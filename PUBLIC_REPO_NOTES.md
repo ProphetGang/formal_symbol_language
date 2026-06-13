@@ -1,10 +1,12 @@
 # Public Repository Notes
 
-This directory is staged for a separate public GitHub repository. It is not the SiMON source repository and should be treated as a publication artifact set.
+This repository is the public publication boundary for the FSL observer theorem package. It is not the full SiMON source repository.
 
-## Publish this directory only
+The repository is intended for readers, reviewers, and implementers who need the papers, current FSL dictionary, machine-readable exports, and release verification material without private runtime state or internal development artifacts.
 
-The public repository should contain this directory's files:
+## Included artifacts
+
+This repository includes:
 
 - `README.md`
 - `MANIFEST.md`
@@ -21,9 +23,22 @@ The public repository should contain this directory's files:
 - `fsl/SYSTEM.yaml`
 - `.gitignore`
 
-## Do not publish the full SiMON repo
+## Canonical and derived files
 
-Do not copy or push these private, heavy, runtime, or internal paths:
+`fsl/SYSTEM.yaml` is the canonical FSL source snapshot included in this release.
+
+The following files are derived publication exports:
+
+- `fsl_specification.md`
+- `fsl_registry.json`
+- `fsl_types.json`
+- `fsl_grammar.json`
+
+They are included for readability, external parsing, and documentation. They do not replace the canonical source snapshot.
+
+## Excluded from this public repository
+
+The full SiMON repository contains private, heavy, runtime, and internal development material that is intentionally excluded here, including:
 
 - `.governance/`
 - `governance/`
@@ -39,22 +54,14 @@ Do not copy or push these private, heavy, runtime, or internal paths:
 - local database/cache files
 - private keys or identity material
 
-## Suggested new repo flow
+Those exclusions keep this repository focused, reviewable, and safe to share publicly.
 
-From outside the SiMON repo, create a new folder or GitHub repository and copy the contents of this staging directory into it. Then run:
+## Verification
 
-```bash
-git init
-git add README.md MANIFEST.md PACKAGE_MAP.md RELEASE_NOTES.md PUBLIC_REPO_NOTES.md CHECKSUMS.sha256 whitepaper.md fsl_governed_symbolic_language.md fsl_specification.md fsl_registry.json fsl_types.json fsl_grammar.json fsl/SYSTEM.yaml .gitignore
-git commit -m "Publish FSL observer theorem package"
-git branch -M main
-git remote add origin <new-public-repo-url>
-git push -u origin main
-```
-
-Before pushing, verify:
+Verify the published files with:
 
 ```bash
 shasum -a 256 -c CHECKSUMS.sha256
-find . -maxdepth 3 -type f | sort
 ```
+
+The checksum file covers the public repository artifacts except `CHECKSUMS.sha256` itself.
