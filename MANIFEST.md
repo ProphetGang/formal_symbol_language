@@ -8,6 +8,7 @@ This manifest defines what should be included, referenced, or excluded when turn
 | --- | --- | --- |
 | `whitepaper.md` | include | Unified governed bounded observer theorem paper. |
 | `THEOREM_REGISTRY.md` | include | Human-readable public registry for the 32 observer theorem records. |
+| `STATEPROOF_NOTE.md` | include | Public explanation of raw-chain status and repaired canonical StateProof verification. |
 | `fsl_governed_symbolic_language.md` | include | FSL language paper explaining the governed symbolic publication layer. |
 | `fsl_specification.md` | include | Human-readable FSL specification derived from the canonical registry. |
 

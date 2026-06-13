@@ -11,8 +11,9 @@ Core artifacts:
 - `whitepaper.md`
 - `THEOREM_REGISTRY.md`
 - `theorem_registry.json`
+- `STATEPROOF_NOTE.md`
 
-This layer contains the governed bounded observer model. The whitepaper gives the narrative and theorem arc. The theorem registry gives the public 32-record theorem export derived from the queryable observer kernel.
+This layer contains the governed bounded observer model. The whitepaper gives the narrative and theorem arc. The theorem registry gives the public 32-record theorem export derived from the queryable observer kernel. The StateProof note explains how to interpret the disclosed repaired canonical proof-chain status.
 
 ## Layer 2: FSL symbolic language
 
@@ -70,5 +71,7 @@ The previous hardening missions made FSL easier to document and safer to extend.
 Include small, public-facing documents and generated exports.
 
 Reference proofchain, Lean, and runtime source files unless the release is explicitly an audit/source snapshot.
+
+Include `STATEPROOF_NOTE.md` in public releases because it is the reader-facing explanation of the proof-chain status, not a raw governance artifact.
 
 Exclude heavy data, model files, caches, embedded repositories, machine-local files, and private identity material.

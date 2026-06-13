@@ -16,6 +16,8 @@ For the theorem index: read `THEOREM_REGISTRY.md` or inspect `theorem_registry.j
 
 For theorem proof coverage: read `lean_coverage_report.md` or inspect `lean_coverage.json`.
 
+For proof-chain status: read `STATEPROOF_NOTE.md`.
+
 For the language: read `fsl_governed_symbolic_language.md`.
 
 For implementers: read `fsl_specification.md`, then inspect `fsl_registry.json`, `fsl_types.json`, and `fsl_grammar.json`.
@@ -50,6 +52,7 @@ The package connects five layers:
 - `README.md`: public landing page
 - `ABSTRACT.md`: compact overview for first-time readers
 - `whitepaper.md`: governed bounded observer theorem paper
+- `STATEPROOF_NOTE.md`: public explanation of raw-chain status and repaired canonical verification
 - `THEOREM_REGISTRY.md`: human-readable observer theorem registry
 - `theorem_registry.json`: machine-readable observer theorem registry
 - `lean_coverage_report.md`: human-readable Lean coverage audit

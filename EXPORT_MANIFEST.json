@@ -66,6 +66,12 @@
       "kind": "public_doc"
     },
     {
+      "source": "publication/fsl_observer_theorem_public_repo/STATEPROOF_NOTE.md",
+      "dest": "STATEPROOF_NOTE.md",
+      "mode": "copy",
+      "kind": "public_integrity_note"
+    },
+    {
       "source": "publication/fsl_observer_theorem_public_repo/whitepaper.md",
       "dest": "whitepaper.md",
       "mode": "copy",

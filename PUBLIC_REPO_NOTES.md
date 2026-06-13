@@ -14,6 +14,7 @@ This repository includes:
 - `RELEASE_NOTES.md`
 - `RELEASE_POLICY.md`
 - `PUBLIC_REPO_NOTES.md`
+- `STATEPROOF_NOTE.md`
 - `CHECKSUMS.sha256`
 - `VERSION`
 - `whitepaper.md`
@@ -41,6 +42,8 @@ The following files are derived publication exports:
 - `fsl_grammar.json`
 
 They are included for readability, external parsing, and documentation. They do not replace the canonical source snapshot.
+
+`STATEPROOF_NOTE.md` is included as public integrity documentation. It explains the difference between the preserved raw historical chain break and the repaired canonical verification path without publishing private runtime governance material.
 
 ## Excluded from this public repository
 

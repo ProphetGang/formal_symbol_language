@@ -11,6 +11,7 @@ This bundle is a clean publication directory for understanding FSL and its conne
 The bundle contains:
 
 - The governed bounded observer theorem whitepaper: `whitepaper.md`
+- Public StateProof chain status note: `STATEPROOF_NOTE.md`
 - The public observer theorem registry: `THEOREM_REGISTRY.md`, `theorem_registry.json`
 - The Lean coverage audit: `lean_coverage_report.md`, `lean_coverage.json`
 - The FSL language paper: `fsl_governed_symbolic_language.md`
@@ -52,6 +53,8 @@ It is a position-paper and publication-package release. It does not claim comple
 ## Proofchain status
 
 At mission start, `python3.12 -m systemq.cli_simonq verify` returned `result: pass` with `canonical_chain_status: repaired`. The raw historical chain still contains an older repaired segment, but the canonical repair overlay is present and valid.
+
+`STATEPROOF_NOTE.md` is included so readers can distinguish raw-chain validity, repaired canonical validity, preserved historical evidence, and the public package boundary.
 
 This bundle mission is documentation and assembly only. It does not modify parser behavior, validator behavior, Lean theorem references, Rust runtime behavior, FSL registry source semantics, or governance execution.
 
