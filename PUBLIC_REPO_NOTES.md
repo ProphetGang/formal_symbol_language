@@ -12,9 +12,13 @@ This repository includes:
 - `MANIFEST.md`
 - `PACKAGE_MAP.md`
 - `RELEASE_NOTES.md`
+- `RELEASE_POLICY.md`
 - `PUBLIC_REPO_NOTES.md`
 - `CHECKSUMS.sha256`
+- `VERSION`
 - `whitepaper.md`
+- `THEOREM_REGISTRY.md`
+- `theorem_registry.json`
 - `fsl_governed_symbolic_language.md`
 - `fsl_specification.md`
 - `fsl_registry.json`
@@ -29,6 +33,8 @@ This repository includes:
 
 The following files are derived publication exports:
 
+- `THEOREM_REGISTRY.md`
+- `theorem_registry.json`
 - `fsl_specification.md`
 - `fsl_registry.json`
 - `fsl_types.json`

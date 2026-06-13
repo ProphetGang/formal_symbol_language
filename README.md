@@ -4,6 +4,8 @@ FSL is a governed symbolic language for describing, publishing, and evolving for
 
 This repository is the public publication package for FSL and the governed bounded observer theorem stack. It contains the theory paper, the language paper, the current FSL dictionary, machine-readable exports, and checksums for verifying the release contents.
 
+Current public package version: `1.1.0`
+
 ## Start here
 
 For a compact overview: read `ABSTRACT.md`.
@@ -17,6 +19,8 @@ For the language: read `fsl_governed_symbolic_language.md`.
 For implementers: read `fsl_specification.md`, then inspect `fsl_registry.json`, `fsl_types.json`, and `fsl_grammar.json`.
 
 For repository scope and exclusions: read `PUBLIC_REPO_NOTES.md`.
+
+For versioning and compatibility promises: read `RELEASE_POLICY.md`.
 
 ## What is included
 
@@ -54,6 +58,8 @@ The package connects five layers:
 - `MANIFEST.md`: include/reference/exclude manifest
 - `PACKAGE_MAP.md`: layer map connecting papers, exports, and provenance
 - `RELEASE_NOTES.md`: release contents and verification notes
+- `RELEASE_POLICY.md`: versioning, compatibility, and publication policy
+- `VERSION`: current public package version
 - `PUBLIC_REPO_NOTES.md`: public repository boundary and exclusions
 - `CHECKSUMS.sha256`: SHA-256 checksums for repository artifacts
 

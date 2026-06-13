@@ -11,6 +11,13 @@ This manifest defines what should be included, referenced, or excluded when turn
 | `fsl_governed_symbolic_language.md` | include | FSL language paper explaining the governed symbolic publication layer. |
 | `fsl_specification.md` | include | Human-readable FSL specification derived from the canonical registry. |
 
+## Include: release metadata
+
+| Path | Status | Purpose |
+| --- | --- | --- |
+| `VERSION` | include | Current public package version. |
+| `RELEASE_POLICY.md` | include | Versioning, compatibility, release-gate, and deprecation policy. |
+
 ## Include: observer theorem export
 
 | Path | Status | Purpose |
@@ -45,7 +52,7 @@ For a paper-style bundle, reference these artifacts and include selected excerpt
 | `updates/UPDATE-FSL-GLYPH-PROMOTION-POLICY-GATE.yaml` | include or reference | Glyph promotion law and gate mission. |
 | `updates/UPDATE-FSL-PUBLICATION-EXPORTS-PROMOTION-GATES.yaml` | include or reference | Publication export refresh with promotion gate fields. |
 | `updates/UPDATE-FSL-WHITEPAPER-DRAFT.yaml` | include or reference | FSL paper drafting mission. |
-| `updates/UPDATE-FSL-OBSERVER-PUBLICATION-PACKAGE-MANIFEST.yaml` | include | This package manifest mission. |
+| `updates/UPDATE-FSL-OBSERVER-PUBLICATION-PACKAGE-MANIFEST.yaml` | reference | Package manifest mission. |
 | `.governance/proof_terms/MISSION-FSL-GLYPH-PROMOTION-POLICY-GATE.jsonl` | reference | Proof terms for glyph policy gate mission. |
 | `.governance/proof_terms/MISSION-FSL-PUBLICATION-EXPORTS-PROMOTION-GATES.jsonl` | reference | Proof terms for export refresh mission. |
 | `.governance/proof_terms/MISSION-FSL-WHITEPAPER-DRAFT.jsonl` | reference | Proof terms for FSL paper mission. |

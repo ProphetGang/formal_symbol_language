@@ -2,7 +2,7 @@
 
 Package: SiMON FSL + Governed Bounded Observer Publication Bundle
 
-Mission: `MISSION-FSL-OBSERVER-PUBLICATION-BUNDLE-ASSEMBLY`
+Current public package version: `1.1.0`
 
 This bundle is a clean publication directory for understanding FSL and its connection to the governed bounded observer theorem stack. It is intentionally a directory bundle, not a zip archive. Archive creation should happen only after checksum review.
 
@@ -11,12 +11,20 @@ This bundle is a clean publication directory for understanding FSL and its conne
 The bundle contains:
 
 - The governed bounded observer theorem whitepaper: `whitepaper.md`
+- The public observer theorem registry: `THEOREM_REGISTRY.md`, `theorem_registry.json`
 - The FSL language paper: `fsl_governed_symbolic_language.md`
 - The human FSL specification: `fsl_specification.md`
 - Machine-readable FSL exports: `fsl_registry.json`, `fsl_types.json`, `fsl_grammar.json`
 - Canonical FSL source snapshot: `fsl/SYSTEM.yaml`
-- Package documentation: `README.md`, `MANIFEST.md`, `PACKAGE_MAP.md`
+- Package documentation: `README.md`, `MANIFEST.md`, `PACKAGE_MAP.md`, `PUBLIC_REPO_NOTES.md`
+- Version and release policy: `VERSION`, `RELEASE_POLICY.md`
 - Checksums: `CHECKSUMS.sha256`
+
+## Version 1.1.0
+
+This is the first public package version that includes both a human-readable and machine-readable observer theorem registry alongside the FSL language exports.
+
+It is a position-paper and publication-package release. It does not claim complete Lean machine-checkable coverage for every theorem family.
 
 ## Current system snapshot
 
@@ -33,6 +41,8 @@ The bundle contains:
 `fsl/SYSTEM.yaml` is the canonical FSL source snapshot included in this bundle.
 
 `fsl_registry.json`, `fsl_types.json`, `fsl_grammar.json`, and `fsl_specification.md` are derived publication exports. They are included for readability, external parsing, and documentation, but they do not replace the canonical source.
+
+`THEOREM_REGISTRY.md` and `theorem_registry.json` are derived public exports of the observer theorem registry. They do not replace the queryable observer kernel source.
 
 ## Proofchain status
 
