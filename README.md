@@ -6,6 +6,8 @@ This repository is the public publication package for FSL and the governed bound
 
 ## Start here
 
+For a compact overview: read `ABSTRACT.md`.
+
 For the theory: read `whitepaper.md`.
 
 For the language: read `fsl_governed_symbolic_language.md`.
@@ -36,6 +38,7 @@ The package connects four layers:
 ## Repository map
 
 - `README.md`: public landing page
+- `ABSTRACT.md`: compact overview for first-time readers
 - `whitepaper.md`: governed bounded observer theorem paper
 - `fsl_governed_symbolic_language.md`: FSL language paper
 - `fsl_specification.md`: human-readable FSL specification
