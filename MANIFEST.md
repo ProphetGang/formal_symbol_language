@@ -7,8 +7,15 @@ This manifest defines what should be included, referenced, or excluded when turn
 | Path | Status | Purpose |
 | --- | --- | --- |
 | `whitepaper.md` | include | Unified governed bounded observer theorem paper. |
-| `papers/fsl_governed_symbolic_language.md` | include | FSL language paper explaining the governed symbolic publication layer. |
+| `THEOREM_REGISTRY.md` | include | Human-readable public registry for the 32 observer theorem records. |
+| `fsl_governed_symbolic_language.md` | include | FSL language paper explaining the governed symbolic publication layer. |
 | `fsl_specification.md` | include | Human-readable FSL specification derived from the canonical registry. |
+
+## Include: observer theorem export
+
+| Path | Status | Purpose |
+| --- | --- | --- |
+| `theorem_registry.json` | include | Machine-readable public export of the 32 observer theorem records. |
 
 ## Include: FSL publication exports
 

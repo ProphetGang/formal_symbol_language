@@ -10,6 +10,8 @@ For a compact overview: read `ABSTRACT.md`.
 
 For the theory: read `whitepaper.md`.
 
+For the theorem index: read `THEOREM_REGISTRY.md` or inspect `theorem_registry.json`.
+
 For the language: read `fsl_governed_symbolic_language.md`.
 
 For implementers: read `fsl_specification.md`, then inspect `fsl_registry.json`, `fsl_types.json`, and `fsl_grammar.json`.
@@ -18,12 +20,13 @@ For repository scope and exclusions: read `PUBLIC_REPO_NOTES.md`.
 
 ## What is included
 
-The package connects four layers:
+The package connects five layers:
 
 1. `whitepaper.md` presents the governed bounded observer theorem model: the world model, observer limits, and lawful movement constraints.
-2. `fsl_governed_symbolic_language.md` presents FSL as the governed symbolic language used to publish and evolve those semantics.
-3. `fsl/SYSTEM.yaml` is the canonical FSL source snapshot included in this repository.
-4. `fsl_specification.md`, `fsl_registry.json`, `fsl_types.json`, and `fsl_grammar.json` are derived publication exports for human readers and external tooling.
+2. `THEOREM_REGISTRY.md` and `theorem_registry.json` expose the 32-record observer theorem registry for readers and external tooling.
+3. `fsl_governed_symbolic_language.md` presents FSL as the governed symbolic language used to publish and evolve those semantics.
+4. `fsl/SYSTEM.yaml` is the canonical FSL source snapshot included in this repository.
+5. `fsl_specification.md`, `fsl_registry.json`, `fsl_types.json`, and `fsl_grammar.json` are derived publication exports for human readers and external tooling.
 
 ## Current snapshot
 
@@ -40,6 +43,8 @@ The package connects four layers:
 - `README.md`: public landing page
 - `ABSTRACT.md`: compact overview for first-time readers
 - `whitepaper.md`: governed bounded observer theorem paper
+- `THEOREM_REGISTRY.md`: human-readable observer theorem registry
+- `theorem_registry.json`: machine-readable observer theorem registry
 - `fsl_governed_symbolic_language.md`: FSL language paper
 - `fsl_specification.md`: human-readable FSL specification
 - `fsl_registry.json`: machine-readable symbol registry

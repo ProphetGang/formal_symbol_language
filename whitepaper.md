@@ -301,13 +301,13 @@ Biodiversity domain (Phase 4), external agent admission (Phase 5), and HTM grid 
 
 ## 8. Current Release Status and Future Work
 
-This public release is a position paper and language package. It presents the governed bounded observer model, the current FSL language snapshot, and the publication exports needed to inspect the symbolic system. The observer kernel currently records 32 canonical theorem artifacts and one deprecated historical artifact, and the package includes the FSL source snapshot plus derived registry, type, and grammar exports.
+This public release is a position paper and language package. It presents the governed bounded observer model, the current FSL language snapshot, the public theorem registry, and the publication exports needed to inspect the symbolic system. The observer kernel currently records 32 canonical theorem artifacts and one deprecated historical artifact, and the package includes the FSL source snapshot plus derived registry, type, and grammar exports.
 
 This release does not claim complete public Lean machine-checkable coverage for every theorem family. Some theorem records are formalized in Lean, some are represented as governed definitions or axioms, and some remain part of the formalization roadmap. This distinction is intentional: the package separates current symbolic and theorem structure from future proof-completion work.
 
 Future work is organized around the following public-facing goals:
 
-- Publish a reader-friendly and machine-readable theorem registry for the 32 canonical observer theorem artifacts.
+- Maintain and extend the reader-friendly and machine-readable theorem registry for the 32 canonical observer theorem artifacts.
 - Classify theorem records by proof status, including proved, defined, axiomatized, property-tested, deprecated, or planned for future formalization.
 - Expand Lean coverage in theorem-family batches rather than as one monolithic proof effort.
 - Connect prove, attest, chain, verify, and retire operations into a repeatable theorem lifecycle.

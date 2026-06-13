@@ -9,10 +9,10 @@ Primary question: what is the formal world being described?
 Core artifacts:
 
 - `whitepaper.md`
-- `observer_limit/kernel.py`
-- `lean/gbo_theorems.lean`
+- `THEOREM_REGISTRY.md`
+- `theorem_registry.json`
 
-This layer contains the governed bounded observer model. The whitepaper gives the narrative and theorem arc. The observer kernel gives the queryable record of 32 theorem constraints. The Lean file provides formal theorem source for the governed bounded observer family.
+This layer contains the governed bounded observer model. The whitepaper gives the narrative and theorem arc. The theorem registry gives the public 32-record theorem export derived from the queryable observer kernel.
 
 ## Layer 2: FSL symbolic language
 
@@ -20,7 +20,7 @@ Primary question: how are those semantics named, grouped, evolved, and published
 
 Core artifacts:
 
-- `papers/fsl_governed_symbolic_language.md`
+- `fsl_governed_symbolic_language.md`
 - `fsl/SYSTEM.yaml`
 
 This layer explains FSL as the symbolic language around the theorem stack. `fsl/SYSTEM.yaml` remains canonical. English labels, glyph candidates, theorem aliases, tiers, and metadata are governed through additive schema hardening rather than destructive renames.
@@ -60,7 +60,7 @@ The observer theorem paper defines the constrained world: bounded observers, amb
 In short:
 
 ```text
-theorem stack -> observer kernel -> FSL registry -> publication exports -> governed release package
+theorem stack -> observer kernel -> theorem registry -> FSL registry -> publication exports -> governed release package
 ```
 
 The previous hardening missions made FSL easier to document and safer to extend. This package makes the relationship legible: the whitepaper explains the theory, the FSL paper explains the language, the exports provide the dictionary, and the governance trail proves how the documents came to exist.

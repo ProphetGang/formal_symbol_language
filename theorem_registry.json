@@ -1,0 +1,654 @@
+{
+  "metadata": {
+    "title": "FSL Observer Theorem Registry",
+    "canonical_source": "observer_limit/kernel.py via systemq.cli_olkq",
+    "public_export": true,
+    "canonical": false,
+    "theorem_count": 32,
+    "expected_theorem_count": 32,
+    "complete": true,
+    "sources": {
+      "lean/gbo_theorems.lean": 29,
+      "fsl/SYSTEM.yaml": 3
+    },
+    "families": {
+      "htm_geometry": 10,
+      "observer_bound": 2,
+      "observer_motion": 4,
+      "observer_horizon": 2,
+      "observer_cost": 4,
+      "observer_ambiguity": 2,
+      "observer_commitment": 1,
+      "observer_impossibility": 3,
+      "observer_unified": 1,
+      "fsl_movement": 3
+    },
+    "constraint_types": {
+      "spatial_refinement": 2,
+      "spatial_adjacency": 5,
+      "spatial_motion": 5,
+      "observer_chassis": 1,
+      "identity_invariant": 1,
+      "temporal_motion": 2,
+      "identity_motion": 1,
+      "horizon_limit": 3,
+      "cost_floor": 5,
+      "underdetermination": 2,
+      "commitment": 1,
+      "self_certification_limit": 1,
+      "unified_limit": 1,
+      "history_preservation": 1,
+      "motion_stability": 1
+    },
+    "notes": [
+      "This is a public export of the queryable observer theorem kernel.",
+      "It does not rename theorem IDs, Lean declarations, FSL symbols, or runtime references.",
+      "The canonical public release also includes fsl/SYSTEM.yaml and the FSL export files."
+    ]
+  },
+  "theorems": [
+    {
+      "ordinal": 1,
+      "theorem_id": "zoom_in_depth",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_refinement",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "zoom_in_depth",
+      "fsl_symbols": [
+        "M",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "ObserverPosition",
+        "SphericalManifoldCell"
+      ],
+      "summary": "Zooming into an HTM cell advances to a deeper spatial resolution."
+    },
+    {
+      "ordinal": 2,
+      "theorem_id": "zoom_in_parent",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_refinement",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "zoom_in_parent",
+      "fsl_symbols": [
+        "M",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "ObserverPosition",
+        "SphericalManifoldCell"
+      ],
+      "summary": "A zoomed child cell preserves the parent relation needed for bounded localization."
+    },
+    {
+      "ordinal": 3,
+      "theorem_id": "face_adj_symm",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "face_adj_symm",
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMFace",
+        "HTMCell",
+        "SpatialNeighborhood"
+      ],
+      "summary": "Face adjacency is symmetric, so local neighbor claims can be checked in either direction."
+    },
+    {
+      "ordinal": 4,
+      "theorem_id": "face_adj_irrefl",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "face_adj_irrefl",
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMFace",
+        "HTMCell",
+        "SpatialNeighborhood"
+      ],
+      "summary": "A face is not adjacent to itself, ruling out zero-length face moves."
+    },
+    {
+      "ordinal": 5,
+      "theorem_id": "face_adj_correct",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "face_adj_correct",
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMFace",
+        "HTMCell",
+        "SpatialNeighborhood"
+      ],
+      "summary": "Declared face adjacency matches the expected HTM neighbor relation."
+    },
+    {
+      "ordinal": 6,
+      "theorem_id": "inner_sib_correct",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "inner_sib_correct",
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "SpatialNeighborhood",
+        "SiblingMotion"
+      ],
+      "summary": "Inner sibling transitions are valid local moves inside the same parent region."
+    },
+    {
+      "ordinal": 7,
+      "theorem_id": "d1_adj_correct",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "d1_adj_correct",
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "SpatialNeighborhood",
+        "DepthOneMotion"
+      ],
+      "summary": "Depth-one adjacency is correctly recognized for the first refinement layer."
+    },
+    {
+      "ordinal": 8,
+      "theorem_id": "htmcell_neighbor_symm",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "HTMCell.neighbor_symm",
+      "fsl_symbols": [
+        "M",
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "ObserverMovementPacket",
+        "SpatialNeighborhood"
+      ],
+      "summary": "HTM neighbor motion is symmetric at the cell level."
+    },
+    {
+      "ordinal": 9,
+      "theorem_id": "htmcell_neighbor_irrefl",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "HTMCell.neighbor_irrefl",
+      "fsl_symbols": [
+        "M",
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "ObserverMovementPacket",
+        "SpatialNeighborhood"
+      ],
+      "summary": "No HTM cell is its own neighbor, preventing fake movement by self-loop."
+    },
+    {
+      "ordinal": 10,
+      "theorem_id": "htmcell_neighbor_same_depth",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "HTMCell.neighbor_same_depth",
+      "fsl_symbols": [
+        "M",
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "ObserverMovementPacket",
+        "SpatialNeighborhood"
+      ],
+      "summary": "Neighbor movement preserves depth, keeping local motion on a consistent resolution layer."
+    },
+    {
+      "ordinal": 11,
+      "theorem_id": "gbo_i_decomposition",
+      "family": "observer_bound",
+      "constraint_type": "observer_chassis",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_i_decomposition",
+      "fsl_symbols": [
+        "observer",
+        "bounded",
+        "governance"
+      ],
+      "applies_to": [
+        "ObserverChassis",
+        "ObserverState",
+        "FSLIntent"
+      ],
+      "summary": "A governed bounded observer decomposes into identity, position, horizon, and proof-bearing state."
+    },
+    {
+      "ordinal": 12,
+      "theorem_id": "gbo_i_did_invariant_necessary",
+      "family": "observer_bound",
+      "constraint_type": "identity_invariant",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_i_did_invariant_necessary",
+      "fsl_symbols": [
+        "DID",
+        "identity",
+        "governance"
+      ],
+      "applies_to": [
+        "ObserverIdentity",
+        "StateProof",
+        "MovementValidationResult"
+      ],
+      "summary": "Observer continuity requires DID preservation across admissible state transitions."
+    },
+    {
+      "ordinal": 13,
+      "theorem_id": "gbo_ii_tick_advances",
+      "family": "observer_motion",
+      "constraint_type": "temporal_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_ii_tick_advances",
+      "fsl_symbols": [
+        "time",
+        "tick",
+        "M"
+      ],
+      "applies_to": [
+        "ObserverClock",
+        "ObserverMovementPacket",
+        "MotionHistory"
+      ],
+      "summary": "A valid observer move advances the temporal tick."
+    },
+    {
+      "ordinal": 14,
+      "theorem_id": "gbo_ii_did_preserved",
+      "family": "observer_motion",
+      "constraint_type": "identity_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_ii_did_preserved",
+      "fsl_symbols": [
+        "DID",
+        "identity",
+        "M"
+      ],
+      "applies_to": [
+        "ObserverIdentity",
+        "ObserverMovementPacket",
+        "MotionHistory"
+      ],
+      "summary": "A valid movement preserves the observer DID."
+    },
+    {
+      "ordinal": 15,
+      "theorem_id": "gbo_ii_no_self_loop",
+      "family": "observer_motion",
+      "constraint_type": "spatial_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_ii_no_self_loop",
+      "fsl_symbols": [
+        "M",
+        "adjacent",
+        "bounded"
+      ],
+      "applies_to": [
+        "ObserverMovementPacket",
+        "HTMCell",
+        "MotionHistory"
+      ],
+      "summary": "A valid move cannot certify a spatial self-loop as movement."
+    },
+    {
+      "ordinal": 16,
+      "theorem_id": "gbo_ii_no_repeated_tick",
+      "family": "observer_motion",
+      "constraint_type": "temporal_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_ii_no_repeated_tick",
+      "fsl_symbols": [
+        "time",
+        "tick",
+        "bounded"
+      ],
+      "applies_to": [
+        "ObserverClock",
+        "MotionHistory",
+        "StateProof"
+      ],
+      "summary": "A valid history cannot reuse the same movement tick."
+    },
+    {
+      "ordinal": 17,
+      "theorem_id": "gbo_iii_spatial_horizon",
+      "family": "observer_horizon",
+      "constraint_type": "horizon_limit",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_iii_spatial_horizon",
+      "fsl_symbols": [
+        "horizon",
+        "space",
+        "bounded"
+      ],
+      "applies_to": [
+        "ObserverHorizon",
+        "HTMCell",
+        "SphericalManifoldCell"
+      ],
+      "summary": "Spatial observation is horizon-bounded; the observer cannot claim complete spatial access."
+    },
+    {
+      "ordinal": 18,
+      "theorem_id": "gbo_iii_temporal_horizon",
+      "family": "observer_horizon",
+      "constraint_type": "horizon_limit",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_iii_temporal_horizon",
+      "fsl_symbols": [
+        "horizon",
+        "time",
+        "bounded"
+      ],
+      "applies_to": [
+        "ObserverHorizon",
+        "ObserverClock",
+        "MotionHistory"
+      ],
+      "summary": "Temporal observation is horizon-bounded; the observer cannot claim complete time access."
+    },
+    {
+      "ordinal": 19,
+      "theorem_id": "gbo_iv_cost_positive",
+      "family": "observer_cost",
+      "constraint_type": "cost_floor",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_iv_cost_positive",
+      "fsl_symbols": [
+        "cost",
+        "blast_radius",
+        "governance"
+      ],
+      "applies_to": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "summary": "Any governed observation or movement has positive cost."
+    },
+    {
+      "ordinal": 20,
+      "theorem_id": "gbo_iv_cost_ge_left",
+      "family": "observer_cost",
+      "constraint_type": "cost_floor",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_iv_cost_ge_left",
+      "fsl_symbols": [
+        "cost",
+        "blast_radius",
+        "governance"
+      ],
+      "applies_to": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "summary": "Combined observer cost is at least its left component cost."
+    },
+    {
+      "ordinal": 21,
+      "theorem_id": "gbo_iv_cost_ge_right",
+      "family": "observer_cost",
+      "constraint_type": "cost_floor",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_iv_cost_ge_right",
+      "fsl_symbols": [
+        "cost",
+        "blast_radius",
+        "governance"
+      ],
+      "applies_to": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "summary": "Combined observer cost is at least its right component cost."
+    },
+    {
+      "ordinal": 22,
+      "theorem_id": "gbo_iv_cost_ge_max",
+      "family": "observer_cost",
+      "constraint_type": "cost_floor",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_iv_cost_ge_max",
+      "fsl_symbols": [
+        "cost",
+        "blast_radius",
+        "governance"
+      ],
+      "applies_to": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "summary": "Combined observer cost is bounded below by the maximum component cost."
+    },
+    {
+      "ordinal": 23,
+      "theorem_id": "gbo_v_underdetermination",
+      "family": "observer_ambiguity",
+      "constraint_type": "underdetermination",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_v_underdetermination",
+      "fsl_symbols": [
+        "ambiguity",
+        "semantic",
+        "bounded"
+      ],
+      "applies_to": [
+        "FSLAmbiguity",
+        "SemanticMap",
+        "ObserverHorizon"
+      ],
+      "summary": "Bounded observation can leave multiple world states consistent with the same evidence."
+    },
+    {
+      "ordinal": 24,
+      "theorem_id": "anchor_nonuniqueness_exists",
+      "family": "observer_ambiguity",
+      "constraint_type": "underdetermination",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "anchor_nonuniqueness_exists",
+      "fsl_symbols": [
+        "anchor",
+        "semantic",
+        "bounded"
+      ],
+      "applies_to": [
+        "SemanticAnchor",
+        "FSLAmbiguity",
+        "ObserverHorizon"
+      ],
+      "summary": "Semantic anchors need not be unique under bounded observation."
+    },
+    {
+      "ordinal": 25,
+      "theorem_id": "gbo_vi_non_equivocating",
+      "family": "observer_commitment",
+      "constraint_type": "commitment",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_vi_non_equivocating",
+      "fsl_symbols": [
+        "commitment",
+        "proof",
+        "governance"
+      ],
+      "applies_to": [
+        "PositionCommitment",
+        "StateProof",
+        "ObserverIdentity"
+      ],
+      "summary": "A governed observer cannot equivocate between incompatible commitments under the same identity."
+    },
+    {
+      "ordinal": 26,
+      "theorem_id": "gbo_impossible_complete_observation",
+      "family": "observer_impossibility",
+      "constraint_type": "horizon_limit",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_impossible_complete_observation",
+      "fsl_symbols": [
+        "impossible",
+        "horizon",
+        "bounded"
+      ],
+      "applies_to": [
+        "ObserverHorizon",
+        "ObserverState",
+        "SemanticMap"
+      ],
+      "summary": "Complete observation is impossible for a bounded observer."
+    },
+    {
+      "ordinal": 27,
+      "theorem_id": "gbo_impossible_zero_cost",
+      "family": "observer_impossibility",
+      "constraint_type": "cost_floor",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_impossible_zero_cost",
+      "fsl_symbols": [
+        "impossible",
+        "cost",
+        "bounded"
+      ],
+      "applies_to": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "summary": "Zero-cost observation or movement is impossible under governed bounds."
+    },
+    {
+      "ordinal": 28,
+      "theorem_id": "gbo_impossible_self_certification",
+      "family": "observer_impossibility",
+      "constraint_type": "self_certification_limit",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_impossible_self_certification",
+      "fsl_symbols": [
+        "impossible",
+        "proof",
+        "governance"
+      ],
+      "applies_to": [
+        "ObserverIdentity",
+        "StateProof",
+        "GovernorResponse"
+      ],
+      "summary": "An observer cannot fully certify itself without an external proof relation."
+    },
+    {
+      "ordinal": 29,
+      "theorem_id": "governed_bounded_observer",
+      "family": "observer_unified",
+      "constraint_type": "unified_limit",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "governed_bounded_observer",
+      "fsl_symbols": [
+        "observer",
+        "bounded",
+        "governance",
+        "semantic"
+      ],
+      "applies_to": [
+        "ObserverChassis",
+        "ObserverHorizon",
+        "StateProof",
+        "SemanticMap"
+      ],
+      "summary": "Unified theorem: identity, motion, horizon, cost, ambiguity, and commitment bound the observer."
+    },
+    {
+      "ordinal": 30,
+      "theorem_id": "valid_history_preserved",
+      "family": "fsl_movement",
+      "constraint_type": "history_preservation",
+      "source": "fsl/SYSTEM.yaml",
+      "lean_declaration": "valid_history_preserved",
+      "fsl_symbols": [
+        "history",
+        "M",
+        "StateProof"
+      ],
+      "applies_to": [
+        "MotionHistory",
+        "ObserverMovementPacket",
+        "MovementValidationResult"
+      ],
+      "summary": "FSL-registered movement history remains valid after an admissible motion step."
+    },
+    {
+      "ordinal": 31,
+      "theorem_id": "valid_spatial_motion",
+      "family": "fsl_movement",
+      "constraint_type": "spatial_motion",
+      "source": "fsl/SYSTEM.yaml",
+      "lean_declaration": "valid_spatial_motion",
+      "fsl_symbols": [
+        "M",
+        "space.htm_surface",
+        "adjacent"
+      ],
+      "applies_to": [
+        "ObserverMovementPacket",
+        "HTMCell",
+        "MovementValidationResult"
+      ],
+      "summary": "FSL-registered spatial motion must be valid against the HTM neighbor surface."
+    },
+    {
+      "ordinal": 32,
+      "theorem_id": "valid_motion_stay",
+      "family": "fsl_movement",
+      "constraint_type": "motion_stability",
+      "source": "fsl/SYSTEM.yaml",
+      "lean_declaration": "valid_motion_stay",
+      "fsl_symbols": [
+        "M",
+        "identity",
+        "bounded"
+      ],
+      "applies_to": [
+        "ObserverMovementPacket",
+        "ObserverIdentity",
+        "MovementValidationResult"
+      ],
+      "summary": "FSL-registered stay/motion validation preserves the bounded observer state."
+    }
+  ]
+}
