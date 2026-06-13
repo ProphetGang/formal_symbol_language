@@ -1,0 +1,466 @@
+{
+  "_provenance": {
+    "derived": true,
+    "canonical": false,
+    "canonical_source": "fsl/SYSTEM.yaml",
+    "source_sha256": "27095f036a3371a372f4d89a2046909c8179cc70babcea81924ff40d386b95ab",
+    "generator": "fsl/export_schema.py",
+    "warning": "Derived publication artifact only. Do not use as parser, validator, Lean, Rust runtime, or governance execution authority."
+  },
+  "surface": "fsl/SYSTEM.yaml",
+  "sort_vocabulary": {
+    "Connective": {
+      "description": "Logical operator taking Prop arguments and returning Prop",
+      "examples": [
+        "∧",
+        "∨",
+        "¬",
+        "→",
+        "↔",
+        "⊕_AMD"
+      ]
+    },
+    "Quantifier": {
+      "description": "Variable binder ranging over a typed domain",
+      "examples": [
+        "∀",
+        "∃",
+        "∄"
+      ]
+    },
+    "Prop": {
+      "description": "Truth-bearing proposition; may be asserted, negated, or composed via Connective. Dominant sort for rules, gates, axiom implications, theorems, GBO predicates, HTM predicates, and mission-state symbols.",
+      "examples": [
+        "R1",
+        "all_passed",
+        "g_L",
+        "M↑",
+        "⊤",
+        "⊥",
+        "∂G → ⊥_ext"
+      ]
+    },
+    "Phase": {
+      "description": "Conversation or deliberation phase; mutually exclusive states",
+      "examples": [
+        "φ_deliberate",
+        "φ_await",
+        "φ_execute"
+      ]
+    },
+    "InputKind": {
+      "description": "UI input classification type; determines routing in the governance conversation pipeline",
+      "examples": [
+        "ι",
+        "γ",
+        "π",
+        "ρ",
+        "q",
+        "χ",
+        "κ"
+      ]
+    },
+    "Entity": {
+      "description": "Named structural object; not truth-bearing; packets, proofs, registries, sets of constitutional components",
+      "examples": [
+        "UP",
+        "SP",
+        "K",
+        "K_surfaces",
+        "DID",
+        "Σ"
+      ]
+    },
+    "Metric": {
+      "description": "Numeric scalar; appears in inequality expressions and stability bounds; cannot be asserted directly as a Prop",
+      "examples": [
+        "L",
+        "C",
+        "β",
+        "G",
+        "ESS-S",
+        "𝓛_C"
+      ]
+    },
+    "Relation": {
+      "description": "Binary predicate that produces Prop from arguments of any sort; does not itself have sort Prop but participates in Prop-sorted expressions",
+      "examples": [
+        "∈",
+        "⊆",
+        "=",
+        "≤",
+        "⊢",
+        "⊬"
+      ]
+    },
+    "SetOp": {
+      "description": "Set operation producing a set from sets; result is Entity-sorted",
+      "examples": [
+        "∩",
+        "∪",
+        "×",
+        "∅"
+      ]
+    },
+    "Scott": {
+      "description": "Tier D fixed-point domain element; exists at the Gödel boundary; may not be passed directly to Connective as a Prop argument",
+      "examples": [
+        "ℒ_FSL",
+        "∂G",
+        "⊥_ext",
+        "↦_FSL",
+        "Δ_FSL",
+        "⊕_sync"
+      ]
+    }
+  },
+  "tier_thresholds": {
+    "A": {
+      "min": 85,
+      "max": 100,
+      "treatment": "Universal. No bundle required. Directly usable in proof terms."
+    },
+    "B": {
+      "min": 70,
+      "max": 84,
+      "treatment": "Typed. Bundle declaration recommended. Proof terms allowed."
+    },
+    "C": {
+      "min": 50,
+      "max": 69,
+      "treatment": "Contextual. Bundle declaration required. Disambiguation enforced."
+    },
+    "D": {
+      "min": 0,
+      "max": 49,
+      "treatment": "Unstable. Rejected without active bundle. Cannot appear in proof terms."
+    }
+  },
+  "schema_contract": {
+    "purpose": "Non-enforcing additive metadata contract for FSL symbol hardening.",
+    "status": "proposed",
+    "introduced_by": "UPD-FSL-SCHEMA-HARDENING-CONTRACT",
+    "runtime_compatibility": {
+      "existing_fields_remain_authoritative": true,
+      "parser_reads_existing_symbol_field": true,
+      "validator_reads_existing_symbol_and_theorem_fields": true,
+      "lean_export_reads_current_parser_ast": true,
+      "rust_runtime_reads_existing_sort_guard_and_violation_fields": true,
+      "governance_decisions_ignore_new_metadata_fields": true
+    },
+    "additive_symbol_fields": {
+      "canonical_id": {
+        "required_now": false,
+        "type": "string",
+        "stability": "immutable_after_assignment",
+        "description": "Stable machine identifier for a symbol entry. It must not replace the existing symbol field or theorem references without a separately governed compatibility mission.",
+        "suggested_format": "<bundle_id>.<stable_name>"
+      },
+      "family": {
+        "required_now": false,
+        "type": "string",
+        "description": "Documentation grouping for readers, publishers, and external tooling. It is metadata only until separately governed.",
+        "allowed_values": [
+          "boundary",
+          "governance",
+          "theorem",
+          "packet",
+          "runtime",
+          "widget",
+          "observer",
+          "topology",
+          "logic",
+          "set",
+          "numeric",
+          "metric",
+          "constitution",
+          "network",
+          "fsl_meta"
+        ]
+      },
+      "kind": {
+        "required_now": false,
+        "type": "string",
+        "description": "Indicates whether a registry entry is an indivisible atom or a composite expression-like entry. This field is descriptive and must not change parser behavior in this contract mission.",
+        "allowed_values": [
+          "atomic",
+          "composite"
+        ]
+      },
+      "display": {
+        "required_now": false,
+        "type": "object",
+        "description": "Presentation metadata for documentation and publication. Runtime lookup remains bound to the existing symbol field.",
+        "fields": {
+          "glyph": "string",
+          "text": "string",
+          "mode": {
+            "type": "string",
+            "allowed_values": [
+              "glyph",
+              "text",
+              "mixed"
+            ]
+          }
+        }
+      }
+    },
+    "non_goals": [
+      "Do not remove or rename existing fields.",
+      "Do not change symbol lookup semantics.",
+      "Do not change parser output.",
+      "Do not change theorem identifiers or Lean declarations.",
+      "Do not change Rust runtime validation.",
+      "Do not change governance authorization or admissibility decisions."
+    ]
+  },
+  "glyph_candidate_contract": {
+    "purpose": "Proposal-only symbolic evolution layer for English-derived FSL symbols.",
+    "status": "proposed",
+    "introduced_by": "UPDATE-FSL-GLYPH-CANDIDATE-SYMBOLPACKETS",
+    "authority": {
+      "symbol_packet_channel": "MISSION-FSL-UNIVERSAL-CHANNEL",
+      "governance_symbol": "K_packet_auth",
+      "promotion_requires": "future_update_packet"
+    },
+    "runtime_compatibility": {
+      "active_symbol_field_remains_authoritative": true,
+      "canonical_id_remains_stable": true,
+      "parser_ignores_glyph_candidate": true,
+      "validator_ignores_glyph_candidate_for_acceptance": true,
+      "lean_export_ignores_glyph_candidate": true,
+      "rust_runtime_ignores_glyph_candidate": true,
+      "governance_decisions_ignore_glyph_candidate": true
+    },
+    "fields": {
+      "glyph": "Proposed publication/display glyph. It is not a lookup key.",
+      "status": {
+        "type": "string",
+        "allowed_values": [
+          "proposed",
+          "reserved",
+          "rejected",
+          "promoted"
+        ]
+      },
+      "glyph_family": "Human-readable lineage used to evaluate visual consistency.",
+      "rationale": "Short reason this glyph shape was proposed.",
+      "proposed_by_packet": "UpdatePacket that introduced the proposal.",
+      "governance_authority": "FSL governance symbol authorizing candidate metadata.",
+      "promotion_requires": "Future UpdatePacket required before active symbol replacement."
+    },
+    "non_goals": [
+      "Do not replace existing symbol values.",
+      "Do not rename theorem IDs or Lean declarations.",
+      "Do not introduce custom Unicode authority or font requirements.",
+      "Do not make glyph candidates parser, validator, runtime, or governance inputs."
+    ]
+  },
+  "glyph_promotion_policy": {
+    "purpose": "Non-enforcing gate for future promotion of glyph_candidate metadata into active symbols.",
+    "status": "proposed",
+    "introduced_by": "UPDATE-FSL-GLYPH-PROMOTION-POLICY-GATE",
+    "authority": {
+      "governance_symbol": "K_packet_auth",
+      "promotion_requires": "future_update_packet"
+    },
+    "gate_values": {
+      "promotable_now": "Candidate has no active symbol binding and may be considered for promotion by a future UpdatePacket.",
+      "display_only": "Candidate may be used for documentation or publication display, but should not replace the active symbol.",
+      "blocked": "Candidate is attached to load-bearing, boundary, governance, or parser-shaped semantics and must not be promoted under this policy.",
+      "requires_alias_plan": "Candidate could be considered only with an explicit compatibility plan for legacy symbol aliases and theorem references."
+    },
+    "default_gate": {
+      "future_replacement_candidate": "promotable_now",
+      "mixed_glyph_candidate": "display_only_unless_alias_plan",
+      "never_replace_load_bearing": "blocked",
+      "keep_text": "not_applicable_without_candidate"
+    },
+    "promotable_now_requires": [
+      "glyph_candidate.status == proposed",
+      "glyph_candidate.governance_authority == K_packet_auth",
+      "readiness_classification == future_replacement_candidate",
+      "active_symbol_is_missing_or_unbound",
+      "no tier_d_boundary",
+      "no load_bearing_family",
+      "no composite_or_parser_shaped_symbol",
+      "no governance_guard_or_violation_symbol"
+    ],
+    "blocked_if": [
+      "tier_d_boundary",
+      "load_bearing_family",
+      "composite_or_parser_shaped_symbol",
+      "governance_guard_or_violation_symbol"
+    ],
+    "requires_alias_plan_if": [
+      "lean_theorem_reference",
+      "appears_in_theorems",
+      "active_symbol_field_exists"
+    ],
+    "alias_plan_required_fields": [
+      "legacy_symbol",
+      "promoted_symbol",
+      "theorem_alias_resolution",
+      "parser_backward_compatibility",
+      "lean_reference_compatibility",
+      "rust_runtime_compatibility",
+      "governance_decision_compatibility"
+    ],
+    "runtime_compatibility": {
+      "active_symbol_field_remains_authoritative": true,
+      "parser_ignores_promotion_gate": true,
+      "validator_ignores_promotion_gate_for_acceptance": true,
+      "lean_export_ignores_promotion_gate": true,
+      "rust_runtime_ignores_promotion_gate": true,
+      "governance_decisions_ignore_promotion_gate": true
+    },
+    "non_goals": [
+      "Do not promote any glyph in this mission.",
+      "Do not change active symbol values.",
+      "Do not rename theorem IDs or Lean declarations.",
+      "Do not make promotion gates parser, validator, runtime, or governance inputs.",
+      "Do not regenerate publication exports in this mission."
+    ]
+  },
+  "role_registry": [
+    {
+      "symbol": "[r:OP]",
+      "role": "Operator",
+      "permitted_actions": [
+        "read_log",
+        "read_state"
+      ],
+      "scope": "read-only",
+      "output_sort": "Prop",
+      "output_terms": [
+        "read_log",
+        "read_state"
+      ],
+      "input_preconditions": [],
+      "transitions_ref": "fsl/role_transitions.yaml"
+    },
+    {
+      "symbol": "[r:RA]",
+      "role": "Research_Agent",
+      "permitted_actions": [
+        "CLI_query"
+      ],
+      "scope": "read-only",
+      "output_sort": "Prop",
+      "output_terms": [
+        "context_available",
+        "query_result"
+      ],
+      "input_preconditions": [],
+      "transitions_ref": "fsl/role_transitions.yaml"
+    },
+    {
+      "symbol": "[r:SA]",
+      "role": "Scope_Agent",
+      "permitted_actions": [
+        "CLI_query",
+        "filesystem_check"
+      ],
+      "scope": "read-only",
+      "output_sort": "Prop",
+      "output_terms": [
+        "packages_admissible"
+      ],
+      "input_preconditions": [
+        "actor_identified"
+      ],
+      "transitions_ref": "fsl/role_transitions.yaml"
+    },
+    {
+      "symbol": "[r:FI]",
+      "role": "File_Inspector",
+      "permitted_actions": [
+        "filesystem_read",
+        "chunk_score"
+      ],
+      "scope": "allowed_packages, read-only",
+      "output_sort": "Prop",
+      "output_terms": [
+        "context_available",
+        "inspector_ran"
+      ],
+      "input_preconditions": [
+        "packages_admissible"
+      ],
+      "transitions_ref": "fsl/role_transitions.yaml"
+    },
+    {
+      "symbol": "[r:PC]",
+      "role": "PacketCreator",
+      "permitted_actions": [
+        "Write",
+        "UpdatePacket"
+      ],
+      "scope": "updates/ only",
+      "output_sort": "Prop",
+      "output_terms": [
+        "authorization_pending"
+      ],
+      "input_preconditions": [
+        "context_available",
+        "inspector_ran"
+      ],
+      "transitions_ref": "fsl/role_transitions.yaml"
+    },
+    {
+      "symbol": "[r:CMD]",
+      "role": "Commander",
+      "permitted_actions": [
+        "mission_authorized",
+        "mission_open",
+        "mission_close"
+      ],
+      "scope": "governance-layer",
+      "output_sort": "Prop",
+      "output_terms": [
+        "mission_open"
+      ],
+      "input_preconditions": [
+        "authorization_pending",
+        "preconditions_met"
+      ],
+      "transitions_ref": "fsl/role_transitions.yaml"
+    },
+    {
+      "symbol": "[r:BLD]",
+      "role": "Builder",
+      "permitted_actions": [
+        "Edit",
+        "Write",
+        "CLI_query"
+      ],
+      "scope": "allowed_packages",
+      "output_sort": "Prop",
+      "output_terms": [
+        "files_written"
+      ],
+      "input_preconditions": [
+        "mission_open",
+        "authorized"
+      ],
+      "transitions_ref": "fsl/role_transitions.yaml"
+    },
+    {
+      "symbol": "[r:GOV]",
+      "role": "Governor",
+      "permitted_actions": [
+        "GovernorResponse"
+      ],
+      "scope": "StackInterface",
+      "output_sort": "Prop",
+      "output_terms": [
+        "proof_sealed"
+      ],
+      "input_preconditions": [
+        "files_written",
+        "human_signed"
+      ],
+      "transitions_ref": "fsl/role_transitions.yaml"
+    }
+  ]
+}

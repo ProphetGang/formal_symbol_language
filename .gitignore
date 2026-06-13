@@ -1,0 +1,16 @@
+.DS_Store
+*.swp
+*.tmp
+*.log
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+dist/
+build/
+*.zip
+*.db
+*.sqlite
+*.gguf
+*.imatrix

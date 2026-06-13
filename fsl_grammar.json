@@ -1,0 +1,223 @@
+{
+  "_provenance": {
+    "derived": true,
+    "canonical": false,
+    "canonical_source": "fsl/SYSTEM.yaml",
+    "source_sha256": "27095f036a3371a372f4d89a2046909c8179cc70babcea81924ff40d386b95ab",
+    "generator": "fsl/export_schema.py",
+    "warning": "Derived publication artifact only. Do not use as parser, validator, Lean, Rust runtime, or governance execution authority."
+  },
+  "surface": "fsl/SYSTEM.yaml",
+  "grammar": {
+    "description": "SiMON-FSL BNF grammar reference. Expressions are typed, role-scoped, and bundle-bound.",
+    "entrypoint": "expression",
+    "productions": {
+      "expression": "atom | compound | transition | mission_expr | stability_expr | constitutional_expr | query_expr | role_expr | tier_D_expr",
+      "atom": "symbol | literal | identifier",
+      "compound": "expression binary_op expression | unary_op expression | expression '(' arg_list ')'",
+      "binary_op": "∧ | ∨ | → | ↔ | = | ≠ | < | ≤ | > | ≥ | ≡ | ∈ | ∉ | ⊂ | ⊆ | ≺ | ∘ | ⊕_AMD",
+      "unary_op": "¬ | ∀ var '.' | ∃ var '.' | λ var '.'",
+      "transition": "'t' ':' state '→' state | admissibility_expr",
+      "admissibility_expr": "'A(' transition ')' '→' ( '⊤' | '⊥' )",
+      "mission_expr": "M↑ '(' mission_id ',' scope ',' blast_radius ')' | M↓ '(' mission_id ',' actual_scope ',' blast_radius ')' | M⊥ '(' mission_id ',' pause_reason ')' | M→ '(' mission_id ')' | M✗ '(' mission_id ')'",
+      "scope": "'Σ(' mission_id ')' | '{' pkg_list '}'",
+      "stability_expr": "'L(' mission_id ')' '≤' 'β' | 'L_C(' mission_id ')' '≤' 'β_C' | 'C(' mission_id ')' '≥' coherence_floor",
+      "constitutional_expr": "'K' '⊢' rule_id | 'K' '⊬' rule_id | 'K' '⊕_AMD' amendment_id | 'lineage(' rule_id ')' '→' ('genesis' | amendment_id)",
+      "query_expr": "'Q[' surface_id '](' query_key ')'",
+      "role_expr": "'[r:' role_id ']' expression",
+      "proof_expr": "'SP_n' '=' 'sign_ML-DSA-65(' 'merkle(T_n)' '‖' 'h(SP_{n-1})' ')'",
+      "tier_D_expr": "living_spec_expr | godel_expr | derivation_expr",
+      "living_spec_expr": "'ℒ_FSL(' surface_id ')' '@' proof_id",
+      "godel_expr": "'∂G(' system_id ')' '→' '⊥_ext'",
+      "derivation_expr": "'↦_FSL(' source ',' symbol ')' '@' proof_id | 'Δ_FSL(' proof_id ',' proof_id ')' | '⊕_sync(' mission_id ')'"
+    },
+    "semantic_rules": [
+      "Tier B/C symbols require an active bundle declaration in scope",
+      "role_expr [r:X] e: actions(e) ⊆ permitted_actions(X) or TYPE_ERROR",
+      "Role bleed: ∃r1≠r2 ([r:r1] e ∧ [r:r2] e) at same level is TYPE_ERROR (R5)",
+      "M↑ valid only if A(mission_open) → ⊤; else unsatisfiable",
+      "Q[s](k) valid only if s ∈ K_surfaces; else TYPE_ERROR (R4)",
+      "L(M) ≤ β must match declared_blast_radius in active UpdatePacket",
+      "K ⊢ R requires lineage(R) traces to genesis or AMD_k ∈ K_AMD",
+      "Tier D symbols require bundle(simon.fsl.v1) active in scope or REJECTED",
+      "sort_connective: Connective(φ, ψ) is well-sorted iff sort(φ)=Prop and sort(ψ)=Prop",
+      "sort_negation: ¬φ is well-sorted iff sort(φ)=Prop",
+      "sort_quantifier: ∀ x:σ. φ is well-sorted iff sort(φ)=Prop; σ may be any sort",
+      "sort_relation: Relation(a, b) produces Prop regardless of sort(a) and sort(b)",
+      "sort_scott: Scott elements may not appear as direct Prop arguments to Connective or ¬",
+      "func_app: f(arg1, arg2, …) is a func_app node; infers sort Prop (predicate application is truth-valued); arg sorts are unconstrained (same as Relation)"
+    ],
+    "sort_vocabulary": {
+      "Connective": {
+        "description": "Logical operator taking Prop arguments and returning Prop",
+        "examples": [
+          "∧",
+          "∨",
+          "¬",
+          "→",
+          "↔",
+          "⊕_AMD"
+        ]
+      },
+      "Quantifier": {
+        "description": "Variable binder ranging over a typed domain",
+        "examples": [
+          "∀",
+          "∃",
+          "∄"
+        ]
+      },
+      "Prop": {
+        "description": "Truth-bearing proposition; may be asserted, negated, or composed via Connective. Dominant sort for rules, gates, axiom implications, theorems, GBO predicates, HTM predicates, and mission-state symbols.",
+        "examples": [
+          "R1",
+          "all_passed",
+          "g_L",
+          "M↑",
+          "⊤",
+          "⊥",
+          "∂G → ⊥_ext"
+        ]
+      },
+      "Phase": {
+        "description": "Conversation or deliberation phase; mutually exclusive states",
+        "examples": [
+          "φ_deliberate",
+          "φ_await",
+          "φ_execute"
+        ]
+      },
+      "InputKind": {
+        "description": "UI input classification type; determines routing in the governance conversation pipeline",
+        "examples": [
+          "ι",
+          "γ",
+          "π",
+          "ρ",
+          "q",
+          "χ",
+          "κ"
+        ]
+      },
+      "Entity": {
+        "description": "Named structural object; not truth-bearing; packets, proofs, registries, sets of constitutional components",
+        "examples": [
+          "UP",
+          "SP",
+          "K",
+          "K_surfaces",
+          "DID",
+          "Σ"
+        ]
+      },
+      "Metric": {
+        "description": "Numeric scalar; appears in inequality expressions and stability bounds; cannot be asserted directly as a Prop",
+        "examples": [
+          "L",
+          "C",
+          "β",
+          "G",
+          "ESS-S",
+          "𝓛_C"
+        ]
+      },
+      "Relation": {
+        "description": "Binary predicate that produces Prop from arguments of any sort; does not itself have sort Prop but participates in Prop-sorted expressions",
+        "examples": [
+          "∈",
+          "⊆",
+          "=",
+          "≤",
+          "⊢",
+          "⊬"
+        ]
+      },
+      "SetOp": {
+        "description": "Set operation producing a set from sets; result is Entity-sorted",
+        "examples": [
+          "∩",
+          "∪",
+          "×",
+          "∅"
+        ]
+      },
+      "Scott": {
+        "description": "Tier D fixed-point domain element; exists at the Gödel boundary; may not be passed directly to Connective as a Prop argument",
+        "examples": [
+          "ℒ_FSL",
+          "∂G",
+          "⊥_ext",
+          "↦_FSL",
+          "Δ_FSL",
+          "⊕_sync"
+        ]
+      }
+    }
+  },
+  "glyph_promotion_policy": {
+    "purpose": "Non-enforcing gate for future promotion of glyph_candidate metadata into active symbols.",
+    "status": "proposed",
+    "introduced_by": "UPDATE-FSL-GLYPH-PROMOTION-POLICY-GATE",
+    "authority": {
+      "governance_symbol": "K_packet_auth",
+      "promotion_requires": "future_update_packet"
+    },
+    "gate_values": {
+      "promotable_now": "Candidate has no active symbol binding and may be considered for promotion by a future UpdatePacket.",
+      "display_only": "Candidate may be used for documentation or publication display, but should not replace the active symbol.",
+      "blocked": "Candidate is attached to load-bearing, boundary, governance, or parser-shaped semantics and must not be promoted under this policy.",
+      "requires_alias_plan": "Candidate could be considered only with an explicit compatibility plan for legacy symbol aliases and theorem references."
+    },
+    "default_gate": {
+      "future_replacement_candidate": "promotable_now",
+      "mixed_glyph_candidate": "display_only_unless_alias_plan",
+      "never_replace_load_bearing": "blocked",
+      "keep_text": "not_applicable_without_candidate"
+    },
+    "promotable_now_requires": [
+      "glyph_candidate.status == proposed",
+      "glyph_candidate.governance_authority == K_packet_auth",
+      "readiness_classification == future_replacement_candidate",
+      "active_symbol_is_missing_or_unbound",
+      "no tier_d_boundary",
+      "no load_bearing_family",
+      "no composite_or_parser_shaped_symbol",
+      "no governance_guard_or_violation_symbol"
+    ],
+    "blocked_if": [
+      "tier_d_boundary",
+      "load_bearing_family",
+      "composite_or_parser_shaped_symbol",
+      "governance_guard_or_violation_symbol"
+    ],
+    "requires_alias_plan_if": [
+      "lean_theorem_reference",
+      "appears_in_theorems",
+      "active_symbol_field_exists"
+    ],
+    "alias_plan_required_fields": [
+      "legacy_symbol",
+      "promoted_symbol",
+      "theorem_alias_resolution",
+      "parser_backward_compatibility",
+      "lean_reference_compatibility",
+      "rust_runtime_compatibility",
+      "governance_decision_compatibility"
+    ],
+    "runtime_compatibility": {
+      "active_symbol_field_remains_authoritative": true,
+      "parser_ignores_promotion_gate": true,
+      "validator_ignores_promotion_gate_for_acceptance": true,
+      "lean_export_ignores_promotion_gate": true,
+      "rust_runtime_ignores_promotion_gate": true,
+      "governance_decisions_ignore_promotion_gate": true
+    },
+    "non_goals": [
+      "Do not promote any glyph in this mission.",
+      "Do not change active symbol values.",
+      "Do not rename theorem IDs or Lean declarations.",
+      "Do not make promotion gates parser, validator, runtime, or governance inputs.",
+      "Do not regenerate publication exports in this mission."
+    ]
+  }
+}
