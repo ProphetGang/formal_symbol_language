@@ -3,23 +3,21 @@
     "title": "FSL Observer Theorem Lean Coverage Audit",
     "package": "fsl_observer_theorem_public_repo",
     "package_version": "1.1.0",
-    "mission_id": "MISSION-FSL-PUBLIC-LEAN-COVERAGE-AUDIT",
+    "mission_id": "MISSION-LEAN-FSL-MOVEMENT-COVERAGE",
     "public_export": true,
     "canonical": false,
     "theorem_count": 32,
     "expected_theorem_count": 32,
     "coverage_status_counts": {
-      "lean_theorem_checked": 28,
+      "lean_theorem_checked": 29,
       "lean_theorem_axiom_dependent": 1,
       "partial_lean_theorem": 1,
-      "planned": 1,
       "lean_definition_only": 1
     },
     "proof_status_counts": {
-      "machine_checked_theorem": 28,
+      "machine_checked_theorem": 29,
       "machine_checked_under_axioms": 1,
       "partial_machine_checked_statement": 1,
-      "not_yet_lean_encoded": 1,
       "definition_only": 1
     },
     "families": {
@@ -54,22 +52,22 @@
       {
         "name": "Commitment",
         "file": "lean/gbo_theorems.lean",
-        "line": 377
+        "line": 383
       },
       {
         "name": "commit",
         "file": "lean/gbo_theorems.lean",
-        "line": 379
+        "line": 384
       },
       {
         "name": "ComputationallyBinding",
         "file": "lean/gbo_theorems.lean",
-        "line": 383
+        "line": 388
       },
       {
         "name": "sha256_binding_assumption",
         "file": "lean/gbo_theorems.lean",
-        "line": 384
+        "line": 389
       }
     ],
     "status_vocabulary": {
@@ -414,7 +412,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 259,
+      "lean_line": 264,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -440,7 +438,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 265,
+      "lean_line": 270,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -466,7 +464,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 271,
+      "lean_line": 276,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -492,7 +490,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 276,
+      "lean_line": 281,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -518,7 +516,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 287,
+      "lean_line": 292,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -544,7 +542,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 296,
+      "lean_line": 301,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -570,7 +568,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 305,
+      "lean_line": 310,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -596,7 +594,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 314,
+      "lean_line": 319,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -622,7 +620,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 319,
+      "lean_line": 324,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -648,7 +646,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 324,
+      "lean_line": 329,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -674,7 +672,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 336,
+      "lean_line": 341,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -700,7 +698,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 356,
+      "lean_line": 361,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -729,7 +727,7 @@
       ],
       "notes": "The theorem checks in Lean, but the commitment type/function are declared as axioms; it is a formal model of non-equivocation over an abstract commitment primitive, not an internal proof of cryptographic binding.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 387,
+      "lean_line": 392,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -755,7 +753,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 393,
+      "lean_line": 398,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -781,7 +779,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 400,
+      "lean_line": 405,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -807,7 +805,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 406,
+      "lean_line": 411,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -835,7 +833,7 @@
       "axiom_dependencies": [],
       "notes": "A Lean theorem exists and checks, but the current statement aggregates a subset of the public registry claim. Treat it as a checked bridge theorem, not yet the complete unified theorem artifact.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 416,
+      "lean_line": 421,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -856,13 +854,13 @@
         "MovementValidationResult"
       ],
       "summary": "FSL-registered movement history remains valid after an admissible motion step.",
-      "coverage_status": "planned",
-      "proof_status": "not_yet_lean_encoded",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
       "axiom_dependencies": [],
-      "notes": "The observer registry contains this FSL movement theorem, but no matching Lean theorem or definition was found in the audited Lean files.",
-      "lean_file": null,
-      "lean_line": null,
-      "lean_declaration_kind": null
+      "notes": "Matching Lean theorem found: an admissible two-state transition forms a valid two-state history.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 259,
+      "lean_declaration_kind": "theorem"
     },
     {
       "ordinal": 31,

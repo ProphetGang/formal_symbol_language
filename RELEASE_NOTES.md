@@ -37,7 +37,7 @@ It is a position-paper and publication-package release. It does not claim comple
 - Glyph promotion state: 3 promotable now, 22 requiring alias plans
 - Observer kernel theorem records: 32 of 32 complete
 - Observer theorem sources: `lean/gbo_theorems.lean` and `fsl/SYSTEM.yaml`
-- Lean coverage: 28 checked theorem records, 1 axiom-dependent, 1 partial, 1 definition-only, 1 planned
+- Lean coverage: 29 checked theorem records, 1 axiom-dependent, 1 partial, 1 definition-only, 0 planned
 
 ## Canonical and derived artifacts
 
