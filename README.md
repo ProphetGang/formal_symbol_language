@@ -60,8 +60,19 @@ The package connects five layers:
 - `RELEASE_NOTES.md`: release contents and verification notes
 - `RELEASE_POLICY.md`: versioning, compatibility, and publication policy
 - `VERSION`: current public package version
+- `EXPORT_MANIFEST.json`: allowlisted source map for rebuilding this package from the SiMON source tree
 - `PUBLIC_REPO_NOTES.md`: public repository boundary and exclusions
 - `CHECKSUMS.sha256`: SHA-256 checksums for repository artifacts
+
+## Rebuild From Source
+
+From the SiMON source tree, the public package can be refreshed with:
+
+```bash
+python3.12 scripts/export_public_fsl_package.py --check
+```
+
+The exporter uses `EXPORT_MANIFEST.json`, regenerates theorem registry exports, preserves repository metadata, refuses excluded private/runtime paths, and rewrites `CHECKSUMS.sha256`.
 
 ## Verify contents
 

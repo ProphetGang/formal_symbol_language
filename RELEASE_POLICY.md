@@ -85,4 +85,12 @@ The current public package is honest about mixed proof status. It is publishable
 
 ## Publishing Rule
 
-The public repository should be built from reviewed release artifacts, not by exposing the full SiMON source tree. A later export tool may automate that process, but the release boundary remains the same: papers, public registries, source snapshots, derived exports, release metadata, and checksums.
+The public repository should be built from reviewed release artifacts, not by exposing the full SiMON source tree. The source-tree command is:
+
+```bash
+python3.12 scripts/export_public_fsl_package.py --check
+```
+
+The exporter reads `publication/fsl_observer_theorem_public_repo/EXPORT_MANIFEST.json`, copies only allowlisted artifacts, regenerates the observer theorem registry exports, preserves repository metadata such as `.git`, refuses excluded private/runtime paths, and rewrites `CHECKSUMS.sha256`.
+
+The release boundary remains: papers, public registries, source snapshots, derived exports, release metadata, and checksums.

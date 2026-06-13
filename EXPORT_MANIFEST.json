@@ -1,0 +1,167 @@
+{
+  "manifest_version": "1.0",
+  "package": "fsl_observer_theorem_public_repo",
+  "package_version": "1.1.0",
+  "target_default": "publication/fsl_observer_theorem_public_repo",
+  "checksum_file": "CHECKSUMS.sha256",
+  "notes": [
+    "This manifest is the allowlist used by scripts/export_public_fsl_package.py.",
+    "Public documents are curated release inputs.",
+    "FSL exports are copied from canonical root-level exports when they already match the current release boundary.",
+    "fsl/SYSTEM.yaml is copied from the public release snapshot in this mission to avoid changing snapshot semantics outside scope."
+  ],
+  "artifacts": [
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/.gitignore",
+      "dest": ".gitignore",
+      "mode": "copy",
+      "kind": "public_repo_config"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/VERSION",
+      "dest": "VERSION",
+      "mode": "copy",
+      "kind": "release_metadata"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/README.md",
+      "dest": "README.md",
+      "mode": "copy",
+      "kind": "public_doc"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/ABSTRACT.md",
+      "dest": "ABSTRACT.md",
+      "mode": "copy",
+      "kind": "public_doc"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/MANIFEST.md",
+      "dest": "MANIFEST.md",
+      "mode": "copy",
+      "kind": "public_doc"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/PACKAGE_MAP.md",
+      "dest": "PACKAGE_MAP.md",
+      "mode": "copy",
+      "kind": "public_doc"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/RELEASE_NOTES.md",
+      "dest": "RELEASE_NOTES.md",
+      "mode": "copy",
+      "kind": "release_metadata"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/RELEASE_POLICY.md",
+      "dest": "RELEASE_POLICY.md",
+      "mode": "copy",
+      "kind": "release_metadata"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/PUBLIC_REPO_NOTES.md",
+      "dest": "PUBLIC_REPO_NOTES.md",
+      "mode": "copy",
+      "kind": "public_doc"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/whitepaper.md",
+      "dest": "whitepaper.md",
+      "mode": "copy",
+      "kind": "position_paper"
+    },
+    {
+      "dest": "THEOREM_REGISTRY.md",
+      "mode": "generate_observer_theorem_registry_markdown",
+      "kind": "generated_public_export"
+    },
+    {
+      "dest": "theorem_registry.json",
+      "mode": "generate_observer_theorem_registry_json",
+      "kind": "generated_public_export"
+    },
+    {
+      "source": "papers/fsl_governed_symbolic_language.md",
+      "dest": "fsl_governed_symbolic_language.md",
+      "mode": "copy",
+      "kind": "language_paper"
+    },
+    {
+      "source": "fsl_specification.md",
+      "dest": "fsl_specification.md",
+      "mode": "copy",
+      "kind": "derived_fsl_export"
+    },
+    {
+      "source": "fsl_registry.json",
+      "dest": "fsl_registry.json",
+      "mode": "copy",
+      "kind": "derived_fsl_export"
+    },
+    {
+      "source": "fsl_types.json",
+      "dest": "fsl_types.json",
+      "mode": "copy",
+      "kind": "derived_fsl_export"
+    },
+    {
+      "source": "fsl_grammar.json",
+      "dest": "fsl_grammar.json",
+      "mode": "copy",
+      "kind": "derived_fsl_export"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/fsl/SYSTEM.yaml",
+      "dest": "fsl/SYSTEM.yaml",
+      "mode": "copy",
+      "kind": "canonical_fsl_release_snapshot"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/EXPORT_MANIFEST.json",
+      "dest": "EXPORT_MANIFEST.json",
+      "mode": "copy",
+      "kind": "export_manifest"
+    }
+  ],
+  "excluded_path_patterns": [
+    ".governance",
+    ".governance/**",
+    "governance",
+    "governance/**",
+    "governance-core",
+    "governance-core/**",
+    "calibration",
+    "calibration/**",
+    "data",
+    "data/**",
+    "tools",
+    "tools/**",
+    "lean/.lake",
+    "lean/.lake/**",
+    "format_time",
+    "format_time/**",
+    "format_system-main",
+    "format_system-main/**",
+    "testinggrounds",
+    "testinggrounds/**",
+    "**/*.gguf",
+    "**/*.imatrix",
+    "**/*.db",
+    "**/*.sqlite",
+    "**/keypair.priv",
+    "**/.DS_Store",
+    "**/.pytest_cache",
+    "**/.pytest_cache/**",
+    "**/__pycache__",
+    "**/__pycache__/**",
+    ".venv",
+    ".venv/**",
+    "venv",
+    "venv/**"
+  ],
+  "preserve_paths": [
+    ".git",
+    ".git/**"
+  ]
+}

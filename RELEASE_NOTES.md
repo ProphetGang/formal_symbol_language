@@ -18,6 +18,7 @@ The bundle contains:
 - Canonical FSL source snapshot: `fsl/SYSTEM.yaml`
 - Package documentation: `README.md`, `MANIFEST.md`, `PACKAGE_MAP.md`, `PUBLIC_REPO_NOTES.md`
 - Version and release policy: `VERSION`, `RELEASE_POLICY.md`
+- Repeatable export manifest: `EXPORT_MANIFEST.json`
 - Checksums: `CHECKSUMS.sha256`
 
 ## Version 1.1.0
@@ -49,6 +50,16 @@ It is a position-paper and publication-package release. It does not claim comple
 At mission start, `python3.12 -m systemq.cli_simonq verify` returned `result: pass` with `canonical_chain_status: repaired`. The raw historical chain still contains an older repaired segment, but the canonical repair overlay is present and valid.
 
 This bundle mission is documentation and assembly only. It does not modify parser behavior, validator behavior, Lean theorem references, Rust runtime behavior, FSL registry source semantics, or governance execution.
+
+## Export process
+
+From the SiMON source tree, run:
+
+```bash
+python3.12 scripts/export_public_fsl_package.py --check
+```
+
+The exporter uses `EXPORT_MANIFEST.json`, rebuilds the allowlisted public package artifacts, regenerates the observer theorem registry exports, checks excluded private/runtime paths, and refreshes checksums.
 
 ## Exclusions
 
