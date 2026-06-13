@@ -299,22 +299,22 @@ Biodiversity domain (Phase 4), external agent admission (Phase 5), and HTM grid 
 
 ---
 
-## 8. Roadmap
+## 8. Current Release Status and Future Work
 
-The following missions are open or planned:
+This public release is a position paper and language package. It presents the governed bounded observer model, the current FSL language snapshot, and the publication exports needed to inspect the symbolic system. The observer kernel currently records 32 canonical theorem artifacts and one deprecated historical artifact, and the package includes the FSL source snapshot plus derived registry, type, and grammar exports.
 
-| ID | Scope |
-|----|-------|
-| MISSION-LEAN-ENCODING | Formal Lean/FSL encoding of T1–T18, S1–S10. Replaces property-based proofs with machine-verified proofs. |
-| MISSION-THEOREM-REGISTRY | Canonical theorem registry in SYSTEM.yaml, queryable by theorem\_id, with provenance, substrate, and canonical/deprecated status. |
-| MISSION-THEOREM-MACHINE | Automated pipeline: prove → attest → chain → verify → retire. Closes the loop between running code and proof record. |
-| MISSION-S2-CANONICALIZE | Formally retire S2 legacy test suite. Issue deprecation proof. Update theorem count to 32 canonical + 1 deprecated. |
-| MISSION-SPACE-BIODIVERSITY-COMPLETE | Complete Phase 4: `knowledge/biodiversity/index.py`, `/api/bio/*` UI endpoints. |
-| MISSION-STATEPROOF-FIX | Fix malformed-line handling in `governance/identity/state_proof.py`. |
-| MISSION-WHITEPAPER-FORMAL | Full formal whitepaper after Lean encoding complete. Every theorem carries a machine-checkable proof reference. |
-| MISSION-RUST-KERNEL | Governance kernel in Rust: type-safe state transitions, compile-time admissibility enforcement. |
+This release does not claim complete public Lean machine-checkable coverage for every theorem family. Some theorem records are formalized in Lean, some are represented as governed definitions or axioms, and some remain part of the formalization roadmap. This distinction is intentional: the package separates current symbolic and theorem structure from future proof-completion work.
 
-The current paper is the position paper that precedes the formal paper. The formal paper will be written when formal encoding is complete and "proved" means proved, not "property-tested." The position paper is complete as stated: 32 canonical theorem artifacts, one deprecated artifact, one integrity incident, and an honest account of what remains open.
+Future work is organized around the following public-facing goals:
+
+- Publish a reader-friendly and machine-readable theorem registry for the 32 canonical observer theorem artifacts.
+- Classify theorem records by proof status, including proved, defined, axiomatized, property-tested, deprecated, or planned for future formalization.
+- Expand Lean coverage in theorem-family batches rather than as one monolithic proof effort.
+- Connect prove, attest, chain, verify, and retire operations into a repeatable theorem lifecycle.
+- Generate the public package from canonical internal sources with a repeatable export tool.
+- Continue moving admissibility and state-transition enforcement into typed runtime boundaries.
+
+In this sense, the paper is complete as a position paper and release companion. A later formal paper can be written once theorem coverage is fully machine-checkable and each theorem record carries a public proof reference.
 
 ---
 
@@ -370,7 +370,7 @@ Broken segment:         indices 335-374 (40 proofs, historical evidence)
 Raw chain valid:        false
 Canonical chain status: repaired
 Signatures:             verified (ML-DSA-65)
-Reattestation mission:  MISSION-RETHEOREM-ALL (SP-37F2EF0E, authorized)
+Reattestation event:    full theorem reattestation (SP-37F2EF0E, authorized)
 ```
 
 The proof chain is the primary evidence for every claim in this paper. It is append-only, hash-chained, ML-DSA-65 signed, and publicly verifiable from the public key in `.governance/identity/keypair.pub`.
