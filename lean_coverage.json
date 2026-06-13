@@ -1,0 +1,920 @@
+{
+  "metadata": {
+    "title": "FSL Observer Theorem Lean Coverage Audit",
+    "package": "fsl_observer_theorem_public_repo",
+    "package_version": "1.1.0",
+    "mission_id": "MISSION-FSL-PUBLIC-LEAN-COVERAGE-AUDIT",
+    "public_export": true,
+    "canonical": false,
+    "theorem_count": 32,
+    "expected_theorem_count": 32,
+    "coverage_status_counts": {
+      "lean_theorem_checked": 28,
+      "lean_theorem_axiom_dependent": 1,
+      "partial_lean_theorem": 1,
+      "planned": 1,
+      "lean_definition_only": 1
+    },
+    "proof_status_counts": {
+      "machine_checked_theorem": 28,
+      "machine_checked_under_axioms": 1,
+      "partial_machine_checked_statement": 1,
+      "not_yet_lean_encoded": 1,
+      "definition_only": 1
+    },
+    "families": {
+      "htm_geometry": 10,
+      "observer_bound": 2,
+      "observer_motion": 4,
+      "observer_horizon": 2,
+      "observer_cost": 4,
+      "observer_ambiguity": 2,
+      "observer_commitment": 1,
+      "observer_impossibility": 3,
+      "observer_unified": 1,
+      "fsl_movement": 3
+    },
+    "audited_lean_files": [
+      "lean/gbo_theorems.lean",
+      "lean/htm_motion.lean"
+    ],
+    "lean_checks": {
+      "lean/gbo_theorems.lean": {
+        "command": "from lean/: ~/.elan/bin/lake env ~/.elan/bin/lean gbo_theorems.lean",
+        "status": "passed",
+        "sorry_or_admit_found": false
+      },
+      "lean/htm_motion.lean": {
+        "command": "from lean/: ~/.elan/bin/lake env ~/.elan/bin/lean htm_motion.lean",
+        "status": "passed",
+        "sorry_or_admit_found": false
+      }
+    },
+    "axiom_declarations_found": [
+      {
+        "name": "Commitment",
+        "file": "lean/gbo_theorems.lean",
+        "line": 377
+      },
+      {
+        "name": "commit",
+        "file": "lean/gbo_theorems.lean",
+        "line": 379
+      },
+      {
+        "name": "ComputationallyBinding",
+        "file": "lean/gbo_theorems.lean",
+        "line": 383
+      },
+      {
+        "name": "sha256_binding_assumption",
+        "file": "lean/gbo_theorems.lean",
+        "line": 384
+      }
+    ],
+    "status_vocabulary": {
+      "lean_theorem_checked": "A matching Lean theorem or lemma exists and the audited Lean file checks without sorry/admit.",
+      "lean_theorem_axiom_dependent": "A matching Lean theorem exists and checks, but depends on declared axiomatic primitives.",
+      "partial_lean_theorem": "A Lean theorem exists and checks, but the statement is narrower than the public registry claim.",
+      "lean_definition_only": "A matching Lean definition exists, but no theorem proof is attached to that registry record.",
+      "planned": "No matching Lean declaration was found in the audited Lean files."
+    },
+    "notes": [
+      "This is a public coverage audit, not a replacement for Lean source files or the observer theorem registry.",
+      "Lean checks were run for lean/gbo_theorems.lean and lean/htm_motion.lean before generating this audit.",
+      "A checked Lean theorem can still be model-level: this report separates Lean checking from claim completeness and axiom dependence."
+    ]
+  },
+  "theorems": [
+    {
+      "ordinal": 1,
+      "theorem_id": "zoom_in_depth",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_refinement",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "zoom_in_depth",
+      "fsl_symbols": [
+        "M",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "ObserverPosition",
+        "SphericalManifoldCell"
+      ],
+      "summary": "Zooming into an HTM cell advances to a deeper spatial resolution.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 56,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 2,
+      "theorem_id": "zoom_in_parent",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_refinement",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "zoom_in_parent",
+      "fsl_symbols": [
+        "M",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "ObserverPosition",
+        "SphericalManifoldCell"
+      ],
+      "summary": "A zoomed child cell preserves the parent relation needed for bounded localization.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 60,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 3,
+      "theorem_id": "face_adj_symm",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "face_adj_symm",
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMFace",
+        "HTMCell",
+        "SpatialNeighborhood"
+      ],
+      "summary": "Face adjacency is symmetric, so local neighbor claims can be checked in either direction.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 83,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 4,
+      "theorem_id": "face_adj_irrefl",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "face_adj_irrefl",
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMFace",
+        "HTMCell",
+        "SpatialNeighborhood"
+      ],
+      "summary": "A face is not adjacent to itself, ruling out zero-length face moves.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 85,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 5,
+      "theorem_id": "face_adj_correct",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "face_adj_correct",
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMFace",
+        "HTMCell",
+        "SpatialNeighborhood"
+      ],
+      "summary": "Declared face adjacency matches the expected HTM neighbor relation.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 106,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 6,
+      "theorem_id": "inner_sib_correct",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "inner_sib_correct",
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "SpatialNeighborhood",
+        "SiblingMotion"
+      ],
+      "summary": "Inner sibling transitions are valid local moves inside the same parent region.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 129,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 7,
+      "theorem_id": "d1_adj_correct",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "d1_adj_correct",
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "SpatialNeighborhood",
+        "DepthOneMotion"
+      ],
+      "summary": "Depth-one adjacency is correctly recognized for the first refinement layer.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 165,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 8,
+      "theorem_id": "htmcell_neighbor_symm",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "HTMCell.neighbor_symm",
+      "fsl_symbols": [
+        "M",
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "ObserverMovementPacket",
+        "SpatialNeighborhood"
+      ],
+      "summary": "HTM neighbor motion is symmetric at the cell level.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 183,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 9,
+      "theorem_id": "htmcell_neighbor_irrefl",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "HTMCell.neighbor_irrefl",
+      "fsl_symbols": [
+        "M",
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "ObserverMovementPacket",
+        "SpatialNeighborhood"
+      ],
+      "summary": "No HTM cell is its own neighbor, preventing fake movement by self-loop.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 191,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 10,
+      "theorem_id": "htmcell_neighbor_same_depth",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "HTMCell.neighbor_same_depth",
+      "fsl_symbols": [
+        "M",
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "applies_to": [
+        "HTMCell",
+        "ObserverMovementPacket",
+        "SpatialNeighborhood"
+      ],
+      "summary": "Neighbor movement preserves depth, keeping local motion on a consistent resolution layer.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 201,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 11,
+      "theorem_id": "gbo_i_decomposition",
+      "family": "observer_bound",
+      "constraint_type": "observer_chassis",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_i_decomposition",
+      "fsl_symbols": [
+        "observer",
+        "bounded",
+        "governance"
+      ],
+      "applies_to": [
+        "ObserverChassis",
+        "ObserverState",
+        "FSLIntent"
+      ],
+      "summary": "A governed bounded observer decomposes into identity, position, horizon, and proof-bearing state.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 241,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 12,
+      "theorem_id": "gbo_i_did_invariant_necessary",
+      "family": "observer_bound",
+      "constraint_type": "identity_invariant",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_i_did_invariant_necessary",
+      "fsl_symbols": [
+        "DID",
+        "identity",
+        "governance"
+      ],
+      "applies_to": [
+        "ObserverIdentity",
+        "StateProof",
+        "MovementValidationResult"
+      ],
+      "summary": "Observer continuity requires DID preservation across admissible state transitions.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 246,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 13,
+      "theorem_id": "gbo_ii_tick_advances",
+      "family": "observer_motion",
+      "constraint_type": "temporal_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_ii_tick_advances",
+      "fsl_symbols": [
+        "time",
+        "tick",
+        "M"
+      ],
+      "applies_to": [
+        "ObserverClock",
+        "ObserverMovementPacket",
+        "MotionHistory"
+      ],
+      "summary": "A valid observer move advances the temporal tick.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 259,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 14,
+      "theorem_id": "gbo_ii_did_preserved",
+      "family": "observer_motion",
+      "constraint_type": "identity_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_ii_did_preserved",
+      "fsl_symbols": [
+        "DID",
+        "identity",
+        "M"
+      ],
+      "applies_to": [
+        "ObserverIdentity",
+        "ObserverMovementPacket",
+        "MotionHistory"
+      ],
+      "summary": "A valid movement preserves the observer DID.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 265,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 15,
+      "theorem_id": "gbo_ii_no_self_loop",
+      "family": "observer_motion",
+      "constraint_type": "spatial_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_ii_no_self_loop",
+      "fsl_symbols": [
+        "M",
+        "adjacent",
+        "bounded"
+      ],
+      "applies_to": [
+        "ObserverMovementPacket",
+        "HTMCell",
+        "MotionHistory"
+      ],
+      "summary": "A valid move cannot certify a spatial self-loop as movement.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 271,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 16,
+      "theorem_id": "gbo_ii_no_repeated_tick",
+      "family": "observer_motion",
+      "constraint_type": "temporal_motion",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_ii_no_repeated_tick",
+      "fsl_symbols": [
+        "time",
+        "tick",
+        "bounded"
+      ],
+      "applies_to": [
+        "ObserverClock",
+        "MotionHistory",
+        "StateProof"
+      ],
+      "summary": "A valid history cannot reuse the same movement tick.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 276,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 17,
+      "theorem_id": "gbo_iii_spatial_horizon",
+      "family": "observer_horizon",
+      "constraint_type": "horizon_limit",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_iii_spatial_horizon",
+      "fsl_symbols": [
+        "horizon",
+        "space",
+        "bounded"
+      ],
+      "applies_to": [
+        "ObserverHorizon",
+        "HTMCell",
+        "SphericalManifoldCell"
+      ],
+      "summary": "Spatial observation is horizon-bounded; the observer cannot claim complete spatial access.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 287,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 18,
+      "theorem_id": "gbo_iii_temporal_horizon",
+      "family": "observer_horizon",
+      "constraint_type": "horizon_limit",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_iii_temporal_horizon",
+      "fsl_symbols": [
+        "horizon",
+        "time",
+        "bounded"
+      ],
+      "applies_to": [
+        "ObserverHorizon",
+        "ObserverClock",
+        "MotionHistory"
+      ],
+      "summary": "Temporal observation is horizon-bounded; the observer cannot claim complete time access.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 296,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 19,
+      "theorem_id": "gbo_iv_cost_positive",
+      "family": "observer_cost",
+      "constraint_type": "cost_floor",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_iv_cost_positive",
+      "fsl_symbols": [
+        "cost",
+        "blast_radius",
+        "governance"
+      ],
+      "applies_to": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "summary": "Any governed observation or movement has positive cost.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 305,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 20,
+      "theorem_id": "gbo_iv_cost_ge_left",
+      "family": "observer_cost",
+      "constraint_type": "cost_floor",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_iv_cost_ge_left",
+      "fsl_symbols": [
+        "cost",
+        "blast_radius",
+        "governance"
+      ],
+      "applies_to": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "summary": "Combined observer cost is at least its left component cost.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 314,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 21,
+      "theorem_id": "gbo_iv_cost_ge_right",
+      "family": "observer_cost",
+      "constraint_type": "cost_floor",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_iv_cost_ge_right",
+      "fsl_symbols": [
+        "cost",
+        "blast_radius",
+        "governance"
+      ],
+      "applies_to": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "summary": "Combined observer cost is at least its right component cost.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 319,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 22,
+      "theorem_id": "gbo_iv_cost_ge_max",
+      "family": "observer_cost",
+      "constraint_type": "cost_floor",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_iv_cost_ge_max",
+      "fsl_symbols": [
+        "cost",
+        "blast_radius",
+        "governance"
+      ],
+      "applies_to": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "summary": "Combined observer cost is bounded below by the maximum component cost.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 324,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 23,
+      "theorem_id": "gbo_v_underdetermination",
+      "family": "observer_ambiguity",
+      "constraint_type": "underdetermination",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_v_underdetermination",
+      "fsl_symbols": [
+        "ambiguity",
+        "semantic",
+        "bounded"
+      ],
+      "applies_to": [
+        "FSLAmbiguity",
+        "SemanticMap",
+        "ObserverHorizon"
+      ],
+      "summary": "Bounded observation can leave multiple world states consistent with the same evidence.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 336,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 24,
+      "theorem_id": "anchor_nonuniqueness_exists",
+      "family": "observer_ambiguity",
+      "constraint_type": "underdetermination",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "anchor_nonuniqueness_exists",
+      "fsl_symbols": [
+        "anchor",
+        "semantic",
+        "bounded"
+      ],
+      "applies_to": [
+        "SemanticAnchor",
+        "FSLAmbiguity",
+        "ObserverHorizon"
+      ],
+      "summary": "Semantic anchors need not be unique under bounded observation.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 356,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 25,
+      "theorem_id": "gbo_vi_non_equivocating",
+      "family": "observer_commitment",
+      "constraint_type": "commitment",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_vi_non_equivocating",
+      "fsl_symbols": [
+        "commitment",
+        "proof",
+        "governance"
+      ],
+      "applies_to": [
+        "PositionCommitment",
+        "StateProof",
+        "ObserverIdentity"
+      ],
+      "summary": "A governed observer cannot equivocate between incompatible commitments under the same identity.",
+      "coverage_status": "lean_theorem_axiom_dependent",
+      "proof_status": "machine_checked_under_axioms",
+      "axiom_dependencies": [
+        "Commitment",
+        "commit"
+      ],
+      "notes": "The theorem checks in Lean, but the commitment type/function are declared as axioms; it is a formal model of non-equivocation over an abstract commitment primitive, not an internal proof of cryptographic binding.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 387,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 26,
+      "theorem_id": "gbo_impossible_complete_observation",
+      "family": "observer_impossibility",
+      "constraint_type": "horizon_limit",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_impossible_complete_observation",
+      "fsl_symbols": [
+        "impossible",
+        "horizon",
+        "bounded"
+      ],
+      "applies_to": [
+        "ObserverHorizon",
+        "ObserverState",
+        "SemanticMap"
+      ],
+      "summary": "Complete observation is impossible for a bounded observer.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 393,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 27,
+      "theorem_id": "gbo_impossible_zero_cost",
+      "family": "observer_impossibility",
+      "constraint_type": "cost_floor",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_impossible_zero_cost",
+      "fsl_symbols": [
+        "impossible",
+        "cost",
+        "bounded"
+      ],
+      "applies_to": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "summary": "Zero-cost observation or movement is impossible under governed bounds.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 400,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 28,
+      "theorem_id": "gbo_impossible_self_certification",
+      "family": "observer_impossibility",
+      "constraint_type": "self_certification_limit",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "gbo_impossible_self_certification",
+      "fsl_symbols": [
+        "impossible",
+        "proof",
+        "governance"
+      ],
+      "applies_to": [
+        "ObserverIdentity",
+        "StateProof",
+        "GovernorResponse"
+      ],
+      "summary": "An observer cannot fully certify itself without an external proof relation.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 406,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 29,
+      "theorem_id": "governed_bounded_observer",
+      "family": "observer_unified",
+      "constraint_type": "unified_limit",
+      "source": "lean/gbo_theorems.lean",
+      "lean_declaration": "governed_bounded_observer",
+      "fsl_symbols": [
+        "observer",
+        "bounded",
+        "governance",
+        "semantic"
+      ],
+      "applies_to": [
+        "ObserverChassis",
+        "ObserverHorizon",
+        "StateProof",
+        "SemanticMap"
+      ],
+      "summary": "Unified theorem: identity, motion, horizon, cost, ambiguity, and commitment bound the observer.",
+      "coverage_status": "partial_lean_theorem",
+      "proof_status": "partial_machine_checked_statement",
+      "axiom_dependencies": [],
+      "notes": "A Lean theorem exists and checks, but the current statement aggregates a subset of the public registry claim. Treat it as a checked bridge theorem, not yet the complete unified theorem artifact.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 416,
+      "lean_declaration_kind": "theorem"
+    },
+    {
+      "ordinal": 30,
+      "theorem_id": "valid_history_preserved",
+      "family": "fsl_movement",
+      "constraint_type": "history_preservation",
+      "source": "fsl/SYSTEM.yaml",
+      "lean_declaration": "valid_history_preserved",
+      "fsl_symbols": [
+        "history",
+        "M",
+        "StateProof"
+      ],
+      "applies_to": [
+        "MotionHistory",
+        "ObserverMovementPacket",
+        "MovementValidationResult"
+      ],
+      "summary": "FSL-registered movement history remains valid after an admissible motion step.",
+      "coverage_status": "planned",
+      "proof_status": "not_yet_lean_encoded",
+      "axiom_dependencies": [],
+      "notes": "The observer registry contains this FSL movement theorem, but no matching Lean theorem or definition was found in the audited Lean files.",
+      "lean_file": null,
+      "lean_line": null,
+      "lean_declaration_kind": null
+    },
+    {
+      "ordinal": 31,
+      "theorem_id": "valid_spatial_motion",
+      "family": "fsl_movement",
+      "constraint_type": "spatial_motion",
+      "source": "fsl/SYSTEM.yaml",
+      "lean_declaration": "valid_spatial_motion",
+      "fsl_symbols": [
+        "M",
+        "space.htm_surface",
+        "adjacent"
+      ],
+      "applies_to": [
+        "ObserverMovementPacket",
+        "HTMCell",
+        "MovementValidationResult"
+      ],
+      "summary": "FSL-registered spatial motion must be valid against the HTM neighbor surface.",
+      "coverage_status": "lean_definition_only",
+      "proof_status": "definition_only",
+      "axiom_dependencies": [],
+      "notes": "This is present as a Lean definition rather than a theorem. It is part of the formal vocabulary, but does not by itself prove preservation or correctness.",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 230,
+      "lean_declaration_kind": "def"
+    },
+    {
+      "ordinal": 32,
+      "theorem_id": "valid_motion_stay",
+      "family": "fsl_movement",
+      "constraint_type": "motion_stability",
+      "source": "fsl/SYSTEM.yaml",
+      "lean_declaration": "valid_motion_stay",
+      "fsl_symbols": [
+        "M",
+        "identity",
+        "bounded"
+      ],
+      "applies_to": [
+        "ObserverMovementPacket",
+        "ObserverIdentity",
+        "MovementValidationResult"
+      ],
+      "summary": "FSL-registered stay/motion validation preserves the bounded observer state.",
+      "coverage_status": "lean_theorem_checked",
+      "proof_status": "machine_checked_theorem",
+      "axiom_dependencies": [],
+      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "lean_file": "lean/htm_motion.lean",
+      "lean_line": 251,
+      "lean_declaration_kind": "theorem"
+    }
+  ]
+}

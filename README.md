@@ -14,6 +14,8 @@ For the theory: read `whitepaper.md`.
 
 For the theorem index: read `THEOREM_REGISTRY.md` or inspect `theorem_registry.json`.
 
+For theorem proof coverage: read `lean_coverage_report.md` or inspect `lean_coverage.json`.
+
 For the language: read `fsl_governed_symbolic_language.md`.
 
 For implementers: read `fsl_specification.md`, then inspect `fsl_registry.json`, `fsl_types.json`, and `fsl_grammar.json`.
@@ -41,6 +43,7 @@ The package connects five layers:
 - Glyph promotion state: 3 promotable now, 22 requiring alias plans
 - Observer kernel theorem records: 32 of 32 complete
 - Observer theorem sources: `lean/gbo_theorems.lean` and `fsl/SYSTEM.yaml`
+- Lean coverage snapshot: 28 checked theorem records, 1 axiom-dependent, 1 partial, 1 definition-only, 1 planned
 
 ## Repository map
 
@@ -49,6 +52,8 @@ The package connects five layers:
 - `whitepaper.md`: governed bounded observer theorem paper
 - `THEOREM_REGISTRY.md`: human-readable observer theorem registry
 - `theorem_registry.json`: machine-readable observer theorem registry
+- `lean_coverage_report.md`: human-readable Lean coverage audit
+- `lean_coverage.json`: machine-readable Lean coverage audit
 - `fsl_governed_symbolic_language.md`: FSL language paper
 - `fsl_specification.md`: human-readable FSL specification
 - `fsl_registry.json`: machine-readable symbol registry

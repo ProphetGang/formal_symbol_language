@@ -82,6 +82,18 @@
       "kind": "generated_public_export"
     },
     {
+      "source": "publication/fsl_observer_theorem_public_repo/lean_coverage_report.md",
+      "dest": "lean_coverage_report.md",
+      "mode": "copy",
+      "kind": "public_coverage_audit"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/lean_coverage.json",
+      "dest": "lean_coverage.json",
+      "mode": "copy",
+      "kind": "public_coverage_audit"
+    },
+    {
       "source": "papers/fsl_governed_symbolic_language.md",
       "dest": "fsl_governed_symbolic_language.md",
       "mode": "copy",

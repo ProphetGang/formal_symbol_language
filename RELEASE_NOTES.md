@@ -12,6 +12,7 @@ The bundle contains:
 
 - The governed bounded observer theorem whitepaper: `whitepaper.md`
 - The public observer theorem registry: `THEOREM_REGISTRY.md`, `theorem_registry.json`
+- The Lean coverage audit: `lean_coverage_report.md`, `lean_coverage.json`
 - The FSL language paper: `fsl_governed_symbolic_language.md`
 - The human FSL specification: `fsl_specification.md`
 - Machine-readable FSL exports: `fsl_registry.json`, `fsl_types.json`, `fsl_grammar.json`
@@ -36,6 +37,7 @@ It is a position-paper and publication-package release. It does not claim comple
 - Glyph promotion state: 3 promotable now, 22 requiring alias plans
 - Observer kernel theorem records: 32 of 32 complete
 - Observer theorem sources: `lean/gbo_theorems.lean` and `fsl/SYSTEM.yaml`
+- Lean coverage: 28 checked theorem records, 1 axiom-dependent, 1 partial, 1 definition-only, 1 planned
 
 ## Canonical and derived artifacts
 
@@ -44,6 +46,8 @@ It is a position-paper and publication-package release. It does not claim comple
 `fsl_registry.json`, `fsl_types.json`, `fsl_grammar.json`, and `fsl_specification.md` are derived publication exports. They are included for readability, external parsing, and documentation, but they do not replace the canonical source.
 
 `THEOREM_REGISTRY.md` and `theorem_registry.json` are derived public exports of the observer theorem registry. They do not replace the queryable observer kernel source.
+
+`lean_coverage_report.md` and `lean_coverage.json` are public coverage audits. They distinguish checked Lean theorem records from axiom-dependent, partial, definition-only, and planned records.
 
 ## Proofchain status
 

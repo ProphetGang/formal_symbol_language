@@ -23,6 +23,8 @@ This manifest defines what should be included, referenced, or excluded when turn
 | Path | Status | Purpose |
 | --- | --- | --- |
 | `theorem_registry.json` | include | Machine-readable public export of the 32 observer theorem records. |
+| `lean_coverage_report.md` | include | Human-readable Lean coverage audit for the 32 observer theorem records. |
+| `lean_coverage.json` | include | Machine-readable Lean coverage audit keyed by theorem record. |
 
 ## Include: FSL publication exports
 
