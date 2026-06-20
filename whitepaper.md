@@ -3,17 +3,19 @@
 **Simon DeFrisco**  
 May 2026
 
-*Position paper. 32 canonical theorem artifacts. Roadmap included.*
+*Position paper. 32 canonical theorem artifacts. Current formal status published separately.*
 
 ---
 
 ## Abstract
 
-We present a governed discrete spacetime model for situated agents — agents with cryptographic identity, discrete spatial position in a Hierarchical Triangular Mesh, and monotone temporal coordinates. Thirty-two canonical theorem artifacts, proved on running code and reattested under a cryptographic repair overlay, characterize what such agents can observe, how they must move, what coordination costs they face, and why complete self-certification of global state requires an external anchor.
+We present a governed discrete spacetime model for situated agents — agents with cryptographic identity, discrete spatial position in a Hierarchical Triangular Mesh, and monotone temporal coordinates. Thirty-two canonical theorem artifacts, validated on running code and reattested under a cryptographic repair overlay, characterize what such agents can observe, how they must move, what coordination costs they face, and why complete self-certification of global state requires an external anchor.
 
 The synthesis theorem — the Admissibility Gate (S10) — is where time, space, identity, and governance collapse into one executable predicate. That predicate has exactly three conjuncts because there are exactly three independent coordinates. Each conjunct is forced by prior theorems, not chosen by design.
 
-This is a position paper with a roadmap. Formal Lean encoding, a theorem machine pipeline, and a Rust governance kernel are open work stated explicitly in the final section.
+This is the position-paper layer of the public package. The current theorem-by-theorem formal proof status is published separately in `formal_whitepaper.md`, which classifies the 32 public theorem records as 31 machine-checked theorem records and 1 machine-checked-under-explicit-axioms record.
+
+Status note for this release: language in this paper about property testing, theorem-machine maturation, and implementation roadmap should be read as the historical/narrative context for the observer model. The current proof-status authority for the public package is `formal_whitepaper.md`, together with `FORMAL_PROOF_BUNDLE.md`, `lean_coverage_report.md`, `theorem_lifecycle.json`, and `ASSUMPTIONS_APPENDIX.md`.
 
 ---
 
@@ -35,7 +37,7 @@ canonical_head:         SP-CHAIN-REPAIR
 
 All 32 canonical theorems were then reattested under the repaired head. One theorem — S2, the quadtree partition theorem under spherical Morton encoding — was classified as a **deprecated historical artifact** rather than reattested, because its substrate was superseded by the HTM triangular mesh. Its replacement, S2\_tri, was reattested and confirmed canonical. A separate canonicalization mission will formally retire S2.
 
-This incident demonstrates what the governance system is designed to do: distinguish historical artifact from canonical artifact, preserve broken history rather than erasing it, and produce a verifiable repair trail. The theorem machine corrected itself. That is the claim. The proof is the chain.
+This incident demonstrates what the governance system is designed to do: distinguish historical artifact from canonical artifact, preserve broken history rather than erasing it, and produce a verifiable repair trail. The theorem machine corrected itself. That is the claim. The evidence is the chain.
 
 ---
 
@@ -76,7 +78,7 @@ Each condition is forced. Section 5 explains why. S10 is not a policy choice.
 
 ### 3.1 Temporal Theorems (T1–T18)
 
-All temporal theorems are proved on `format_time`, a real time engine implementing a carry-chain model. A time state is `(tick, hour, day, month, year)` with configurable cycle parameters. The cycle length `P = tph × hpd × dpm × mpy`. Every theorem is a falsifiable Hypothesis property verified on running code. "Proved" means falsification was attempted and failed across thousands of generated examples.
+All temporal theorem artifacts are validated on `format_time`, a real time engine implementing a carry-chain model. A time state is `(tick, hour, day, month, year)` with configurable cycle parameters. The cycle length `P = tph × hpd × dpm × mpy`. Every theorem is a falsifiable Hypothesis property verified on running code. In this property-testing context, "proved" means falsification was attempted and failed across thousands of generated examples; it does not mean complete Lean machine-checked proof.
 
 **T1 — Composition Law.**  
 `advance(advance(s, a), b) = advance(s, a+b)`  
@@ -138,7 +140,7 @@ Every peer agent has a strict observable horizon H(i) = {j : Pⱼ | Pᵢ}. Coord
 
 ### 3.2 Spatial Theorems
 
-**Legacy spatial (S1, S3–S5)** are proved on spherical Morton encoding. They remain canonical theorems about that substrate — historically valid. Where the substrate has been superseded, the legacy theorem is noted.
+**Legacy spatial (S1, S3–S5)** are validated on spherical Morton encoding. They remain canonical theorem artifacts about that substrate — historically valid. Where the substrate has been superseded, the legacy theorem is noted.
 
 **S1 — Morton Bijection (legacy).**  
 The spherical Morton encoding is a bijection from sphere points to integer codes at depth d. Design note: codes can escape `[0, 4^d)` at high latitudes — a range flaw that motivated HTM migration. S1 correctly characterizes the old substrate.
@@ -154,7 +156,7 @@ Spatial coordination bandwidth is bounded by the number of cell neighbors at a g
 
 ---
 
-**HTM canonical spatial (S1\_tri–S7\_tri)** are proved on the Hierarchical Triangular Mesh (`space/morton_tri.py`). These are the canonical spatial theorems.
+**HTM canonical spatial (S1\_tri–S7\_tri)** are validated on the Hierarchical Triangular Mesh (`space/morton_tri.py`). These are the canonical spatial theorem artifacts.
 
 **S1\_tri — HTM Bijection.**  
 `tri_encode/tri_decode` is an exact bijection from the unit sphere to `[0, 8×4^d)`. No code escapes range at any depth, any latitude. The bijection is exact and depth-independent.
@@ -265,9 +267,9 @@ This is the sense in which S10 is the synthesis. The preceding 31 theorems defin
 The SiMON GAN protocol's admission gate is a direct instantiation of S10. The anchor requirement (T13) grounds the genesis DID. The DID invariant (S8, S10) makes identity change a gate violation rather than a protocol message — you cannot rekey while in motion. The horizon theorems (T10, T11, T18) explain why multi-governor quorum is necessary: no single internal governor can verify the full network state. A governor is always operating within its own dark matter.
 
 **For the theorem machine.**  
-The 32 reattested theorems represent a first-generation theorem machine: theorems proved on running code, committed to a SHA-256 hash-chained proof record, verified by a formal chain verifier, and reattested after a governance incident without losing the incident from the record. The machine can detect when a theorem's substrate is superseded (S2 → S2\_tri) and reclassify artifacts without pretending the old results never existed. The chain itself is the evidence.
+The 32 reattested theorem artifacts represent a first-generation theorem machine: claims validated on running code, committed to a SHA-256 hash-chained proof record, verified by a formal chain verifier, and reattested after a governance incident without losing the incident from the record. The machine can detect when a theorem's substrate is superseded (S2 → S2\_tri) and reclassify artifacts without pretending the old results never existed. The chain itself is the evidence.
 
-The second generation — Lean/FSL formal encoding — would replace "proved on thousands of examples" with "proved for all inputs by construction." That changes the epistemic status of every theorem in this paper from engineering-confident to formally certain. It is open work.
+The second generation — Lean/FSL formal encoding — has now been published as a proof-status package rather than folded into this narrative paper. For the current release, `formal_whitepaper.md` reports 31 machine-checked theorem records and 1 theorem checked under explicit cryptographic axioms. This paper remains useful as the explanatory model; the formal whitepaper is the current proof-status account.
 
 **For personal agents and digital twins.**  
 An agent operating within a network of other agents has a coordination horizon determined by the arithmetic structure of its interaction periods. Facts about agent interactions it is not party to are in its dark matter. The existence of this dark matter is not a failure of design — it is the structure of the problem. An honest agent should know its horizon, report it explicitly, and route beyond-horizon decisions to the appropriate anchor rather than guessing.
@@ -285,8 +287,8 @@ An AI model operating within a network of other models has a coordination horizo
 **The raw chain is historically broken.**  
 The broken segment (proof indices 335–374) is preserved as historical evidence, not canonical state. The repair overlay restores canonical continuity, but the raw linear chain is permanently impaired. Any verifier not implementing repair-overlay semantics will report the chain as broken at index 335. The updated verifier (`systemq/cli_simonq.py`) implements these semantics correctly and reports `canonical_chain_status: repaired`. The distinction between raw validity and canonical validity is real and must not be collapsed.
 
-**Property-based tests are not formal proofs.**  
-Every theorem in this paper is verified by Hypothesis property-based testing — aggressive random falsification attempted across thousands of generated examples. This is stronger than unit testing and sufficient for engineering confidence. It is not equivalent to a Lean or Coq formal proof, where the theorem holds for all possible inputs by construction. The open roadmap includes formal encoding. Until that is complete, "proved" in this paper means "not falsified across thousands of examples," which is a probabilistic claim, not a mathematical certainty.
+**This position paper is not the proof-status authority.**  
+The original theorem artifacts were first validated through property-based testing and governance reattestation. That remains important historical and engineering evidence, but this public package now includes `formal_whitepaper.md` for current theorem-by-theorem proof status. In that formal status layer, 31 records are machine-checked theorem records and 1 record is machine-checked under explicit cryptographic axioms. Where this position paper uses the older artifact language, defer to the formal whitepaper and proof bundle for present release claims.
 
 **S2 canonicalization is pending.**  
 The legacy S2 test file (`space/tests/test_s2_quadtree_partition.py`) remains in the repository and currently fails 5 tests, because the substrate it tests no longer exists. A formal canonicalization mission will retire the test suite, update the theorem register, and issue a deprecation proof. Until then, the situation is: S2 is deprecated but not formally retired.
@@ -299,22 +301,21 @@ Biodiversity domain (Phase 4), external agent admission (Phase 5), and HTM grid 
 
 ---
 
-## 8. Current Release Status and Future Work
+## 8. Current Release Status and Remaining Work
 
-This public release is a position paper and language package. It presents the governed bounded observer model, the current FSL language snapshot, the public theorem registry, and the publication exports needed to inspect the symbolic system. The observer kernel currently records 32 canonical theorem artifacts and one deprecated historical artifact, and the package includes the FSL source snapshot plus derived registry, type, and grammar exports.
+This public release is a position-paper, language-package, proof-bundle, and formal-whitepaper release. It presents the governed bounded observer model, the current FSL language snapshot, the public theorem registry, and the publication exports needed to inspect the symbolic system. The observer kernel records 32 public theorem records, and the package includes the FSL source snapshot plus derived registry, type, grammar, and specification exports.
 
-This release does not claim complete public Lean machine-checkable coverage for every theorem family. Some theorem records are formalized in Lean, some are represented as governed definitions or axioms, and some remain part of the formalization roadmap. This distinction is intentional: the package separates current symbolic and theorem structure from future proof-completion work.
+The current formal status is stated in `formal_whitepaper.md`: 31 records are machine-checked theorem records, 1 record is machine-checked under explicit cryptographic axioms, and 0 records are partial, definition-only, or planned. The axiom-dependent record is `gbo_vi_non_equivocating`, whose cryptographic commitment boundary is documented in `CRYPTO_AXIOM_BOUNDARY.md`.
 
-Future work is organized around the following public-facing goals:
+Remaining work is organized around the following public-facing goals:
 
 - Maintain and extend the reader-friendly and machine-readable theorem registry for the 32 canonical observer theorem artifacts.
-- Classify theorem records by proof status, including proved, defined, axiomatized, property-tested, deprecated, or planned for future formalization.
-- Expand Lean coverage in theorem-family batches rather than as one monolithic proof effort.
-- Connect prove, attest, chain, verify, and retire operations into a repeatable theorem lifecycle.
-- Generate the public package from canonical internal sources with a repeatable export tool.
+- Reduce or replace explicit axioms where stronger models become available, especially the cryptographic commitment boundary and governance-model bridge axioms.
+- Maintain theorem lifecycle exports and proof-status fields as the registry evolves.
+- Keep generating the public package from canonical internal sources with the repeatable export tool.
 - Continue moving admissibility and state-transition enforcement into typed runtime boundaries.
 
-In this sense, the paper is complete as a position paper and release companion. A later formal paper can be written once theorem coverage is fully machine-checkable and each theorem record carries a public proof reference.
+In this sense, this paper is complete as a position paper and release companion. The current formal paper is `formal_whitepaper.md`; future releases should improve assumptions, runtime authority, and external demonstrations rather than treating formal whitepaper writing as pending.
 
 ---
 
@@ -373,7 +374,7 @@ Signatures:             verified (ML-DSA-65)
 Reattestation event:    full theorem reattestation (SP-37F2EF0E, authorized)
 ```
 
-The proof chain is the primary evidence for every claim in this paper. It is append-only, hash-chained, ML-DSA-65 signed, and publicly verifiable from the public key in `.governance/identity/keypair.pub`.
+The proof chain is the primary internal evidence for every claim in this paper. It is append-only, hash-chained, and ML-DSA-65 signed. Public releases expose the chain status and repair-overlay interpretation without publishing private runtime governance material.
 
 ---
 
@@ -385,4 +386,4 @@ The proof chain is the primary evidence for every claim in this paper. It is app
 
 3. **Dark matter growth rate.** T18 proves dark matter grows as O(n³) for temporal coordination. Is the spatial dark matter similarly characterized as a function of network size? The spatial horizon is exactly half the sphere per agent (S3\_tri), but the aggregate unobserved spatial coordination across a network of agents has no formal characterization here.
 
-4. **FSL encoding of the unified theorem.** The FSL symbol registry contains 110 symbols across Tiers A–D. The unified theorem has not yet been expressed as an FSL expression. This is a natural target for the theorem machine roadmap.
+4. **FSL expression-level presentation of the unified theorem.** The formal whitepaper records the current Lean/proof-status boundary. A future language-facing release can also present the unified theorem as a full FSL expression for external parsers and symbolic readers.

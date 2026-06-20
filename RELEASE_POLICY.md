@@ -52,6 +52,12 @@ A public release should pass these checks before publication:
 - `shasum -a 256 -c CHECKSUMS.sha256` returns `OK` for every listed artifact.
 - `theorem_registry.json` contains `metadata.theorem_count == 32` unless a later release explicitly changes the theorem count and explains why.
 - `THEOREM_REGISTRY.md` and `theorem_registry.json` agree on the public theorem records.
+- `theorem_lifecycle.json` contains 32 tracked theorem lifecycle records unless a later release explicitly changes the theorem count and explains why.
+- `theorem_registry.json` merges lifecycle status from `theorem_lifecycle.json` by theorem ID.
+- `ASSUMPTIONS_APPENDIX.md` and `lean_assumptions.json` are present when formal proof-status claims are included.
+- `lean_assumptions.json` reports `proof_hole_count == 0` unless a later release explicitly explains an open proof hole.
+- `FORMAL_PROOF_BUNDLE.md` and public `lean/` source snapshots are present when the release claims to include a formal proof bundle.
+- `formal_whitepaper.md` is present when the release claims to include a formal whitepaper, and it references the proof bundle, lifecycle export, and assumptions appendix.
 - `fsl/SYSTEM.yaml` is present as the canonical FSL source snapshot.
 - `fsl_registry.json`, `fsl_types.json`, `fsl_grammar.json`, and `fsl_specification.md` are present as derived publication exports.
 - Private keys, local caches, model files, embedded repositories, and internal runtime artifacts are excluded.

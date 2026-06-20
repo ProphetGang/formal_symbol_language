@@ -7,8 +7,14 @@ This manifest defines what should be included, referenced, or excluded when turn
 | Path | Status | Purpose |
 | --- | --- | --- |
 | `whitepaper.md` | include | Unified governed bounded observer theorem paper. |
+| `formal_whitepaper.md` | include | Formal proof-status whitepaper grounded in the public proof bundle. |
+| `OVERLEAF_README.md` | include | Instructions for compiling the PDF-facing Overleaf paper package. |
+| `overleaf/main.tex` | include | Overleaf-ready LaTeX paper source. |
+| `overleaf/references.bib` | include | Bibliography for the Overleaf paper source. |
 | `THEOREM_REGISTRY.md` | include | Human-readable public registry for the 32 observer theorem records. |
 | `STATEPROOF_NOTE.md` | include | Public explanation of raw-chain status and repaired canonical StateProof verification. |
+| `RUST_PARITY_NOTE.md` | include | Public explanation of Rust/Python parity status and the current governance authority boundary. |
+| `RUST_AUTHORITY_CRITERIA.md` | include | Public criteria for any future Rust governance-authority promotion. |
 | `fsl_governed_symbolic_language.md` | include | FSL language paper explaining the governed symbolic publication layer. |
 | `fsl_specification.md` | include | Human-readable FSL specification derived from the canonical registry. |
 
@@ -18,14 +24,37 @@ This manifest defines what should be included, referenced, or excluded when turn
 | --- | --- | --- |
 | `VERSION` | include | Current public package version. |
 | `RELEASE_POLICY.md` | include | Versioning, compatibility, release-gate, and deprecation policy. |
+| `RELEASE_CANDIDATE_AUDIT.md` | include | Release-candidate claim-safety and public-boundary audit. |
+| `PUBLICATION_TAG.md` | include | Governed release-freeze and tag-ready record. |
 
 ## Include: observer theorem export
 
 | Path | Status | Purpose |
 | --- | --- | --- |
 | `theorem_registry.json` | include | Machine-readable public export of the 32 observer theorem records. |
+| `theorem_lifecycle.json` | include | Machine-readable public export of the verified theorem lifecycle status. |
 | `lean_coverage_report.md` | include | Human-readable Lean coverage audit for the 32 observer theorem records. |
 | `lean_coverage.json` | include | Machine-readable Lean coverage audit keyed by theorem record. |
+| `ASSUMPTIONS_APPENDIX.md` | include | Human-readable no-sorry/no-axiom audit and assumptions appendix. |
+| `lean_assumptions.json` | include | Machine-readable Lean assumption inventory. |
+| `FORMAL_PROOF_BUNDLE.md` | include | Public guide to the assembled formal proof bundle. |
+| `CRYPTO_AXIOM_BOUNDARY.md` | include | Public cryptographic assumption boundary for the axiom-dependent commitment theorem. |
+
+## Include: Lean source snapshots
+
+| Path | Status | Purpose |
+| --- | --- | --- |
+| `lean/gbo_theorems.lean` | include | Main observer theorem Lean source. |
+| `lean/htm_motion.lean` | include | HTM motion theorem Lean source. |
+| `lean/governance_theorems.lean` | include | Governance theorem/model bridge Lean source. |
+| `lean/goedel_boundary.lean` | include | Godel-boundary model Lean source. |
+| `lean/fsl_floor_theorem.lean` | include | FSL floor theorem Lean source. |
+| `lean/fsl_invariant_completeness.lean` | include | FSL invariant completeness Lean source. |
+| `lean/fsl_sort_soundness.lean` | include | FSL sort soundness Lean source. |
+| `lean/format_time_theorems.lean` | include | Format-time theorem Lean source. |
+| `lean/SYSTEM_parsed.lean` | include | Parsed Lean system source snapshot. |
+| `lean/lakefile.lean` | include | Lean project context. |
+| `FORMAL_COVERAGE_BASELINE.md` | include | Formal-whitepaper-track proof-status baseline. |
 
 ## Include: FSL publication exports
 

@@ -60,6 +60,18 @@
       "kind": "release_metadata"
     },
     {
+      "source": "publication/fsl_observer_theorem_public_repo/RELEASE_CANDIDATE_AUDIT.md",
+      "dest": "RELEASE_CANDIDATE_AUDIT.md",
+      "mode": "copy",
+      "kind": "release_audit"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/PUBLICATION_TAG.md",
+      "dest": "PUBLICATION_TAG.md",
+      "mode": "copy",
+      "kind": "release_freeze_record"
+    },
+    {
       "source": "publication/fsl_observer_theorem_public_repo/PUBLIC_REPO_NOTES.md",
       "dest": "PUBLIC_REPO_NOTES.md",
       "mode": "copy",
@@ -70,6 +82,60 @@
       "dest": "STATEPROOF_NOTE.md",
       "mode": "copy",
       "kind": "public_integrity_note"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/RUST_PARITY_NOTE.md",
+      "dest": "RUST_PARITY_NOTE.md",
+      "mode": "copy",
+      "kind": "public_runtime_boundary_note"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/RUST_AUTHORITY_CRITERIA.md",
+      "dest": "RUST_AUTHORITY_CRITERIA.md",
+      "mode": "copy",
+      "kind": "public_runtime_authority_criteria"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/CRYPTO_AXIOM_BOUNDARY.md",
+      "dest": "CRYPTO_AXIOM_BOUNDARY.md",
+      "mode": "copy",
+      "kind": "public_axiom_boundary_note"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/ASSUMPTIONS_APPENDIX.md",
+      "dest": "ASSUMPTIONS_APPENDIX.md",
+      "mode": "copy",
+      "kind": "public_assumptions_appendix"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/FORMAL_PROOF_BUNDLE.md",
+      "dest": "FORMAL_PROOF_BUNDLE.md",
+      "mode": "copy",
+      "kind": "formal_proof_bundle_index"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/formal_whitepaper.md",
+      "dest": "formal_whitepaper.md",
+      "mode": "copy",
+      "kind": "formal_whitepaper"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/OVERLEAF_README.md",
+      "dest": "OVERLEAF_README.md",
+      "mode": "copy",
+      "kind": "overleaf_package_doc"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/overleaf/main.tex",
+      "dest": "overleaf/main.tex",
+      "mode": "copy",
+      "kind": "overleaf_latex_source"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/overleaf/references.bib",
+      "dest": "overleaf/references.bib",
+      "mode": "copy",
+      "kind": "overleaf_bibliography"
     },
     {
       "source": "publication/fsl_observer_theorem_public_repo/whitepaper.md",
@@ -88,6 +154,11 @@
       "kind": "generated_public_export"
     },
     {
+      "dest": "theorem_lifecycle.json",
+      "mode": "generate_theorem_lifecycle_json",
+      "kind": "generated_public_export"
+    },
+    {
       "source": "publication/fsl_observer_theorem_public_repo/lean_coverage_report.md",
       "dest": "lean_coverage_report.md",
       "mode": "copy",
@@ -98,6 +169,78 @@
       "dest": "lean_coverage.json",
       "mode": "copy",
       "kind": "public_coverage_audit"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/lean_assumptions.json",
+      "dest": "lean_assumptions.json",
+      "mode": "copy",
+      "kind": "public_assumptions_audit"
+    },
+    {
+      "source": "lean/gbo_theorems.lean",
+      "dest": "lean/gbo_theorems.lean",
+      "mode": "copy",
+      "kind": "public_lean_source"
+    },
+    {
+      "source": "lean/htm_motion.lean",
+      "dest": "lean/htm_motion.lean",
+      "mode": "copy",
+      "kind": "public_lean_source"
+    },
+    {
+      "source": "lean/governance_theorems.lean",
+      "dest": "lean/governance_theorems.lean",
+      "mode": "copy",
+      "kind": "public_lean_source"
+    },
+    {
+      "source": "lean/goedel_boundary.lean",
+      "dest": "lean/goedel_boundary.lean",
+      "mode": "copy",
+      "kind": "public_lean_source"
+    },
+    {
+      "source": "lean/fsl_floor_theorem.lean",
+      "dest": "lean/fsl_floor_theorem.lean",
+      "mode": "copy",
+      "kind": "public_lean_source"
+    },
+    {
+      "source": "lean/fsl_invariant_completeness.lean",
+      "dest": "lean/fsl_invariant_completeness.lean",
+      "mode": "copy",
+      "kind": "public_lean_source"
+    },
+    {
+      "source": "lean/fsl_sort_soundness.lean",
+      "dest": "lean/fsl_sort_soundness.lean",
+      "mode": "copy",
+      "kind": "public_lean_source"
+    },
+    {
+      "source": "lean/format_time_theorems.lean",
+      "dest": "lean/format_time_theorems.lean",
+      "mode": "copy",
+      "kind": "public_lean_source"
+    },
+    {
+      "source": "lean/SYSTEM_parsed.lean",
+      "dest": "lean/SYSTEM_parsed.lean",
+      "mode": "copy",
+      "kind": "public_lean_source"
+    },
+    {
+      "source": "lean/lakefile.lean",
+      "dest": "lean/lakefile.lean",
+      "mode": "copy",
+      "kind": "public_lean_project_context"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/FORMAL_COVERAGE_BASELINE.md",
+      "dest": "FORMAL_COVERAGE_BASELINE.md",
+      "mode": "copy",
+      "kind": "formal_coverage_baseline"
     },
     {
       "source": "papers/fsl_governed_symbolic_language.md",

@@ -1,0 +1,1129 @@
+{
+  "metadata": {
+    "title": "FSL Lean Assumptions Audit",
+    "package": "fsl_observer_theorem_public_repo",
+    "package_version": "1.1.0",
+    "mission_id": "MISSION-FSL-NO-SORRY-AXIOM-AUDIT",
+    "public_export": true,
+    "canonical": false,
+    "scan_root": "lean/",
+    "lean_files_scanned": [
+      "lean/SYSTEM_parsed.lean",
+      "lean/format_time_theorems.lean",
+      "lean/fsl_floor_theorem.lean",
+      "lean/fsl_invariant_completeness.lean",
+      "lean/fsl_sort_soundness.lean",
+      "lean/gbo_theorems.lean",
+      "lean/goedel_boundary.lean",
+      "lean/governance_theorems.lean",
+      "lean/htm_motion.lean",
+      "lean/lakefile.lean"
+    ],
+    "lean_file_count": 10,
+    "axiom_count": 132,
+    "axiom_count_by_file": {
+      "lean/gbo_theorems.lean": 4,
+      "lean/goedel_boundary.lean": 9,
+      "lean/governance_theorems.lean": 119
+    },
+    "axiom_count_by_classification": {
+      "constitutional_rule_atom": 9,
+      "cryptographic_model_boundary": 4,
+      "fsl_boundary_atom": 3,
+      "godel_boundary_atom": 2,
+      "godel_boundary_model_axiom": 9,
+      "governance_model_relation": 84,
+      "governance_packet_atom": 5,
+      "governance_phase_atom": 3,
+      "proof_witness_bridge_axiom": 7,
+      "ui_widget_atom": 6
+    },
+    "proof_hole_tokens_scanned": [
+      "sorry",
+      "admit"
+    ],
+    "proof_hole_count": 0,
+    "comment_only_mentions_count": 2,
+    "scan_method": "line scan for top-level axiom declarations plus code-only sorry/admit token scan with Lean line comments ignored",
+    "formal_whitepaper_status": "assumption_inventory_complete",
+    "notes": [
+      "This audit inventories declared Lean axioms; it does not alter Lean source files.",
+      "Comment-only mentions of sorry/admit are tracked separately and are not proof holes.",
+      "gbo_vi_non_equivocating remains machine-checked under the explicit cryptographic axiom boundary.",
+      "governance_theorems.lean is a model/bridge file with many propositional atoms intentionally declared as axioms."
+    ]
+  },
+  "axioms": [
+    {
+      "name": "Commitment",
+      "file": "lean/gbo_theorems.lean",
+      "line": 390,
+      "signature": "Type",
+      "classification": "cryptographic_model_boundary",
+      "source_line": "axiom Commitment : Type"
+    },
+    {
+      "name": "commit",
+      "file": "lean/gbo_theorems.lean",
+      "line": 391,
+      "signature": "GBC → Commitment",
+      "classification": "cryptographic_model_boundary",
+      "source_line": "axiom commit : GBC → Commitment"
+    },
+    {
+      "name": "ComputationallyBinding",
+      "file": "lean/gbo_theorems.lean",
+      "line": 395,
+      "signature": "(GBC → Commitment) → Prop",
+      "classification": "cryptographic_model_boundary",
+      "source_line": "axiom ComputationallyBinding : (GBC → Commitment) → Prop"
+    },
+    {
+      "name": "sha256_binding_assumption",
+      "file": "lean/gbo_theorems.lean",
+      "line": 396,
+      "signature": "ComputationallyBinding commit",
+      "classification": "cryptographic_model_boundary",
+      "source_line": "axiom sha256_binding_assumption : ComputationallyBinding commit"
+    },
+    {
+      "name": "g_C",
+      "file": "lean/goedel_boundary.lean",
+      "line": 9,
+      "signature": "Prop",
+      "classification": "godel_boundary_model_axiom",
+      "source_line": "axiom g_C        : Prop"
+    },
+    {
+      "name": "all_passed",
+      "file": "lean/goedel_boundary.lean",
+      "line": 10,
+      "signature": "Prop",
+      "classification": "godel_boundary_model_axiom",
+      "source_line": "axiom all_passed : Prop"
+    },
+    {
+      "name": "fsl_godel_boundary",
+      "file": "lean/goedel_boundary.lean",
+      "line": 13,
+      "signature": "Prop",
+      "classification": "godel_boundary_model_axiom",
+      "source_line": "axiom fsl_godel_boundary : Prop  -- ∂G: the formal boundary itself"
+    },
+    {
+      "name": "fsl_living_spec",
+      "file": "lean/goedel_boundary.lean",
+      "line": 14,
+      "signature": "Prop",
+      "classification": "godel_boundary_model_axiom",
+      "source_line": "axiom fsl_living_spec    : Prop  -- ℒ_FSL: living specification (simplified to Prop)"
+    },
+    {
+      "name": "fsl_ext_auth",
+      "file": "lean/goedel_boundary.lean",
+      "line": 15,
+      "signature": "Prop",
+      "classification": "godel_boundary_model_axiom",
+      "source_line": "axiom fsl_ext_auth       : Prop  -- ⊥_ext: external authority at ∂G"
+    },
+    {
+      "name": "coherence_floor",
+      "file": "lean/goedel_boundary.lean",
+      "line": 18,
+      "signature": "g_C → all_passed",
+      "classification": "godel_boundary_model_axiom",
+      "source_line": "axiom coherence_floor : g_C → all_passed"
+    },
+    {
+      "name": "boundary_external",
+      "file": "lean/goedel_boundary.lean",
+      "line": 23,
+      "signature": "fsl_godel_boundary → fsl_ext_auth",
+      "classification": "godel_boundary_model_axiom",
+      "source_line": "axiom boundary_external : fsl_godel_boundary → fsl_ext_auth"
+    },
+    {
+      "name": "living_spec_external",
+      "file": "lean/goedel_boundary.lean",
+      "line": 27,
+      "signature": "fsl_living_spec → fsl_ext_auth",
+      "classification": "godel_boundary_model_axiom",
+      "source_line": "axiom living_spec_external : fsl_living_spec → fsl_ext_auth"
+    },
+    {
+      "name": "ext_blocks_pass",
+      "file": "lean/goedel_boundary.lean",
+      "line": 31,
+      "signature": "fsl_ext_auth → ¬all_passed",
+      "classification": "godel_boundary_model_axiom",
+      "source_line": "axiom ext_blocks_pass : fsl_ext_auth → ¬all_passed"
+    },
+    {
+      "name": "R1",
+      "file": "lean/governance_theorems.lean",
+      "line": 8,
+      "signature": "Prop",
+      "classification": "constitutional_rule_atom",
+      "source_line": "axiom R1 : Prop"
+    },
+    {
+      "name": "R2",
+      "file": "lean/governance_theorems.lean",
+      "line": 9,
+      "signature": "Prop",
+      "classification": "constitutional_rule_atom",
+      "source_line": "axiom R2 : Prop"
+    },
+    {
+      "name": "R3",
+      "file": "lean/governance_theorems.lean",
+      "line": 10,
+      "signature": "Prop",
+      "classification": "constitutional_rule_atom",
+      "source_line": "axiom R3 : Prop"
+    },
+    {
+      "name": "R4",
+      "file": "lean/governance_theorems.lean",
+      "line": 11,
+      "signature": "Prop",
+      "classification": "constitutional_rule_atom",
+      "source_line": "axiom R4 : Prop"
+    },
+    {
+      "name": "R5",
+      "file": "lean/governance_theorems.lean",
+      "line": 12,
+      "signature": "Prop",
+      "classification": "constitutional_rule_atom",
+      "source_line": "axiom R5 : Prop"
+    },
+    {
+      "name": "R6",
+      "file": "lean/governance_theorems.lean",
+      "line": 13,
+      "signature": "Prop",
+      "classification": "constitutional_rule_atom",
+      "source_line": "axiom R6 : Prop"
+    },
+    {
+      "name": "R7",
+      "file": "lean/governance_theorems.lean",
+      "line": 14,
+      "signature": "Prop",
+      "classification": "constitutional_rule_atom",
+      "source_line": "axiom R7 : Prop"
+    },
+    {
+      "name": "R8",
+      "file": "lean/governance_theorems.lean",
+      "line": 15,
+      "signature": "Prop",
+      "classification": "constitutional_rule_atom",
+      "source_line": "axiom R8 : Prop"
+    },
+    {
+      "name": "R9",
+      "file": "lean/governance_theorems.lean",
+      "line": 16,
+      "signature": "Prop",
+      "classification": "constitutional_rule_atom",
+      "source_line": "axiom R9 : Prop"
+    },
+    {
+      "name": "UP",
+      "file": "lean/governance_theorems.lean",
+      "line": 18,
+      "signature": "Prop",
+      "classification": "governance_packet_atom",
+      "source_line": "axiom UP    : Prop"
+    },
+    {
+      "name": "AP",
+      "file": "lean/governance_theorems.lean",
+      "line": 19,
+      "signature": "Prop",
+      "classification": "governance_packet_atom",
+      "source_line": "axiom AP    : Prop   -- AuthorizationPacket"
+    },
+    {
+      "name": "PP",
+      "file": "lean/governance_theorems.lean",
+      "line": 20,
+      "signature": "Prop",
+      "classification": "governance_packet_atom",
+      "source_line": "axiom PP    : Prop   -- PausePacket"
+    },
+    {
+      "name": "LogEvt",
+      "file": "lean/governance_theorems.lean",
+      "line": 21,
+      "signature": "Prop",
+      "classification": "governance_packet_atom",
+      "source_line": "axiom LogEvt : Prop  -- LogEventPacket (LE); renamed to avoid Lean LE typeclass clash"
+    },
+    {
+      "name": "SRP",
+      "file": "lean/governance_theorems.lean",
+      "line": 22,
+      "signature": "Prop",
+      "classification": "governance_packet_atom",
+      "source_line": "axiom SRP   : Prop"
+    },
+    {
+      "name": "K_surfaces",
+      "file": "lean/governance_theorems.lean",
+      "line": 24,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom K_surfaces   : Prop"
+    },
+    {
+      "name": "K_invariants",
+      "file": "lean/governance_theorems.lean",
+      "line": 25,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom K_invariants : Prop"
+    },
+    {
+      "name": "g_L",
+      "file": "lean/governance_theorems.lean",
+      "line": 28,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom g_L        : Prop"
+    },
+    {
+      "name": "g_C",
+      "file": "lean/governance_theorems.lean",
+      "line": 29,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom g_C        : Prop"
+    },
+    {
+      "name": "g_LC",
+      "file": "lean/governance_theorems.lean",
+      "line": 30,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom g_LC       : Prop  -- Lipschitz-coherence composite gate"
+    },
+    {
+      "name": "all_passed",
+      "file": "lean/governance_theorems.lean",
+      "line": 31,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom all_passed : Prop"
+    },
+    {
+      "name": "r9_surface_mandatory",
+      "file": "lean/governance_theorems.lean",
+      "line": 34,
+      "signature": "R9 → K_surfaces",
+      "classification": "governance_model_relation",
+      "source_line": "axiom r9_surface_mandatory   : R9 → K_surfaces"
+    },
+    {
+      "name": "r3_auth_required",
+      "file": "lean/governance_theorems.lean",
+      "line": 35,
+      "signature": "R3 → UP",
+      "classification": "governance_model_relation",
+      "source_line": "axiom r3_auth_required       : R3 → UP"
+    },
+    {
+      "name": "chain_integrity",
+      "file": "lean/governance_theorems.lean",
+      "line": 36,
+      "signature": "all_passed → SRP",
+      "classification": "governance_model_relation",
+      "source_line": "axiom chain_integrity        : all_passed → SRP"
+    },
+    {
+      "name": "surface_registry_exact",
+      "file": "lean/governance_theorems.lean",
+      "line": 37,
+      "signature": "K_surfaces → K_invariants",
+      "classification": "governance_model_relation",
+      "source_line": "axiom surface_registry_exact : K_surfaces → K_invariants"
+    },
+    {
+      "name": "log_immutable",
+      "file": "lean/governance_theorems.lean",
+      "line": 38,
+      "signature": "LogEvt → ¬ΔK",
+      "classification": "governance_model_relation",
+      "source_line": "axiom log_immutable          : LogEvt → ¬ΔK"
+    },
+    {
+      "name": "LC_le_Beta",
+      "file": "lean/governance_theorems.lean",
+      "line": 41,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom LC_le_Beta          : Prop   -- 𝓛_C ≤ β: Lipschitz constant within bound"
+    },
+    {
+      "name": "CTilde",
+      "file": "lean/governance_theorems.lean",
+      "line": 42,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom CTilde              : Prop   -- C̃: coherence series converging"
+    },
+    {
+      "name": "GateParity",
+      "file": "lean/governance_theorems.lean",
+      "line": 43,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom GateParity          : Prop   -- parity(𝒜): admission gate parity holds"
+    },
+    {
+      "name": "AdmissionSymmetric",
+      "file": "lean/governance_theorems.lean",
+      "line": 44,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom AdmissionSymmetric  : Prop   -- 𝒜_symmetric: admission predicate is symmetric"
+    },
+    {
+      "name": "BitcoinAnchor",
+      "file": "lean/governance_theorems.lean",
+      "line": 45,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom BitcoinAnchor       : Prop   -- bitcoin_anchor: BTC state anchor present"
+    },
+    {
+      "name": "Forgeable",
+      "file": "lean/governance_theorems.lean",
+      "line": 46,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom Forgeable           : Prop   -- forgeable: record can be tampered"
+    },
+    {
+      "name": "lc_bound_implies_pass",
+      "file": "lean/governance_theorems.lean",
+      "line": 47,
+      "signature": "LC_le_Beta → all_passed",
+      "classification": "governance_model_relation",
+      "source_line": "axiom lc_bound_implies_pass    : LC_le_Beta → all_passed"
+    },
+    {
+      "name": "ctilde_implies_pass",
+      "file": "lean/governance_theorems.lean",
+      "line": 48,
+      "signature": "CTilde → all_passed",
+      "classification": "governance_model_relation",
+      "source_line": "axiom ctilde_implies_pass      : CTilde → all_passed"
+    },
+    {
+      "name": "parity_implies_symmetric",
+      "file": "lean/governance_theorems.lean",
+      "line": 49,
+      "signature": "GateParity → AdmissionSymmetric",
+      "classification": "governance_model_relation",
+      "source_line": "axiom parity_implies_symmetric : GateParity → AdmissionSymmetric"
+    },
+    {
+      "name": "btc_anchor_not_forgeable",
+      "file": "lean/governance_theorems.lean",
+      "line": 50,
+      "signature": "BitcoinAnchor → ¬Forgeable",
+      "classification": "governance_model_relation",
+      "source_line": "axiom btc_anchor_not_forgeable : BitcoinAnchor → ¬Forgeable"
+    },
+    {
+      "name": "AMD",
+      "file": "lean/governance_theorems.lean",
+      "line": 53,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom AMD        : Prop   -- ⊕_AMD: amendment applied"
+    },
+    {
+      "name": "Consistent",
+      "file": "lean/governance_theorems.lean",
+      "line": 54,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom Consistent : Prop   -- 𝒮_consistent: system consistency holds"
+    },
+    {
+      "name": "Provable",
+      "file": "lean/governance_theorems.lean",
+      "line": 55,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom Provable   : Prop   -- ⊢: formula is derivable (⊢ reserved in Lean, use ASCII)"
+    },
+    {
+      "name": "Unprovable",
+      "file": "lean/governance_theorems.lean",
+      "line": 56,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom Unprovable : Prop   -- ⊬: formula is not derivable"
+    },
+    {
+      "name": "AMDk",
+      "file": "lean/governance_theorems.lean",
+      "line": 57,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom AMDk       : Prop   -- AMD_k: specific amendment record"
+    },
+    {
+      "name": "K_AMD",
+      "file": "lean/governance_theorems.lean",
+      "line": 58,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom K_AMD      : Prop   -- amendment knowledge set"
+    },
+    {
+      "name": "INV",
+      "file": "lean/governance_theorems.lean",
+      "line": 59,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom INV        : Prop   -- INV_n: invariant holds at step n"
+    },
+    {
+      "name": "INV_next",
+      "file": "lean/governance_theorems.lean",
+      "line": 60,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom INV_next   : Prop   -- INV_n+1: invariant holds at step n+1"
+    },
+    {
+      "name": "AMD_applied_consistent",
+      "file": "lean/governance_theorems.lean",
+      "line": 61,
+      "signature": "AMD → Consistent",
+      "classification": "governance_model_relation",
+      "source_line": "axiom AMD_applied_consistent   : AMD → Consistent"
+    },
+    {
+      "name": "provable_excludes_unprovable",
+      "file": "lean/governance_theorems.lean",
+      "line": 62,
+      "signature": "Provable → ¬Unprovable",
+      "classification": "governance_model_relation",
+      "source_line": "axiom provable_excludes_unprovable : Provable → ¬Unprovable"
+    },
+    {
+      "name": "amd_tracked",
+      "file": "lean/governance_theorems.lean",
+      "line": 63,
+      "signature": "AMDk → K_AMD",
+      "classification": "governance_model_relation",
+      "source_line": "axiom amd_tracked              : AMDk → K_AMD"
+    },
+    {
+      "name": "invariant_preserved",
+      "file": "lean/governance_theorems.lean",
+      "line": 64,
+      "signature": "INV → ¬ΔK → INV_next",
+      "classification": "governance_model_relation",
+      "source_line": "axiom invariant_preserved      : INV → ¬ΔK → INV_next"
+    },
+    {
+      "name": "GBound",
+      "file": "lean/governance_theorems.lean",
+      "line": 68,
+      "signature": "Prop",
+      "classification": "godel_boundary_atom",
+      "source_line": "axiom GBound              : Prop          -- ∂G: Gödel boundary concept"
+    },
+    {
+      "name": "ExtAuth",
+      "file": "lean/governance_theorems.lean",
+      "line": 69,
+      "signature": "Prop",
+      "classification": "godel_boundary_atom",
+      "source_line": "axiom ExtAuth             : Prop          -- ⊥_ext: external authority at boundary"
+    },
+    {
+      "name": "ext_auth_blocks",
+      "file": "lean/governance_theorems.lean",
+      "line": 70,
+      "signature": "ExtAuth → ¬all_passed",
+      "classification": "governance_model_relation",
+      "source_line": "axiom ext_auth_blocks     : ExtAuth → ¬all_passed   -- external auth contradicts mission pass"
+    },
+    {
+      "name": "boundary_implies_ext",
+      "file": "lean/governance_theorems.lean",
+      "line": 71,
+      "signature": "GBound → ExtAuth",
+      "classification": "governance_model_relation",
+      "source_line": "axiom boundary_implies_ext : GBound → ExtAuth        -- boundary condition produces external auth"
+    },
+    {
+      "name": "GP",
+      "file": "lean/governance_theorems.lean",
+      "line": 74,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom GP           : Prop          -- Governor role active"
+    },
+    {
+      "name": "Edit_action",
+      "file": "lean/governance_theorems.lean",
+      "line": 75,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom Edit_action  : Prop          -- file edit action"
+    },
+    {
+      "name": "Write_action",
+      "file": "lean/governance_theorems.lean",
+      "line": 76,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom Write_action : Prop          -- file write action"
+    },
+    {
+      "name": "gp_implies_r5",
+      "file": "lean/governance_theorems.lean",
+      "line": 77,
+      "signature": "GP → R5",
+      "classification": "governance_model_relation",
+      "source_line": "axiom gp_implies_r5   : GP → R5"
+    },
+    {
+      "name": "gp_blocks_edit",
+      "file": "lean/governance_theorems.lean",
+      "line": 78,
+      "signature": "GP → ¬Edit_action",
+      "classification": "governance_model_relation",
+      "source_line": "axiom gp_blocks_edit  : GP → ¬Edit_action"
+    },
+    {
+      "name": "gp_blocks_write",
+      "file": "lean/governance_theorems.lean",
+      "line": 79,
+      "signature": "GP → ¬Write_action",
+      "classification": "governance_model_relation",
+      "source_line": "axiom gp_blocks_write : GP → ¬Write_action"
+    },
+    {
+      "name": "M_advance",
+      "file": "lean/governance_theorems.lean",
+      "line": 82,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom M_advance         : Prop          -- mission execution can advance"
+    },
+    {
+      "name": "srp_invokes_r6",
+      "file": "lean/governance_theorems.lean",
+      "line": 83,
+      "signature": "SRP → R6",
+      "classification": "governance_model_relation",
+      "source_line": "axiom srp_invokes_r6    : SRP → R6     -- ScopeExpansionRequest triggers R6 enforcement"
+    },
+    {
+      "name": "r6_blocks_advance",
+      "file": "lean/governance_theorems.lean",
+      "line": 84,
+      "signature": "R6 → ¬M_advance",
+      "classification": "governance_model_relation",
+      "source_line": "axiom r6_blocks_advance : R6 → ¬M_advance  -- R6 halts mission when scope exceeded"
+    },
+    {
+      "name": "r8_produces_log",
+      "file": "lean/governance_theorems.lean",
+      "line": 87,
+      "signature": "R8 → LogEvt",
+      "classification": "governance_model_relation",
+      "source_line": "axiom r8_produces_log : R8 → LogEvt   -- R8 mandates a log event for every governance action"
+    },
+    {
+      "name": "all_passed_requires_gl",
+      "file": "lean/governance_theorems.lean",
+      "line": 90,
+      "signature": "all_passed → g_L",
+      "classification": "governance_model_relation",
+      "source_line": "axiom all_passed_requires_gl  : all_passed → g_L"
+    },
+    {
+      "name": "all_passed_requires_gc",
+      "file": "lean/governance_theorems.lean",
+      "line": 91,
+      "signature": "all_passed → g_C",
+      "classification": "governance_model_relation",
+      "source_line": "axiom all_passed_requires_gc  : all_passed → g_C"
+    },
+    {
+      "name": "all_passed_requires_glc",
+      "file": "lean/governance_theorems.lean",
+      "line": 92,
+      "signature": "all_passed → g_LC",
+      "classification": "governance_model_relation",
+      "source_line": "axiom all_passed_requires_glc : all_passed → g_LC"
+    },
+    {
+      "name": "pp_invokes_r7",
+      "file": "lean/governance_theorems.lean",
+      "line": 95,
+      "signature": "PP → R7",
+      "classification": "governance_model_relation",
+      "source_line": "axiom pp_invokes_r7  : PP → R7      -- PP only emitted under R7 enforcement"
+    },
+    {
+      "name": "pp_requires_log",
+      "file": "lean/governance_theorems.lean",
+      "line": 96,
+      "signature": "PP → LogEvt",
+      "classification": "governance_model_relation",
+      "source_line": "axiom pp_requires_log : PP → LogEvt -- R8: every governance action is logged"
+    },
+    {
+      "name": "ap_requires_mission",
+      "file": "lean/governance_theorems.lean",
+      "line": 99,
+      "signature": "AP → R1",
+      "classification": "governance_model_relation",
+      "source_line": "axiom ap_requires_mission : AP → R1   -- AP only written by open_mission() which enforces R1"
+    },
+    {
+      "name": "up_authorizes_r3",
+      "file": "lean/governance_theorems.lean",
+      "line": 100,
+      "signature": "UP → R3",
+      "classification": "governance_model_relation",
+      "source_line": "axiom up_authorizes_r3    : UP → R3   -- having UP IS the definition of R3 being satisfied"
+    },
+    {
+      "name": "coherence_floor",
+      "file": "lean/governance_theorems.lean",
+      "line": 103,
+      "signature": "g_C → all_passed",
+      "classification": "governance_model_relation",
+      "source_line": "axiom coherence_floor : g_C → all_passed"
+    },
+    {
+      "name": "lipschitz_bound",
+      "file": "lean/governance_theorems.lean",
+      "line": 104,
+      "signature": "g_L → g_C",
+      "classification": "governance_model_relation",
+      "source_line": "axiom lipschitz_bound : g_L → g_C"
+    },
+    {
+      "name": "scope_declared",
+      "file": "lean/governance_theorems.lean",
+      "line": 105,
+      "signature": "R6 → g_L",
+      "classification": "governance_model_relation",
+      "source_line": "axiom scope_declared  : R6 → g_L"
+    },
+    {
+      "name": "gate_chain",
+      "file": "lean/governance_theorems.lean",
+      "line": 106,
+      "signature": "R6 → g_L → g_C → all_passed",
+      "classification": "governance_model_relation",
+      "source_line": "axiom gate_chain      : R6 → g_L → g_C → all_passed"
+    },
+    {
+      "name": "Phase_deliberate",
+      "file": "lean/governance_theorems.lean",
+      "line": 239,
+      "signature": "Prop",
+      "classification": "governance_phase_atom",
+      "source_line": "axiom Phase_deliberate : Prop   -- φ_deliberate: deliberation phase active"
+    },
+    {
+      "name": "Phase_await",
+      "file": "lean/governance_theorems.lean",
+      "line": 240,
+      "signature": "Prop",
+      "classification": "governance_phase_atom",
+      "source_line": "axiom Phase_await      : Prop   -- φ_await: await-response phase active"
+    },
+    {
+      "name": "Phase_execute",
+      "file": "lean/governance_theorems.lean",
+      "line": 241,
+      "signature": "Prop",
+      "classification": "governance_phase_atom",
+      "source_line": "axiom Phase_execute    : Prop   -- φ_execute: executing phase active"
+    },
+    {
+      "name": "Intent",
+      "file": "lean/governance_theorems.lean",
+      "line": 244,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom Intent    : Prop   -- ι: intent submitted"
+    },
+    {
+      "name": "RoleClaim",
+      "file": "lean/governance_theorems.lean",
+      "line": 245,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom RoleClaim : Prop   -- ρ: role claim active"
+    },
+    {
+      "name": "GovAction",
+      "file": "lean/governance_theorems.lean",
+      "line": 246,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom GovAction : Prop   -- γ: governance action"
+    },
+    {
+      "name": "Command",
+      "file": "lean/governance_theorems.lean",
+      "line": 247,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom Command   : Prop   -- κ: command"
+    },
+    {
+      "name": "Question",
+      "file": "lean/governance_theorems.lean",
+      "line": 248,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom Question  : Prop   -- q: question"
+    },
+    {
+      "name": "Challenge",
+      "file": "lean/governance_theorems.lean",
+      "line": 249,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom Challenge : Prop   -- χ: challenge"
+    },
+    {
+      "name": "PacketEdit",
+      "file": "lean/governance_theorems.lean",
+      "line": 250,
+      "signature": "Prop",
+      "classification": "governance_model_relation",
+      "source_line": "axiom PacketEdit : Prop  -- π: packet edit action"
+    },
+    {
+      "name": "phase_mutex_exec",
+      "file": "lean/governance_theorems.lean",
+      "line": 253,
+      "signature": "Phase_deliberate → ¬Phase_execute",
+      "classification": "governance_model_relation",
+      "source_line": "axiom phase_mutex_exec  : Phase_deliberate → ¬Phase_execute"
+    },
+    {
+      "name": "phase_mutex_await",
+      "file": "lean/governance_theorems.lean",
+      "line": 254,
+      "signature": "Phase_deliberate → ¬Phase_await",
+      "classification": "governance_model_relation",
+      "source_line": "axiom phase_mutex_await : Phase_deliberate → ¬Phase_await"
+    },
+    {
+      "name": "intent_role_implies_r5",
+      "file": "lean/governance_theorems.lean",
+      "line": 257,
+      "signature": "Intent → RoleClaim → R5",
+      "classification": "governance_model_relation",
+      "source_line": "axiom intent_role_implies_r5 : Intent → RoleClaim → R5"
+    },
+    {
+      "name": "action_needs_deliberate",
+      "file": "lean/governance_theorems.lean",
+      "line": 260,
+      "signature": "GovAction → Phase_deliberate",
+      "classification": "governance_model_relation",
+      "source_line": "axiom action_needs_deliberate   : GovAction → Phase_deliberate"
+    },
+    {
+      "name": "command_needs_deliberate",
+      "file": "lean/governance_theorems.lean",
+      "line": 261,
+      "signature": "Command → Phase_deliberate",
+      "classification": "governance_model_relation",
+      "source_line": "axiom command_needs_deliberate  : Command → Phase_deliberate"
+    },
+    {
+      "name": "question_needs_deliberate",
+      "file": "lean/governance_theorems.lean",
+      "line": 262,
+      "signature": "Question → Phase_deliberate",
+      "classification": "governance_model_relation",
+      "source_line": "axiom question_needs_deliberate : Question → Phase_deliberate"
+    },
+    {
+      "name": "challenge_implies_r3",
+      "file": "lean/governance_theorems.lean",
+      "line": 265,
+      "signature": "Challenge → R3",
+      "classification": "governance_model_relation",
+      "source_line": "axiom challenge_implies_r3   : Challenge → R3"
+    },
+    {
+      "name": "packet_edit_implies_r1",
+      "file": "lean/governance_theorems.lean",
+      "line": 266,
+      "signature": "PacketEdit → R1",
+      "classification": "governance_model_relation",
+      "source_line": "axiom packet_edit_implies_r1 : PacketEdit → R1"
+    },
+    {
+      "name": "W_ch",
+      "file": "lean/governance_theorems.lean",
+      "line": 296,
+      "signature": "Prop",
+      "classification": "ui_widget_atom",
+      "source_line": "axiom W_ch : Prop   -- W_ch: chain widget"
+    },
+    {
+      "name": "W_L",
+      "file": "lean/governance_theorems.lean",
+      "line": 297,
+      "signature": "Prop",
+      "classification": "ui_widget_atom",
+      "source_line": "axiom W_L  : Prop   -- W_L: lipschitz widget"
+    },
+    {
+      "name": "W_sv",
+      "file": "lean/governance_theorems.lean",
+      "line": 298,
+      "signature": "Prop",
+      "classification": "ui_widget_atom",
+      "source_line": "axiom W_sv : Prop   -- W_sv: state vector widget"
+    },
+    {
+      "name": "W_hm",
+      "file": "lean/governance_theorems.lean",
+      "line": 299,
+      "signature": "Prop",
+      "classification": "ui_widget_atom",
+      "source_line": "axiom W_hm : Prop   -- W_hm: heatmap widget"
+    },
+    {
+      "name": "W_cd",
+      "file": "lean/governance_theorems.lean",
+      "line": 300,
+      "signature": "Prop",
+      "classification": "ui_widget_atom",
+      "source_line": "axiom W_cd : Prop   -- W_cd: constitutional delta widget"
+    },
+    {
+      "name": "W_TL",
+      "file": "lean/governance_theorems.lean",
+      "line": 301,
+      "signature": "Prop",
+      "classification": "ui_widget_atom",
+      "source_line": "axiom W_TL : Prop   -- W_TL: timeline widget"
+    },
+    {
+      "name": "w_ch_in_deliberate",
+      "file": "lean/governance_theorems.lean",
+      "line": 304,
+      "signature": "W_ch → Phase_deliberate",
+      "classification": "governance_model_relation",
+      "source_line": "axiom w_ch_in_deliberate : W_ch → Phase_deliberate"
+    },
+    {
+      "name": "w_L_reads_gate",
+      "file": "lean/governance_theorems.lean",
+      "line": 305,
+      "signature": "W_L → g_L",
+      "classification": "governance_model_relation",
+      "source_line": "axiom w_L_reads_gate     : W_L → g_L"
+    },
+    {
+      "name": "w_sv_in_deliberate",
+      "file": "lean/governance_theorems.lean",
+      "line": 306,
+      "signature": "W_sv → Phase_deliberate",
+      "classification": "governance_model_relation",
+      "source_line": "axiom w_sv_in_deliberate : W_sv → Phase_deliberate"
+    },
+    {
+      "name": "w_hm_in_deliberate",
+      "file": "lean/governance_theorems.lean",
+      "line": 307,
+      "signature": "W_hm → Phase_deliberate",
+      "classification": "governance_model_relation",
+      "source_line": "axiom w_hm_in_deliberate : W_hm → Phase_deliberate"
+    },
+    {
+      "name": "w_cd_in_deliberate",
+      "file": "lean/governance_theorems.lean",
+      "line": 308,
+      "signature": "W_cd → Phase_deliberate",
+      "classification": "governance_model_relation",
+      "source_line": "axiom w_cd_in_deliberate : W_cd → Phase_deliberate"
+    },
+    {
+      "name": "w_TL_in_deliberate",
+      "file": "lean/governance_theorems.lean",
+      "line": 309,
+      "signature": "W_TL → Phase_deliberate",
+      "classification": "governance_model_relation",
+      "source_line": "axiom w_TL_in_deliberate : W_TL → Phase_deliberate"
+    },
+    {
+      "name": "FSL_derivation",
+      "file": "lean/governance_theorems.lean",
+      "line": 332,
+      "signature": "Prop",
+      "classification": "fsl_boundary_atom",
+      "source_line": "axiom FSL_derivation : Prop   -- ↦_FSL: derivation relationship holds (impl → FSL symbol)"
+    },
+    {
+      "name": "FSL_delta",
+      "file": "lean/governance_theorems.lean",
+      "line": 333,
+      "signature": "Prop",
+      "classification": "fsl_boundary_atom",
+      "source_line": "axiom FSL_delta      : Prop   -- Δ_FSL: a cryptographic FSL diff between two StateProofs exists"
+    },
+    {
+      "name": "FSL_sync",
+      "file": "lean/governance_theorems.lean",
+      "line": 334,
+      "signature": "Prop",
+      "classification": "fsl_boundary_atom",
+      "source_line": "axiom FSL_sync       : Prop   -- ⊕_sync: FSL synchronization event occurred at mission close"
+    },
+    {
+      "name": "derivation_requires_spec",
+      "file": "lean/governance_theorems.lean",
+      "line": 337,
+      "signature": "FSL_derivation → fsl_living_spec",
+      "classification": "governance_model_relation",
+      "source_line": "axiom derivation_requires_spec     : FSL_derivation → fsl_living_spec"
+    },
+    {
+      "name": "derivation_boundary_anchored",
+      "file": "lean/governance_theorems.lean",
+      "line": 338,
+      "signature": "FSL_derivation → GBound",
+      "classification": "governance_model_relation",
+      "source_line": "axiom derivation_boundary_anchored : FSL_derivation → GBound"
+    },
+    {
+      "name": "delta_requires_spec",
+      "file": "lean/governance_theorems.lean",
+      "line": 341,
+      "signature": "FSL_delta → fsl_living_spec",
+      "classification": "governance_model_relation",
+      "source_line": "axiom delta_requires_spec  : FSL_delta → fsl_living_spec"
+    },
+    {
+      "name": "delta_requires_chain",
+      "file": "lean/governance_theorems.lean",
+      "line": 342,
+      "signature": "FSL_delta → SRP",
+      "classification": "governance_model_relation",
+      "source_line": "axiom delta_requires_chain : FSL_delta → SRP"
+    },
+    {
+      "name": "delta_boundary_anchored",
+      "file": "lean/governance_theorems.lean",
+      "line": 343,
+      "signature": "FSL_delta → GBound",
+      "classification": "governance_model_relation",
+      "source_line": "axiom delta_boundary_anchored : FSL_delta → GBound"
+    },
+    {
+      "name": "sync_produces_delta",
+      "file": "lean/governance_theorems.lean",
+      "line": 346,
+      "signature": "FSL_sync → FSL_delta",
+      "classification": "governance_model_relation",
+      "source_line": "axiom sync_produces_delta   : FSL_sync → FSL_delta"
+    },
+    {
+      "name": "sync_at_mission_close",
+      "file": "lean/governance_theorems.lean",
+      "line": 347,
+      "signature": "FSL_sync → ¬M_advance",
+      "classification": "governance_model_relation",
+      "source_line": "axiom sync_at_mission_close : FSL_sync → ¬M_advance"
+    },
+    {
+      "name": "K_floor_minimum_proved",
+      "file": "lean/governance_theorems.lean",
+      "line": 372,
+      "signature": "Prop",
+      "classification": "proof_witness_bridge_axiom",
+      "source_line": "axiom K_floor_minimum_proved : Prop   -- witness: T-FLOOR-1 fsl_floor_minimum"
+    },
+    {
+      "name": "K_floor_monotone_proved",
+      "file": "lean/governance_theorems.lean",
+      "line": 376,
+      "signature": "Prop",
+      "classification": "proof_witness_bridge_axiom",
+      "source_line": "axiom K_floor_monotone_proved : Prop  -- witness: T-FLOOR-2 fsl_floor_monotone"
+    },
+    {
+      "name": "K_floor_lt_one_proved",
+      "file": "lean/governance_theorems.lean",
+      "line": 380,
+      "signature": "Prop",
+      "classification": "proof_witness_bridge_axiom",
+      "source_line": "axiom K_floor_lt_one_proved : Prop    -- witness: T-FLOOR-3 fsl_floor_lt_one"
+    },
+    {
+      "name": "K_inv_completeness_proved",
+      "file": "lean/governance_theorems.lean",
+      "line": 396,
+      "signature": "Prop",
+      "classification": "proof_witness_bridge_axiom",
+      "source_line": "axiom K_inv_completeness_proved : Prop"
+    },
+    {
+      "name": "K_all_surfaces_guarded_proved",
+      "file": "lean/governance_theorems.lean",
+      "line": 400,
+      "signature": "Prop",
+      "classification": "proof_witness_bridge_axiom",
+      "source_line": "axiom K_all_surfaces_guarded_proved : Prop"
+    },
+    {
+      "name": "K_inv_counts_proved",
+      "file": "lean/governance_theorems.lean",
+      "line": 403,
+      "signature": "Prop",
+      "classification": "proof_witness_bridge_axiom",
+      "source_line": "axiom K_inv_counts_proved : Prop"
+    },
+    {
+      "name": "K_sort_soundness_proved",
+      "file": "lean/governance_theorems.lean",
+      "line": 430,
+      "signature": "Prop",
+      "classification": "proof_witness_bridge_axiom",
+      "source_line": "axiom K_sort_soundness_proved : Prop"
+    }
+  ],
+  "proof_holes": [],
+  "comment_only_mentions": [
+    {
+      "token": "sorry",
+      "file": "lean/fsl_floor_theorem.lean",
+      "line": 18,
+      "source_line": "-- norm_num, positivity, and linarith. No sorry, no admit."
+    },
+    {
+      "token": "admit",
+      "file": "lean/fsl_floor_theorem.lean",
+      "line": 18,
+      "source_line": "-- norm_num, positivity, and linarith. No sorry, no admit."
+    }
+  ]
+}
