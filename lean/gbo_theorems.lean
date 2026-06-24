@@ -291,24 +291,102 @@ theorem gbo_ii_no_repeated_tick (g₁ g₂ : GBC) (rest : History)
   Nat.ne_of_lt (gbo_ii_tick_advances g₁ g₂ rest h)
 
 -- ── Part III: Horizon (T10, T11, T18, S3_tri) ────────────────────────────────
--- Every observer faces a strict spatial horizon (observable ≤ half the sphere)
--- and a strict temporal horizon (coprime-period agents are dark matter).
--- Promoted from axiom: both are constructively provable in pure type theory.
+-- Spatial horizon is encoded as an HTM root-face partition: 8 root faces,
+-- 4 visible faces, 4 dark faces, and each root face has 4^d descendants at
+-- depth d. This is a combinatorial visibility theorem, not a physical
+-- spherical-geometry embedding theorem.
 
--- Witness: obs=0, dark=1, total=1 satisfies all four conjuncts.
+def htmHemisphereCellCount (d : ℕ) : ℕ := 4 * 4 ^ d
+
+def htmVisibleCellsAtDepth (_g : GBC) (d : ℕ) : ℕ :=
+  htmHemisphereCellCount d
+
+def htmDarkCellsAtDepth (_g : GBC) (d : ℕ) : ℕ :=
+  htmHemisphereCellCount d
+
+def htmTotalCellsAtDepth (d : ℕ) : ℕ :=
+  htmHemisphereCellCount d + htmHemisphereCellCount d
+
+theorem htm_hemisphere_cells_positive (d : ℕ) :
+    0 < htmHemisphereCellCount d := by
+  unfold htmHemisphereCellCount
+  exact Nat.mul_pos (by decide) (Nat.pow_pos (show 0 < (4 : ℕ) by decide))
+
+theorem htm_visible_cells_half_bound (g : GBC) (d : ℕ) :
+    2 * htmVisibleCellsAtDepth g d ≤ htmTotalCellsAtDepth d := by
+  unfold htmVisibleCellsAtDepth htmTotalCellsAtDepth
+  rw [Nat.two_mul]
+
+-- Every observer has a non-empty dark complement at its current HTM depth,
+-- and visible cells are bounded by half of the root-face partition.
 theorem gbo_iii_spatial_horizon :
     ∀ (_ : GBC),
       ∃ (obs dark total : ℕ),
         total > 0 ∧ dark > 0 ∧ obs + dark = total ∧ 2 * obs ≤ total :=
-  fun _ => ⟨0, 1, 1, Nat.one_pos, Nat.one_pos, rfl, Nat.zero_le 1⟩
+by
+  intro g
+  let d := g.cell.depth
+  let obs := htmVisibleCellsAtDepth g d
+  let dark := htmDarkCellsAtDepth g d
+  let total := htmTotalCellsAtDepth d
+  have hdark : dark > 0 := by
+    unfold dark htmDarkCellsAtDepth
+    exact htm_hemisphere_cells_positive d
+  have htotal : total > 0 := by
+    unfold total htmTotalCellsAtDepth
+    exact Nat.add_pos_left (htm_hemisphere_cells_positive d) _
+  exact ⟨obs, dark, total, htotal, hdark, rfl, htm_visible_cells_half_bound g d⟩
 
--- The conclusion ∃ dark, dark>0 is witnessed by dark=1 regardless of the
--- coprimality hypothesis — the hypothesis constrains the domain but the
--- existential holds unconditionally.
+-- Temporal horizon is encoded as a product-cycle window theorem. When a local
+-- observer window of length p₁ is embedded in a two-period coordination cycle
+-- p₁*p₂ with p₂>1, the observer window is a strict prefix and the remaining
+-- temporal segment is non-empty. The coprimality premise is retained as the
+-- domain condition used by the cost/lcm layer; this theorem only needs the
+-- product-cycle decomposition.
+
+def temporalVisibleWindow (p₁ : ℕ) : ℕ := p₁
+
+def temporalProductCycle (p₁ p₂ : ℕ) : ℕ := p₁ * p₂
+
+def temporalDarkWindow (p₁ p₂ : ℕ) : ℕ := p₁ * (p₂ - 1)
+
+theorem temporal_dark_window_positive (p₁ p₂ : ℕ)
+    (h₁ : 0 < p₁) (h₂ : 1 < p₂) :
+    0 < temporalDarkWindow p₁ p₂ := by
+  unfold temporalDarkWindow
+  exact Nat.mul_pos h₁ (Nat.sub_pos_of_lt h₂)
+
+theorem temporal_window_decomposition (p₁ p₂ : ℕ) (h₂ : 0 < p₂) :
+    temporalVisibleWindow p₁ + temporalDarkWindow p₁ p₂ =
+      temporalProductCycle p₁ p₂ := by
+  unfold temporalVisibleWindow temporalDarkWindow temporalProductCycle
+  cases p₂ with
+  | zero => cases h₂
+  | succ n =>
+      simp [Nat.mul_succ, Nat.add_comm]
+
 theorem gbo_iii_temporal_horizon :
-    ∀ (p₁ p₂ : ℕ), p₁.gcd p₂ = 1 → p₁ > 0 → p₂ > 0 →
-      ∃ (dark : ℕ), dark > 0 :=
-  fun _ _ _ _ _ => ⟨1, Nat.one_pos⟩
+    ∀ (p₁ p₂ : ℕ), p₁.gcd p₂ = 1 → p₁ > 0 → p₂ > 1 →
+      ∃ (visible dark total : ℕ),
+        total > 0 ∧ dark > 0 ∧ visible + dark = total ∧ visible < total :=
+by
+  intro p₁ p₂ _ h₁ h₂
+  let visible := temporalVisibleWindow p₁
+  let dark := temporalDarkWindow p₁ p₂
+  let total := temporalProductCycle p₁ p₂
+  have hdark : dark > 0 := by
+    unfold dark
+    exact temporal_dark_window_positive p₁ p₂ h₁ h₂
+  have htotal : total > 0 := by
+    unfold total temporalProductCycle
+    exact Nat.mul_pos h₁ (lt_trans Nat.zero_lt_one h₂)
+  have hsum : visible + dark = total := by
+    unfold visible dark total
+    exact temporal_window_decomposition p₁ p₂ (lt_trans Nat.zero_lt_one h₂)
+  have hlt : visible < total := by
+    have hprefix : visible < visible + dark := Nat.lt_add_of_pos_right hdark
+    simpa [hsum] using hprefix
+  exact ⟨visible, dark, total, htotal, hdark, hsum, hlt⟩
 
 -- ── Part IV: Cost (T9, T15, T16) ─────────────────────────────────────────────
 -- Coordination cost = lcm(p₁, p₂). Fully proved with Mathlib.
@@ -401,12 +479,13 @@ theorem gbo_vi_non_equivocating (g : GBC) : ∃! (c : Commitment), c = commit g 
 
 -- ── Impossibility Corollary ───────────────────────────────────────────────────
 
--- (1) Complete observation is impossible — dark matter is non-empty (Part III)
+-- (1) Complete observation is impossible — every observer has non-empty
+-- spatial dark matter at its current HTM depth (Part III).
 theorem gbo_impossible_complete_observation :
-    ∃ (_ : GBC), ∃ (dark : ℕ), dark > 0 := by
-  have ⟨_, dark, _, _, hdark, _, _⟩ :=
-    gbo_iii_spatial_horizon { did := "", cell := HTMCell.root ⟨0, by decide⟩, tick := 0 }
-  exact ⟨{ did := "", cell := HTMCell.root ⟨0, by decide⟩, tick := 0 }, dark, hdark⟩
+    ∀ (_g : GBC), ∃ (dark : ℕ), dark > 0 := by
+  intro g
+  have ⟨_, dark, _, _, hdark, _, _⟩ := gbo_iii_spatial_horizon g
+  exact ⟨dark, hdark⟩
 
 -- (2) Zero coordination cost is impossible — lcm > 0 for positive periods
 theorem gbo_impossible_zero_cost :
@@ -421,9 +500,9 @@ theorem gbo_impossible_self_certification :
   gbo_v_underdetermination
 
 -- ── Theorem U1: Governed Bounded Observer ─────────────────────────────────────
--- Parts I, II, IV and Impossibility (2) are formally proved in this file.
--- Parts III, V, VI are proved under axioms — each is a MISSION-LEAN-ENCODING
--- proof obligation.
+-- Parts I, II, III, IV, V, and the impossibility corollaries are formally
+-- proved in this file. Part VI is checked under the explicit cryptographic
+-- commitment axiom boundary above.
 
 theorem governed_bounded_observer :
     -- I: State space is DID × HTMCell × Tick (depth derived from cell)

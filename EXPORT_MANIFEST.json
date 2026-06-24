@@ -1,7 +1,7 @@
 {
   "manifest_version": "1.0",
   "package": "fsl_observer_theorem_public_repo",
-  "package_version": "1.1.0",
+  "package_version": "1.1.1",
   "target_default": "publication/fsl_observer_theorem_public_repo",
   "checksum_file": "CHECKSUMS.sha256",
   "notes": [
@@ -28,6 +28,30 @@
       "dest": "README.md",
       "mode": "copy",
       "kind": "public_doc"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/USE_CASES.md",
+      "dest": "USE_CASES.md",
+      "mode": "copy",
+      "kind": "public_adoption_doc"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/EVIDENCE_CLASSES.md",
+      "dest": "EVIDENCE_CLASSES.md",
+      "mode": "copy",
+      "kind": "public_evidence_doc"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/INDEPENDENT_REPLAY.md",
+      "dest": "INDEPENDENT_REPLAY.md",
+      "mode": "copy",
+      "kind": "public_replay_doc"
+    },
+    {
+      "source": "scripts/replay_fsl_claim.py",
+      "dest": "scripts/replay_fsl_claim.py",
+      "mode": "copy",
+      "kind": "public_replay_tool"
     },
     {
       "source": "publication/fsl_observer_theorem_public_repo/ABSTRACT.md",
@@ -64,6 +88,18 @@
       "dest": "RELEASE_CANDIDATE_AUDIT.md",
       "mode": "copy",
       "kind": "release_audit"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/ERRATA.md",
+      "dest": "ERRATA.md",
+      "mode": "copy",
+      "kind": "formal_claim_correction"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/HORIZON_RECONCILIATION.md",
+      "dest": "HORIZON_RECONCILIATION.md",
+      "mode": "copy",
+      "kind": "formal_claim_reconciliation"
     },
     {
       "source": "publication/fsl_observer_theorem_public_repo/PUBLICATION_TAG.md",
@@ -157,6 +193,16 @@
       "dest": "theorem_lifecycle.json",
       "mode": "generate_theorem_lifecycle_json",
       "kind": "generated_public_export"
+    },
+    {
+      "dest": "REPLAY_MATRIX.md",
+      "mode": "generate_replay_matrix_markdown",
+      "kind": "generated_public_replay_export"
+    },
+    {
+      "dest": "replay_matrix.json",
+      "mode": "generate_replay_matrix_json",
+      "kind": "generated_public_replay_export"
     },
     {
       "source": "publication/fsl_observer_theorem_public_repo/lean_coverage_report.md",

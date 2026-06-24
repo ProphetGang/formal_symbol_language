@@ -2,7 +2,7 @@
 
 This repository uses version numbers for the public FSL observer theorem package, not for the full private SiMON runtime.
 
-Current public package version: `1.1.0`
+Current public package version: `1.1.1`
 
 ## Version Meaning
 
@@ -20,7 +20,7 @@ MAJOR.MINOR.PATCH
 
 ## Current Release
 
-Version `1.1.0` is the first public package release with all of the following included:
+Version `1.1.0` was the first public package release with all of the following included:
 
 - Governed bounded observer whitepaper.
 - FSL governed symbolic language paper.

@@ -2,8 +2,8 @@
   "metadata": {
     "title": "FSL Observer Theorem Lean Coverage Audit",
     "package": "fsl_observer_theorem_public_repo",
-    "package_version": "1.1.0",
-    "mission_id": "MISSION-FSL-NO-SORRY-AXIOM-AUDIT",
+    "package_version": "1.1.1",
+    "mission_id": "MISSION-FSL-TEMPORAL-HORIZON-PROOF",
     "public_export": true,
     "canonical": false,
     "theorem_count": 32,
@@ -12,13 +12,15 @@
       "lean_theorem_checked": 31,
       "lean_theorem_axiom_dependent": 1,
       "partial_lean_theorem": 0,
-      "lean_definition_only": 0
+      "lean_definition_only": 0,
+      "planned": 0
     },
     "proof_status_counts": {
       "machine_checked_theorem": 31,
       "machine_checked_under_axioms": 1,
       "partial_machine_checked_statement": 0,
-      "definition_only": 0
+      "definition_only": 0,
+      "planned": 0
     },
     "families": {
       "htm_geometry": 10,
@@ -52,22 +54,22 @@
       {
         "name": "Commitment",
         "file": "lean/gbo_theorems.lean",
-        "line": 390
+        "line": 468
       },
       {
         "name": "commit",
         "file": "lean/gbo_theorems.lean",
-        "line": 391
+        "line": 469
       },
       {
         "name": "ComputationallyBinding",
         "file": "lean/gbo_theorems.lean",
-        "line": 395
+        "line": 473
       },
       {
         "name": "sha256_binding_assumption",
         "file": "lean/gbo_theorems.lean",
-        "line": 396
+        "line": 474
       }
     ],
     "status_vocabulary": {
@@ -78,14 +80,14 @@
       "planned": "No matching Lean declaration was found in the audited Lean files."
     },
     "notes": [
-      "This is a public coverage audit, not a replacement for Lean source files or the observer theorem registry.",
-      "Lean checks were rerun for lean/gbo_theorems.lean and lean/htm_motion.lean on 2026-06-14 before refreshing this baseline.",
-      "A checked Lean theorem can still be model-level: this report separates Lean checking from claim completeness and axiom dependence.",
-      "Mission 45 accepts gbo_vi_non_equivocating as a checked theorem under an explicit cryptographic axiom boundary documented in CRYPTO_AXIOM_BOUNDARY.md.",
-      "Mission 46 populates lean/theorem_lifecycle.jsonl with 32 active theorem lifecycle records.",
-      "Mission 47 exports theorem_lifecycle.json and merges lifecycle status into theorem_registry.json.",
-      "Mission 48 publishes ASSUMPTIONS_APPENDIX.md and lean_assumptions.json with a no-sorry/no-axiom audit.",
-      "Mission 50 publishes formal_whitepaper.md against this proof-status boundary."
+      "This audit does not claim every public theorem summary is fully formalized. It reports the current formal coverage honestly.",
+      "gbo_vi_non_equivocating is machine-checked under the explicit cryptographic axiom boundary documented in CRYPTO_AXIOM_BOUNDARY.md.",
+      "Mission 54 closes the spatial horizon caveat with an axiom-free combinatorial HTM root-face partition theorem, htm_visible_cells_half_bound.",
+      "Mission 54 strengthens gbo_impossible_complete_observation to a universal non-empty spatial dark-complement theorem derived from gbo_iii_spatial_horizon.",
+      "governed_bounded_observer is classified as checked because the public theorem claim has been narrowed to the checked Lean statement.",
+      "valid_spatial_motion remains a stable Lean predicate and is backed by valid_spatial_motion_iff_cell_valid_motion.",
+      "valid_history_preserved is Lean-checked for the two-state admissible transition case.",
+      "MISSION-FSL-TEMPORAL-HORIZON-PROOF closes the temporal horizon caveat with an axiom-free product-cycle window theorem."
     ],
     "baseline_refreshed_at": "2026-06-14",
     "formal_whitepaper_track": true,
@@ -553,13 +555,13 @@
         "HTMCell",
         "SphericalManifoldCell"
       ],
-      "summary": "Spatial observation is horizon-bounded; the observer cannot claim complete spatial access.",
+      "summary": "Axiom-free HTM root-face partition theorem: visible cells at observer depth are bounded by half of the combinatorial HTM surface.",
       "coverage_status": "lean_theorem_checked",
       "proof_status": "machine_checked_theorem",
       "axiom_dependencies": [],
-      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "notes": "Mission 54 replaces the weak existential witness with htm_visible_cells_half_bound and a non-empty dark complement at the observer depth. This is a combinatorial HTM partition theorem, not a physical spherical-visibility axiom.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 299,
+      "lean_line": 322,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -579,13 +581,13 @@
         "ObserverClock",
         "MotionHistory"
       ],
-      "summary": "Temporal observation is horizon-bounded; the observer cannot claim complete time access.",
+      "summary": "Axiom-free temporal product-cycle theorem: a positive observer window is a strict prefix of a larger coordination cycle.",
       "coverage_status": "lean_theorem_checked",
       "proof_status": "machine_checked_theorem",
       "axiom_dependencies": [],
-      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "notes": "Mission temporal horizon proof replaces the weak dark=1 witness with temporalVisibleWindow + temporalDarkWindow = temporalProductCycle and visible < total for p1>0, p2>1.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 308,
+      "lean_line": 368,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -611,7 +613,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 317,
+      "lean_line": 395,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -637,7 +639,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 326,
+      "lean_line": 404,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -663,7 +665,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 331,
+      "lean_line": 409,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -689,7 +691,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 336,
+      "lean_line": 414,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -715,7 +717,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 348,
+      "lean_line": 426,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -741,7 +743,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 368,
+      "lean_line": 446,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -772,7 +774,7 @@
       ],
       "notes": "The theorem checks in Lean under the explicit cryptographic axiom boundary documented in CRYPTO_AXIOM_BOUNDARY.md. It proves uniqueness in the abstract commitment model; it does not internally prove SHA-256 collision resistance or validate a concrete runtime commitment implementation.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 399,
+      "lean_line": 477,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -792,13 +794,13 @@
         "ObserverState",
         "SemanticMap"
       ],
-      "summary": "Complete observation is impossible for a bounded observer.",
+      "summary": "Every governed bounded observer has a non-empty spatial dark complement at its current HTM depth.",
       "coverage_status": "lean_theorem_checked",
       "proof_status": "machine_checked_theorem",
       "axiom_dependencies": [],
-      "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
+      "notes": "Mission 54 strengthens this theorem to ∀ (_g : GBC), ∃ dark, dark > 0, derived from the strengthened spatial horizon theorem.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 405,
+      "lean_line": 484,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -824,7 +826,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 412,
+      "lean_line": 491,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -850,7 +852,7 @@
       "axiom_dependencies": [],
       "notes": "Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 418,
+      "lean_line": 497,
       "lean_declaration_kind": "theorem"
     },
     {
@@ -876,7 +878,7 @@
       "axiom_dependencies": [],
       "notes": "Public claim narrowed to match the checked Lean theorem statement; horizon, semantic ambiguity, and commitment claims remain represented by their own theorem records rather than this unified bridge.",
       "lean_file": "lean/gbo_theorems.lean",
-      "lean_line": 428,
+      "lean_line": 507,
       "lean_declaration_kind": "theorem"
     },
     {

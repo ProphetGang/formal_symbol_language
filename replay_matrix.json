@@ -1,0 +1,1702 @@
+{
+  "metadata": {
+    "title": "FSL Independent Replay Matrix",
+    "package": "fsl_observer_theorem_public_repo",
+    "package_version": "1.1.1",
+    "public_export": true,
+    "canonical": false,
+    "derived_from": [
+      "theorem_registry.json",
+      "theorem_lifecycle.json",
+      "lean_coverage.json",
+      "lean_assumptions.json",
+      "CHECKSUMS.sha256"
+    ],
+    "theorem_count": 32,
+    "proof_status_counts": {
+      "machine_checked_theorem": 31,
+      "machine_checked_under_axioms": 1,
+      "partial_machine_checked_statement": 0,
+      "definition_only": 0,
+      "planned": 0
+    },
+    "lifecycle_chain_valid": true,
+    "notes": [
+      "This matrix is a derived reviewer index, not a new theorem authority.",
+      "Lean source, theorem registry, coverage audit, lifecycle export, assumptions inventory, and checksums remain the evidence authorities.",
+      "Checksum references are copied from the public package checksum file where available."
+    ]
+  },
+  "records": [
+    {
+      "ordinal": 1,
+      "theorem_id": "zoom_in_depth",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_refinement",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 56,
+      "lean_declaration": "zoom_in_depth",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/0"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/0"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "a37460548ced4dab6d547dd4dabe4174ef509cd91cf421a8fc0bc318a26d08b3",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "HTMCell",
+        "ObserverPosition",
+        "SphericalManifoldCell"
+      ],
+      "fsl_symbols": [
+        "M",
+        "space.htm_surface"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Zooming into an HTM cell advances to a deeper spatial resolution."
+    },
+    {
+      "ordinal": 2,
+      "theorem_id": "zoom_in_parent",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_refinement",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 60,
+      "lean_declaration": "zoom_in_parent",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/1"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/1"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "ca1a18779568e475ce6138a8b4afad3bd4cae37c0e3c588315f077794f7a9ad2",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "HTMCell",
+        "ObserverPosition",
+        "SphericalManifoldCell"
+      ],
+      "fsl_symbols": [
+        "M",
+        "space.htm_surface"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "A zoomed child cell preserves the parent relation needed for bounded localization."
+    },
+    {
+      "ordinal": 3,
+      "theorem_id": "face_adj_symm",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 83,
+      "lean_declaration": "face_adj_symm",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/2"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/2"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "17a149c2edd1e228f3d7c7ab90139203185789748ed00346d59b77b6d277fbc5",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "HTMFace",
+        "HTMCell",
+        "SpatialNeighborhood"
+      ],
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Face adjacency is symmetric, so local neighbor claims can be checked in either direction."
+    },
+    {
+      "ordinal": 4,
+      "theorem_id": "face_adj_irrefl",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 85,
+      "lean_declaration": "face_adj_irrefl",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/3"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/3"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "b45a5c2de80e7f0ffc50c4e0984691c494e61063e1eb59435573065beb7a3884",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "HTMFace",
+        "HTMCell",
+        "SpatialNeighborhood"
+      ],
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "A face is not adjacent to itself, ruling out zero-length face moves."
+    },
+    {
+      "ordinal": 5,
+      "theorem_id": "face_adj_correct",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 106,
+      "lean_declaration": "face_adj_correct",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/4"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/4"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "36703ccbc8ee973016fb7893586cd36bdbad10f9547e6afe29cc901a0f2fdcb2",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "HTMFace",
+        "HTMCell",
+        "SpatialNeighborhood"
+      ],
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Declared face adjacency matches the expected HTM neighbor relation."
+    },
+    {
+      "ordinal": 6,
+      "theorem_id": "inner_sib_correct",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 129,
+      "lean_declaration": "inner_sib_correct",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/5"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/5"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "bb6a88b6940d45094c34a924a59354b868ff08e6c7358148a8d45f3e3711c16d",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "HTMCell",
+        "SpatialNeighborhood",
+        "SiblingMotion"
+      ],
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Inner sibling transitions are valid local moves inside the same parent region."
+    },
+    {
+      "ordinal": 7,
+      "theorem_id": "d1_adj_correct",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_adjacency",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 165,
+      "lean_declaration": "d1_adj_correct",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/6"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/6"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "a3483fbd2cd619ee5687bfa59353c598e418fcb5d12cd0cf45ac55b7a5a3e574",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "HTMCell",
+        "SpatialNeighborhood",
+        "DepthOneMotion"
+      ],
+      "fsl_symbols": [
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Depth-one adjacency is correctly recognized for the first refinement layer."
+    },
+    {
+      "ordinal": 8,
+      "theorem_id": "htmcell_neighbor_symm",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_motion",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 183,
+      "lean_declaration": "HTMCell.neighbor_symm",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/7"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/7"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "f953703dc554eb48121a13838b23068de799723a3ccac4b79ca3ed42820abd11",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "HTMCell",
+        "ObserverMovementPacket",
+        "SpatialNeighborhood"
+      ],
+      "fsl_symbols": [
+        "M",
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "HTM neighbor motion is symmetric at the cell level."
+    },
+    {
+      "ordinal": 9,
+      "theorem_id": "htmcell_neighbor_irrefl",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_motion",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 191,
+      "lean_declaration": "HTMCell.neighbor_irrefl",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/8"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/8"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "7fa7c00ee0ca0d38a0c62f8889f570d674c572527ebde4152ee04139bcd5a646",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "HTMCell",
+        "ObserverMovementPacket",
+        "SpatialNeighborhood"
+      ],
+      "fsl_symbols": [
+        "M",
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "No HTM cell is its own neighbor, preventing fake movement by self-loop."
+    },
+    {
+      "ordinal": 10,
+      "theorem_id": "htmcell_neighbor_same_depth",
+      "family": "htm_geometry",
+      "constraint_type": "spatial_motion",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 201,
+      "lean_declaration": "HTMCell.neighbor_same_depth",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/9"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/9"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "1117905f77f777b172b2939cc34bbfe85b2be5c1ff72c5a2d126fcde765f0845",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "HTMCell",
+        "ObserverMovementPacket",
+        "SpatialNeighborhood"
+      ],
+      "fsl_symbols": [
+        "M",
+        "adjacent",
+        "space.htm_surface"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Neighbor movement preserves depth, keeping local motion on a consistent resolution layer."
+    },
+    {
+      "ordinal": 11,
+      "theorem_id": "gbo_i_decomposition",
+      "family": "observer_bound",
+      "constraint_type": "observer_chassis",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 248,
+      "lean_declaration": "gbo_i_decomposition",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/10"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/10"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "91e7457b9b14fd77510d4138481c1f5e97ff8c24ef199d45fe1f53f67c4be3d7",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "ObserverChassis",
+        "ObserverState",
+        "FSLIntent"
+      ],
+      "fsl_symbols": [
+        "observer",
+        "bounded",
+        "governance"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "A governed bounded observer decomposes into identity, position, horizon, and proof-bearing state."
+    },
+    {
+      "ordinal": 12,
+      "theorem_id": "gbo_i_did_invariant_necessary",
+      "family": "observer_bound",
+      "constraint_type": "identity_invariant",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 253,
+      "lean_declaration": "gbo_i_did_invariant_necessary",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/11"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/11"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "ba92e1670e0fca4b3800c1a9ff6222230db2331b7d19e9ddd8cb39fc06cdaea0",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "ObserverIdentity",
+        "StateProof",
+        "MovementValidationResult"
+      ],
+      "fsl_symbols": [
+        "DID",
+        "identity",
+        "governance"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Observer continuity requires DID preservation across admissible state transitions."
+    },
+    {
+      "ordinal": 13,
+      "theorem_id": "gbo_ii_tick_advances",
+      "family": "observer_motion",
+      "constraint_type": "temporal_motion",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 271,
+      "lean_declaration": "gbo_ii_tick_advances",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/12"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/12"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "bd0bd3b1b79ced488c27ece99d3418504dee4acb4df84b0b4294bb79b67c0534",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "ObserverClock",
+        "ObserverMovementPacket",
+        "MotionHistory"
+      ],
+      "fsl_symbols": [
+        "time",
+        "tick",
+        "M"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "A valid observer move advances the temporal tick."
+    },
+    {
+      "ordinal": 14,
+      "theorem_id": "gbo_ii_did_preserved",
+      "family": "observer_motion",
+      "constraint_type": "identity_motion",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 277,
+      "lean_declaration": "gbo_ii_did_preserved",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/13"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/13"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "37635c35420693c0bdeaf00cddafb8f728e50a0e4c764305faf2a1267aec5112",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "ObserverIdentity",
+        "ObserverMovementPacket",
+        "MotionHistory"
+      ],
+      "fsl_symbols": [
+        "DID",
+        "identity",
+        "M"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "A valid movement preserves the observer DID."
+    },
+    {
+      "ordinal": 15,
+      "theorem_id": "gbo_ii_no_self_loop",
+      "family": "observer_motion",
+      "constraint_type": "spatial_motion",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 283,
+      "lean_declaration": "gbo_ii_no_self_loop",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/14"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/14"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "8012b45684c02e11c10fce194267e8d7db5e2c95699ae6839569eac198c116cd",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "ObserverMovementPacket",
+        "HTMCell",
+        "MotionHistory"
+      ],
+      "fsl_symbols": [
+        "M",
+        "adjacent",
+        "bounded"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "A valid move cannot certify a spatial self-loop as movement."
+    },
+    {
+      "ordinal": 16,
+      "theorem_id": "gbo_ii_no_repeated_tick",
+      "family": "observer_motion",
+      "constraint_type": "temporal_motion",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 288,
+      "lean_declaration": "gbo_ii_no_repeated_tick",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/15"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/15"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "8ffae966864d811a3f053d96cd4ba7ea5113e83b205106bfe07a1c736f821f23",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "ObserverClock",
+        "MotionHistory",
+        "StateProof"
+      ],
+      "fsl_symbols": [
+        "time",
+        "tick",
+        "bounded"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "A valid history cannot reuse the same movement tick."
+    },
+    {
+      "ordinal": 17,
+      "theorem_id": "gbo_iii_spatial_horizon",
+      "family": "observer_horizon",
+      "constraint_type": "horizon_limit",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 322,
+      "lean_declaration": "gbo_iii_spatial_horizon",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/16"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/16"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "b543e23f181bd334bcb90c6944d61a2ee55c1132e0feb931b8f18fb41b0b4772",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md",
+        "ERRATA.md",
+        "HORIZON_RECONCILIATION.md"
+      ],
+      "governance_relevance": [
+        "ObserverHorizon",
+        "HTMCell",
+        "SphericalManifoldCell"
+      ],
+      "fsl_symbols": [
+        "horizon",
+        "space",
+        "bounded"
+      ],
+      "claim_boundary": "HTM combinatorial half-bound at observer depth; not arbitrary physical spherical visibility geometry.",
+      "summary": "Axiom-free HTM root-face partition theorem: visible cells at observer depth are bounded by half of the combinatorial HTM surface."
+    },
+    {
+      "ordinal": 18,
+      "theorem_id": "gbo_iii_temporal_horizon",
+      "family": "observer_horizon",
+      "constraint_type": "horizon_limit",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 368,
+      "lean_declaration": "gbo_iii_temporal_horizon",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/17"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/17"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "56adc6065e39b8d8dbf04da6652d6cc687177d9e045d31a265a1efc1f373ea88",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md",
+        "ERRATA.md",
+        "HORIZON_RECONCILIATION.md"
+      ],
+      "governance_relevance": [
+        "ObserverHorizon",
+        "ObserverClock",
+        "MotionHistory"
+      ],
+      "fsl_symbols": [
+        "horizon",
+        "time",
+        "bounded"
+      ],
+      "claim_boundary": "Product-cycle strict-prefix theorem for a modeled coordination cycle; not a complete temporal phenomenology model.",
+      "summary": "Axiom-free temporal product-cycle theorem: a positive observer window is a strict prefix of a larger coordination cycle."
+    },
+    {
+      "ordinal": 19,
+      "theorem_id": "gbo_iv_cost_positive",
+      "family": "observer_cost",
+      "constraint_type": "cost_floor",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 395,
+      "lean_declaration": "gbo_iv_cost_positive",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/18"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/18"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "87148d47bf1d7b0fb1a58f8c51a603e726c581b8cf9ecdc9f5e1aa2f534ddfca",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "fsl_symbols": [
+        "cost",
+        "blast_radius",
+        "governance"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Any governed observation or movement has positive cost."
+    },
+    {
+      "ordinal": 20,
+      "theorem_id": "gbo_iv_cost_ge_left",
+      "family": "observer_cost",
+      "constraint_type": "cost_floor",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 404,
+      "lean_declaration": "gbo_iv_cost_ge_left",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/19"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/19"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "5acf5687855fbd9efc6a422f83ff80836979c968f6665aa7e4bf00c296f6e393",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "fsl_symbols": [
+        "cost",
+        "blast_radius",
+        "governance"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Combined observer cost is at least its left component cost."
+    },
+    {
+      "ordinal": 21,
+      "theorem_id": "gbo_iv_cost_ge_right",
+      "family": "observer_cost",
+      "constraint_type": "cost_floor",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 409,
+      "lean_declaration": "gbo_iv_cost_ge_right",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/20"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/20"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "0660445fee5161ff1e1d628e56a2b6c95b03b968935d899a4a2f226dbddd6fb3",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "fsl_symbols": [
+        "cost",
+        "blast_radius",
+        "governance"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Combined observer cost is at least its right component cost."
+    },
+    {
+      "ordinal": 22,
+      "theorem_id": "gbo_iv_cost_ge_max",
+      "family": "observer_cost",
+      "constraint_type": "cost_floor",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 414,
+      "lean_declaration": "gbo_iv_cost_ge_max",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/21"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/21"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "cc5dc50b30639d8c55652183687003121605490ae5af2027b6e8461d135db7bc",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "fsl_symbols": [
+        "cost",
+        "blast_radius",
+        "governance"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Combined observer cost is bounded below by the maximum component cost."
+    },
+    {
+      "ordinal": 23,
+      "theorem_id": "gbo_v_underdetermination",
+      "family": "observer_ambiguity",
+      "constraint_type": "underdetermination",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 426,
+      "lean_declaration": "gbo_v_underdetermination",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/22"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/22"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "230669295c47b69b78517298c60cc5a4961a3066ea1bca9603e11470f9fb4b9d",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "FSLAmbiguity",
+        "SemanticMap",
+        "ObserverHorizon"
+      ],
+      "fsl_symbols": [
+        "ambiguity",
+        "semantic",
+        "bounded"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Bounded observation can leave multiple world states consistent with the same evidence."
+    },
+    {
+      "ordinal": 24,
+      "theorem_id": "anchor_nonuniqueness_exists",
+      "family": "observer_ambiguity",
+      "constraint_type": "underdetermination",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 446,
+      "lean_declaration": "anchor_nonuniqueness_exists",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/23"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/23"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "c7a38081eccbb069ec8fc243d7a53e19c9df809a9baea0db9395cebd010ad105",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "SemanticAnchor",
+        "FSLAmbiguity",
+        "ObserverHorizon"
+      ],
+      "fsl_symbols": [
+        "anchor",
+        "semantic",
+        "bounded"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Semantic anchors need not be unique under bounded observation."
+    },
+    {
+      "ordinal": 25,
+      "theorem_id": "gbo_vi_non_equivocating",
+      "family": "observer_commitment",
+      "constraint_type": "commitment",
+      "proof_status": "machine_checked_under_axioms",
+      "coverage_status": "lean_theorem_axiom_dependent",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 477,
+      "lean_declaration": "gbo_vi_non_equivocating",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [
+        "Commitment",
+        "commit",
+        "ComputationallyBinding",
+        "sha256_binding_assumption"
+      ],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/24"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/24"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "544b14b8f5654b75add44644bbcabac9b026f7f7a63e82e803be6c26c35f2190",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md",
+        "CRYPTO_AXIOM_BOUNDARY.md",
+        "ASSUMPTIONS_APPENDIX.md"
+      ],
+      "governance_relevance": [
+        "PositionCommitment",
+        "StateProof",
+        "ObserverIdentity"
+      ],
+      "fsl_symbols": [
+        "commitment",
+        "proof",
+        "governance"
+      ],
+      "claim_boundary": "Machine-checked under explicit cryptographic/model axioms; not assumption-free and not a concrete runtime cryptography proof.",
+      "summary": "A governed observer cannot equivocate between incompatible commitments under the same identity."
+    },
+    {
+      "ordinal": 26,
+      "theorem_id": "gbo_impossible_complete_observation",
+      "family": "observer_impossibility",
+      "constraint_type": "horizon_limit",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 484,
+      "lean_declaration": "gbo_impossible_complete_observation",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/25"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/25"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "9470ca52e976b904580f87b61ec4046dc75655000b0c3e14185b6533c24c852e",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md",
+        "ERRATA.md",
+        "HORIZON_RECONCILIATION.md"
+      ],
+      "governance_relevance": [
+        "ObserverHorizon",
+        "ObserverState",
+        "SemanticMap"
+      ],
+      "fsl_symbols": [
+        "impossible",
+        "horizon",
+        "bounded"
+      ],
+      "claim_boundary": "Non-empty dark complement at current HTM depth; not a claim about every possible sensor model.",
+      "summary": "Every governed bounded observer has a non-empty spatial dark complement at its current HTM depth."
+    },
+    {
+      "ordinal": 27,
+      "theorem_id": "gbo_impossible_zero_cost",
+      "family": "observer_impossibility",
+      "constraint_type": "cost_floor",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 491,
+      "lean_declaration": "gbo_impossible_zero_cost",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/26"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/26"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "ed5959d3f799aa55c14bf98dd795c4eb30e5b198c75179f20144a488ff4fca58",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "MotionBudget",
+        "StabilityReport",
+        "ObserverMovementPacket"
+      ],
+      "fsl_symbols": [
+        "impossible",
+        "cost",
+        "bounded"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Zero-cost observation or movement is impossible under governed bounds."
+    },
+    {
+      "ordinal": 28,
+      "theorem_id": "gbo_impossible_self_certification",
+      "family": "observer_impossibility",
+      "constraint_type": "self_certification_limit",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 497,
+      "lean_declaration": "gbo_impossible_self_certification",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/27"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/27"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "75a7b0038b290830825f151ffef9cee167de2b542e52a82215fcfb9a9010a3c8",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "ObserverIdentity",
+        "StateProof",
+        "GovernorResponse"
+      ],
+      "fsl_symbols": [
+        "impossible",
+        "proof",
+        "governance"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "An observer cannot fully certify itself without an external proof relation."
+    },
+    {
+      "ordinal": 29,
+      "theorem_id": "governed_bounded_observer",
+      "family": "observer_unified",
+      "constraint_type": "unified_limit",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 507,
+      "lean_declaration": "governed_bounded_observer",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/28"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/28"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "0a163afa532d21490c1cd3c803b99da642313393f0fb70a6030ae3f4d621f843",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "GBC",
+        "History",
+        "CoordinationCost"
+      ],
+      "fsl_symbols": [
+        "observer",
+        "bounded",
+        "governance"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "Checked unified bridge: state decomposition, valid-history tick advance, no admissible self-loop, positive coordination cost, and zero-cost impossibility."
+    },
+    {
+      "ordinal": 30,
+      "theorem_id": "valid_history_preserved",
+      "family": "fsl_movement",
+      "constraint_type": "history_preservation",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 266,
+      "lean_declaration": "valid_history_preserved",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/29"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/29"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "4cd5c6e3bd5e6ce391f2bb6f867bd8b50b4d7c17ef4574044fbf5657753bf87c",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "MotionHistory",
+        "ObserverMovementPacket",
+        "MovementValidationResult"
+      ],
+      "fsl_symbols": [
+        "history",
+        "M",
+        "StateProof"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "FSL-registered movement history remains valid after an admissible motion step."
+    },
+    {
+      "ordinal": 31,
+      "theorem_id": "valid_spatial_motion",
+      "family": "fsl_movement",
+      "constraint_type": "spatial_motion",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/gbo_theorems.lean",
+      "lean_line": 236,
+      "lean_declaration": "valid_spatial_motion_iff_cell_valid_motion",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/30"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/30"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "10805a98088f2d9410ea84fe5ce0ed4a0e693fa2af4139be2b15c788e279fab7",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "ObserverMovementPacket",
+        "HTMCell",
+        "MovementValidationResult"
+      ],
+      "fsl_symbols": [
+        "M",
+        "space.htm_surface",
+        "adjacent"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "FSL-registered spatial motion must be valid against the HTM neighbor surface."
+    },
+    {
+      "ordinal": 32,
+      "theorem_id": "valid_motion_stay",
+      "family": "fsl_movement",
+      "constraint_type": "motion_stability",
+      "proof_status": "machine_checked_theorem",
+      "coverage_status": "lean_theorem_checked",
+      "lifecycle_status": "active",
+      "lean_file": "lean/htm_motion.lean",
+      "lean_line": 251,
+      "lean_declaration": "valid_motion_stay",
+      "lean_declaration_kind": "theorem",
+      "axiom_dependencies": [],
+      "assumption_refs": [
+        "ASSUMPTIONS_APPENDIX.md",
+        "lean_assumptions.json"
+      ],
+      "registry_refs": [
+        "THEOREM_REGISTRY.md",
+        "theorem_registry.json#/theorems/31"
+      ],
+      "coverage_refs": [
+        "lean_coverage_report.md",
+        "lean_coverage.json#/theorems/31"
+      ],
+      "lifecycle_ref": "theorem_lifecycle.json",
+      "lifecycle_record_hash": "b01274d4b70c2a58804d3b02ee83745c348e3870401ca166af787f2475257e9e",
+      "checksum_refs": {
+        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
+        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
+        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
+        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "lean/htm_motion.lean": "8763962f45965fb16dd7035aa67cdf8c56b70ccc2605718926e21a4f5ebd9a06"
+      },
+      "proof_boundary_docs": [
+        "formal_whitepaper.md",
+        "FORMAL_PROOF_BUNDLE.md"
+      ],
+      "governance_relevance": [
+        "ObserverMovementPacket",
+        "ObserverIdentity",
+        "MovementValidationResult"
+      ],
+      "fsl_symbols": [
+        "M",
+        "identity",
+        "bounded"
+      ],
+      "claim_boundary": "Machine-checked theorem record within the public Lean/model boundary stated in the formal whitepaper.",
+      "summary": "FSL-registered stay/motion validation preserves the bounded observer state."
+    }
+  ]
+}

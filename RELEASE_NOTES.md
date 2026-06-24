@@ -2,7 +2,7 @@
 
 Package: SiMON FSL + Governed Bounded Observer Publication Bundle
 
-Current public package version: `1.1.0`
+Current public package version: `1.1.1`
 
 This bundle is a clean publication directory for understanding FSL and its connection to the governed bounded observer theorem stack. It is intentionally a directory bundle, not a zip archive. Archive creation should happen only after checksum review.
 
@@ -18,6 +18,7 @@ The bundle contains:
 - Public Rust authority-promotion criteria: `RUST_AUTHORITY_CRITERIA.md`
 - The public observer theorem registry: `THEOREM_REGISTRY.md`, `theorem_registry.json`
 - The public theorem lifecycle export: `theorem_lifecycle.json`
+- The public independent replay tool: `scripts/replay_fsl_claim.py`
 - The Lean coverage audit: `lean_coverage_report.md`, `lean_coverage.json`
 - The Lean assumptions audit: `ASSUMPTIONS_APPENDIX.md`, `lean_assumptions.json`
 - The formal proof bundle guide and Lean source snapshots: `FORMAL_PROOF_BUNDLE.md`, `lean/`
@@ -29,13 +30,29 @@ The bundle contains:
 - Package documentation: `README.md`, `MANIFEST.md`, `PACKAGE_MAP.md`, `PUBLIC_REPO_NOTES.md`
 - Version and release policy: `VERSION`, `RELEASE_POLICY.md`
 - Release-candidate audit: `RELEASE_CANDIDATE_AUDIT.md`
+- Formal claim correction errata: `ERRATA.md`
+- Horizon claim reconciliation: `HORIZON_RECONCILIATION.md`
 - Publication tag record: `PUBLICATION_TAG.md`
 - Repeatable export manifest: `EXPORT_MANIFEST.json`
 - Checksums: `CHECKSUMS.sha256`
 
+## Version 1.1.1
+
+Version `1.1.1` is a patch release for public clarity and claim-boundary discipline.
+
+It incorporates the reader-facing improvements from Missions 57, 58, and 59:
+
+- `USE_CASES.md` now explains the governed bounded observer as a journey through governed space, governed time, bounded action, FSL claim references, and independent replay.
+- `README.md` now introduces HTM manifold, governed bounded observer, Lean theorem evidence, SiMON runtime boundaries, and FSL as a semantic language layer before asking readers to inspect the artifact set.
+- `README.md` and `ASSUMPTIONS_APPENDIX.md` now explain theorems, axioms, and proof holes for readers who do not already know Lean terminology.
+- The generic external-tool arrow block was replaced with concrete FSL/theorem nomenclature such as `declared_scope`, `Δ_FSL`, `valid_spatial_motion`, `gbo_iii_temporal_horizon`, and `gbo_vi_non_equivocating`.
+- Horizon wording remains explicitly bounded: the spatial result is a combinatorial HTM root-face visibility theorem, not a proof of arbitrary physical spherical visibility geometry; the temporal result is a product-cycle window theorem, not a complete temporal phenomenology model.
+
+No theorem IDs, Lean declarations, parser behavior, validator behavior, Rust runtime behavior, FSL registry source semantics, or governance execution behavior changed in `1.1.1`.
+
 ## Version 1.1.0
 
-This is the first public package version that includes both a human-readable and machine-readable observer theorem registry alongside the FSL language exports.
+Version `1.1.0` was the first public package version that included both a human-readable and machine-readable observer theorem registry alongside the FSL language exports.
 
 It is a position-paper and publication-package release. It does not claim complete Lean machine-checkable coverage for every theorem family.
 
@@ -65,6 +82,8 @@ It is a position-paper and publication-package release. It does not claim comple
 
 `theorem_lifecycle.json` is a derived public export of the verified theorem lifecycle chain. `theorem_registry.json` merges lifecycle status from this file by `theorem_id`.
 
+`REPLAY_MATRIX.md`, `replay_matrix.json`, and `scripts/replay_fsl_claim.py` are reviewer replay artifacts. The script checks a selected theorem claim against the replay matrix, lifecycle export, boundary documents, and checksums. It does not run Lean, authorize governance actions, or promote any runtime to governance authority.
+
 `lean_coverage_report.md` and `lean_coverage.json` are public coverage audits. They distinguish checked Lean theorem records from axiom-dependent, partial, definition-only, and planned records.
 
 `ASSUMPTIONS_APPENDIX.md` and `lean_assumptions.json` are public no-sorry/no-axiom audit artifacts. They inventory all declared Lean axioms found in the scanned files and confirm that no code-level `sorry` or `admit` proof holes were found.
@@ -77,7 +96,11 @@ It is a position-paper and publication-package release. It does not claim comple
 
 `CRYPTO_AXIOM_BOUNDARY.md` records the Mission 45 decision that `gbo_vi_non_equivocating` is a checked theorem under an explicit cryptographic axiom boundary, not an assumption-free cryptographic proof.
 
-`FORMAL_COVERAGE_BASELINE.md` records the current formal-whitepaper-track baseline after Mission 50: 31 checked theorem records, 1 axiom-dependent record, 0 partial records, 0 definition-only records, 0 planned records, 32 publicly exported active theorem lifecycle records, a completed assumptions audit, an assembled formal proof bundle, and the formal whitepaper.
+`FORMAL_COVERAGE_BASELINE.md` records the current formal-whitepaper-track baseline after `MISSION-FSL-TEMPORAL-HORIZON-PROOF`: 31 checked theorem records, 1 axiom-dependent record, 0 partial records, 0 definition-only records, 0 planned records, 32 publicly exported active theorem lifecycle records, a completed assumptions audit, an assembled formal proof bundle, and the formal whitepaper.
+
+`ERRATA.md` records the Mission 53 correction and Mission 54 resolution: `gbo_iii_spatial_horizon` and `gbo_impossible_complete_observation` are now machine-checked theorem records, and `gbo_iii_temporal_horizon` is now closed by the temporal product-cycle proof.
+
+`HORIZON_RECONCILIATION.md` records that Mission 53 and Mission 54 were public document labels rather than clean governed lifecycle missions. It preserves the procedural gap honestly while documenting the verified evidence that led to the current `31 / 1 / 0` proof-status boundary.
 
 ## Proofchain status
 
@@ -101,9 +124,9 @@ Rust governance surfaces are currently treated as shadow/parity evidence. The cu
 
 ## Publication tag status
 
-`PUBLICATION_TAG.md` records this package as the governed `1.1.0` public position-paper, language-package, proof-bundle, and formal-whitepaper release. The recommended tag is `fsl-observer-theorem-v1.1.0` after the public package files are committed.
+`PUBLICATION_TAG.md` records this package as the governed `1.1.1` public position-paper, language-package, proof-bundle, formal-whitepaper, and reader-clarity patch release. The recommended tag is `fsl-observer-theorem-v1.1.1` after the public package files are committed.
 
-This tag represents the current formal whitepaper package for the `1.1.0` proof-status boundary. It does not claim assumption-free cryptographic proof or Rust runtime authority.
+This tag represents the current formal whitepaper package for the `1.1.1` public package boundary. The proof-status distribution remains `31 / 1 / 0`: 31 machine-checked theorem records, 1 machine-checked-under-explicit-axioms record, and no partial, definition-only, or planned records. It does not claim assumption-free cryptographic proof or Rust runtime authority.
 
 ## Export process
 
@@ -113,7 +136,7 @@ From the SiMON source tree, run:
 python3.12 scripts/export_public_fsl_package.py --check
 ```
 
-The exporter uses `EXPORT_MANIFEST.json`, rebuilds the allowlisted public package artifacts, regenerates the observer theorem registry exports, checks excluded private/runtime paths, and refreshes checksums.
+The exporter uses `EXPORT_MANIFEST.json`, rebuilds the allowlisted public package artifacts, regenerates the observer theorem registry exports, regenerates lifecycle and replay artifacts, copies the public replay script, checks excluded private/runtime paths, and refreshes checksums.
 
 ## Exclusions
 

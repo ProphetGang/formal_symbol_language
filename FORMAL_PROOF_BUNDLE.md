@@ -48,6 +48,7 @@ The public package intentionally excludes Lean build products and dependencies s
 | `ASSUMPTIONS_APPENDIX.md` | Human-readable no-sorry/no-axiom audit. |
 | `lean_assumptions.json` | Machine-readable assumption inventory. |
 | `CRYPTO_AXIOM_BOUNDARY.md` | Boundary decision for the axiom-dependent commitment theorem. |
+| `ERRATA.md` | Mission 53 horizon correction and Mission 54 spatial-horizon resolution. |
 | `formal_whitepaper.md` | Formal whitepaper grounded in this proof bundle. |
 | `CHECKSUMS.sha256` | SHA-256 checksums for the public package artifacts. |
 

@@ -6,6 +6,28 @@ Audit mission: `MISSION-FSL-NO-SORRY-AXIOM-AUDIT`
 
 Audit date: June 15, 2026
 
+## How To Read This Appendix
+
+This appendix is meant to make the package's proof boundary inspectable.
+
+For readers who do not work with Lean every day:
+
+- A theorem is a precise claim checked by the proof system.
+- An axiom is an explicit assumption or model primitive that the proof system is allowed to use.
+- A proof hole is an unfinished proof placeholder.
+
+This audit found 132 declared axioms and 0 code-level proof holes in the scanned Lean files. Those numbers should not be read as "132 failed proofs." They mean the package openly lists every declared assumption it found, including governance model atoms and bridge relations that intentionally describe the system model rather than derive all of governance from first principles.
+
+The largest source of declared axioms is `governance_theorems.lean`. That file is a governance model/bridge file: it names constitutional rules, packet concepts, phases, UI widgets, and governance relations as formal atoms. The cryptographic boundary used by `gbo_vi_non_equivocating` is much smaller and is documented separately in `CRYPTO_AXIOM_BOUNDARY.md`.
+
+The practical reading is:
+
+```text
+No scanned Lean proof holes were found.
+Declared assumptions are public and classified.
+Axiom-dependent theorem claims remain axiom-dependent.
+```
+
 ## Summary
 
 - Lean files scanned: 10

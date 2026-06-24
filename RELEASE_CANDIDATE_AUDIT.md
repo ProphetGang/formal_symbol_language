@@ -92,4 +92,4 @@ The following caveats are intentional and should remain visible:
 
 The package is appropriate for public re-export.
 
-It is now the formal whitepaper package for the current 1.1.0 proof-status boundary.
+It is now the formal whitepaper package for the current 1.1.1 public package boundary. The proof-status distribution remains unchanged at 31 checked theorem records, 1 axiom-dependent theorem record, 0 partial records, 0 definition-only records, and 0 planned records.

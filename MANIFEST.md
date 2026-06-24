@@ -8,6 +8,11 @@ This manifest defines what should be included, referenced, or excluded when turn
 | --- | --- | --- |
 | `whitepaper.md` | include | Unified governed bounded observer theorem paper. |
 | `formal_whitepaper.md` | include | Formal proof-status whitepaper grounded in the public proof bundle. |
+| `USE_CASES.md` | include | Adoption-facing scenarios, including a governed autonomous coding/deployment agent. |
+| `EVIDENCE_CLASSES.md` | include | Public distinction between proof, attestation, export, parity, authorization, checksum, and StateProof evidence. |
+| `INDEPENDENT_REPLAY.md` | include | Reviewer playbook for traversing theorem claims to evidence boundaries. |
+| `REPLAY_MATRIX.md` | include | Human-readable theorem-by-theorem independent replay index. |
+| `scripts/replay_fsl_claim.py` | include | Deterministic reviewer tool for replaying one theorem claim against the replay matrix, lifecycle export, boundary documents, and checksums. |
 | `OVERLEAF_README.md` | include | Instructions for compiling the PDF-facing Overleaf paper package. |
 | `overleaf/main.tex` | include | Overleaf-ready LaTeX paper source. |
 | `overleaf/references.bib` | include | Bibliography for the Overleaf paper source. |
@@ -25,6 +30,8 @@ This manifest defines what should be included, referenced, or excluded when turn
 | `VERSION` | include | Current public package version. |
 | `RELEASE_POLICY.md` | include | Versioning, compatibility, release-gate, and deprecation policy. |
 | `RELEASE_CANDIDATE_AUDIT.md` | include | Release-candidate claim-safety and public-boundary audit. |
+| `ERRATA.md` | include | Mission 53 formal claim correction for horizon and complete-observation proof status. |
+| `HORIZON_RECONCILIATION.md` | include | Governed reconciliation note for the Mission 53/54 lifecycle gap and current horizon proof-status evidence. |
 | `PUBLICATION_TAG.md` | include | Governed release-freeze and tag-ready record. |
 
 ## Include: observer theorem export
@@ -32,6 +39,7 @@ This manifest defines what should be included, referenced, or excluded when turn
 | Path | Status | Purpose |
 | --- | --- | --- |
 | `theorem_registry.json` | include | Machine-readable public export of the 32 observer theorem records. |
+| `replay_matrix.json` | include | Machine-readable theorem-by-theorem independent replay index. |
 | `theorem_lifecycle.json` | include | Machine-readable public export of the verified theorem lifecycle status. |
 | `lean_coverage_report.md` | include | Human-readable Lean coverage audit for the 32 observer theorem records. |
 | `lean_coverage.json` | include | Machine-readable Lean coverage audit keyed by theorem record. |

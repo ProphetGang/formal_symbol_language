@@ -2,6 +2,22 @@
 
 The package is organized as a layered explanation of SiMON's governed symbolic system. Each layer answers a different question.
 
+## Layer 0: adoption and independent replay
+
+Primary question: what problem does this solve, and how can a reviewer replay the claims?
+
+Core artifacts:
+
+- `README.md`
+- `USE_CASES.md`
+- `EVIDENCE_CLASSES.md`
+- `INDEPENDENT_REPLAY.md`
+- `REPLAY_MATRIX.md`
+- `replay_matrix.json`
+- `scripts/replay_fsl_claim.py`
+
+This layer is the front door for builders and reviewers. `USE_CASES.md` explains the governed autonomous-agent scenario. `EVIDENCE_CLASSES.md` separates Lean proof, axiom-dependent proof, lifecycle attestation, generated export, runtime parity, governance authorization, checksum/archive evidence, and StateProof evidence. `INDEPENDENT_REPLAY.md` gives a reviewer playbook. `REPLAY_MATRIX.md` and `replay_matrix.json` provide theorem-by-theorem replay references derived from the registry, coverage audit, lifecycle export, assumptions inventory, and checksums. `scripts/replay_fsl_claim.py` turns that replay path into a concrete one-theorem command.
+
 ## Layer 1: observer theorem world model
 
 Primary question: what is the formal world being described?
@@ -14,8 +30,10 @@ Core artifacts:
 - `theorem_registry.json`
 - `theorem_lifecycle.json`
 - `STATEPROOF_NOTE.md`
+- `ERRATA.md`
+- `HORIZON_RECONCILIATION.md`
 
-This layer contains the governed bounded observer model. The position whitepaper gives the narrative and theorem arc. The formal whitepaper states theorem-by-theorem proof status from the public proof bundle. The theorem registry gives the public 32-record theorem export derived from the queryable observer kernel. The theorem lifecycle export gives the public chain-derived lifecycle status for those records. The StateProof note explains how to interpret the disclosed repaired canonical proof-chain status.
+This layer contains the governed bounded observer model. The position whitepaper gives the narrative and theorem arc. The formal whitepaper states theorem-by-theorem proof status from the public proof bundle. The theorem registry gives the public 32-record theorem export derived from the queryable observer kernel. The theorem lifecycle export gives the public chain-derived lifecycle status for those records. The StateProof note explains how to interpret the disclosed repaired canonical proof-chain status. `ERRATA.md` records the Mission 53 horizon correction and Mission 54 spatial-horizon resolution. `HORIZON_RECONCILIATION.md` records the governed reconciliation for the Mission 53/54 lifecycle gap.
 
 ## Layer 1b: runtime parity boundary
 
@@ -153,6 +171,8 @@ The previous hardening missions made FSL easier to document and safer to extend.
 ## Inclusion policy
 
 Include small, public-facing documents and generated exports.
+
+Include `USE_CASES.md`, `EVIDENCE_CLASSES.md`, `INDEPENDENT_REPLAY.md`, `REPLAY_MATRIX.md`, `replay_matrix.json`, and `scripts/replay_fsl_claim.py` in public releases because they make the package adoptable and independently replayable without strengthening any theorem claim.
 
 Reference proofchain, Lean, and runtime source files unless the release is explicitly an audit/source snapshot.
 
