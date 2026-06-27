@@ -2,7 +2,7 @@
   "metadata": {
     "title": "FSL Independent Replay Matrix",
     "package": "fsl_observer_theorem_public_repo",
-    "package_version": "1.1.1",
+    "package_version": "1.1.2",
     "public_export": true,
     "canonical": false,
     "derived_from": [
@@ -56,11 +56,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "a37460548ced4dab6d547dd4dabe4174ef509cd91cf421a8fc0bc318a26d08b3",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -107,11 +107,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "ca1a18779568e475ce6138a8b4afad3bd4cae37c0e3c588315f077794f7a9ad2",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -158,11 +158,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "17a149c2edd1e228f3d7c7ab90139203185789748ed00346d59b77b6d277fbc5",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -209,11 +209,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "b45a5c2de80e7f0ffc50c4e0984691c494e61063e1eb59435573065beb7a3884",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -260,11 +260,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "36703ccbc8ee973016fb7893586cd36bdbad10f9547e6afe29cc901a0f2fdcb2",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -311,11 +311,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "bb6a88b6940d45094c34a924a59354b868ff08e6c7358148a8d45f3e3711c16d",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -362,11 +362,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "a3483fbd2cd619ee5687bfa59353c598e418fcb5d12cd0cf45ac55b7a5a3e574",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -413,11 +413,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "f953703dc554eb48121a13838b23068de799723a3ccac4b79ca3ed42820abd11",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -465,11 +465,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "7fa7c00ee0ca0d38a0c62f8889f570d674c572527ebde4152ee04139bcd5a646",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -517,11 +517,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "1117905f77f777b172b2939cc34bbfe85b2be5c1ff72c5a2d126fcde765f0845",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -569,11 +569,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "91e7457b9b14fd77510d4138481c1f5e97ff8c24ef199d45fe1f53f67c4be3d7",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -621,11 +621,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "ba92e1670e0fca4b3800c1a9ff6222230db2331b7d19e9ddd8cb39fc06cdaea0",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -673,11 +673,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "bd0bd3b1b79ced488c27ece99d3418504dee4acb4df84b0b4294bb79b67c0534",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -725,11 +725,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "37635c35420693c0bdeaf00cddafb8f728e50a0e4c764305faf2a1267aec5112",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -777,11 +777,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "8012b45684c02e11c10fce194267e8d7db5e2c95699ae6839569eac198c116cd",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -829,11 +829,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "8ffae966864d811a3f053d96cd4ba7ea5113e83b205106bfe07a1c736f821f23",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -881,11 +881,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "b543e23f181bd334bcb90c6944d61a2ee55c1132e0feb931b8f18fb41b0b4772",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -935,11 +935,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "56adc6065e39b8d8dbf04da6652d6cc687177d9e045d31a265a1efc1f373ea88",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -989,11 +989,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "87148d47bf1d7b0fb1a58f8c51a603e726c581b8cf9ecdc9f5e1aa2f534ddfca",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1041,11 +1041,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "5acf5687855fbd9efc6a422f83ff80836979c968f6665aa7e4bf00c296f6e393",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1093,11 +1093,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "0660445fee5161ff1e1d628e56a2b6c95b03b968935d899a4a2f226dbddd6fb3",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1145,11 +1145,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "cc5dc50b30639d8c55652183687003121605490ae5af2027b6e8461d135db7bc",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1197,11 +1197,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "230669295c47b69b78517298c60cc5a4961a3066ea1bca9603e11470f9fb4b9d",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1249,11 +1249,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "c7a38081eccbb069ec8fc243d7a53e19c9df809a9baea0db9395cebd010ad105",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1306,11 +1306,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "544b14b8f5654b75add44644bbcabac9b026f7f7a63e82e803be6c26c35f2190",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1360,11 +1360,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "9470ca52e976b904580f87b61ec4046dc75655000b0c3e14185b6533c24c852e",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1414,11 +1414,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "ed5959d3f799aa55c14bf98dd795c4eb30e5b198c75179f20144a488ff4fca58",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1466,11 +1466,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "75a7b0038b290830825f151ffef9cee167de2b542e52a82215fcfb9a9010a3c8",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1518,11 +1518,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "0a163afa532d21490c1cd3c803b99da642313393f0fb70a6030ae3f4d621f843",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1570,11 +1570,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "4cd5c6e3bd5e6ce391f2bb6f867bd8b50b4d7c17ef4574044fbf5657753bf87c",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1622,11 +1622,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "10805a98088f2d9410ea84fe5ce0ed4a0e693fa2af4139be2b15c788e279fab7",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/gbo_theorems.lean": "79f312f35e6fc144f086f8496efbd40fd640a55d8adc2416f3ad2f67c52aaa86"
       },
       "proof_boundary_docs": [
@@ -1674,11 +1674,11 @@
       "lifecycle_ref": "theorem_lifecycle.json",
       "lifecycle_record_hash": "b01274d4b70c2a58804d3b02ee83745c348e3870401ca166af787f2475257e9e",
       "checksum_refs": {
-        "theorem_registry.json": "ead01ad419c7f959b83cbfd7ff195b00316a48c3ac5a9f7a1c9e0a3f66e8606e",
+        "theorem_registry.json": "313c7e5cd4581fe78e9ec5a639cec49862dc2f440a9a0e6ac03577abb18cf8f6",
         "THEOREM_REGISTRY.md": "0b18d3833dd9b6b2a9f9dcbe45c50bd379d2d26f1073254b7a6fb2d0e92aa62f",
-        "theorem_lifecycle.json": "13f989ad75bb0aa22857a52a10935645b5a89826eccf4ffc3f6c619c4237a9bb",
-        "lean_coverage.json": "d154007c0dcd6a6b7ff55f5e2b4f77bba8bd79943dc808b56c1b09e0ff6e3e2c",
-        "lean_assumptions.json": "882d0fd651f26f1e53009769ec112fe716d02638947bfff2f8c06276aed5f3c5",
+        "theorem_lifecycle.json": "81058f9e9d4bb9baa0ede6ad7f85a2caaf3976e6a6cb3041692603530ad404ca",
+        "lean_coverage.json": "f0aa4e4201d62857b13dcb959c14b2970ec8c559afbd30495bfec26a71394af3",
+        "lean_assumptions.json": "e330230197e4ed388ae9892661595aa65500823210f50606ac5321cb5d2c9b62",
         "lean/htm_motion.lean": "8763962f45965fb16dd7035aa67cdf8c56b70ccc2605718926e21a4f5ebd9a06"
       },
       "proof_boundary_docs": [

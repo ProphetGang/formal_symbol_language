@@ -20,6 +20,7 @@ This manifest defines what should be included, referenced, or excluded when turn
 | `STATEPROOF_NOTE.md` | include | Public explanation of raw-chain status and repaired canonical StateProof verification. |
 | `RUST_PARITY_NOTE.md` | include | Public explanation of Rust/Python parity status and the current governance authority boundary. |
 | `RUST_AUTHORITY_CRITERIA.md` | include | Public criteria for any future Rust governance-authority promotion. |
+| `docs/fsl_rust_authority_promotion_audit.md` | include | Public report-only audit explaining why Rust StateProof candidate and append-gate parity remain shadow-only. |
 | `fsl_governed_symbolic_language.md` | include | FSL language paper explaining the governed symbolic publication layer. |
 | `fsl_specification.md` | include | Human-readable FSL specification derived from the canonical registry. |
 
@@ -30,8 +31,8 @@ This manifest defines what should be included, referenced, or excluded when turn
 | `VERSION` | include | Current public package version. |
 | `RELEASE_POLICY.md` | include | Versioning, compatibility, release-gate, and deprecation policy. |
 | `RELEASE_CANDIDATE_AUDIT.md` | include | Release-candidate claim-safety and public-boundary audit. |
-| `ERRATA.md` | include | Mission 53 formal claim correction for horizon and complete-observation proof status. |
-| `HORIZON_RECONCILIATION.md` | include | Governed reconciliation note for the Mission 53/54 lifecycle gap and current horizon proof-status evidence. |
+| `ERRATA.md` | include | Formal claim correction for horizon and complete-observation proof status. |
+| `HORIZON_RECONCILIATION.md` | include | Governed reconciliation note for horizon publication history and current horizon proof-status evidence. |
 | `PUBLICATION_TAG.md` | include | Governed release-freeze and tag-ready record. |
 
 ## Include: observer theorem export
@@ -83,22 +84,15 @@ These files explain or implement theorem/runtime semantics, but do not need to b
 | `lean/gbo_theorems.lean` | reference | Lean source for the governed bounded observer theorem family. |
 | `lean/governance_theorems.lean` | reference | Lean source for governance theorem support. |
 
-## Include or reference: governance provenance
+## Reference: governance provenance
 
-For a paper-style bundle, reference these artifacts and include selected excerpts or hashes. For an audit bundle, copy the full files.
+For a paper-style bundle, summarize these artifacts through public notes and include selected excerpts or hashes. For an audit bundle, copy the full files only when that release explicitly includes private/runtime provenance.
 
 | Path | Status | Purpose |
 | --- | --- | --- |
-| `updates/UPDATE-FSL-GLYPH-PROMOTION-POLICY-GATE.yaml` | include or reference | Glyph promotion law and gate mission. |
-| `updates/UPDATE-FSL-PUBLICATION-EXPORTS-PROMOTION-GATES.yaml` | include or reference | Publication export refresh with promotion gate fields. |
-| `updates/UPDATE-FSL-WHITEPAPER-DRAFT.yaml` | include or reference | FSL paper drafting mission. |
-| `updates/UPDATE-FSL-OBSERVER-PUBLICATION-PACKAGE-MANIFEST.yaml` | reference | Package manifest mission. |
-| `.governance/proof_terms/MISSION-FSL-GLYPH-PROMOTION-POLICY-GATE.jsonl` | reference | Proof terms for glyph policy gate mission. |
-| `.governance/proof_terms/MISSION-FSL-PUBLICATION-EXPORTS-PROMOTION-GATES.jsonl` | reference | Proof terms for export refresh mission. |
-| `.governance/proof_terms/MISSION-FSL-WHITEPAPER-DRAFT.jsonl` | reference | Proof terms for FSL paper mission. |
-| `.governance/proof_terms/MISSION-OBSERVER-LIMIT-KERNEL.jsonl` | reference | Proof terms for observer kernel mission. |
-| `.governance/proof_terms/MISSION-RETHEOREM-ALL.jsonl` | reference | Historical theorem refresh proof terms. |
-| `.governance/identity/state_proofs.jsonl` | reference | Append-only StateProof chain; include hashes or selected records for public release. |
+| `updates/` | reference | Internal governed update packets that produced the public package. |
+| `.governance/proof_terms/` | reference | Internal proof-term records for governed actions. |
+| `.governance/identity/state_proofs.jsonl` | reference | Append-only StateProof chain; public releases should include hashes, selected records, or status notes rather than private runtime material. |
 
 ## Exclude: heavy, private, generated, or local-only artifacts
 

@@ -1,6 +1,6 @@
 # Cryptographic Axiom Boundary
 
-This note records the Mission 45 decision for the only axiom-dependent theorem record in the public FSL observer theorem package.
+This note records the current decision for the only axiom-dependent theorem record in the public FSL observer theorem package.
 
 ## Decision
 
@@ -50,4 +50,4 @@ Those claims belong to the cryptographic substrate and implementation audit laye
 
 The formal whitepaper may include `gbo_vi_non_equivocating` as a proved-under-assumptions theorem, provided the assumption boundary is listed explicitly.
 
-This decision closes the Mission 45 ambiguity: the theorem is not unresolved, but it must not be described as assumption-free.
+This decision closes the ambiguity: the theorem is not unresolved, but it must not be described as assumption-free.

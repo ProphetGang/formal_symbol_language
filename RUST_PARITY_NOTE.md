@@ -21,6 +21,13 @@ The measured surfaces were:
 
 The parity runner also performed binary preflight checks and recorded fresh release binaries for the measured Rust surfaces.
 
+The FSL StateProof hardening track also added Rust shadow parity for two serialized evidence boundaries:
+
+- `stateproof_candidate_parity`: mirrors StateProof anchor-candidate shape and rejection checks.
+- `stateproof_append_gate_parity`: mirrors append-request and Governor authorization gate checks.
+
+Those checks are useful for detecting malformed records, policy drift, and authority-escalation attempts. They do not append StateProofs and do not promote Rust to authority.
+
 ## What parity means
 
 A passing parity case means the Rust surface and the Python owner semantics returned the same observable decision for the fixture.
@@ -46,11 +53,22 @@ The Rust parity evidence does not change:
 
 In this release, Rust is evidence-bearing and compatibility-checked. It is not yet the constitutional authority for enforcing SiMON governance decisions.
 
+For the FSL StateProof candidate pipeline, the current authority boundary is:
+
+```text
+Python/governance authority: retained
+Rust runtime authority: not promoted
+Rust validation status: shadow parity
+StateProof append authority: Python canonical entrypoint only
+```
+
 ## Promotion requirement
 
-Rust authority promotion requires a separate governed mission with explicit success criteria.
+Rust authority promotion requires a separate governed release decision with explicit success criteria.
 
 The public criteria for such a mission are defined in `RUST_AUTHORITY_CRITERIA.md`.
+
+The current report-only audit is included at `docs/fsl_rust_authority_promotion_audit.md`. Its finding is that Rust should remain shadow parity until shared Python/Rust fixtures, canonical dry-run observation checks, and an explicit governed promotion decision exist.
 
 At minimum, a future promotion must show:
 

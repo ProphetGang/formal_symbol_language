@@ -1,6 +1,6 @@
 # Formal Coverage Baseline
 
-This document records the current formal coverage baseline for the public FSL observer theorem package after Mission 54.
+This document records the current formal coverage baseline for the public FSL observer theorem package.
 
 Baseline date: June 14, 2026
 
@@ -10,7 +10,7 @@ This is the formal-whitepaper-track baseline after the public release hardening 
 
 It records the proof boundaries that still remain.
 
-It records the exact current proof-status distribution used by the formal whitepaper. Later missions can change one thing at a time and prove that future releases are becoming more precise.
+It records the exact current proof-status distribution used by the formal whitepaper. Later releases can change one thing at a time and show that future packages are becoming more precise.
 
 ## Verification Performed
 
@@ -33,7 +33,7 @@ The same scan found four declared axiomatic primitives in `lean/gbo_theorems.lea
 - `ComputationallyBinding`
 - `sha256_binding_assumption`
 
-Mission 48 extended this scan across all 10 Lean files in `lean/`. It found 132 declared axioms in total, 0 code-level `sorry` or `admit` proof holes, and 2 comment-only mentions. The full assumption inventory is published in `ASSUMPTIONS_APPENDIX.md` and `lean_assumptions.json`.
+The scan was extended across all 10 Lean files in `lean/`. It found 132 declared axioms in total, 0 code-level `sorry` or `admit` proof holes, and 2 comment-only mentions. The full assumption inventory is published in `ASSUMPTIONS_APPENDIX.md` and `lean_assumptions.json`.
 
 ## Coverage Counts
 
@@ -65,28 +65,18 @@ The remaining formal boundary is:
 
 ## Baseline Decision
 
-The baseline is accepted as the current formal-whitepaper track state.
+The baseline is accepted as the current formal-whitepaper track state:
 
-Mission 43 closed the previous `valid_spatial_motion` definition-only caveat by adding `valid_spatial_motion_iff_cell_valid_motion` while preserving `valid_spatial_motion` as the stable predicate.
-
-Mission 44 closed the previous `governed_bounded_observer` partial caveat by narrowing the public theorem claim to the checked Lean statement.
-
-Mission 45 accepts `gbo_vi_non_equivocating` as a checked theorem under an explicit cryptographic axiom boundary documented in `CRYPTO_AXIOM_BOUNDARY.md`.
-
-Mission 46 populated `lean/theorem_lifecycle.jsonl` with 32 active theorem lifecycle records.
-
-Mission 47 exports lifecycle status to the public package through `theorem_lifecycle.json` and merges that status into the public theorem registry.
-
-Mission 48 publishes the assumptions appendix and machine-readable Lean assumptions audit.
-
-Mission 49 assembles the public formal proof bundle and includes public Lean source snapshots.
-
-Mission 50 writes `formal_whitepaper.md` against the public proof bundle.
-
-Mission 53 corrects the horizon proof-status classification without changing Lean source, theorem IDs, lifecycle hashes, parser behavior, validator behavior, Rust runtime behavior, or governance execution.
-
-Mission 54 closes the spatial-horizon and complete-observation caveats by adding an axiom-free combinatorial HTM root-face half-bound theorem and deriving universal non-empty spatial dark complement for every governed bounded observer. No horizon theorem record remains partial.
-
-`MISSION-FSL-TEMPORAL-HORIZON-PROOF` closes the temporal-horizon caveat by replacing the weak existential witness with an axiom-free product-cycle window theorem.
+- The previous `valid_spatial_motion` definition-only caveat is closed by `valid_spatial_motion_iff_cell_valid_motion`, while `valid_spatial_motion` remains the stable predicate.
+- The previous `governed_bounded_observer` partial caveat is closed by narrowing the public theorem claim to the checked Lean statement.
+- `gbo_vi_non_equivocating` is accepted as a checked theorem under an explicit cryptographic axiom boundary documented in `CRYPTO_AXIOM_BOUNDARY.md`.
+- The theorem lifecycle export contains 32 active theorem lifecycle records.
+- Lifecycle status is exported to the public package through `theorem_lifecycle.json` and merged into the public theorem registry.
+- The public package includes the assumptions appendix and machine-readable Lean assumptions audit.
+- The public package includes the formal proof bundle and public Lean source snapshots.
+- `formal_whitepaper.md` states theorem-by-theorem proof status against the public proof bundle.
+- The horizon proof-status classification is corrected without changing theorem IDs, parser behavior, validator behavior, Rust runtime behavior, or governance execution.
+- The spatial-horizon and complete-observation caveats are closed by an axiom-free combinatorial HTM root-face half-bound theorem and a derived universal non-empty spatial dark complement for every governed bounded observer.
+- The temporal-horizon caveat is closed by replacing the weak existential witness with an axiom-free product-cycle window theorem.
 
 This baseline does not erase the current position paper; it identifies the proof-status boundary used by the formal whitepaper.

@@ -1,10 +1,12 @@
 # Rust Authority Criteria
 
-This document defines the public criteria for any future mission that promotes Rust from shadow/parity evidence to governance authority in SiMON.
+This document defines the public criteria for any future release that promotes Rust from shadow/parity evidence to governance authority in SiMON.
 
 It does not promote Rust authority.
 
 Current governance authority remains with the Python/query-surface governance path and the governed StateProof chain.
+
+The current report-only audit for FSL StateProof candidate and append-gate parity is included at `docs/fsl_rust_authority_promotion_audit.md`. That audit does not promote Rust authority; it records why Rust remains shadow parity for this release.
 
 ## Promotion meaning
 
@@ -16,7 +18,7 @@ Parity says two implementations agree on measured fixtures. Authority says one i
 
 ## Required promotion scope
 
-Any promotion mission must name the exact surfaces being promoted.
+Any promotion decision must name the exact surfaces being promoted.
 
 Acceptable surface declarations include:
 
@@ -26,6 +28,8 @@ Acceptable surface declarations include:
 - FSL parser acceptance
 - FSL validator acceptance
 - StateProof verification
+- StateProof candidate preflight validation
+- StateProof append-gate preflight validation
 - theorem lifecycle verification
 - mesh movement admissibility
 
@@ -33,7 +37,7 @@ No mission may promote "the Rust kernel" as a vague whole. Each promoted surface
 
 ## Minimum criteria
 
-Before any Rust surface can become governance authority, the promotion mission must satisfy all of the following criteria.
+Before any Rust surface can become governance authority, the promotion decision must satisfy all of the following criteria.
 
 ### 1. Parity coverage
 
@@ -135,7 +139,7 @@ At minimum, the promotion must export or summarize:
 
 ### 8. Rollback path
 
-The promotion mission must define a rollback path before authority changes.
+The promotion decision must define a rollback path before authority changes.
 
 Rollback must restore the previous authority path without changing theorem IDs, FSL symbols, StateProof history, or public release checksums outside a governed release update.
 
@@ -173,4 +177,4 @@ For this release, Rust remains evidence-bearing and compatibility-checked only.
 
 The current public Rust parity note reports shadow/parity evidence. It does not grant enforcement authority.
 
-Future promotion requires a separate governed mission that satisfies this document.
+Future promotion requires a separate governed release decision that satisfies this document.

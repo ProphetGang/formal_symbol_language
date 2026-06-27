@@ -2,134 +2,91 @@
 
 FSL is a governed symbolic language for making autonomous-agent claims inspectable.
 
-This repository is the public package for FSL and the governed bounded observer theorem stack. It explains a model of agents as bounded observers in a spatial/temporal system, publishes the current theorem and proof-status evidence, and provides machine-readable language exports that external tools can inspect.
+This repository is the public package for FSL and the governed bounded observer theorem stack. It explains a model of agents as bounded observers in a spatial/temporal system, publishes theorem and proof-status evidence, and provides machine-readable language exports that external tools can inspect.
 
-Current public package version: `1.1.1`
+Current public package version: `1.1.2`
 
-## Why This Exists
+## What Problem This Solves
 
-AI agents often describe their actions with broad words like "safe", "approved", "verified", "allowed", or "in scope." Those words are useful in conversation, but they are too blurry for review.
+AI agents often describe actions with broad words like "safe", "approved", "verified", "allowed", or "in scope." Those words are useful in conversation, but too blurry for review.
 
-For example, an agent might say:
+For example:
 
 ```text
 I made the deployment change and it is verified.
 ```
 
-That sentence can hide many different questions:
+That can hide many different questions:
 
 - Was the agent allowed to touch those files?
-- Did it stay inside the requested scope?
+- Did it stay inside scope?
 - Was anything formally proved?
-- Was the proof checked by Lean 4, or checked only under assumptions?
-- Was the result merely tested by a runtime parity check?
+- Was the proof checked by Lean 4, or checked under assumptions?
+- Was the result only tested by runtime parity?
 - Did the release artifact drift after export?
 - Can another reviewer replay the claim without trusting the author's summary?
 
-FSL exists to separate those claims into stable, named, reviewable objects. It is not just a collection of symbols or glyphs. It is a semantic reference layer for agent governance.
+FSL separates those claims into stable, named, reviewable objects.
 
-## The System Model
+## The Model
 
-This package connects five ideas:
+This package connects five layers:
 
 ```text
-HTM manifold -> governed bounded observer -> Lean theorem evidence -> SiMON runtime -> FSL semantic layer
+HTM manifold
+  -> governed bounded observer
+  -> Lean theorem evidence
+  -> SiMON governance/runtime evidence
+  -> FSL semantic references
 ```
 
-### 1. HTM Manifold
+### HTM Manifold
 
 The spatial substrate is an HTM, or Hierarchical Triangular Mesh, surface.
 
-In plain terms, the system divides a spherical surface into addressable cells. Cells can have neighbors, parents, children, and movement relations. This gives the model a way to talk about where an observer is, what local region it can inspect, and how it can move without pretending it sees the whole world at once.
-
-The important idea is simple:
+In plain terms, the system divides a spherical surface into addressable cells. Cells can have neighbors, parents, children, and movement relations. This gives the model a way to talk about where an observer is, what local region it can inspect, and how it can move without pretending it sees everything.
 
 ```text
 An agent acts from somewhere. It does not have global vision.
 ```
 
-### 2. Governed Bounded Observer
+### Governed Bounded Observer
 
 A governed bounded observer is an agent modeled with limits.
 
 It has:
 
-- an identity;
-- a position or local state;
-- a visible neighborhood;
-- a movement rule;
-- a time/history constraint;
-- a governance boundary;
-- a record of what claims it is allowed to make.
+- identity;
+- position or local state;
+- visible neighborhood;
+- movement rule;
+- time/history constraint;
+- governance boundary;
+- record of what claims it is allowed to make.
 
-This matters because a real autonomous agent should not be treated as an omniscient command executor. It should be treated as a bounded actor inside a governed world.
-
-The observer model asks questions like:
+The observer model asks:
 
 - What can this agent see?
 - Where may it move?
 - What history must it preserve?
 - What scope is it allowed to act inside?
-- What claims can be supported by the evidence?
+- What claims can be supported by evidence?
 
-### 3. Lean 4 Theorems And Evidence Classes
+### Lean 4 Theorem Evidence
 
 Lean 4 is a proof checker.
 
-For a first-time reader, the most important idea is this:
-
-```text
 A theorem is a precise claim that a proof checker can verify from definitions and allowed assumptions.
-```
 
-In ordinary writing, a claim might appear as a sentence:
+Instead of only saying:
 
 ```text
 The observer preserves valid history.
 ```
 
-In this package, that claim is given a theorem record, a stable theorem ID, a Lean declaration when available, a proof status, an assumption boundary, lifecycle status, and release checksums. That makes the claim inspectable instead of merely persuasive.
+this package gives the claim a theorem record, stable theorem ID, Lean declaration when available, proof status, assumption boundary, lifecycle status, and release checksums.
 
-This package includes public Lean source snapshots and a 32-record observer theorem registry. The theorem records describe claims about observer limits, movement, visibility, cost, identity, history, and commitment.
-
-Not every evidence class means the same thing. This package distinguishes:
-
-- **Machine-checked theorem:** Lean checks the theorem for the included source snapshot.
-- **Machine-checked under axioms:** Lean checks the theorem assuming explicit primitives or model assumptions.
-- **Lifecycle attestation:** a theorem record is active or otherwise classified in the exported lifecycle chain.
-- **Runtime parity:** an implementation matches reference behavior for declared checks.
-- **Checksum evidence:** a release artifact can be checked for byte-level drift.
-- **Governance authorization:** a mission/change was authorized under the governance protocol.
-
-Those categories should not be collapsed into one vague claim of "verified."
-
-#### How To Read Axioms
-
-An axiom is an explicit assumption or model primitive that the proof checker is allowed to use.
-
-That is different from an unfinished proof.
-
-In Lean-oriented language, unfinished proof placeholders are often called `sorry` or `admit`. If a file contains a real proof placeholder, it means some proof obligation was left open. This public package reports no code-level proof holes in the scanned Lean files.
-
-The declared axioms are different. They are intentionally visible boundaries where the package says, in effect:
-
-```text
-This part is accepted as a model assumption, not derived here from first principles.
-```
-
-That matters because some realities are external to the theorem file. For example, `gbo_vi_non_equivocating` is checked under an abstract cryptographic binding model. Lean checks the theorem relative to that model; the package does not claim to prove SHA-256 or all cryptographic security from first principles.
-
-So the reader should distinguish three things:
-
-| Term | Plain meaning | In this package |
-| --- | --- | --- |
-| Theorem | A claim checked by the proof system. | A stable theorem record with proof status and evidence links. |
-| Axiom | An explicit assumption or model boundary. | Publicly inventoried in `ASSUMPTIONS_APPENDIX.md` and `lean_assumptions.json`. |
-| Proof hole | An unfinished proof placeholder. | Count is 0 for scanned code-level Lean proof holes. |
-
-The `132` declared axioms are not `132` hidden failed proofs. They are the full inventory of declared assumptions across all scanned Lean files, including governance model bridge files. The high count is mostly from `governance_theorems.lean`, which models constitutional rules, packets, phases, UI widgets, and governance relations as propositional atoms and bridge relations. The count is public because the package is meant to expose proof boundaries, not hide them.
-
-Current proof-status boundary:
+This package includes:
 
 - 32 public theorem records;
 - 31 machine-checked theorem records;
@@ -143,82 +100,144 @@ Current proof-status boundary:
 
 The one axiom-dependent theorem is `gbo_vi_non_equivocating`. Its boundary is documented in `CRYPTO_AXIOM_BOUNDARY.md`.
 
-### 4. SiMON Runtime
+### Axioms, Theorems, And Proof Holes
+
+An axiom is an explicit assumption or model primitive that the proof checker is allowed to use.
+
+That is different from an unfinished proof.
+
+| Term | Plain meaning | In this package |
+| --- | --- | --- |
+| Theorem | A claim checked by the proof system. | A stable theorem record with proof status and evidence links. |
+| Axiom | An explicit assumption or model boundary. | Publicly inventoried in `ASSUMPTIONS_APPENDIX.md` and `lean_assumptions.json`. |
+| Proof hole | An unfinished proof placeholder such as `sorry` or `admit`. | Count is 0 for scanned code-level Lean proof holes. |
+
+The `132` declared axioms are not 132 hidden failed proofs. They are the visible assumption inventory across scanned Lean files, including governance model bridge files.
+
+### SiMON Runtime Boundary
 
 SiMON is the governed runtime and research system from which this public package was exported.
 
-The private/runtime system contains governance execution, mission lifecycle records, StateProof chain material, runtime code, and broader experimental surfaces. This repository is not that full runtime. It is the public evidence and language package.
+The full private/runtime system contains mission lifecycle records, governance execution, StateProof chain material, runtime code, and broader experimental surfaces. This repository is not the full runtime. It is the public evidence and language package.
 
-That separation is intentional. Readers should be able to inspect the public theorem records, proof-status boundaries, FSL exports, replay matrix, and checksums without needing access to the full SiMON implementation repository.
+That separation is intentional. A reader should be able to inspect theorem records, proof boundaries, FSL exports, replay artifacts, and checksums without access to the private SiMON repository.
 
-### 5. FSL Semantic Language Layer
+### Governance Roles And Rust Kernel Boundary
 
-FSL connects the pieces above.
+SiMON's reference governance system uses roles to keep action, inspection, authorization, and evidence separate.
 
-It gives stable names to claims that would otherwise be trapped in prose. A mission, theorem, proof status, assumption boundary, runtime boundary, release artifact, and external software identifier can all be connected through a shared semantic reference layer.
+In public terms:
 
-FSL does not replace tickets, commits, CI systems, policies, theorem files, or checksums. It gives them a shared language for agent-governance meaning.
+| Role | Public meaning | FSL-facing claim |
+| --- | --- | --- |
+| Research Agent | Investigates current state and evidence before action. | What is known, unknown, or queryable. |
+| Scope Agent | Bounds the proposed work before implementation. | Which files, packages, and deltas are in scope. |
+| File Inspector | Reads allowed files without changing them. | What the authorized scope actually contains. |
+| Builder | Performs the scoped implementation. | What changed inside the allowed boundary. |
+| Governor | Authorizes or rejects durable governance transitions. | Which transition is allowed to become governance evidence. |
+| Commander | Owns mission-level authority in the reference system. | Which mission-level action may proceed. |
 
-| Ordinary context | Project artifact | FSL / theorem nomenclature | What the reference means |
+FSL does not replace these roles. FSL gives stable names to the claims those roles produce. A scope boundary can be referenced as a declared scope. A builder delta can be referenced as a symbolic change. A Governor decision can be referenced as an authorization boundary. A StateProof can be referenced as a durable evidence class.
+
+Rust is being developed as a kernel/runtime hardening layer for selected governance checks. In this release, Rust is not the governance authority. It mirrors selected candidate and append-gate validation boundaries as shadow parity, helping detect malformed serialized records, policy drift, and authority-escalation attempts.
+
+The intended long-term value of a Rust kernel is type-safe enforcement at carefully promoted boundaries. Promotion requires explicit evidence, compatibility checks, rollback rules, and a governed authority decision. Until then, Rust remains evidence-bearing validation, not constitutional authority.
+
+## What FSL Adds
+
+FSL is the semantic language layer connecting these pieces.
+
+It gives stable names to claims that would otherwise remain loose prose. A mission, theorem, proof status, assumption boundary, runtime boundary, release artifact, and external software identifier can all be connected through shared symbolic references.
+
+| Ordinary context | Project artifact | FSL / theorem reference | Meaning |
 | --- | --- | --- | --- |
 | Work request | mission or update packet | `mission_open`, `declared_scope` | A bounded mission exists and declares what may change. |
-| Changed files | commit or file delta | `Δ_FSL`, `⊕_sync` | Symbolic/export state changed and was synchronized. |
+| Changed files | commit or file delta | `Δ_FSL`, `⊕_sync` | Symbolic/export state changed and synchronized. |
 | Allowed scope | `allowed_packages` | `declared_scope` | The agent may act only inside the declared boundary. |
-| Agent identity | DID and StateProof identity | `DID`, `identity`, `StateProof` | The observer identity is tracked across history. |
-| Spatial position | HTM cell or observer location | `M`, `space.htm_surface`, `adjacent` | The observer acts from a location on the manifold. |
-| Movement rule | movement or history packet | `valid_spatial_motion`, `valid_motion_stay` | Motion obeys the HTM neighbor/bounded-motion rule. |
-| History rule | trace or tick sequence | `valid_history_preserved`, `history`, `tick` | Valid history persists across admissible motion. |
-| Observer bound | local view or horizon | `gbo_iii_spatial_horizon`, `horizon`, `bounded` | The observer has a bounded spatial horizon. |
-| Temporal bound | tick or time horizon | `gbo_iii_temporal_horizon`, `time`, `tick` | The observer has a bounded temporal horizon. |
+| Agent identity | DID and StateProof identity | `DID`, `identity`, `StateProof` | Observer identity is tracked across history. |
+| Spatial position | HTM cell or observer location | `space.htm_surface`, `adjacent` | The observer acts from a location on the manifold. |
+| Movement rule | movement/history packet | `valid_spatial_motion`, `valid_motion_stay` | Motion obeys the HTM neighbor/bounded-motion rule. |
+| History rule | trace or tick sequence | `valid_history_preserved`, `tick` | Valid history persists across admissible motion. |
+| Observer bound | local view or horizon | `gbo_iii_spatial_horizon`, `bounded` | The observer has a bounded spatial horizon. |
+| Temporal bound | tick/time horizon | `gbo_iii_temporal_horizon`, `time` | The observer has a bounded temporal horizon. |
 | Formal proof reference | Lean declaration | `gbo_vi_non_equivocating` | The theorem is checked under explicit cryptographic assumptions. |
 | Release integrity | checksum file | `CHECKSUMS.sha256` | Package files can be checked for byte-level drift. |
 
-The point of FSL is that the right-hand column can be reviewed by humans and tools without relying on one broad sentence like "the agent made a verified change."
+The point of FSL is not decorative notation. It is durable meaning that humans and tools can review.
 
-For example, instead of leaving this as prose:
+## StateProof And Runtime Evidence Pipeline
 
-```text
-The deployment agent made a safe, verified change.
-```
+Recent hardening work added a governed path from semantic observation to durable evidence.
 
-An FSL-facing package can separate it into inspectable pieces:
+The internal pipeline is:
 
 ```text
-mission: governed production change
-scope: declared allowed packages
-actor: authorized implementation agent
-claim: change stayed in scope
-formal_reference: theorem/rule boundary when applicable
-proof_status: machine checked / axiom-dependent / runtime-only / lifecycle-attested
-release_integrity: checksum and archive boundary
+observable semantics
+  -> StateProof anchor candidate
+  -> anchor decision
+  -> append request
+  -> dry-run StateProof payload
+  -> Governor authorization
+  -> controlled append integration
+  -> Rust shadow parity
 ```
 
-That is the practical value of a symbolic language here: not decorative notation, but durable meaning that humans and tools can review.
+Important boundary:
 
-## Adoption Protocol
+```text
+Candidate evidence is not StateProof evidence.
+Dry-run payload is not StateProof append.
+Governor authorization is not direct append execution.
+Rust parity is not governance authority.
+```
 
-If you are new to this repository, use this path:
+The canonical StateProof append entrypoint remains:
 
-1. Read this README for orientation.
-2. Read `USE_CASES.md` for the governed production-change journey.
-3. Read `EVIDENCE_CLASSES.md` to understand what each evidence type means and does not mean.
-4. Replay one theorem claim:
+```text
+governance.identity.state_proof.generate_state_proof
+```
 
-   ```bash
-   python3.12 scripts/replay_fsl_claim.py gbo_iii_temporal_horizon
-   ```
+Rust currently mirrors candidate and append-gate validation as shadow parity only. It can help detect malformed records and authority escalation attempts, but it is not promoted to authority.
 
-5. Inspect the theorem registry in `THEOREM_REGISTRY.md` or `theorem_registry.json`.
-6. Read `formal_whitepaper.md` for theorem-by-theorem proof-status claims.
-7. Map your own system's names, such as tickets, commits, policies, CI jobs, or deployment IDs, to FSL-style semantic references.
+See:
 
-For an axiom-dependent replay example:
+- `RUST_PARITY_NOTE.md`
+- `RUST_AUTHORITY_CRITERIA.md`
+- `docs/fsl_rust_authority_promotion_audit.md`
+
+## Replay One Claim
+
+From the public package directory:
+
+```bash
+python3.12 scripts/replay_fsl_claim.py gbo_iii_temporal_horizon
+```
+
+For an axiom-dependent example:
 
 ```bash
 python3.12 scripts/replay_fsl_claim.py gbo_vi_non_equivocating
 ```
 
+To list available theorem IDs:
+
+```bash
+python3.12 scripts/replay_fsl_claim.py --list
+```
+
 The replay script is not a Lean prover and not a governance authority. It helps a reviewer traverse one public claim from theorem ID to evidence boundary.
+
+## Adoption Protocol
+
+If you are new to this repository:
+
+1. Read this README.
+2. Read `USE_CASES.md` for the governed production-change journey.
+3. Read `EVIDENCE_CLASSES.md` to understand evidence boundaries.
+4. Replay one theorem claim with `scripts/replay_fsl_claim.py`.
+5. Inspect `THEOREM_REGISTRY.md` or `theorem_registry.json`.
+6. Read `formal_whitepaper.md` for theorem-by-theorem proof status.
+7. Map your own system names, such as tickets, commits, policies, CI jobs, deployment IDs, or audit records, to FSL-style semantic references.
 
 ## What This Package Is
 
@@ -226,9 +245,9 @@ This package is:
 
 - a public, versioned release of the FSL language and observer theorem evidence bundle;
 - a formal proof-status package for 32 public theorem records;
-- a publication package containing human-readable and machine-readable artifacts;
 - a replayable evidence package with checksums;
-- a bridge between governed autonomous-agent action and inspectable semantic claims.
+- a bridge between governed autonomous-agent action and inspectable semantic claims;
+- a publication package containing human-readable and machine-readable artifacts.
 
 ## What This Package Is Not
 
@@ -240,8 +259,24 @@ This package is not:
 - a replacement for governance execution;
 - a runtime authority handoff to Rust;
 - a claim that generated exports are parser authority;
+- a claim that Rust can append StateProofs;
 - a claim that every governance axiom has been derived from first principles;
 - a claim that every real-world implementation detail is formally proved.
+
+## Current Snapshot
+
+- FSL symbols: 179
+- FSL bundles: 15
+- FSL tiers: A 94, B 70, C 8, D 7
+- Glyph candidates: 25
+- Glyph promotion state: 3 promotable now, 22 requiring alias plans
+- Observer kernel theorem records: 32 of 32 complete
+- Lean coverage snapshot: 31 checked theorem records, 1 axiom-dependent, 0 partial, 0 definition-only, 0 planned
+- Theorem lifecycle snapshot: 32 active records
+- Lean assumptions snapshot: 132 declared axioms, 0 code-level `sorry`/`admit` proof holes
+- Rust StateProof candidate parity: shadow only
+- Rust append-gate parity: shadow only
+- Rust authority promotion: not granted
 
 ## Reader Paths
 
@@ -261,7 +296,7 @@ For evidence boundaries:
 - `replay_matrix.json`
 - `scripts/replay_fsl_claim.py`
 
-For the observer theorem model and proof-status account:
+For theorem and proof-status review:
 
 - `whitepaper.md`
 - `formal_whitepaper.md`
@@ -275,7 +310,7 @@ For the observer theorem model and proof-status account:
 - `FORMAL_PROOF_BUNDLE.md`
 - `CRYPTO_AXIOM_BOUNDARY.md`
 
-For the FSL language:
+For FSL language review:
 
 - `fsl_governed_symbolic_language.md`
 - `fsl_specification.md`
@@ -293,6 +328,7 @@ For release and runtime boundaries:
 - `STATEPROOF_NOTE.md`
 - `RUST_PARITY_NOTE.md`
 - `RUST_AUTHORITY_CRITERIA.md`
+- `docs/fsl_rust_authority_promotion_audit.md`
 - `PUBLIC_REPO_NOTES.md`
 
 For PDF presentation:
@@ -301,26 +337,11 @@ For PDF presentation:
 - `overleaf/main.tex`
 - `overleaf/references.bib`
 
-## Current Snapshot
-
-- FSL symbols: 179
-- FSL bundles: 15
-- FSL tiers: A 94, B 70, C 8, D 7
-- Glyph candidates: 25
-- Glyph promotion state: 3 promotable now, 22 requiring alias plans
-- Observer kernel theorem records: 32 of 32 complete
-- Observer theorem sources: `lean/gbo_theorems.lean` and `fsl/SYSTEM.yaml`
-- Lean coverage snapshot: 31 checked theorem records, 1 axiom-dependent, 0 partial, 0 definition-only, 0 planned
-- Theorem lifecycle snapshot: 32 active records, chain valid
-- Lean assumptions snapshot: 132 declared axioms, 0 code-level `sorry`/`admit` proof holes
-- Formal proof bundle: included with public Lean source snapshots
-- Formal whitepaper: included as `formal_whitepaper.md`
-
 ## Repository Map
 
 - `README.md`: public landing page and orientation map
 - `ABSTRACT.md`: compact overview for first-time readers
-- `USE_CASES.md`: practical adoption scenarios and the governed autonomous-agent example
+- `USE_CASES.md`: practical adoption scenarios and governed autonomous-agent example
 - `EVIDENCE_CLASSES.md`: distinctions between proof, attestation, export, parity, authorization, checksum, and StateProof evidence
 - `INDEPENDENT_REPLAY.md`: reviewer playbook for traversing theorem claims to evidence
 - `scripts/replay_fsl_claim.py`: one-theorem public replay command
@@ -332,7 +353,8 @@ For PDF presentation:
 - `overleaf/`: PDF-ready LaTeX paper source
 - `STATEPROOF_NOTE.md`: public explanation of raw-chain status and repaired canonical verification
 - `RUST_PARITY_NOTE.md`: public explanation of Rust/Python parity status and current authority boundary
-- `RUST_AUTHORITY_CRITERIA.md`: public criteria for any future Rust governance-authority promotion
+- `RUST_AUTHORITY_CRITERIA.md`: public criteria for future Rust governance-authority promotion
+- `docs/fsl_rust_authority_promotion_audit.md`: report-only audit explaining why Rust remains shadow parity
 - `THEOREM_REGISTRY.md`: human-readable observer theorem registry
 - `theorem_registry.json`: machine-readable observer theorem registry
 - `theorem_lifecycle.json`: machine-readable public theorem lifecycle export
@@ -354,7 +376,7 @@ For PDF presentation:
 - `PACKAGE_MAP.md`: layer map connecting papers, exports, and provenance
 - `RELEASE_NOTES.md`: release contents and verification notes
 - `RELEASE_POLICY.md`: versioning, compatibility, and publication policy
-- `RELEASE_CANDIDATE_AUDIT.md`: claim-safety and public-boundary audit for this release candidate
+- `RELEASE_CANDIDATE_AUDIT.md`: claim-safety and public-boundary audit
 - `ERRATA.md`: horizon correction and spatial-horizon resolution
 - `HORIZON_RECONCILIATION.md`: governed reconciliation note for the horizon lifecycle gap
 - `PUBLICATION_TAG.md`: governed release-freeze and tag-ready record

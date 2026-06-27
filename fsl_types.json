@@ -315,11 +315,11 @@
       "governance_decisions_ignore_promotion_gate": true
     },
     "non_goals": [
-      "Do not promote any glyph in this mission.",
+      "Do not promote any glyph during this release stage.",
       "Do not change active symbol values.",
       "Do not rename theorem IDs or Lean declarations.",
       "Do not make promotion gates parser, validator, runtime, or governance inputs.",
-      "Do not regenerate publication exports in this mission."
+      "Do not regenerate publication exports during this release stage."
     ]
   },
   "role_registry": [

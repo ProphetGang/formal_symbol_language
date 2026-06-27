@@ -33,7 +33,7 @@ Core artifacts:
 - `ERRATA.md`
 - `HORIZON_RECONCILIATION.md`
 
-This layer contains the governed bounded observer model. The position whitepaper gives the narrative and theorem arc. The formal whitepaper states theorem-by-theorem proof status from the public proof bundle. The theorem registry gives the public 32-record theorem export derived from the queryable observer kernel. The theorem lifecycle export gives the public chain-derived lifecycle status for those records. The StateProof note explains how to interpret the disclosed repaired canonical proof-chain status. `ERRATA.md` records the Mission 53 horizon correction and Mission 54 spatial-horizon resolution. `HORIZON_RECONCILIATION.md` records the governed reconciliation for the Mission 53/54 lifecycle gap.
+This layer contains the governed bounded observer model. The position whitepaper gives the narrative and theorem arc. The formal whitepaper states theorem-by-theorem proof status from the public proof bundle. The theorem registry gives the public 32-record theorem export derived from the queryable observer kernel. The theorem lifecycle export gives the public chain-derived lifecycle status for those records. The StateProof note explains how to interpret the disclosed repaired canonical proof-chain status. `ERRATA.md` records the horizon correction and spatial/temporal horizon proof-status resolution. `HORIZON_RECONCILIATION.md` records the governed reconciliation for horizon publication history.
 
 ## Layer 1b: runtime parity boundary
 
@@ -83,7 +83,7 @@ Core artifacts:
 - `.governance/proof_terms/*.jsonl` for the relevant missions
 - `.governance/identity/state_proofs.jsonl`
 
-This layer is the audit trail. It should be referenced in paper-facing releases and copied only into audit-facing releases.
+This layer is the audit trail. It should be summarized in paper-facing releases and copied only into audit-facing releases.
 
 ## Layer 5: release verification
 
@@ -166,7 +166,7 @@ In short:
 theorem stack -> observer kernel -> theorem registry -> FSL registry -> publication exports -> governed release package
 ```
 
-The previous hardening missions made FSL easier to document and safer to extend. This package makes the relationship legible: the whitepaper explains the theory, the FSL paper explains the language, the exports provide the dictionary, and the governance trail proves how the documents came to exist.
+The previous hardening work made FSL easier to document and safer to extend. This package makes the relationship legible: the whitepaper explains the theory, the FSL paper explains the language, the exports provide the dictionary, and the governance trail records how the documents came to exist.
 
 ## Inclusion policy
 

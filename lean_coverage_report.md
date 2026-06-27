@@ -2,8 +2,6 @@
 
 This document states exactly how the 32 public observer theorem records relate to the current Lean sources included in the SiMON source tree. It is intentionally conservative: a theorem is only called fully checked when a matching Lean theorem/lemma exists, the audited Lean file checks, and no special limitation applies.
 
-Baseline mission: `MISSION-FSL-TEMPORAL-HORIZON-PROOF`
-
 Baseline refreshed: June 14, 2026
 
 ## Summary
@@ -51,9 +49,9 @@ Baseline refreshed: June 14, 2026
 
 - This audit does not claim every public theorem summary is fully formalized. It reports the current formal coverage honestly.
 - `gbo_vi_non_equivocating` is machine-checked under the explicit cryptographic axiom boundary documented in `CRYPTO_AXIOM_BOUNDARY.md`.
-- Mission 54 closes the spatial horizon caveat with an axiom-free combinatorial HTM root-face partition theorem, `htm_visible_cells_half_bound`.
+- The current proof bundle closes the spatial horizon caveat with an axiom-free combinatorial HTM root-face partition theorem, `htm_visible_cells_half_bound`.
 - `gbo_iii_temporal_horizon` is now an axiom-free temporal product-cycle theorem rather than a weak existential dark witness.
-- Mission 54 strengthens `gbo_impossible_complete_observation` to a universal non-empty spatial dark-complement theorem derived from `gbo_iii_spatial_horizon`.
+- The current proof bundle strengthens `gbo_impossible_complete_observation` to a universal non-empty spatial dark-complement theorem derived from `gbo_iii_spatial_horizon`.
 - `governed_bounded_observer` is classified as checked because the public theorem claim has been narrowed to the checked Lean statement.
 - `valid_spatial_motion` remains a stable Lean predicate and is backed by `valid_spatial_motion_iff_cell_valid_motion`.
 - `valid_history_preserved` is Lean-checked for the two-state admissible transition case.
@@ -94,8 +92,8 @@ No theorem record remains partial. `gbo_iii_temporal_horizon` is now classified 
 | 14 | `gbo_ii_did_preserved` | `observer_motion` | `gbo_ii_did_preserved` | `lean/gbo_theorems.lean:277` | `lean_theorem_checked` | `machine_checked_theorem` | Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit. |
 | 15 | `gbo_ii_no_self_loop` | `observer_motion` | `gbo_ii_no_self_loop` | `lean/gbo_theorems.lean:283` | `lean_theorem_checked` | `machine_checked_theorem` | Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit. |
 | 16 | `gbo_ii_no_repeated_tick` | `observer_motion` | `gbo_ii_no_repeated_tick` | `lean/gbo_theorems.lean:288` | `lean_theorem_checked` | `machine_checked_theorem` | Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit. |
-| 17 | `gbo_iii_spatial_horizon` | `observer_horizon` | `gbo_iii_spatial_horizon` | `lean/gbo_theorems.lean:322` | `lean_theorem_checked` | `machine_checked_theorem` | Mission 54 replaces the weak existential witness with htm_visible_cells_half_bound and a non-empty dark complement at the observer depth. This is a combinatorial HTM partition theorem, not a physical spherical-visibility axiom. |
-| 18 | `gbo_iii_temporal_horizon` | `observer_horizon` | `gbo_iii_temporal_horizon` | `lean/gbo_theorems.lean:368` | `lean_theorem_checked` | `machine_checked_theorem` | Mission temporal horizon proof replaces the weak dark=1 witness with temporalVisibleWindow + temporalDarkWindow = temporalProductCycle and visible < total for p1>0, p2>1. |
+| 17 | `gbo_iii_spatial_horizon` | `observer_horizon` | `gbo_iii_spatial_horizon` | `lean/gbo_theorems.lean:322` | `lean_theorem_checked` | `machine_checked_theorem` | The current proof bundle replaces the weak existential witness with htm_visible_cells_half_bound and a non-empty dark complement at the observer depth. This is a combinatorial HTM partition theorem, not a physical spherical-visibility axiom. |
+| 18 | `gbo_iii_temporal_horizon` | `observer_horizon` | `gbo_iii_temporal_horizon` | `lean/gbo_theorems.lean:368` | `lean_theorem_checked` | `machine_checked_theorem` | The current proof bundle replaces the weak dark=1 witness with temporalVisibleWindow + temporalDarkWindow = temporalProductCycle and visible < total for p1>0, p2>1. |
 | 19 | `gbo_iv_cost_positive` | `observer_cost` | `gbo_iv_cost_positive` | `lean/gbo_theorems.lean:395` | `lean_theorem_checked` | `machine_checked_theorem` | Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit. |
 | 20 | `gbo_iv_cost_ge_left` | `observer_cost` | `gbo_iv_cost_ge_left` | `lean/gbo_theorems.lean:404` | `lean_theorem_checked` | `machine_checked_theorem` | Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit. |
 | 21 | `gbo_iv_cost_ge_right` | `observer_cost` | `gbo_iv_cost_ge_right` | `lean/gbo_theorems.lean:409` | `lean_theorem_checked` | `machine_checked_theorem` | Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit. |
@@ -103,7 +101,7 @@ No theorem record remains partial. `gbo_iii_temporal_horizon` is now classified 
 | 23 | `gbo_v_underdetermination` | `observer_ambiguity` | `gbo_v_underdetermination` | `lean/gbo_theorems.lean:426` | `lean_theorem_checked` | `machine_checked_theorem` | Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit. |
 | 24 | `anchor_nonuniqueness_exists` | `observer_ambiguity` | `anchor_nonuniqueness_exists` | `lean/gbo_theorems.lean:446` | `lean_theorem_checked` | `machine_checked_theorem` | Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit. |
 | 25 | `gbo_vi_non_equivocating` | `observer_commitment` | `gbo_vi_non_equivocating` | `lean/gbo_theorems.lean:477` | `lean_theorem_axiom_dependent` | `machine_checked_under_axioms` | The theorem checks in Lean under the explicit cryptographic axiom boundary documented in CRYPTO_AXIOM_BOUNDARY.md. It proves uniqueness in the abstract commitment model; it does not internally prove SHA-256 collision resistance or validate a concrete runtime commitment implementation. |
-| 26 | `gbo_impossible_complete_observation` | `observer_impossibility` | `gbo_impossible_complete_observation` | `lean/gbo_theorems.lean:484` | `lean_theorem_checked` | `machine_checked_theorem` | Mission 54 strengthens this theorem to ∀ (_g : GBC), ∃ dark, dark > 0, derived from the strengthened spatial horizon theorem. |
+| 26 | `gbo_impossible_complete_observation` | `observer_impossibility` | `gbo_impossible_complete_observation` | `lean/gbo_theorems.lean:484` | `lean_theorem_checked` | `machine_checked_theorem` | The current proof bundle strengthens this theorem to ∀ (_g : GBC), ∃ dark, dark > 0, derived from the strengthened spatial horizon theorem. |
 | 27 | `gbo_impossible_zero_cost` | `observer_impossibility` | `gbo_impossible_zero_cost` | `lean/gbo_theorems.lean:491` | `lean_theorem_checked` | `machine_checked_theorem` | Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit. |
 | 28 | `gbo_impossible_self_certification` | `observer_impossibility` | `gbo_impossible_self_certification` | `lean/gbo_theorems.lean:497` | `lean_theorem_checked` | `machine_checked_theorem` | Matching Lean theorem/lemma declaration found and audited Lean file checks without sorry/admit. |
 | 29 | `governed_bounded_observer` | `observer_unified` | `governed_bounded_observer` | `lean/gbo_theorems.lean:507` | `lean_theorem_checked` | `machine_checked_theorem` | Public claim narrowed to match the checked Lean theorem statement; horizon, semantic ambiguity, and commitment claims remain represented by their own theorem records rather than this unified bridge. |

@@ -2,8 +2,7 @@
   "metadata": {
     "title": "FSL Observer Theorem Lean Coverage Audit",
     "package": "fsl_observer_theorem_public_repo",
-    "package_version": "1.1.1",
-    "mission_id": "MISSION-FSL-TEMPORAL-HORIZON-PROOF",
+    "package_version": "1.1.2",
     "public_export": true,
     "canonical": false,
     "theorem_count": 32,
@@ -82,12 +81,12 @@
     "notes": [
       "This audit does not claim every public theorem summary is fully formalized. It reports the current formal coverage honestly.",
       "gbo_vi_non_equivocating is machine-checked under the explicit cryptographic axiom boundary documented in CRYPTO_AXIOM_BOUNDARY.md.",
-      "Mission 54 closes the spatial horizon caveat with an axiom-free combinatorial HTM root-face partition theorem, htm_visible_cells_half_bound.",
-      "Mission 54 strengthens gbo_impossible_complete_observation to a universal non-empty spatial dark-complement theorem derived from gbo_iii_spatial_horizon.",
+      "The current proof bundle closes the spatial horizon caveat with an axiom-free combinatorial HTM root-face partition theorem, htm_visible_cells_half_bound.",
+      "The current proof bundle strengthens gbo_impossible_complete_observation to a universal non-empty spatial dark-complement theorem derived from gbo_iii_spatial_horizon.",
       "governed_bounded_observer is classified as checked because the public theorem claim has been narrowed to the checked Lean statement.",
       "valid_spatial_motion remains a stable Lean predicate and is backed by valid_spatial_motion_iff_cell_valid_motion.",
       "valid_history_preserved is Lean-checked for the two-state admissible transition case.",
-      "MISSION-FSL-TEMPORAL-HORIZON-PROOF closes the temporal horizon caveat with an axiom-free product-cycle window theorem."
+      "The current proof bundle closes the temporal horizon caveat with an axiom-free product-cycle window theorem."
     ],
     "baseline_refreshed_at": "2026-06-14",
     "formal_whitepaper_track": true,
@@ -106,7 +105,6 @@
     },
     "theorem_lifecycle": {
       "lifecycle_path": "lean/theorem_lifecycle.jsonl",
-      "mission_id": "MISSION-FSL-THEOREM-LIFECYCLE-POPULATION",
       "chain_valid": true,
       "record_count": 32,
       "tracked_theorem_count": 32,
@@ -114,14 +112,12 @@
         "active": 32
       },
       "public_export_pending": false,
-      "public_export_mission": "MISSION-FSL-LIFECYCLE-EXPORT",
       "public_export_path": "theorem_lifecycle.json",
       "registry_lifecycle_merge": true
     },
     "assumptions_audit": {
       "appendix_path": "ASSUMPTIONS_APPENDIX.md",
       "machine_readable_path": "lean_assumptions.json",
-      "mission_id": "MISSION-FSL-NO-SORRY-AXIOM-AUDIT",
       "lean_file_count": 10,
       "axiom_count": 132,
       "proof_hole_count": 0,
@@ -559,7 +555,7 @@
       "coverage_status": "lean_theorem_checked",
       "proof_status": "machine_checked_theorem",
       "axiom_dependencies": [],
-      "notes": "Mission 54 replaces the weak existential witness with htm_visible_cells_half_bound and a non-empty dark complement at the observer depth. This is a combinatorial HTM partition theorem, not a physical spherical-visibility axiom.",
+      "notes": "The current proof bundle replaces the weak existential witness with htm_visible_cells_half_bound and a non-empty dark complement at the observer depth. This is a combinatorial HTM partition theorem, not a physical spherical-visibility axiom.",
       "lean_file": "lean/gbo_theorems.lean",
       "lean_line": 322,
       "lean_declaration_kind": "theorem"
@@ -585,7 +581,7 @@
       "coverage_status": "lean_theorem_checked",
       "proof_status": "machine_checked_theorem",
       "axiom_dependencies": [],
-      "notes": "Mission temporal horizon proof replaces the weak dark=1 witness with temporalVisibleWindow + temporalDarkWindow = temporalProductCycle and visible < total for p1>0, p2>1.",
+      "notes": "The current proof bundle replaces the weak dark=1 witness with temporalVisibleWindow + temporalDarkWindow = temporalProductCycle and visible < total for p1>0, p2>1.",
       "lean_file": "lean/gbo_theorems.lean",
       "lean_line": 368,
       "lean_declaration_kind": "theorem"
@@ -798,7 +794,7 @@
       "coverage_status": "lean_theorem_checked",
       "proof_status": "machine_checked_theorem",
       "axiom_dependencies": [],
-      "notes": "Mission 54 strengthens this theorem to ∀ (_g : GBC), ∃ dark, dark > 0, derived from the strengthened spatial horizon theorem.",
+      "notes": "The current proof bundle strengthens this theorem to ∀ (_g : GBC), ∃ dark, dark > 0, derived from the strengthened spatial horizon theorem.",
       "lean_file": "lean/gbo_theorems.lean",
       "lean_line": 484,
       "lean_declaration_kind": "theorem"

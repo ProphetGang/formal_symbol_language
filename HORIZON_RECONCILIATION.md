@@ -1,22 +1,20 @@
 # Horizon Claim Reconciliation
 
-Mission: `MISSION-FSL-HORIZON-CLAIM-RECONCILIATION`
-
 Date: June 22, 2026
 
 ## Purpose
 
-This note reconciles the public Mission 53 and Mission 54 horizon-correction labels with the governed mission proofchain.
+This note reconciles the horizon-correction publication history with the current governed proofchain.
 
-Mission 53 and Mission 54 were used as public document labels for:
+Earlier public drafts used mission-style labels for:
 
 - the horizon claim correction recorded in `ERRATA.md`;
 - the spatial-horizon proof strengthening in `lean/gbo_theorems.lean`;
-- the public proof-status update from `28 / 1 / 3` to `30 / 1 / 1`, later superseded by `MISSION-FSL-TEMPORAL-HORIZON-PROOF` to `31 / 1 / 0`.
+- the public proof-status update from `28 / 1 / 3` to `30 / 1 / 1`, later superseded by the temporal horizon proof closure to `31 / 1 / 0`.
 
-Those labels were not opened as governed lifecycle missions before the file edits occurred. Therefore, they do not have clean pre-edit mission-open snapshots in the StateProof chain.
+Those labels were not clean release-stage identifiers. Therefore, the public package now states the evidence status directly instead of asking readers to interpret internal lifecycle labels.
 
-This reconciliation mission does not pretend otherwise. It records the current evidence and the procedural gap.
+This reconciliation does not pretend otherwise. It records the current evidence and the procedural gap.
 
 ## Current Evidence
 
@@ -50,7 +48,7 @@ Its Lean declaration proves a product-cycle temporal horizon: for a positive obs
 
 ## Governance Reconciliation
 
-This mission records that the Mission 53 and Mission 54 edits were technically verified but procedurally incomplete as governed lifecycle missions.
+This record acknowledges that the early horizon-correction labels were procedurally noisy, while the current proof-status evidence is inspectable.
 
 The reconciled claim is:
 

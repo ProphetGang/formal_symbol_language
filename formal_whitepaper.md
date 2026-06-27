@@ -1,8 +1,6 @@
 # Formal Whitepaper: FSL Governed Observer Theorem Package
 
-Version: `1.1.1`
-
-Mission: `MISSION-FSL-FORMAL-WHITEPAPER`
+Version: `1.1.2`
 
 Date: June 19, 2026
 
@@ -115,7 +113,7 @@ This paper therefore claims that `gbo_vi_non_equivocating` is proved under the a
 
 ## Horizon Closure And Model Boundaries
 
-Mission 53 corrected the proof-status classification for the horizon records. Mission 54 then closed the spatial part of that correction without introducing a spatial axiom.
+The current proof bundle corrects the proof-status classification for the horizon records and closes the spatial part of that correction without introducing a spatial axiom.
 
 The strengthened Lean source defines the HTM root-face partition at a depth:
 

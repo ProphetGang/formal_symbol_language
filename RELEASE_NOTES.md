@@ -2,7 +2,7 @@
 
 Package: SiMON FSL + Governed Bounded Observer Publication Bundle
 
-Current public package version: `1.1.1`
+Current public package version: `1.1.2`
 
 This bundle is a clean publication directory for understanding FSL and its connection to the governed bounded observer theorem stack. It is intentionally a directory bundle, not a zip archive. Archive creation should happen only after checksum review.
 
@@ -16,6 +16,7 @@ The bundle contains:
 - Public StateProof chain status note: `STATEPROOF_NOTE.md`
 - Public Rust parity boundary note: `RUST_PARITY_NOTE.md`
 - Public Rust authority-promotion criteria: `RUST_AUTHORITY_CRITERIA.md`
+- Public Rust authority-promotion audit: `docs/fsl_rust_authority_promotion_audit.md`
 - The public observer theorem registry: `THEOREM_REGISTRY.md`, `theorem_registry.json`
 - The public theorem lifecycle export: `theorem_lifecycle.json`
 - The public independent replay tool: `scripts/replay_fsl_claim.py`
@@ -36,11 +37,26 @@ The bundle contains:
 - Repeatable export manifest: `EXPORT_MANIFEST.json`
 - Checksums: `CHECKSUMS.sha256`
 
+## Version 1.1.2
+
+Version `1.1.2` is a patch release for public documentation of the semantic StateProof pipeline and Rust shadow-parity boundary.
+
+It incorporates the current reader-facing release updates:
+
+- The public README now explains the staged evidence path from observable semantics to StateProof anchor candidate, anchor decision, append request, dry-run payload, Governor authorization, controlled append integration, and Rust shadow parity.
+- The public README now explains governance roles, how FSL names role-produced claims, and why Rust remains a kernel hardening layer rather than governance authority.
+- `USE_CASES.md` now explains why semantic observations do not immediately become durable StateProof evidence.
+- `RUST_PARITY_NOTE.md` now distinguishes the older Rust/Python parity runner evidence from the newer FSL StateProof candidate and append-gate shadow parity checks.
+- `RUST_AUTHORITY_CRITERIA.md` now points to the report-only promotion audit.
+- `docs/fsl_rust_authority_promotion_audit.md` is included as the public audit explaining why Rust remains shadow parity and is not promoted to authority.
+
+No theorem IDs, Lean declarations, parser behavior, validator behavior, FSL registry source semantics, StateProof append authority, Rust runtime authority, or governance execution behavior changed in `1.1.2`.
+
 ## Version 1.1.1
 
 Version `1.1.1` is a patch release for public clarity and claim-boundary discipline.
 
-It incorporates the reader-facing improvements from Missions 57, 58, and 59:
+It incorporates the reader-facing adoption improvements from the 1.1.1 documentation pass:
 
 - `USE_CASES.md` now explains the governed bounded observer as a journey through governed space, governed time, bounded action, FSL claim references, and independent replay.
 - `README.md` now introduces HTM manifold, governed bounded observer, Lean theorem evidence, SiMON runtime boundaries, and FSL as a semantic language layer before asking readers to inspect the artifact set.
@@ -71,6 +87,9 @@ It is a position-paper and publication-package release. It does not claim comple
 - Formal proof bundle: included with public Lean source snapshots
 - Formal whitepaper: included with theorem-by-theorem proof-status claims
 - Overleaf paper package: included as PDF-ready LaTeX source
+- Rust StateProof candidate parity: shadow only
+- Rust append-gate parity: shadow only
+- Rust authority promotion: not granted
 
 ## Canonical and derived artifacts
 
@@ -94,13 +113,13 @@ It is a position-paper and publication-package release. It does not claim comple
 
 `OVERLEAF_README.md` and `overleaf/` provide a PDF-facing LaTeX paper package for Overleaf. They are presentation artifacts and do not replace the formal whitepaper or proof bundle.
 
-`CRYPTO_AXIOM_BOUNDARY.md` records the Mission 45 decision that `gbo_vi_non_equivocating` is a checked theorem under an explicit cryptographic axiom boundary, not an assumption-free cryptographic proof.
+`CRYPTO_AXIOM_BOUNDARY.md` records that `gbo_vi_non_equivocating` is a checked theorem under an explicit cryptographic axiom boundary, not an assumption-free cryptographic proof.
 
-`FORMAL_COVERAGE_BASELINE.md` records the current formal-whitepaper-track baseline after `MISSION-FSL-TEMPORAL-HORIZON-PROOF`: 31 checked theorem records, 1 axiom-dependent record, 0 partial records, 0 definition-only records, 0 planned records, 32 publicly exported active theorem lifecycle records, a completed assumptions audit, an assembled formal proof bundle, and the formal whitepaper.
+`FORMAL_COVERAGE_BASELINE.md` records the current formal-whitepaper-track baseline: 31 checked theorem records, 1 axiom-dependent record, 0 partial records, 0 definition-only records, 0 planned records, 32 publicly exported active theorem lifecycle records, a completed assumptions audit, an assembled formal proof bundle, and the formal whitepaper.
 
-`ERRATA.md` records the Mission 53 correction and Mission 54 resolution: `gbo_iii_spatial_horizon` and `gbo_impossible_complete_observation` are now machine-checked theorem records, and `gbo_iii_temporal_horizon` is now closed by the temporal product-cycle proof.
+`ERRATA.md` records the horizon correction and proof-status resolution: `gbo_iii_spatial_horizon` and `gbo_impossible_complete_observation` are now machine-checked theorem records, and `gbo_iii_temporal_horizon` is now closed by the temporal product-cycle proof.
 
-`HORIZON_RECONCILIATION.md` records that Mission 53 and Mission 54 were public document labels rather than clean governed lifecycle missions. It preserves the procedural gap honestly while documenting the verified evidence that led to the current `31 / 1 / 0` proof-status boundary.
+`HORIZON_RECONCILIATION.md` preserves the horizon-correction publication history honestly while documenting the verified evidence that led to the current `31 / 1 / 0` proof-status boundary.
 
 ## Proofchain status
 
@@ -108,15 +127,19 @@ At mission start, `python3.12 -m systemq.cli_simonq verify` returned `result: pa
 
 `STATEPROOF_NOTE.md` is included so readers can distinguish raw-chain validity, repaired canonical validity, preserved historical evidence, and the public package boundary.
 
-This bundle mission is documentation and assembly only. It does not modify parser behavior, validator behavior, Lean theorem references, Rust runtime behavior, FSL registry source semantics, or governance execution.
+This release is documentation and assembly only. It does not modify parser behavior, validator behavior, Lean theorem references, Rust runtime authority, FSL registry source semantics, StateProof append authority, or governance execution.
 
 ## Rust parity status
 
-Rust governance surfaces are currently treated as shadow/parity evidence. The current parity evidence reports 12 passing cases, 0 failures, and 0 skips across mission gate predicates, FSL sort checks, and mesh movement predicates.
+Rust governance surfaces are currently treated as shadow/parity evidence. The earlier public parity evidence reports 12 passing cases, 0 failures, and 0 skips across mission gate predicates, FSL sort checks, and mesh movement predicates.
+
+Additional internal Rust shadow parity now exists for FSL StateProof candidate validation and append-gate validation. These checks help detect malformed serialized records and authority escalation attempts. They do not promote Rust to governance authority and do not permit Rust to append StateProof.
 
 `RUST_PARITY_NOTE.md` is included so readers can distinguish Rust compatibility evidence from governance authority. This release does not promote Rust to constitutional authority and does not alter current governance execution.
 
-`RUST_AUTHORITY_CRITERIA.md` defines the evidence required before a later governed mission may promote any Rust surface to governance authority. It is a criteria document only; it does not perform promotion.
+`RUST_AUTHORITY_CRITERIA.md` defines the evidence required before a later governed release may promote any Rust surface to governance authority. It is a criteria document only; it does not perform promotion.
+
+`docs/fsl_rust_authority_promotion_audit.md` records the current audit finding: Rust should remain shadow parity until shared Python/Rust fixtures, canonical dry-run observation checks, and an explicit governed promotion decision exist.
 
 ## Release-candidate audit
 
@@ -124,9 +147,9 @@ Rust governance surfaces are currently treated as shadow/parity evidence. The cu
 
 ## Publication tag status
 
-`PUBLICATION_TAG.md` records this package as the governed `1.1.1` public position-paper, language-package, proof-bundle, formal-whitepaper, and reader-clarity patch release. The recommended tag is `fsl-observer-theorem-v1.1.1` after the public package files are committed.
+`PUBLICATION_TAG.md` records this package as the governed `1.1.2` public position-paper, language-package, proof-bundle, formal-whitepaper, StateProof/Rust-boundary documentation patch release. The recommended tag is `fsl-observer-theorem-v1.1.2` after the public package files are committed.
 
-This tag represents the current formal whitepaper package for the `1.1.1` public package boundary. The proof-status distribution remains `31 / 1 / 0`: 31 machine-checked theorem records, 1 machine-checked-under-explicit-axioms record, and no partial, definition-only, or planned records. It does not claim assumption-free cryptographic proof or Rust runtime authority.
+This tag represents the current formal whitepaper package for the `1.1.2` public package boundary. The proof-status distribution remains `31 / 1 / 0`: 31 machine-checked theorem records, 1 machine-checked-under-explicit-axioms record, and no partial, definition-only, or planned records. It does not claim assumption-free cryptographic proof, StateProof append authority from semantic candidates alone, or Rust runtime authority.
 
 ## Export process
 

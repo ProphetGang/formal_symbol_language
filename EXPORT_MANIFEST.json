@@ -1,14 +1,14 @@
 {
   "manifest_version": "1.0",
   "package": "fsl_observer_theorem_public_repo",
-  "package_version": "1.1.1",
+  "package_version": "1.1.2",
   "target_default": "publication/fsl_observer_theorem_public_repo",
   "checksum_file": "CHECKSUMS.sha256",
   "notes": [
     "This manifest is the allowlist used by scripts/export_public_fsl_package.py.",
     "Public documents are curated release inputs.",
     "FSL exports are copied from canonical root-level exports when they already match the current release boundary.",
-    "fsl/SYSTEM.yaml is copied from the public release snapshot in this mission to avoid changing snapshot semantics outside scope."
+    "fsl/SYSTEM.yaml is copied from the public release snapshot to avoid changing snapshot semantics during documentation-only release updates."
   ],
   "artifacts": [
     {
@@ -130,6 +130,12 @@
       "dest": "RUST_AUTHORITY_CRITERIA.md",
       "mode": "copy",
       "kind": "public_runtime_authority_criteria"
+    },
+    {
+      "source": "publication/fsl_observer_theorem_public_repo/docs/fsl_rust_authority_promotion_audit.md",
+      "dest": "docs/fsl_rust_authority_promotion_audit.md",
+      "mode": "copy",
+      "kind": "public_runtime_authority_audit"
     },
     {
       "source": "publication/fsl_observer_theorem_public_repo/CRYPTO_AXIOM_BOUNDARY.md",

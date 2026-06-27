@@ -2,8 +2,6 @@
 
 This document describes the public formal proof bundle for the FSL observer theorem package.
 
-Bundle mission: `MISSION-FSL-FORMAL-PROOF-BUNDLE`
-
 Bundle date: June 15, 2026
 
 ## Purpose
@@ -48,7 +46,7 @@ The public package intentionally excludes Lean build products and dependencies s
 | `ASSUMPTIONS_APPENDIX.md` | Human-readable no-sorry/no-axiom audit. |
 | `lean_assumptions.json` | Machine-readable assumption inventory. |
 | `CRYPTO_AXIOM_BOUNDARY.md` | Boundary decision for the axiom-dependent commitment theorem. |
-| `ERRATA.md` | Mission 53 horizon correction and Mission 54 spatial-horizon resolution. |
+| `ERRATA.md` | Horizon correction and spatial/temporal horizon proof-status resolution. |
 | `formal_whitepaper.md` | Formal whitepaper grounded in this proof bundle. |
 | `CHECKSUMS.sha256` | SHA-256 checksums for the public package artifacts. |
 
@@ -107,4 +105,4 @@ Claims should remain theorem-by-theorem:
 - excluded from formal claim,
 - or future work.
 
-This bundle closes the public proof-bundle assembly step. Mission 50 adds `formal_whitepaper.md` as the theorem-by-theorem claim document grounded in this bundle.
+This bundle closes the public proof-bundle assembly step. `formal_whitepaper.md` is the theorem-by-theorem claim document grounded in this bundle.

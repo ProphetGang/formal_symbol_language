@@ -1,22 +1,16 @@
 # Errata: Horizon Claim Correction And Horizon Proof Resolutions
 
-Errata mission: `MISSION-53-FORMAL-CLAIM-CORRECTION`
-
-Spatial resolution mission: `MISSION-54-HTM-SPATIAL-HORIZON-PROOF`
-
-Temporal resolution mission: `MISSION-FSL-TEMPORAL-HORIZON-PROOF`
-
 Date: June 22, 2026
 
 ## Summary
 
-Mission 53 corrected the public proof-status classification for the observer horizon records. It identified that the prior Lean statement for `gbo_iii_spatial_horizon` was a weak existential witness and did not prove the stronger public interpretation of a universal HTM half-bound. It also identified that `gbo_impossible_complete_observation` depended on that weak spatial witness.
+This errata corrects the public proof-status classification for the observer horizon records. It identifies that the prior Lean statement for `gbo_iii_spatial_horizon` was a weak existential witness and did not prove the stronger public interpretation of a universal HTM half-bound. It also identifies that `gbo_impossible_complete_observation` depended on that weak spatial witness.
 
-Mission 54 resolves the spatial part of that correction without introducing a spatial axiom. The Lean source now contains an axiom-free combinatorial HTM root-face partition theorem, `htm_visible_cells_half_bound`, and `gbo_iii_spatial_horizon` now derives the half-bound and a non-empty dark complement at the observer depth.
+The spatial part of that correction is now resolved without introducing a spatial axiom. The Lean source contains an axiom-free combinatorial HTM root-face partition theorem, `htm_visible_cells_half_bound`, and `gbo_iii_spatial_horizon` now derives the half-bound and a non-empty dark complement at the observer depth.
 
 `gbo_impossible_complete_observation` is also strengthened to a universal theorem: every governed bounded observer has a non-empty spatial dark complement at its current HTM depth.
 
-`gbo_iii_temporal_horizon` is also closed by `MISSION-FSL-TEMPORAL-HORIZON-PROOF`. Its Lean declaration now proves a product-cycle temporal horizon: for `p1 > 0` and `p2 > 1`, a visible observer window plus a non-empty dark temporal window decomposes the total coordination cycle, and the visible window is a strict prefix of that total.
+`gbo_iii_temporal_horizon` is also closed in the current proof bundle. Its Lean declaration now proves a product-cycle temporal horizon: for `p1 > 0` and `p2 > 1`, a visible observer window plus a non-empty dark temporal window decomposes the total coordination cycle, and the visible window is a strict prefix of that total.
 
 ## Corrected Proof-Status Distribution
 
@@ -33,9 +27,9 @@ Mission 54 resolves the spatial part of that correction without introducing a sp
 
 | theorem_id | Current status | Reason |
 | --- | --- | --- |
-| `gbo_iii_spatial_horizon` | `machine_checked_theorem` | Mission 54 proves the combinatorial HTM root-face half-bound via `htm_visible_cells_half_bound`, with a non-empty dark complement at observer depth. |
-| `gbo_iii_temporal_horizon` | `machine_checked_theorem` | Mission temporal horizon proof replaces the weak witness with a product-cycle theorem: visible window plus non-empty dark window equals the total cycle, and visible is a strict prefix for `p1 > 0`, `p2 > 1`. |
-| `gbo_impossible_complete_observation` | `machine_checked_theorem` | Mission 54 derives universal non-empty spatial dark complement from the strengthened spatial horizon theorem. |
+| `gbo_iii_spatial_horizon` | `machine_checked_theorem` | The current Lean proof bundle proves the combinatorial HTM root-face half-bound via `htm_visible_cells_half_bound`, with a non-empty dark complement at observer depth. |
+| `gbo_iii_temporal_horizon` | `machine_checked_theorem` | The current Lean proof bundle replaces the weak witness with a product-cycle theorem: visible window plus non-empty dark window equals the total cycle, and visible is a strict prefix for `p1 > 0`, `p2 > 1`. |
+| `gbo_impossible_complete_observation` | `machine_checked_theorem` | The current Lean proof bundle derives universal non-empty spatial dark complement from the strengthened spatial horizon theorem. |
 
 ## Non-Affected Records
 

@@ -64,7 +64,7 @@ The package is suitable as a public position-paper and language-package release 
 | Formal whitepaper | pass | `formal_whitepaper.md` states theorem-by-theorem proof status and preserves lifecycle/axiom boundaries. |
 | StateProof wording | pass with caveat | The package states raw-chain breakage and repaired canonical verification separately. |
 | Generated export authority | pass | FSL exports state they are derived publication artifacts and not runtime authority. |
-| Internal mission-language leakage | pass with allowed exceptions | Reader-facing roadmap tables have been removed. Remaining mission IDs appear inside canonical snapshots, export manifests, provenance references, or release-audit context. |
+| Internal mission-language leakage | pass with allowed exceptions | Reader-facing docs avoid internal mission numbers and raw `MISSION-*` IDs. Remaining `mission_id` strings are part of FSL grammar/source semantics or internal provenance snapshots, not the release narrative. |
 | Unsupported formal-proof language | remediated | Front-facing `whitepaper.md` wording now prefers validated/reattested language for property-tested artifacts and reserves formal proof language for Lean/formalization context. |
 
 ## Remediated In This Audit
@@ -92,4 +92,4 @@ The following caveats are intentional and should remain visible:
 
 The package is appropriate for public re-export.
 
-It is now the formal whitepaper package for the current 1.1.1 public package boundary. The proof-status distribution remains unchanged at 31 checked theorem records, 1 axiom-dependent theorem record, 0 partial records, 0 definition-only records, and 0 planned records.
+It is now the formal whitepaper package for the current 1.1.2 public package boundary. The proof-status distribution remains unchanged at 31 checked theorem records, 1 axiom-dependent theorem record, 0 partial records, 0 definition-only records, and 0 planned records.

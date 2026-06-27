@@ -2,7 +2,7 @@
 
 This repository uses version numbers for the public FSL observer theorem package, not for the full private SiMON runtime.
 
-Current public package version: `1.1.1`
+Current public package version: `1.1.2`
 
 ## Version Meaning
 
@@ -19,6 +19,8 @@ MAJOR.MINOR.PATCH
 `PATCH` changes are corrections that do not change public semantics. Examples include typo fixes, formatting improvements, checksum refreshes, clarifying prose, or non-semantic documentation updates.
 
 ## Current Release
+
+Version `1.1.2` is a documentation patch release that explains the semantic StateProof candidate pipeline, Rust StateProof candidate and append-gate shadow parity, and the report-only Rust authority promotion audit. It does not change theorem IDs, Lean declarations, parser behavior, validator behavior, StateProof append authority, Rust runtime authority, or governance execution.
 
 Version `1.1.0` was the first public package release with all of the following included:
 

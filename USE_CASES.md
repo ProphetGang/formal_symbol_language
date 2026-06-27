@@ -92,6 +92,27 @@ python3.12 scripts/replay_fsl_claim.py --list
 
 The replay script is not a Lean prover and not a governance authority. It does not create new proofs or authorize missions. Its purpose is narrower and more useful for review: it helps a reader traverse one public claim from theorem ID to evidence boundary without relying on author interpretation.
 
+## From Semantic Claim To StateProof Candidate
+
+In the live SiMON system, a semantic observation does not immediately become durable StateProof evidence.
+
+The safer path is staged:
+
+```text
+observable semantics
+  -> StateProof anchor candidate
+  -> anchor decision
+  -> append request
+  -> dry-run StateProof payload
+  -> Governor authorization
+  -> controlled append integration
+  -> Rust shadow parity
+```
+
+Each step answers a different question. A candidate asks whether an observation is even eligible to be considered. An anchor decision asks whether the candidate passes policy. An append request preserves replay metadata without writing to the chain. A dry-run payload shows the exact StateProof call that would be made. Governor authorization decides whether the future append boundary is approved. Rust shadow parity then checks serialized records for drift and authority escalation without becoming authority itself.
+
+This matters because durable evidence should not be created from raw agent movement, temporary tour memory, file excerpts, or builder context. FSL makes the claim visible, but governance decides whether the claim may become durable evidence.
+
 ## What FSL Gives You That Ordinary Policy Docs Do Not
 
 Ordinary policy documents can say what should happen. FSL gives those policy claims stable symbolic handles and evidence boundaries.

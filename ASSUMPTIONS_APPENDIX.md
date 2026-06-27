@@ -2,8 +2,6 @@
 
 This appendix records the no-sorry/no-axiom audit for the public FSL observer theorem package. It is a publication-facing inventory of Lean proof holes and declared axioms; it does not modify Lean source or promote any axiom to an assumption-free proof.
 
-Audit mission: `MISSION-FSL-NO-SORRY-AXIOM-AUDIT`
-
 Audit date: June 15, 2026
 
 ## How To Read This Appendix

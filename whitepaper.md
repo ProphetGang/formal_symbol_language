@@ -13,7 +13,7 @@ We present a governed discrete spacetime model for situated agents — agents wi
 
 The synthesis theorem — the Admissibility Gate (S10) — is where time, space, identity, and governance collapse into one executable predicate. That predicate has exactly three conjuncts because there are exactly three independent coordinates. Each conjunct is forced by prior theorems, not chosen by design.
 
-This is the position-paper layer of the public package. The current theorem-by-theorem formal proof status is published separately in `formal_whitepaper.md`, which classifies the 32 public theorem records as 31 machine-checked theorem records and 1 machine-checked-under-explicit-axioms record. See `ERRATA.md` for the Mission 53 horizon correction and Mission 54 spatial-horizon resolution.
+This is the position-paper layer of the public package. The current theorem-by-theorem formal proof status is published separately in `formal_whitepaper.md`, which classifies the 32 public theorem records as 31 machine-checked theorem records and 1 machine-checked-under-explicit-axioms record. See `ERRATA.md` for the horizon correction and spatial-horizon resolution.
 
 Status note for this release: language in this paper about property testing, theorem-machine maturation, and implementation roadmap should be read as the historical/narrative context for the observer model. The current proof-status authority for the public package is `formal_whitepaper.md`, together with `FORMAL_PROOF_BUNDLE.md`, `lean_coverage_report.md`, `theorem_lifecycle.json`, and `ASSUMPTIONS_APPENDIX.md`.
 
@@ -35,7 +35,7 @@ canonical_chain_status: repaired
 canonical_head:         SP-CHAIN-REPAIR
 ```
 
-All 32 canonical theorems were then reattested under the repaired head. One theorem — S2, the quadtree partition theorem under spherical Morton encoding — was classified as a **deprecated historical artifact** rather than reattested, because its substrate was superseded by the HTM triangular mesh. Its replacement, S2\_tri, was reattested and confirmed canonical. A separate canonicalization mission will formally retire S2.
+All 32 canonical theorems were then reattested under the repaired head. One theorem — S2, the quadtree partition theorem under spherical Morton encoding — was classified as a **deprecated historical artifact** rather than reattested, because its substrate was superseded by the HTM triangular mesh. Its replacement, S2\_tri, was reattested and confirmed canonical. A later canonicalization step should formally retire S2.
 
 This incident demonstrates what the governance system is designed to do: distinguish historical artifact from canonical artifact, preserve broken history rather than erasing it, and produce a verifiable repair trail. The theorem machine corrected itself. That is the claim. The evidence is the chain.
 
@@ -164,10 +164,10 @@ Spatial coordination bandwidth is bounded by the number of cell neighbors at a g
 **S2\_tri — HTM Partition.**  
 Depth-d HTM cells partition the sphere into exactly 8×4^d non-overlapping, near-equal-area triangles. Children cover the parent triangle exactly — no overlap, no gap. Cell size halves per depth in angular radius.
 
-> **Note on S2 (deprecated historical artifact):** The legacy S2 quadtree partition theorem, proved under spherical Morton's `QuadtreeNode`, is a deprecated historical artifact. The substrate was replaced in Phase 2: `QuadtreeNode` is now HTM-backed, and the old size/coverage invariants (90° cells at depth 1, rectangular bounding boxes) no longer hold. S2 correctly characterized the old geometry. The old geometry is gone. S2\_tri is the canonical replacement. S2 is not counted as a failed theorem — it is counted as a superseded one. A separate canonicalization mission will formally retire the S2 test suite.
+> **Note on S2 (deprecated historical artifact):** The legacy S2 quadtree partition theorem, proved under spherical Morton's `QuadtreeNode`, is a deprecated historical artifact. The substrate was replaced in Phase 2: `QuadtreeNode` is now HTM-backed, and the old size/coverage invariants (90° cells at depth 1, rectangular bounding boxes) no longer hold. S2 correctly characterized the old geometry. The old geometry is gone. S2\_tri is the canonical replacement. S2 is not counted as a failed theorem — it is counted as a superseded one. A later canonicalization step should formally retire the S2 test suite.
 
 **S3\_tri — HTM Spatial Horizon.**  
-The encoded HTM horizon model is a root-face partition: an observer's visible side is bounded by `4×4^d` cells out of `8×4^d` cells at depth `d`. Mission 54 proves this combinatorial half-bound without introducing a spatial axiom. This is not a claim that arbitrary physical spherical visibility geometry has been fully formalized.
+The encoded HTM horizon model is a root-face partition: an observer's visible side is bounded by `4×4^d` cells out of `8×4^d` cells at depth `d`. The current Lean proof bundle proves this combinatorial half-bound without introducing a spatial axiom. This is not a claim that arbitrary physical spherical visibility geometry has been fully formalized.
 
 **S4\_tri — HTM Omniscient Observer.**  
 Full spatial observability requires tracking all `8×4^d` cells — exponential in depth. Cost is now uniform at all latitudes (unlike spherical Morton, where polar observers were cheaper).
@@ -291,10 +291,10 @@ The broken segment (proof indices 335–374) is preserved as historical evidence
 The original theorem artifacts were first validated through property-based testing and governance reattestation. That remains important historical and engineering evidence, but this public package now includes `formal_whitepaper.md` for current theorem-by-theorem proof status. In that formal status layer, 31 records are machine-checked theorem records and 1 record is machine-checked under explicit cryptographic axioms. Where this position paper uses the older artifact language, defer to the formal whitepaper, `ERRATA.md`, and proof bundle for present release claims.
 
 **S2 canonicalization is pending.**  
-The legacy S2 test file (`space/tests/test_s2_quadtree_partition.py`) remains in the repository and currently fails 5 tests, because the substrate it tests no longer exists. A formal canonicalization mission will retire the test suite, update the theorem register, and issue a deprecation proof. Until then, the situation is: S2 is deprecated but not formally retired.
+The legacy S2 test file (`space/tests/test_s2_quadtree_partition.py`) remains in the source history and currently targets a substrate that no longer exists. A formal canonicalization step should retire the test suite, update the theorem register, and issue a deprecation proof. Until then, the situation is: S2 is deprecated but not formally retired.
 
 **The state\_proof.py malformed-line bug is unfixed.**  
-`governance/identity/state_proof.py` does not handle malformed JSON lines gracefully — a bug exposed by the broken segment. The retheorem runner uses a local workaround. The fix should be applied to the canonical entrypoint in a future mission.
+`governance/identity/state_proof.py` historically did not handle malformed JSON lines gracefully — a bug exposed by the broken segment. The public package reports the repaired canonical status while preserving that historical limitation.
 
 **Phases 4–6 are not complete.**  
 Biodiversity domain (Phase 4), external agent admission (Phase 5), and HTM grid UI (Phase 6) are open implementation work. The theorems in this paper are grounded in the substrate and do not depend on these phases — but the full application of the model to real-world situated observation is not yet demonstrated end-to-end.
@@ -384,6 +384,6 @@ The proof chain is the primary internal evidence for every claim in this paper. 
 
 2. **Formal proof of S10 uniqueness.** The claim that S10 is the *only* gate consistent with all prior theorems is argued structurally in Section 5 but not formally proved. A formal proof would show that any gate with fewer or different conjuncts violates at least one of T1, S7\_tri, or S8.
 
-3. **Dark matter growth rate.** T18 proves dark matter grows as O(n³) for temporal coordination. Is the spatial dark matter similarly characterized as a function of network size? Mission 54 proves the per-observer combinatorial HTM root-face half-bound, but the aggregate unobserved spatial coordination across a network of agents still has no formal characterization here.
+3. **Dark matter growth rate.** T18 proves dark matter grows as O(n³) for temporal coordination. Is the spatial dark matter similarly characterized as a function of network size? The current proof bundle proves the per-observer combinatorial HTM root-face half-bound, but the aggregate unobserved spatial coordination across a network of agents still has no formal characterization here.
 
 4. **FSL expression-level presentation of the unified theorem.** The formal whitepaper records the current Lean/proof-status boundary. A future language-facing release can also present the unified theorem as a full FSL expression for external parsers and symbolic readers.
