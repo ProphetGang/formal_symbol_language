@@ -78,7 +78,7 @@ They are included for readability, external parsing, and documentation. They do 
 
 `RUST_AUTHORITY_CRITERIA.md` is included as public promotion-boundary documentation. It defines the evidence required before any Rust surface can become governance authority.
 
-`docs/fsl_rust_authority_promotion_audit.md` is included as public report-only audit documentation. It records that Rust StateProof candidate and append-gate checks remain shadow parity and are not promoted to governance or StateProof append authority.
+`docs/fsl_rust_authority_promotion_audit.md` is included as public report-only audit documentation. It records that Rust StateProof candidate, append-gate, and file-semantics checks remain shadow parity and are not promoted to governance, Builder rejection, scope expansion, or StateProof append authority.
 
 `RELEASE_CANDIDATE_AUDIT.md` is included as public claim-safety documentation. It records the current release-candidate boundary and remaining formal proof-status caveats.
 

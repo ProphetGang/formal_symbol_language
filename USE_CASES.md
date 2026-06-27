@@ -30,6 +30,12 @@ That is the governance layer. It answers the first question: may this agent act 
 
 Once the mission is authorized, the implementation agent can perform the scoped change. At that point, the system has a concrete action to account for: what changed, whether it stayed inside the declared boundary, and whether the result still satisfies the relevant rules.
 
+Before implementation, the files themselves can also be treated as semantic objects. That matters because "a file in scope" is still too vague. A public README, a Lean theorem source file, a Rust runtime module, a checksum file, and an export manifest each carry different meaning. They have different risks, different allowed operations, and different review expectations.
+
+FSL gives the system a way to say: this path is a public documentation file, this path is a formal proof snapshot, this path is a runtime module, this path is release-integrity evidence. ScopeAgent can state what kinds of files are expected. FileInspector can read allowed files and attach context without changing them. The advisory file admissibility layer can then classify whether a proposed file action appears eligible, rejected, requiring Governor review, or not applicable.
+
+That file-semantics step does not replace governance authorization. It gives governance better language. Instead of only asking whether a path string is inside `allowed_packages`, the system can ask whether the file's meaning matches the mission's declared scope.
+
 This is where ordinary governance systems often become vague. They may say the change was "approved", "tested", "safe", or "verified", but those words can hide very different kinds of evidence.
 
 FSL enters at that boundary. It does not replace mission governance. Instead, it gives the claims produced by governance stable symbolic and theorem-facing references.
@@ -112,6 +118,34 @@ observable semantics
 Each step answers a different question. A candidate asks whether an observation is even eligible to be considered. An anchor decision asks whether the candidate passes policy. An append request preserves replay metadata without writing to the chain. A dry-run payload shows the exact StateProof call that would be made. Governor authorization decides whether the future append boundary is approved. Rust shadow parity then checks serialized records for drift and authority escalation without becoming authority itself.
 
 This matters because durable evidence should not be created from raw agent movement, temporary tour memory, file excerpts, or builder context. FSL makes the claim visible, but governance decides whether the claim may become durable evidence.
+
+## From File Path To Semantic Review
+
+The file-semantics path is another example of the same pattern.
+
+```text
+file path
+  -> semantic file object
+  -> semantic scope check
+  -> FileInspector context
+  -> dependency and invariant context
+  -> advisory admissibility decision
+  -> FSL claim reference
+  -> optional Rust shadow parity
+```
+
+Each step narrows ambiguity. A path becomes a file object with a kind and role. The scope check asks whether that object matches the mission's declared expectations. FileInspector contributes read-only context from allowed files. Dependency and invariant context show whether the file touches other meaning-bearing surfaces. The advisory admissibility decision reports whether the proposed action appears safe to continue, needs Governor review, or should be rejected by policy.
+
+The boundary is deliberately conservative:
+
+```text
+semantic file object != permission to edit
+FileInspector context != proof
+advisory admissibility != Builder rejection authority
+Rust file-semantics parity != governance authority
+```
+
+This is useful because many real agent failures are not theorem failures. They are context failures: the agent edits the wrong kind of file, treats generated output as source, changes a release-integrity artifact without refreshing checksums, or touches a runtime file when the mission was only documentation. FSL's file-semantics layer gives those distinctions stable names before the system asks whether a change should proceed.
 
 ## What FSL Gives You That Ordinary Policy Docs Do Not
 

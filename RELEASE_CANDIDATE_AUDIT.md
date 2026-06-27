@@ -2,7 +2,7 @@
 
 This audit checks the public FSL observer theorem package for release-candidate claim safety.
 
-Audit date: June 14, 2026
+Audit date: June 27, 2026
 
 ## Scope
 
@@ -49,6 +49,8 @@ The package is suitable as a public position-paper and language-package release 
 - the raw StateProof chain has a preserved historical break
 - canonical StateProof verification uses a valid repair overlay
 - generated exports are not parser, validator, Lean, Rust runtime, or governance authority
+- semantic file classification and advisory admissibility are not Builder rejection authority
+- Rust file-semantics parity is shadow evidence, not governance authority
 - private runtime and governance material is excluded from the public package
 
 ## Checks
@@ -57,6 +59,7 @@ The package is suitable as a public position-paper and language-package release 
 | --- | --- | --- |
 | Public/private boundary | pass | `PUBLIC_REPO_NOTES.md`, `EXPORT_MANIFEST.json`, and `STATEPROOF_NOTE.md` identify excluded private/runtime material. |
 | Rust authority boundary | pass | `RUST_PARITY_NOTE.md` states Rust is shadow/parity evidence; `RUST_AUTHORITY_CRITERIA.md` defines future promotion requirements. |
+| File-semantics authority boundary | pass | `README.md`, `USE_CASES.md`, `RUST_PARITY_NOTE.md`, and the Rust audit state semantic file classification and advisory admissibility are not Builder rejection, scope expansion, StateProof append, or governance authority. |
 | Lean proof-status honesty | pass | `lean_coverage_report.md` distinguishes checked theorem records, axiom-dependent records, partial records, and definition-only records. |
 | Theorem lifecycle export | pass | `theorem_lifecycle.json` exports 32 active theorem lifecycle records and `theorem_registry.json` merges lifecycle status by theorem ID. |
 | No-sorry/no-axiom audit | pass | `ASSUMPTIONS_APPENDIX.md` and `lean_assumptions.json` scan 10 Lean files, inventory 132 declared axioms, and report 0 code-level `sorry`/`admit` proof holes. |
@@ -64,7 +67,7 @@ The package is suitable as a public position-paper and language-package release 
 | Formal whitepaper | pass | `formal_whitepaper.md` states theorem-by-theorem proof status and preserves lifecycle/axiom boundaries. |
 | StateProof wording | pass with caveat | The package states raw-chain breakage and repaired canonical verification separately. |
 | Generated export authority | pass | FSL exports state they are derived publication artifacts and not runtime authority. |
-| Internal mission-language leakage | pass with allowed exceptions | Reader-facing docs avoid internal mission numbers and raw `MISSION-*` IDs. Remaining `mission_id` strings are part of FSL grammar/source semantics or internal provenance snapshots, not the release narrative. |
+| Internal mission-language leakage | pass with allowed exceptions | Reader-facing docs avoid internal mission numbers and raw internal mission identifiers. Remaining `mission_id` strings are part of FSL grammar/source semantics or internal provenance snapshots, not the release narrative. |
 | Unsupported formal-proof language | remediated | Front-facing `whitepaper.md` wording now prefers validated/reattested language for property-tested artifacts and reserves formal proof language for Lean/formalization context. |
 
 ## Remediated In This Audit
@@ -92,4 +95,4 @@ The following caveats are intentional and should remain visible:
 
 The package is appropriate for public re-export.
 
-It is now the formal whitepaper package for the current 1.1.2 public package boundary. The proof-status distribution remains unchanged at 31 checked theorem records, 1 axiom-dependent theorem record, 0 partial records, 0 definition-only records, and 0 planned records.
+It is now the formal whitepaper package for the current 1.1.3 public package boundary. The proof-status distribution remains unchanged at 31 checked theorem records, 1 axiom-dependent theorem record, 0 partial records, 0 definition-only records, and 0 planned records. The 1.1.3 file-semantics documentation layer does not change theorem IDs, Lean declarations, parser behavior, validator behavior, StateProof append authority, Rust runtime authority, Builder rejection authority, scope expansion authority, or governance execution behavior.

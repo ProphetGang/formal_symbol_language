@@ -20,7 +20,7 @@ This manifest defines what should be included, referenced, or excluded when turn
 | `STATEPROOF_NOTE.md` | include | Public explanation of raw-chain status and repaired canonical StateProof verification. |
 | `RUST_PARITY_NOTE.md` | include | Public explanation of Rust/Python parity status and the current governance authority boundary. |
 | `RUST_AUTHORITY_CRITERIA.md` | include | Public criteria for any future Rust governance-authority promotion. |
-| `docs/fsl_rust_authority_promotion_audit.md` | include | Public report-only audit explaining why Rust StateProof candidate and append-gate parity remain shadow-only. |
+| `docs/fsl_rust_authority_promotion_audit.md` | include | Public report-only audit explaining why Rust StateProof candidate, append-gate, and file-semantics parity remain shadow-only. |
 | `fsl_governed_symbolic_language.md` | include | FSL language paper explaining the governed symbolic publication layer. |
 | `fsl_specification.md` | include | Human-readable FSL specification derived from the canonical registry. |
 

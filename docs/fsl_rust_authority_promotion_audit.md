@@ -4,9 +4,9 @@ Status: report only. This document does not promote Rust authority.
 
 ## Executive Decision
 
-Rust should not yet become authoritative for FSL StateProof candidate or append validation.
+Rust should not yet become authoritative for FSL StateProof candidate validation, append validation, or file-semantics validation.
 
-Rust is now useful as a shadow parity layer. It can reject malformed candidate records, malformed append-gate records, and obvious authority-escalation attempts. It still does not own the canonical StateProof append boundary, the Python dataclass schemas, or the Governor authorization lifecycle.
+Rust is now useful as a shadow parity layer. It can reject malformed candidate records, malformed append-gate records, malformed file-semantics records, and obvious authority-escalation attempts. It still does not own the canonical StateProof append boundary, the Python dataclass schemas, the FileInspector/ScopeAgent semantic authority, or the Governor authorization lifecycle.
 
 The correct next posture is:
 
@@ -15,6 +15,7 @@ Python/governance authority: retained
 Rust runtime authority: not promoted
 Rust validation status: shadow parity
 StateProof append authority: Python canonical entrypoint only
+Builder rejection authority: not granted
 ```
 
 ## Current Authority Boundary
@@ -36,13 +37,23 @@ The Rust path currently mirrors only the policy checks:
 ```text
 stateproof_candidate_parity
 stateproof_append_gate_parity
+file_semantics_parity
 ```
 
-Both Rust operations return:
+All three Rust operations return:
 
 ```text
 rust_authority = shadow_parity_only
 can_append_stateproof = false
+```
+
+For file semantics, Rust also returns:
+
+```text
+python_authority = authoritative
+can_reject_builder = false
+can_authorize_governance = false
+can_expand_scope = false
 ```
 
 For the append gate, Rust also returns:
@@ -117,6 +128,38 @@ op=stateproof_append_gate_parity
 
 The Rust parity operation checks append request status, eligible decision status, dry-run status, Governor decision, future append status, replay metadata flags, and authority escalation fields.
 
+### Python File Semantics Gate
+
+Python defines the file-semantics and advisory admissibility boundary in:
+
+```text
+fsl/file_semantics.py
+fsl/file_constraints.py
+fsl/file_kind_registry.py
+fsl/repo_semantic_profile.py
+fsl/semantic_scope.py
+fsl/file_inspector_context.py
+fsl/file_dependency_bridge.py
+fsl/file_admissibility.py
+```
+
+Key authority facts:
+
+- File semantic objects classify repository paths by kind, role, language, symbols, and constraints.
+- Semantic scope checks compare file objects against mission expectations.
+- FileInspector context remains read-only and allowed-scope bounded.
+- File admissibility is advisory only.
+- Advisory decisions cannot reject Builder actions, expand scope, authorize governance, append StateProof, or promote Rust.
+
+Rust currently mirrors the main serialized file-semantics boundary in:
+
+```text
+governance-core/fsl/src/main.rs
+op=file_semantics_parity
+```
+
+The Rust parity operation classifies the path, allowed operations, default constraint references, expected file kinds, allowed semantic roles, required constraint refs, supplied constraint-evaluation summaries, and outside-scope status. It returns `eligible`, `requires_governor`, or `rejected` as a shadow parity status only.
+
 ## Known Mismatches And Gaps
 
 These gaps block authority promotion:
@@ -145,13 +188,17 @@ These gaps block authority promotion:
 
    No UpdatePacket has authorized Rust as authoritative. No Governor countersign has promoted Rust from shadow parity to authority.
 
+7. Rust file-semantics parity mirrors defaults and serialized summaries, not full FileInspector understanding.
+
+   Rust can classify a path and inspect supplied semantic metadata. It does not parse files, build ASTs, infer dependency graphs, own ScopeAgent authority, or replace Python FileInspector context.
+
 ## Promotion Criteria
 
 Rust may be considered for limited authority only after all of the following are true:
 
 1. Shared fixture corpus exists.
 
-   Python must export canonical JSON fixtures for valid candidates, rejected candidates, eligible decisions, append requests, dry-run payloads, approved and denied Governor authorizations, malformed replay metadata, and attempted authority escalation.
+   Python must export canonical JSON fixtures for valid candidates, rejected candidates, eligible decisions, append requests, dry-run payloads, approved and denied Governor authorizations, malformed replay metadata, file-semantics records, advisory admissibility records, and attempted authority escalation.
 
 2. Rust and Python agree on every fixture.
 
@@ -159,15 +206,15 @@ Rust may be considered for limited authority only after all of the following are
 
 3. Rust canonicalizes dry-run observations.
 
-   Rust must be able to reproduce or verify the canonical observation payload from the append request, not merely accept a provided observation string.
+   Rust must be able to reproduce or verify the canonical observation payload from the append request, not merely accept a provided observation string. For file semantics, Rust must agree with Python-generated fixtures for file-kind defaults, semantic roles, constraint refs, scope mismatch, and advisory status.
 
 4. Rust authority remains staged.
 
-   First promotion, if any, should only allow Rust to reject malformed candidate or append-gate records before Python append. It should not allow Rust to append StateProof, call `generate_state_proof`, override Governor authorization, or replace Python dataclass authority.
+   First promotion, if any, should only allow Rust to reject malformed candidate, append-gate, or file-semantics records before Python authority acts. It should not allow Rust to append StateProof, call `generate_state_proof`, reject Builder actions, expand scope, override Governor authorization, or replace Python dataclass/FileInspector authority.
 
 5. Governor authorization explicitly names the promoted boundary.
 
-   A future governed promotion decision must state whether Rust is promoted to candidate preflight authority, append-gate preflight authority, parity verifier only, or append executor. The only safe near-term candidate is append/candidate preflight rejection authority.
+   A future governed promotion decision must state whether Rust is promoted to StateProof candidate preflight authority, append-gate preflight authority, file-semantics preflight authority, parity verifier only, or append executor. The safest near-term candidates are narrow preflight rejection authority for malformed serialized records, not append execution or full governance authority.
 
 6. StateProof chain remains append-only and canonically verified.
 
@@ -177,7 +224,7 @@ Rust may be considered for limited authority only after all of the following are
 
 Rust is beneficial here as a second implementation that can detect drift and reject malformed serialized records. It is not yet ready to become authority.
 
-Promotion now would be premature because Rust does not yet consume shared Python-generated fixtures, does not canonicalize dry-run observations, and does not own the governed append lifecycle.
+Promotion now would be premature because Rust does not yet consume shared Python-generated fixtures, does not canonicalize dry-run observations, does not own the governed append lifecycle, and does not perform full FileInspector/ScopeAgent semantic analysis.
 
 The safest path is:
 

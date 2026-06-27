@@ -4,7 +4,7 @@ FSL is a governed symbolic language for making autonomous-agent claims inspectab
 
 This repository is the public package for FSL and the governed bounded observer theorem stack. It explains a model of agents as bounded observers in a spatial/temporal system, publishes theorem and proof-status evidence, and provides machine-readable language exports that external tools can inspect.
 
-Current public package version: `1.1.2`
+Current public package version: `1.1.3`
 
 ## What Problem This Solves
 
@@ -139,9 +139,39 @@ In public terms:
 
 FSL does not replace these roles. FSL gives stable names to the claims those roles produce. A scope boundary can be referenced as a declared scope. A builder delta can be referenced as a symbolic change. A Governor decision can be referenced as an authorization boundary. A StateProof can be referenced as a durable evidence class.
 
-Rust is being developed as a kernel/runtime hardening layer for selected governance checks. In this release, Rust is not the governance authority. It mirrors selected candidate and append-gate validation boundaries as shadow parity, helping detect malformed serialized records, policy drift, and authority-escalation attempts.
+Rust is being developed as a kernel/runtime hardening layer for selected governance checks. In this release, Rust is not the governance authority. It mirrors selected StateProof candidate, append-gate, and file-semantics validation boundaries as shadow parity, helping detect malformed serialized records, policy drift, and authority-escalation attempts.
 
 The intended long-term value of a Rust kernel is type-safe enforcement at carefully promoted boundaries. Promotion requires explicit evidence, compatibility checks, rollback rules, and a governed authority decision. Until then, Rust remains evidence-bearing validation, not constitutional authority.
+
+### Semantic File Objects
+
+The current FSL runtime also models repository files as semantic objects.
+
+That means a file is not only treated as bytes on disk. It can be described by:
+
+- repository path;
+- file kind;
+- semantic role;
+- language or format;
+- allowed operation class;
+- RFC 2119-style constraints;
+- expected scope relationship;
+- dependency and invariant context;
+- advisory admissibility status.
+
+This layer helps bridge ordinary repository work to FSL meaning. A markdown paper, a Lean theorem file, a Rust runtime module, a checksum file, and a public export manifest do not carry the same governance meaning. They have different roles, different risks, different allowed operations, and different evidence boundaries.
+
+In the reference SiMON runtime, ScopeAgent can express what kinds of files are expected, FileInspector can attach read-only context to allowed files, and the advisory file admissibility layer can classify a proposed file action as eligible, rejected, requiring Governor review, or not applicable.
+
+Important boundary:
+
+```text
+semantic file classification is not enforcement authority
+advisory admissibility is not Builder rejection authority
+Rust file-semantics parity is not governance authority
+```
+
+The practical value is that a governed agent can reason about files with more precision than "this path is allowed." It can distinguish the meaning of the file, the constraints attached to that kind of file, and the evidence needed before a change should proceed.
 
 ## What FSL Adds
 
@@ -198,6 +228,8 @@ governance.identity.state_proof.generate_state_proof
 ```
 
 Rust currently mirrors candidate and append-gate validation as shadow parity only. It can help detect malformed records and authority escalation attempts, but it is not promoted to authority.
+
+Rust also mirrors file semantic classification and advisory admissibility status as shadow parity. That check can classify a path into a file kind and semantic role, compare expected scope metadata, inspect supplied constraint-evaluation summaries, and report whether the serialized record looks eligible, rejected, or requiring Governor review. It still cannot reject the Builder, expand scope, authorize governance, append StateProof, or promote Rust authority.
 
 See:
 
@@ -274,8 +306,10 @@ This package is not:
 - Lean coverage snapshot: 31 checked theorem records, 1 axiom-dependent, 0 partial, 0 definition-only, 0 planned
 - Theorem lifecycle snapshot: 32 active records
 - Lean assumptions snapshot: 132 declared axioms, 0 code-level `sorry`/`admit` proof holes
+- FSL file-semantics layer: semantic classification and advisory admissibility only
 - Rust StateProof candidate parity: shadow only
 - Rust append-gate parity: shadow only
+- Rust file-semantics parity: shadow only
 - Rust authority promotion: not granted
 
 ## Reader Paths

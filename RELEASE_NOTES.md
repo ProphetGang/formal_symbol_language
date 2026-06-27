@@ -2,7 +2,7 @@
 
 Package: SiMON FSL + Governed Bounded Observer Publication Bundle
 
-Current public package version: `1.1.2`
+Current public package version: `1.1.3`
 
 This bundle is a clean publication directory for understanding FSL and its connection to the governed bounded observer theorem stack. It is intentionally a directory bundle, not a zip archive. Archive creation should happen only after checksum review.
 
@@ -37,17 +37,31 @@ The bundle contains:
 - Repeatable export manifest: `EXPORT_MANIFEST.json`
 - Checksums: `CHECKSUMS.sha256`
 
+## Version 1.1.3
+
+Version `1.1.3` is a patch release for public documentation of the FSL file-semantics layer and Rust file-semantics shadow parity.
+
+It incorporates the current reader-facing release updates:
+
+- The public README now explains semantic file objects, file kinds, semantic roles, RFC 2119-style file constraints, ScopeAgent expectations, FileInspector context, advisory admissibility, and the Rust file-semantics parity boundary.
+- `USE_CASES.md` now explains the journey from file path to semantic file object, semantic scope check, FileInspector context, dependency/invariant context, advisory admissibility decision, FSL claim reference, and optional Rust shadow parity.
+- `RUST_PARITY_NOTE.md` now includes `file_semantics_parity` alongside the StateProof candidate and append-gate parity operations.
+- `docs/fsl_rust_authority_promotion_audit.md` now records file-semantics parity as a third shadow-only Rust evidence surface.
+- Public package metadata, tag guidance, and machine-readable package-version fields now identify this package as `1.1.3`.
+
+No theorem IDs, Lean declarations, parser behavior, validator behavior, FSL registry source semantics, StateProof append authority, Rust runtime authority, Builder rejection authority, or governance execution behavior changed in `1.1.3`.
+
 ## Version 1.1.2
 
 Version `1.1.2` is a patch release for public documentation of the semantic StateProof pipeline and Rust shadow-parity boundary.
 
-It incorporates the current reader-facing release updates:
+It incorporates the reader-facing StateProof/Rust-boundary updates:
 
-- The public README now explains the staged evidence path from observable semantics to StateProof anchor candidate, anchor decision, append request, dry-run payload, Governor authorization, controlled append integration, and Rust shadow parity.
-- The public README now explains governance roles, how FSL names role-produced claims, and why Rust remains a kernel hardening layer rather than governance authority.
-- `USE_CASES.md` now explains why semantic observations do not immediately become durable StateProof evidence.
-- `RUST_PARITY_NOTE.md` now distinguishes the older Rust/Python parity runner evidence from the newer FSL StateProof candidate and append-gate shadow parity checks.
-- `RUST_AUTHORITY_CRITERIA.md` now points to the report-only promotion audit.
+- The public README explains the staged evidence path from observable semantics to StateProof anchor candidate, anchor decision, append request, dry-run payload, Governor authorization, controlled append integration, and Rust shadow parity.
+- The public README explains governance roles, how FSL names role-produced claims, and why Rust remains a kernel hardening layer rather than governance authority.
+- `USE_CASES.md` explains why semantic observations do not immediately become durable StateProof evidence.
+- `RUST_PARITY_NOTE.md` distinguishes the older Rust/Python parity runner evidence from the FSL StateProof candidate and append-gate shadow parity checks.
+- `RUST_AUTHORITY_CRITERIA.md` points to the report-only promotion audit.
 - `docs/fsl_rust_authority_promotion_audit.md` is included as the public audit explaining why Rust remains shadow parity and is not promoted to authority.
 
 No theorem IDs, Lean declarations, parser behavior, validator behavior, FSL registry source semantics, StateProof append authority, Rust runtime authority, or governance execution behavior changed in `1.1.2`.
@@ -89,6 +103,7 @@ It is a position-paper and publication-package release. It does not claim comple
 - Overleaf paper package: included as PDF-ready LaTeX source
 - Rust StateProof candidate parity: shadow only
 - Rust append-gate parity: shadow only
+- Rust file-semantics parity: shadow only
 - Rust authority promotion: not granted
 
 ## Canonical and derived artifacts
@@ -133,13 +148,13 @@ This release is documentation and assembly only. It does not modify parser behav
 
 Rust governance surfaces are currently treated as shadow/parity evidence. The earlier public parity evidence reports 12 passing cases, 0 failures, and 0 skips across mission gate predicates, FSL sort checks, and mesh movement predicates.
 
-Additional internal Rust shadow parity now exists for FSL StateProof candidate validation and append-gate validation. These checks help detect malformed serialized records and authority escalation attempts. They do not promote Rust to governance authority and do not permit Rust to append StateProof.
+Additional internal Rust shadow parity now exists for FSL StateProof candidate validation, append-gate validation, and file semantic classification/advisory admissibility status. These checks help detect malformed serialized records, policy drift, scope mismatch, constraint-status mismatch, and authority escalation attempts. They do not promote Rust to governance authority, do not permit Rust to append StateProof, and do not let Rust reject Builder actions.
 
 `RUST_PARITY_NOTE.md` is included so readers can distinguish Rust compatibility evidence from governance authority. This release does not promote Rust to constitutional authority and does not alter current governance execution.
 
 `RUST_AUTHORITY_CRITERIA.md` defines the evidence required before a later governed release may promote any Rust surface to governance authority. It is a criteria document only; it does not perform promotion.
 
-`docs/fsl_rust_authority_promotion_audit.md` records the current audit finding: Rust should remain shadow parity until shared Python/Rust fixtures, canonical dry-run observation checks, and an explicit governed promotion decision exist.
+`docs/fsl_rust_authority_promotion_audit.md` records the current audit finding: Rust should remain shadow parity until shared Python/Rust fixtures, canonical dry-run observation checks where relevant, file-semantics parity fixtures, and an explicit governed promotion decision exist.
 
 ## Release-candidate audit
 
@@ -147,9 +162,9 @@ Additional internal Rust shadow parity now exists for FSL StateProof candidate v
 
 ## Publication tag status
 
-`PUBLICATION_TAG.md` records this package as the governed `1.1.2` public position-paper, language-package, proof-bundle, formal-whitepaper, StateProof/Rust-boundary documentation patch release. The recommended tag is `fsl-observer-theorem-v1.1.2` after the public package files are committed.
+`PUBLICATION_TAG.md` records this package as the governed `1.1.3` public position-paper, language-package, proof-bundle, formal-whitepaper, StateProof/Rust-boundary, and file-semantics documentation patch release. The recommended tag is `fsl-observer-theorem-v1.1.3` after the public package files are committed.
 
-This tag represents the current formal whitepaper package for the `1.1.2` public package boundary. The proof-status distribution remains `31 / 1 / 0`: 31 machine-checked theorem records, 1 machine-checked-under-explicit-axioms record, and no partial, definition-only, or planned records. It does not claim assumption-free cryptographic proof, StateProof append authority from semantic candidates alone, or Rust runtime authority.
+This tag represents the current formal whitepaper package for the `1.1.3` public package boundary. The proof-status distribution remains `31 / 1 / 0`: 31 machine-checked theorem records, 1 machine-checked-under-explicit-axioms record, and no partial, definition-only, or planned records. It does not claim assumption-free cryptographic proof, StateProof append authority from semantic candidates alone, Rust runtime authority, or Builder rejection authority from file-semantics parity.
 
 ## Export process
 

@@ -44,7 +44,7 @@ Core artifacts:
 - `RUST_PARITY_NOTE.md`
 - `RUST_AUTHORITY_CRITERIA.md`
 
-This layer prevents runtime overclaiming. Rust parity evidence currently supports implementation hardening and future authority-promotion review. It does not replace the Python/query-surface governance authority, StateProof verification authority, parser behavior, validator behavior, Lean references, or theorem status. The authority criteria define what a future promotion must prove before that boundary can change.
+This layer prevents runtime overclaiming. Rust parity evidence currently supports implementation hardening and future authority-promotion review for selected StateProof candidate, append-gate, and file-semantics boundaries. It does not replace the Python/query-surface governance authority, StateProof verification authority, Builder rejection authority, ScopeAgent/FileInspector authority, parser behavior, validator behavior, Lean references, or theorem status. The authority criteria define what a future promotion must prove before that boundary can change.
 
 ## Layer 2: FSL symbolic language
 
