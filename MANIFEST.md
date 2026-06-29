@@ -10,6 +10,8 @@ This manifest defines what should be included, referenced, or excluded when turn
 | `formal_whitepaper.md` | include | Formal proof-status whitepaper grounded in the public proof bundle. |
 | `USE_CASES.md` | include | Adoption-facing scenarios, including a governed autonomous coding/deployment agent. |
 | `EVIDENCE_CLASSES.md` | include | Public distinction between proof, attestation, export, parity, authorization, checksum, and StateProof evidence. |
+| `FILE_CONSTRAINT_CATALOG.md` | include | Human-readable public export of RFC 2119-style file-semantics constraints. |
+| `file_constraint_catalog.json` | include | Machine-readable public export of the file constraint catalog. |
 | `INDEPENDENT_REPLAY.md` | include | Reviewer playbook for traversing theorem claims to evidence boundaries. |
 | `REPLAY_MATRIX.md` | include | Human-readable theorem-by-theorem independent replay index. |
 | `scripts/replay_fsl_claim.py` | include | Deterministic reviewer tool for replaying one theorem claim against the replay matrix, lifecycle export, boundary documents, and checksums. |
@@ -72,6 +74,8 @@ This manifest defines what should be included, referenced, or excluded when turn
 | `fsl_registry.json` | include | Machine-readable symbol registry export. |
 | `fsl_types.json` | include | Machine-readable type/sort/category export. |
 | `fsl_grammar.json` | include | Machine-readable grammar and rendering export. |
+| `FILE_CONSTRAINT_CATALOG.md` | include | Human-readable file constraint catalog export derived from the canonical FSL file constraint catalog. |
+| `file_constraint_catalog.json` | include | Machine-readable file constraint catalog export for external tooling and review. |
 | `fsl/SYSTEM.yaml` | include as canonical source | Canonical FSL source of truth. Exports are derived from this file. |
 
 ## Reference: theorem and runtime sources

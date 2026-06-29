@@ -4,7 +4,7 @@ FSL is a governed symbolic language for making autonomous-agent claims inspectab
 
 This repository is the public package for FSL and the governed bounded observer theorem stack. It explains a model of agents as bounded observers in a spatial/temporal system, publishes theorem and proof-status evidence, and provides machine-readable language exports that external tools can inspect.
 
-Current public package version: `1.1.3`
+Current public package version: `1.1.4`
 
 ## What Problem This Solves
 
@@ -157,7 +157,8 @@ That means a file is not only treated as bytes on disk. It can be described by:
 - RFC 2119-style constraints;
 - expected scope relationship;
 - dependency and invariant context;
-- advisory admissibility status.
+- advisory admissibility status;
+- public constraint catalog reference.
 
 This layer helps bridge ordinary repository work to FSL meaning. A markdown paper, a Lean theorem file, a Rust runtime module, a checksum file, and a public export manifest do not carry the same governance meaning. They have different roles, different risks, different allowed operations, and different evidence boundaries.
 
@@ -172,6 +173,8 @@ Rust file-semantics parity is not governance authority
 ```
 
 The practical value is that a governed agent can reason about files with more precision than "this path is allowed." It can distinguish the meaning of the file, the constraints attached to that kind of file, and the evidence needed before a change should proceed.
+
+The public catalog for those constraints is included as `FILE_CONSTRAINT_CATALOG.md` and `file_constraint_catalog.json`. It turns stable constraint references into readable RFC 2119-style statements without granting enforcement authority.
 
 ## What FSL Adds
 
@@ -307,6 +310,7 @@ This package is not:
 - Theorem lifecycle snapshot: 32 active records
 - Lean assumptions snapshot: 132 declared axioms, 0 code-level `sorry`/`admit` proof holes
 - FSL file-semantics layer: semantic classification and advisory admissibility only
+- FSL file constraint catalog: public vocabulary/evidence only
 - Rust StateProof candidate parity: shadow only
 - Rust append-gate parity: shadow only
 - Rust file-semantics parity: shadow only
@@ -326,6 +330,8 @@ For evidence boundaries:
 
 - `EVIDENCE_CLASSES.md`
 - `INDEPENDENT_REPLAY.md`
+- `FILE_CONSTRAINT_CATALOG.md`
+- `file_constraint_catalog.json`
 - `REPLAY_MATRIX.md`
 - `replay_matrix.json`
 - `scripts/replay_fsl_claim.py`
@@ -352,6 +358,8 @@ For FSL language review:
 - `fsl_types.json`
 - `fsl_grammar.json`
 - `fsl/SYSTEM.yaml`
+- `FILE_CONSTRAINT_CATALOG.md`
+- `file_constraint_catalog.json`
 
 For release and runtime boundaries:
 
@@ -377,6 +385,8 @@ For PDF presentation:
 - `ABSTRACT.md`: compact overview for first-time readers
 - `USE_CASES.md`: practical adoption scenarios and governed autonomous-agent example
 - `EVIDENCE_CLASSES.md`: distinctions between proof, attestation, export, parity, authorization, checksum, and StateProof evidence
+- `FILE_CONSTRAINT_CATALOG.md`: human-readable RFC 2119-style file constraint catalog
+- `file_constraint_catalog.json`: machine-readable file constraint catalog
 - `INDEPENDENT_REPLAY.md`: reviewer playbook for traversing theorem claims to evidence
 - `scripts/replay_fsl_claim.py`: one-theorem public replay command
 - `REPLAY_MATRIX.md`: human-readable theorem-by-theorem replay index

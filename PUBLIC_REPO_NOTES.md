@@ -22,6 +22,8 @@ This repository includes:
 - `docs/fsl_rust_authority_promotion_audit.md`
 - `ASSUMPTIONS_APPENDIX.md`
 - `lean_assumptions.json`
+- `FILE_CONSTRAINT_CATALOG.md`
+- `file_constraint_catalog.json`
 - `FORMAL_PROOF_BUNDLE.md`
 - `formal_whitepaper.md`
 - `OVERLEAF_README.md`
@@ -52,6 +54,8 @@ The following files are derived publication exports:
 - `theorem_lifecycle.json`
 - `ASSUMPTIONS_APPENDIX.md`
 - `lean_assumptions.json`
+- `FILE_CONSTRAINT_CATALOG.md`
+- `file_constraint_catalog.json`
 - `FORMAL_PROOF_BUNDLE.md`
 - `formal_whitepaper.md`
 - `OVERLEAF_README.md`
@@ -67,6 +71,8 @@ They are included for readability, external parsing, and documentation. They do 
 `theorem_lifecycle.json` is included as a public theorem-lifecycle export. It preserves theorem IDs, lifecycle statuses, and lifecycle record hashes derived from the verified internal lifecycle chain without publishing private governance state.
 
 `ASSUMPTIONS_APPENDIX.md` and `lean_assumptions.json` are included as public formalization-boundary documentation. They inventory declared Lean axioms and confirm that the scanned Lean files contain no code-level `sorry` or `admit` proof holes.
+
+`FILE_CONSTRAINT_CATALOG.md` and `file_constraint_catalog.json` are included as public file-semantics vocabulary exports. They resolve stable constraint references into RFC 2119-style statements. They do not authorize governance, append StateProof evidence, reject Builder work, expand scope, or promote Rust authority.
 
 `FORMAL_PROOF_BUNDLE.md`, `formal_whitepaper.md`, and `lean/` are included as the public formal proof package. The Lean files are source snapshots for inspection; Lean build products and dependencies remain excluded. The formal whitepaper states theorem-by-theorem proof status against the public proof bundle and preserves explicit axiom and lifecycle boundaries.
 

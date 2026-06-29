@@ -11,12 +11,14 @@ Core artifacts:
 - `README.md`
 - `USE_CASES.md`
 - `EVIDENCE_CLASSES.md`
+- `FILE_CONSTRAINT_CATALOG.md`
+- `file_constraint_catalog.json`
 - `INDEPENDENT_REPLAY.md`
 - `REPLAY_MATRIX.md`
 - `replay_matrix.json`
 - `scripts/replay_fsl_claim.py`
 
-This layer is the front door for builders and reviewers. `USE_CASES.md` explains the governed autonomous-agent scenario. `EVIDENCE_CLASSES.md` separates Lean proof, axiom-dependent proof, lifecycle attestation, generated export, runtime parity, governance authorization, checksum/archive evidence, and StateProof evidence. `INDEPENDENT_REPLAY.md` gives a reviewer playbook. `REPLAY_MATRIX.md` and `replay_matrix.json` provide theorem-by-theorem replay references derived from the registry, coverage audit, lifecycle export, assumptions inventory, and checksums. `scripts/replay_fsl_claim.py` turns that replay path into a concrete one-theorem command.
+This layer is the front door for builders and reviewers. `USE_CASES.md` explains the governed autonomous-agent scenario. `EVIDENCE_CLASSES.md` separates Lean proof, axiom-dependent proof, lifecycle attestation, generated export, runtime parity, governance authorization, checksum/archive evidence, and StateProof evidence. `FILE_CONSTRAINT_CATALOG.md` and `file_constraint_catalog.json` expose the file-semantics constraint vocabulary without granting enforcement authority. `INDEPENDENT_REPLAY.md` gives a reviewer playbook. `REPLAY_MATRIX.md` and `replay_matrix.json` provide theorem-by-theorem replay references derived from the registry, coverage audit, lifecycle export, assumptions inventory, and checksums. `scripts/replay_fsl_claim.py` turns that replay path into a concrete one-theorem command.
 
 ## Layer 1: observer theorem world model
 
@@ -67,8 +69,10 @@ Core artifacts:
 - `fsl_registry.json`
 - `fsl_types.json`
 - `fsl_grammar.json`
+- `FILE_CONSTRAINT_CATALOG.md`
+- `file_constraint_catalog.json`
 
-These are derived artifacts. They are suitable for publishing, documentation, and external parsing, but they do not replace `fsl/SYSTEM.yaml`.
+These are derived artifacts. They are suitable for publishing, documentation, and external parsing, but they do not replace `fsl/SYSTEM.yaml` or grant runtime authority.
 
 ## Layer 4: governance provenance
 
@@ -172,7 +176,7 @@ The previous hardening work made FSL easier to document and safer to extend. Thi
 
 Include small, public-facing documents and generated exports.
 
-Include `USE_CASES.md`, `EVIDENCE_CLASSES.md`, `INDEPENDENT_REPLAY.md`, `REPLAY_MATRIX.md`, `replay_matrix.json`, and `scripts/replay_fsl_claim.py` in public releases because they make the package adoptable and independently replayable without strengthening any theorem claim.
+Include `USE_CASES.md`, `EVIDENCE_CLASSES.md`, `FILE_CONSTRAINT_CATALOG.md`, `file_constraint_catalog.json`, `INDEPENDENT_REPLAY.md`, `REPLAY_MATRIX.md`, `replay_matrix.json`, and `scripts/replay_fsl_claim.py` in public releases because they make the package adoptable and independently replayable without strengthening any theorem claim or granting runtime authority.
 
 Reference proofchain, Lean, and runtime source files unless the release is explicitly an audit/source snapshot.
 

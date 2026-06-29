@@ -1,6 +1,6 @@
 # Formal Whitepaper: FSL Governed Observer Theorem Package
 
-Version: `1.1.3`
+Version: `1.1.4`
 
 Date: June 19, 2026
 

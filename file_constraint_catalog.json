@@ -1,0 +1,461 @@
+{
+  "metadata": {
+    "title": "FSL File Constraint Catalog",
+    "package": "fsl_observer_theorem_public_repo",
+    "package_version": "1.1.4",
+    "public_export": true,
+    "canonical": false,
+    "source": "fsl/file_constraint_catalog.py",
+    "constraint_count": 14,
+    "normative_term_counts": {
+      "MUST_NOT": 3,
+      "MUST": 10,
+      "SHOULD": 1
+    },
+    "severity_counts": {
+      "governor_review": 13,
+      "warn": 1
+    },
+    "default_profile_constraint_ref_count": 14,
+    "dangling_default_profile_refs": [],
+    "authority": {
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    "notes": [
+      "This is a generated public export of the canonical FSL file constraint catalog.",
+      "It resolves file-semantics constraint references into RFC 2119-style statements.",
+      "It does not authorize governance, append StateProof evidence, reject Builder work, or promote Rust authority."
+    ]
+  },
+  "constraints": [
+    {
+      "constraint_id": "public_markdown_no_internal_mission_ids",
+      "normative_term": "MUST_NOT",
+      "statement": "Public markdown must not expose internal mission identifiers as user-facing release language.",
+      "applicable_file_kinds": [
+        "public_markdown"
+      ],
+      "applicable_semantic_roles": [
+        "public_explanation"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "chunk",
+        "score",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "Public documentation should explain stable concepts, evidence classes, and release boundaries without requiring readers to understand internal mission flow.",
+      "fsl_symbols": [
+        "FSL"
+      ],
+      "theorem_refs": [
+        "boundary_blocks_pass"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "public_claim_boundary_required",
+      "normative_term": "MUST",
+      "statement": "Public explanatory documents must state the boundary of claims they present.",
+      "applicable_file_kinds": [
+        "public_markdown"
+      ],
+      "applicable_semantic_roles": [
+        "public_explanation"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "chunk",
+        "score",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "A reader must be able to distinguish explanation, evidence, proof, runtime parity, and governance authority.",
+      "fsl_symbols": [
+        "FSL"
+      ],
+      "theorem_refs": [
+        "boundary_blocks_pass"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "formal_claim_boundary_required",
+      "normative_term": "MUST",
+      "statement": "Formal claim surfaces must identify proof status, assumptions, and claim boundaries.",
+      "applicable_file_kinds": [
+        "formal_whitepaper"
+      ],
+      "applicable_semantic_roles": [
+        "formal_claim_surface"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "chunk",
+        "score",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "Formal-facing text must keep machine-checked claims, axiom-dependent claims, definitions, and publication framing separate.",
+      "fsl_symbols": [
+        "FSL"
+      ],
+      "theorem_refs": [
+        "derivation_soundness",
+        "boundary_blocks_pass"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "lean_no_unclassified_sorry_or_admit",
+      "normative_term": "MUST_NOT",
+      "statement": "Lean theorem sources must not contain unclassified sorry or admit placeholders.",
+      "applicable_file_kinds": [
+        "lean_theorem_source"
+      ],
+      "applicable_semantic_roles": [
+        "proof_source"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "A missing proof placeholder is acceptable only when explicitly classified as an assumption, axiom boundary, or roadmap item.",
+      "fsl_symbols": [
+        "FSL"
+      ],
+      "theorem_refs": [
+        "derivation_soundness"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "rust_runtime_no_authority_without_promotion",
+      "normative_term": "MUST_NOT",
+      "statement": "Rust runtime source must not be described as governance authority before promotion.",
+      "applicable_file_kinds": [
+        "rust_runtime_source"
+      ],
+      "applicable_semantic_roles": [
+        "runtime_shadow_parity",
+        "runtime_authority_candidate"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "Rust parity may mirror Python decisions, but authority promotion requires a separate governed promotion decision.",
+      "fsl_symbols": [
+        "A(t)",
+        "K"
+      ],
+      "theorem_refs": [
+        "r6_activates_gates",
+        "governor_deliberates_only"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "governance_source_must_preserve_lifecycle",
+      "normative_term": "MUST",
+      "statement": "Governance source changes must preserve the mission lifecycle and packet authorization boundary.",
+      "applicable_file_kinds": [
+        "python_governance_source"
+      ],
+      "applicable_semantic_roles": [
+        "governance_runtime"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "Governance runtime files sit near mission open, authorization, close, and proof lifecycle behavior.",
+      "fsl_symbols": [
+        "K"
+      ],
+      "theorem_refs": [
+        "mission_completeness",
+        "r3_requires_packet"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "fsl_source_must_preserve_parser_compatibility",
+      "normative_term": "MUST",
+      "statement": "FSL source changes must preserve parser, symbol, and registry compatibility unless separately governed.",
+      "applicable_file_kinds": [
+        "python_fsl_source"
+      ],
+      "applicable_semantic_roles": [
+        "language_runtime"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "FSL language runtime files affect symbols, semantic objects, exports, and public interpretation.",
+      "fsl_symbols": [
+        "FSL"
+      ],
+      "theorem_refs": [
+        "sync_chain_sound"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "registry_must_include_stable_ids",
+      "normative_term": "MUST",
+      "statement": "Registry files must include stable identifiers for public or machine-readable records.",
+      "applicable_file_kinds": [
+        "json_registry"
+      ],
+      "applicable_semantic_roles": [
+        "theorem_registry"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "Stable IDs make exported records replayable and prevent prose-only claim drift.",
+      "fsl_symbols": [
+        "FSL"
+      ],
+      "theorem_refs": [
+        "surfaces_imply_invariants"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "governance_packet_must_declare_allowed_packages",
+      "normative_term": "MUST",
+      "statement": "Governance packet files must declare bounded allowed packages for build work.",
+      "applicable_file_kinds": [
+        "yaml_governance_packet"
+      ],
+      "applicable_semantic_roles": [
+        "governance_packet"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "Allowed packages define the scope boundary that separates authorized work from scope expansion.",
+      "fsl_symbols": [
+        "UP",
+        "K"
+      ],
+      "theorem_refs": [
+        "r3_requires_packet",
+        "scope_expansion_halts"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "checksum_manifest_must_cover_exports",
+      "normative_term": "MUST",
+      "statement": "Checksum manifests must cover exported release artifacts according to the package boundary.",
+      "applicable_file_kinds": [
+        "checksum_manifest"
+      ],
+      "applicable_semantic_roles": [
+        "release_integrity"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "Release integrity depends on reviewers being able to detect byte-level drift.",
+      "fsl_symbols": [
+        "SP",
+        "FSL"
+      ],
+      "theorem_refs": [
+        "sync_chain_sound",
+        "bitcoin_anchor_tamper_evident"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "export_manifest_must_match_package",
+      "normative_term": "MUST",
+      "statement": "Export manifests must match the public package contents and release boundary.",
+      "applicable_file_kinds": [
+        "export_manifest"
+      ],
+      "applicable_semantic_roles": [
+        "publication_boundary"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "The manifest is the reader-facing map between source material, exported artifacts, and release claims.",
+      "fsl_symbols": [
+        "FSL"
+      ],
+      "theorem_refs": [
+        "sync_chain_sound"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "release_notes_public_delta_required",
+      "normative_term": "MUST",
+      "statement": "Release notes must summarize the public delta in user-facing language.",
+      "applicable_file_kinds": [
+        "release_notes"
+      ],
+      "applicable_semantic_roles": [
+        "publication_boundary"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "chunk",
+        "score",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "A release note should explain what changed for readers without leaking internal mission mechanics as the primary story.",
+      "fsl_symbols": [
+        "FSL"
+      ],
+      "theorem_refs": [
+        "log_event_freezes_delta"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "test_source_must_match_behavioral_boundary",
+      "normative_term": "MUST",
+      "statement": "Test sources must match the behavioral boundary claimed by the module under test.",
+      "applicable_file_kinds": [
+        "test_source"
+      ],
+      "applicable_semantic_roles": [
+        "test_fixture"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "reference"
+      ],
+      "severity": "governor_review",
+      "rationale": "Tests should verify the promised semantic boundary without implying authority that the module does not hold.",
+      "fsl_symbols": [
+        "A(t)"
+      ],
+      "theorem_refs": [
+        "coherence_implies_pass"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    },
+    {
+      "constraint_id": "unclassified_artifact_requires_review",
+      "normative_term": "SHOULD",
+      "statement": "Unclassified artifacts should receive Governor review before being used as governed context.",
+      "applicable_file_kinds": [
+        "unclassified_artifact"
+      ],
+      "applicable_semantic_roles": [
+        "unclassified_context"
+      ],
+      "applicable_operations": [
+        "read",
+        "inspect",
+        "reference"
+      ],
+      "severity": "warn",
+      "rationale": "Unclassified files may be harmless, but they have not been mapped to a known semantic role or release boundary.",
+      "fsl_symbols": [
+        "?",
+        "K"
+      ],
+      "theorem_refs": [
+        "governor_deliberates_only"
+      ],
+      "can_authorize_governance": false,
+      "can_emit_stateproof": false,
+      "can_reject_builder": false,
+      "can_promote_rust_authority": false
+    }
+  ],
+  "default_profile_constraint_refs": [
+    "public_markdown_no_internal_mission_ids",
+    "public_claim_boundary_required",
+    "formal_claim_boundary_required",
+    "lean_no_unclassified_sorry_or_admit",
+    "rust_runtime_no_authority_without_promotion",
+    "governance_source_must_preserve_lifecycle",
+    "fsl_source_must_preserve_parser_compatibility",
+    "registry_must_include_stable_ids",
+    "governance_packet_must_declare_allowed_packages",
+    "checksum_manifest_must_cover_exports",
+    "export_manifest_must_match_package",
+    "release_notes_public_delta_required",
+    "test_source_must_match_behavioral_boundary",
+    "unclassified_artifact_requires_review"
+  ]
+}

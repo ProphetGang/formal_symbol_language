@@ -2,7 +2,7 @@
 
 Package: SiMON FSL + Governed Bounded Observer Publication Bundle
 
-Current public package version: `1.1.3`
+Current public package version: `1.1.4`
 
 This bundle is a clean publication directory for understanding FSL and its connection to the governed bounded observer theorem stack. It is intentionally a directory bundle, not a zip archive. Archive creation should happen only after checksum review.
 
@@ -17,6 +17,7 @@ The bundle contains:
 - Public Rust parity boundary note: `RUST_PARITY_NOTE.md`
 - Public Rust authority-promotion criteria: `RUST_AUTHORITY_CRITERIA.md`
 - Public Rust authority-promotion audit: `docs/fsl_rust_authority_promotion_audit.md`
+- Public file constraint catalog: `FILE_CONSTRAINT_CATALOG.md`, `file_constraint_catalog.json`
 - The public observer theorem registry: `THEOREM_REGISTRY.md`, `theorem_registry.json`
 - The public theorem lifecycle export: `theorem_lifecycle.json`
 - The public independent replay tool: `scripts/replay_fsl_claim.py`
@@ -36,6 +37,18 @@ The bundle contains:
 - Publication tag record: `PUBLICATION_TAG.md`
 - Repeatable export manifest: `EXPORT_MANIFEST.json`
 - Checksums: `CHECKSUMS.sha256`
+
+## Version 1.1.4
+
+Version `1.1.4` is a patch release that adds the public FSL file constraint catalog export.
+
+It incorporates the current reader-facing release updates:
+
+- `FILE_CONSTRAINT_CATALOG.md` now gives a human-readable catalog of file-semantics constraint references, RFC 2119-style terms, statements, severity, FSL symbols, theorem references, and authority boundaries.
+- `file_constraint_catalog.json` now provides the same catalog as a machine-readable public export for reviewers and external tooling.
+- `EXPORT_MANIFEST.json`, `MANIFEST.md`, `PACKAGE_MAP.md`, `README.md`, release metadata, and checksums now include the generated constraint catalog artifacts.
+
+No theorem IDs, Lean declarations, parser behavior, validator behavior, FSL registry source semantics, StateProof append authority, Rust runtime authority, Builder rejection authority, scope expansion authority, or governance execution behavior changed in `1.1.4`.
 
 ## Version 1.1.3
 
@@ -162,9 +175,9 @@ Additional internal Rust shadow parity now exists for FSL StateProof candidate v
 
 ## Publication tag status
 
-`PUBLICATION_TAG.md` records this package as the governed `1.1.3` public position-paper, language-package, proof-bundle, formal-whitepaper, StateProof/Rust-boundary, and file-semantics documentation patch release. The recommended tag is `fsl-observer-theorem-v1.1.3` after the public package files are committed.
+`PUBLICATION_TAG.md` records this package as the governed `1.1.4` public position-paper, language-package, proof-bundle, formal-whitepaper, StateProof/Rust-boundary, file-semantics documentation, and file constraint catalog patch release. The recommended tag is `fsl-observer-theorem-v1.1.4` after the public package files are committed.
 
-This tag represents the current formal whitepaper package for the `1.1.3` public package boundary. The proof-status distribution remains `31 / 1 / 0`: 31 machine-checked theorem records, 1 machine-checked-under-explicit-axioms record, and no partial, definition-only, or planned records. It does not claim assumption-free cryptographic proof, StateProof append authority from semantic candidates alone, Rust runtime authority, or Builder rejection authority from file-semantics parity.
+This tag represents the current formal whitepaper package for the `1.1.4` public package boundary. The proof-status distribution remains `31 / 1 / 0`: 31 machine-checked theorem records, 1 machine-checked-under-explicit-axioms record, and no partial, definition-only, or planned records. It does not claim assumption-free cryptographic proof, StateProof append authority from semantic candidates alone, Rust runtime authority, or Builder rejection authority from file-semantics parity or file constraint catalog exports.
 
 ## Export process
 

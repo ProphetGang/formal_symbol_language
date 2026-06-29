@@ -1,7 +1,7 @@
 {
   "manifest_version": "1.0",
   "package": "fsl_observer_theorem_public_repo",
-  "package_version": "1.1.3",
+  "package_version": "1.1.4",
   "target_default": "publication/fsl_observer_theorem_public_repo",
   "checksum_file": "CHECKSUMS.sha256",
   "notes": [
@@ -40,6 +40,16 @@
       "dest": "EVIDENCE_CLASSES.md",
       "mode": "copy",
       "kind": "public_evidence_doc"
+    },
+    {
+      "dest": "FILE_CONSTRAINT_CATALOG.md",
+      "mode": "generate_file_constraint_catalog_markdown",
+      "kind": "generated_public_file_semantics_export"
+    },
+    {
+      "dest": "file_constraint_catalog.json",
+      "mode": "generate_file_constraint_catalog_json",
+      "kind": "generated_public_file_semantics_export"
     },
     {
       "source": "publication/fsl_observer_theorem_public_repo/INDEPENDENT_REPLAY.md",
