@@ -10,6 +10,7 @@ Core artifacts:
 
 - `README.md`
 - `USE_CASES.md`
+- `REPO_SEMANTIC_INGESTION.md`
 - `EVIDENCE_CLASSES.md`
 - `FILE_CONSTRAINT_CATALOG.md`
 - `file_constraint_catalog.json`
@@ -17,8 +18,9 @@ Core artifacts:
 - `REPLAY_MATRIX.md`
 - `replay_matrix.json`
 - `scripts/replay_fsl_claim.py`
+- `scripts/replay_repo_semantic_map.py`
 
-This layer is the front door for builders and reviewers. `USE_CASES.md` explains the governed autonomous-agent scenario. `EVIDENCE_CLASSES.md` separates Lean proof, axiom-dependent proof, lifecycle attestation, generated export, runtime parity, governance authorization, checksum/archive evidence, and StateProof evidence. `FILE_CONSTRAINT_CATALOG.md` and `file_constraint_catalog.json` expose the file-semantics constraint vocabulary without granting enforcement authority. `INDEPENDENT_REPLAY.md` gives a reviewer playbook. `REPLAY_MATRIX.md` and `replay_matrix.json` provide theorem-by-theorem replay references derived from the registry, coverage audit, lifecycle export, assumptions inventory, and checksums. `scripts/replay_fsl_claim.py` turns that replay path into a concrete one-theorem command.
+This layer is the front door for builders and reviewers. `USE_CASES.md` explains the governed autonomous-agent scenario. `REPO_SEMANTIC_INGESTION.md` explains how repository files can become semantic objects, occupy HTM/FSL placements, support bounded observer traversal, and remain separate from governance authority. `EVIDENCE_CLASSES.md` separates Lean proof, axiom-dependent proof, lifecycle attestation, generated export, runtime parity, governance authorization, checksum/archive evidence, and StateProof evidence. `FILE_CONSTRAINT_CATALOG.md` and `file_constraint_catalog.json` expose the file-semantics constraint vocabulary without granting enforcement authority. `INDEPENDENT_REPLAY.md` gives a reviewer playbook. `REPLAY_MATRIX.md` and `replay_matrix.json` provide theorem-by-theorem replay references derived from the registry, coverage audit, lifecycle export, assumptions inventory, and checksums. `scripts/replay_fsl_claim.py` turns that replay path into a concrete one-theorem command. `scripts/replay_repo_semantic_map.py` replays exported repository semantic maps without scanning live repositories or granting authority.
 
 ## Layer 1: observer theorem world model
 
@@ -46,7 +48,7 @@ Core artifacts:
 - `RUST_PARITY_NOTE.md`
 - `RUST_AUTHORITY_CRITERIA.md`
 
-This layer prevents runtime overclaiming. Rust parity evidence currently supports implementation hardening and future authority-promotion review for selected StateProof candidate, append-gate, and file-semantics boundaries. It does not replace the Python/query-surface governance authority, StateProof verification authority, Builder rejection authority, ScopeAgent/FileInspector authority, parser behavior, validator behavior, Lean references, or theorem status. The authority criteria define what a future promotion must prove before that boundary can change.
+This layer prevents runtime overclaiming. Rust parity evidence currently supports implementation hardening and future authority-promotion review for selected StateProof candidate, append-gate, file-semantics, and repository semantic boundaries. It does not replace the Python/query-surface governance authority, StateProof verification authority, Builder rejection authority, ScopeAgent/FileInspector authority, parser behavior, validator behavior, Lean references, repository scan ownership, or theorem status. The authority criteria define what a future promotion must prove before that boundary can change.
 
 ## Layer 2: FSL symbolic language
 
@@ -176,7 +178,7 @@ The previous hardening work made FSL easier to document and safer to extend. Thi
 
 Include small, public-facing documents and generated exports.
 
-Include `USE_CASES.md`, `EVIDENCE_CLASSES.md`, `FILE_CONSTRAINT_CATALOG.md`, `file_constraint_catalog.json`, `INDEPENDENT_REPLAY.md`, `REPLAY_MATRIX.md`, `replay_matrix.json`, and `scripts/replay_fsl_claim.py` in public releases because they make the package adoptable and independently replayable without strengthening any theorem claim or granting runtime authority.
+Include `USE_CASES.md`, `REPO_SEMANTIC_INGESTION.md`, `EVIDENCE_CLASSES.md`, `FILE_CONSTRAINT_CATALOG.md`, `file_constraint_catalog.json`, `INDEPENDENT_REPLAY.md`, `REPLAY_MATRIX.md`, `replay_matrix.json`, `scripts/replay_fsl_claim.py`, and `scripts/replay_repo_semantic_map.py` in public releases because they make the package adoptable and independently replayable without strengthening any theorem claim or granting runtime authority.
 
 Reference proofchain, Lean, and runtime source files unless the release is explicitly an audit/source snapshot.
 

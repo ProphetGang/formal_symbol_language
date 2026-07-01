@@ -4,7 +4,7 @@ FSL is a governed symbolic language for making autonomous-agent claims inspectab
 
 This repository is the public package for FSL and the governed bounded observer theorem stack. It explains a model of agents as bounded observers in a spatial/temporal system, publishes theorem and proof-status evidence, and provides machine-readable language exports that external tools can inspect.
 
-Current public package version: `1.1.4`
+Current public package version: `1.1.5`
 
 ## What Problem This Solves
 
@@ -139,7 +139,7 @@ In public terms:
 
 FSL does not replace these roles. FSL gives stable names to the claims those roles produce. A scope boundary can be referenced as a declared scope. A builder delta can be referenced as a symbolic change. A Governor decision can be referenced as an authorization boundary. A StateProof can be referenced as a durable evidence class.
 
-Rust is being developed as a kernel/runtime hardening layer for selected governance checks. In this release, Rust is not the governance authority. It mirrors selected StateProof candidate, append-gate, and file-semantics validation boundaries as shadow parity, helping detect malformed serialized records, policy drift, and authority-escalation attempts.
+Rust is being developed as a kernel/runtime hardening layer for selected governance checks. In this release, Rust is not the governance authority. It mirrors selected StateProof candidate, append-gate, file-semantics, and repository semantic validation boundaries as shadow parity, helping detect malformed serialized records, policy drift, and authority-escalation attempts.
 
 The intended long-term value of a Rust kernel is type-safe enforcement at carefully promoted boundaries. Promotion requires explicit evidence, compatibility checks, rollback rules, and a governed authority decision. Until then, Rust remains evidence-bearing validation, not constitutional authority.
 
@@ -175,6 +175,43 @@ Rust file-semantics parity is not governance authority
 The practical value is that a governed agent can reason about files with more precision than "this path is allowed." It can distinguish the meaning of the file, the constraints attached to that kind of file, and the evidence needed before a change should proceed.
 
 The public catalog for those constraints is included as `FILE_CONSTRAINT_CATALOG.md` and `file_constraint_catalog.json`. It turns stable constraint references into readable RFC 2119-style statements without granting enforcement authority.
+
+### Repository Semantic Ingestion
+
+The repository semantic ingestion layer extends file semantics from one file at a time to a whole repository snapshot.
+
+The bridge is staged:
+
+```text
+repository files
+  -> file inventory
+  -> path and content classification
+  -> repository profile override
+  -> semantic file object
+  -> constraint resolution
+  -> dependency and invariant context
+  -> advisory admissibility
+  -> HTM semantic placement
+  -> bounded observer traversal
+  -> optional StateProof candidate
+  -> optional Rust shadow parity
+```
+
+The point is not only to know that a path exists. The point is to know what kind of meaning the file carries in the governed system. A public README, a release note, a Lean proof snapshot, a Rust runtime module, and a checksum manifest should not be treated as interchangeable files.
+
+In this model, each file can become a semantic object. That object can then be placed into the HTM/FSL manifold as a semantic-layer occupant. A bounded observer can traverse the resulting semantic map, and FileInspector can attach read-only context about visible files, constraints, dependencies, and ambiguity sources.
+
+Important boundary:
+
+```text
+semantic ingestion is not permission to edit
+HTM placement is not observer movement
+bounded traversal is not durable proof
+StateProof candidate is not StateProof append
+Rust repository semantic parity is not governance authority
+```
+
+For the dedicated public explainer, see `REPO_SEMANTIC_INGESTION.md`.
 
 ## What FSL Adds
 
@@ -234,6 +271,8 @@ Rust currently mirrors candidate and append-gate validation as shadow parity onl
 
 Rust also mirrors file semantic classification and advisory admissibility status as shadow parity. That check can classify a path into a file kind and semantic role, compare expected scope metadata, inspect supplied constraint-evaluation summaries, and report whether the serialized record looks eligible, rejected, or requiring Governor review. It still cannot reject the Builder, expand scope, authorize governance, append StateProof, or promote Rust authority.
 
+Rust also mirrors repository semantic records as shadow parity. That check can validate supplied semantic object, placement, and advisory-status summaries for drift or authority escalation. It still does not scan repositories by itself, own FileInspector context, reject Builder actions, expand scope, authorize governance, append StateProof, or promote Rust authority.
+
 See:
 
 - `RUST_PARITY_NOTE.md`
@@ -262,17 +301,26 @@ python3.12 scripts/replay_fsl_claim.py --list
 
 The replay script is not a Lean prover and not a governance authority. It helps a reviewer traverse one public claim from theorem ID to evidence boundary.
 
+If a repository semantic map export is available, replay it with:
+
+```bash
+python3.12 scripts/replay_repo_semantic_map.py semantic_map.json
+```
+
+That command checks the exported semantic map for replay/placement drift. It does not scan a live repository, authorize edits, append StateProof evidence, or promote Rust authority.
+
 ## Adoption Protocol
 
 If you are new to this repository:
 
 1. Read this README.
 2. Read `USE_CASES.md` for the governed production-change journey.
-3. Read `EVIDENCE_CLASSES.md` to understand evidence boundaries.
-4. Replay one theorem claim with `scripts/replay_fsl_claim.py`.
-5. Inspect `THEOREM_REGISTRY.md` or `theorem_registry.json`.
-6. Read `formal_whitepaper.md` for theorem-by-theorem proof status.
-7. Map your own system names, such as tickets, commits, policies, CI jobs, deployment IDs, or audit records, to FSL-style semantic references.
+3. Read `REPO_SEMANTIC_INGESTION.md` to understand how repository files become semantic objects in the HTM/FSL manifold.
+4. Read `EVIDENCE_CLASSES.md` to understand evidence boundaries.
+5. Replay one theorem claim with `scripts/replay_fsl_claim.py`.
+6. Inspect `THEOREM_REGISTRY.md` or `theorem_registry.json`.
+7. Read `formal_whitepaper.md` for theorem-by-theorem proof status.
+8. Map your own system names, such as tickets, commits, policies, CI jobs, deployment IDs, or audit records, to FSL-style semantic references.
 
 ## What This Package Is
 
@@ -282,6 +330,7 @@ This package is:
 - a formal proof-status package for 32 public theorem records;
 - a replayable evidence package with checksums;
 - a bridge between governed autonomous-agent action and inspectable semantic claims;
+- a public explanation of repository files as semantic objects placed into an HTM/FSL manifold;
 - a publication package containing human-readable and machine-readable artifacts.
 
 ## What This Package Is Not
@@ -311,9 +360,11 @@ This package is not:
 - Lean assumptions snapshot: 132 declared axioms, 0 code-level `sorry`/`admit` proof holes
 - FSL file-semantics layer: semantic classification and advisory admissibility only
 - FSL file constraint catalog: public vocabulary/evidence only
+- FSL repository semantic ingestion: semantic map/replay explanation only
 - Rust StateProof candidate parity: shadow only
 - Rust append-gate parity: shadow only
 - Rust file-semantics parity: shadow only
+- Rust repository semantic parity: shadow only
 - Rust authority promotion: not granted
 
 ## Reader Paths
@@ -325,6 +376,7 @@ For a compact overview:
 For examples and conceptual walkthroughs:
 
 - `USE_CASES.md`
+- `REPO_SEMANTIC_INGESTION.md`
 
 For evidence boundaries:
 
@@ -335,6 +387,7 @@ For evidence boundaries:
 - `REPLAY_MATRIX.md`
 - `replay_matrix.json`
 - `scripts/replay_fsl_claim.py`
+- `scripts/replay_repo_semantic_map.py`
 
 For theorem and proof-status review:
 
@@ -384,11 +437,13 @@ For PDF presentation:
 - `README.md`: public landing page and orientation map
 - `ABSTRACT.md`: compact overview for first-time readers
 - `USE_CASES.md`: practical adoption scenarios and governed autonomous-agent example
+- `REPO_SEMANTIC_INGESTION.md`: public explainer for repository semantic objects, HTM placement, bounded traversal, StateProof candidates, and Rust shadow parity
 - `EVIDENCE_CLASSES.md`: distinctions between proof, attestation, export, parity, authorization, checksum, and StateProof evidence
 - `FILE_CONSTRAINT_CATALOG.md`: human-readable RFC 2119-style file constraint catalog
 - `file_constraint_catalog.json`: machine-readable file constraint catalog
 - `INDEPENDENT_REPLAY.md`: reviewer playbook for traversing theorem claims to evidence
 - `scripts/replay_fsl_claim.py`: one-theorem public replay command
+- `scripts/replay_repo_semantic_map.py`: semantic-map replay command for exported repository semantic maps
 - `REPLAY_MATRIX.md`: human-readable theorem-by-theorem replay index
 - `replay_matrix.json`: machine-readable theorem-by-theorem replay index
 - `whitepaper.md`: governed bounded observer theorem position paper

@@ -2,7 +2,7 @@
   "metadata": {
     "title": "FSL File Constraint Catalog",
     "package": "fsl_observer_theorem_public_repo",
-    "package_version": "1.1.4",
+    "package_version": "1.1.5",
     "public_export": true,
     "canonical": false,
     "source": "fsl/file_constraint_catalog.py",
@@ -27,6 +27,7 @@
     "notes": [
       "This is a generated public export of the canonical FSL file constraint catalog.",
       "It resolves file-semantics constraint references into RFC 2119-style statements.",
+      "Repository semantic ingestion uses these records when matching files to semantic objects and review boundaries.",
       "It does not authorize governance, append StateProof evidence, reject Builder work, or promote Rust authority."
     ]
   },

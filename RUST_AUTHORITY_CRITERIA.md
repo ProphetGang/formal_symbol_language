@@ -6,7 +6,7 @@ It does not promote Rust authority.
 
 Current governance authority remains with the Python/query-surface governance path and the governed StateProof chain.
 
-The current report-only audit for FSL StateProof candidate, append-gate, and file-semantics parity is included at `docs/fsl_rust_authority_promotion_audit.md`. That audit does not promote Rust authority; it records why Rust remains shadow parity for this release.
+The current report-only audit for FSL StateProof candidate, append-gate, file-semantics, and repository semantic parity is included at `docs/fsl_rust_authority_promotion_audit.md`. That audit does not promote Rust authority; it records why Rust remains shadow parity for this release.
 
 ## Promotion meaning
 
@@ -32,6 +32,8 @@ Acceptable surface declarations include:
 - StateProof append-gate preflight validation
 - file-semantics preflight validation
 - advisory file admissibility preflight validation
+- repository semantic map preflight validation
+- HTM file placement preflight validation
 - theorem lifecycle verification
 - mesh movement admissibility
 

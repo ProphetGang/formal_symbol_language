@@ -21,13 +21,14 @@ The measured surfaces were:
 
 The parity runner also performed binary preflight checks and recorded fresh release binaries for the measured Rust surfaces.
 
-The FSL hardening track also added Rust shadow parity for three serialized evidence boundaries:
+The FSL hardening track also added Rust shadow parity for four serialized evidence boundaries:
 
 - `stateproof_candidate_parity`: mirrors StateProof anchor-candidate shape and rejection checks.
 - `stateproof_append_gate_parity`: mirrors append-request and Governor authorization gate checks.
 - `file_semantics_parity`: mirrors file semantic classification and advisory admissibility status checks.
+- `repo_semantic_parity`: mirrors repository semantic object, HTM placement, and advisory-status summaries.
 
-Those checks are useful for detecting malformed records, policy drift, scope mismatch, constraint-status mismatch, and authority-escalation attempts. They do not append StateProofs, reject Builder actions, expand scope, or promote Rust to authority.
+Those checks are useful for detecting malformed records, policy drift, scope mismatch, placement drift, constraint-status mismatch, and authority-escalation attempts. They do not scan repositories, append StateProofs, reject Builder actions, expand scope, or promote Rust to authority.
 
 ## What parity means
 
@@ -73,13 +74,23 @@ Builder rejection authority: not granted
 Scope expansion authority: not granted
 ```
 
+For the FSL repository semantic ingestion layer, the current authority boundary is:
+
+```text
+Python/FSL semantic map authority: retained
+Rust runtime authority: not promoted
+Rust validation status: shadow parity
+Repository scan authority: not granted to Rust
+StateProof append authority: not granted to Rust
+```
+
 ## Promotion requirement
 
 Rust authority promotion requires a separate governed release decision with explicit success criteria.
 
 The public criteria for such a mission are defined in `RUST_AUTHORITY_CRITERIA.md`.
 
-The current report-only audit is included at `docs/fsl_rust_authority_promotion_audit.md`. Its finding is that Rust should remain shadow parity until shared Python/Rust fixtures, canonical dry-run observation checks where relevant, file-semantics parity fixtures, and an explicit governed promotion decision exist.
+The current report-only audit is included at `docs/fsl_rust_authority_promotion_audit.md`. Its finding is that Rust should remain shadow parity until shared Python/Rust fixtures, canonical dry-run observation checks where relevant, file-semantics and repository-semantic parity fixtures, and an explicit governed promotion decision exist.
 
 At minimum, a future promotion must show:
 

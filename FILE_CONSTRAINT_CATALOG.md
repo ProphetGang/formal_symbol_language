@@ -2,11 +2,13 @@
 
 This catalog is the public export of the FSL file-semantics constraints. It resolves stable `constraint_ref` names into RFC 2119-style statements so readers can see what each reference means.
 
+Repository semantic ingestion uses this catalog when matching files to semantic objects, review boundaries, and replayable semantic maps.
+
 The catalog is evidence and vocabulary, not runtime authority. It does not authorize governance, append StateProof evidence, reject Builder work, or promote Rust authority.
 
 ## Snapshot
 
-- Package version: `1.1.4`
+- Package version: `1.1.5`
 - Constraint records: 14
 - Normative terms: MUST_NOT (3), MUST (10), SHOULD (1)
 - Severities: governor_review (13), warn (1)

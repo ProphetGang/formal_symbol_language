@@ -1,7 +1,7 @@
 {
   "manifest_version": "1.0",
   "package": "fsl_observer_theorem_public_repo",
-  "package_version": "1.1.4",
+  "package_version": "1.1.5",
   "target_default": "publication/fsl_observer_theorem_public_repo",
   "checksum_file": "CHECKSUMS.sha256",
   "notes": [
@@ -36,6 +36,12 @@
       "kind": "public_adoption_doc"
     },
     {
+      "source": "publication/fsl_observer_theorem_public_repo/REPO_SEMANTIC_INGESTION.md",
+      "dest": "REPO_SEMANTIC_INGESTION.md",
+      "mode": "copy",
+      "kind": "public_adoption_doc"
+    },
+    {
       "source": "publication/fsl_observer_theorem_public_repo/EVIDENCE_CLASSES.md",
       "dest": "EVIDENCE_CLASSES.md",
       "mode": "copy",
@@ -60,6 +66,12 @@
     {
       "source": "scripts/replay_fsl_claim.py",
       "dest": "scripts/replay_fsl_claim.py",
+      "mode": "copy",
+      "kind": "public_replay_tool"
+    },
+    {
+      "source": "scripts/replay_repo_semantic_map.py",
+      "dest": "scripts/replay_repo_semantic_map.py",
       "mode": "copy",
       "kind": "public_replay_tool"
     },

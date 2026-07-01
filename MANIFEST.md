@@ -9,12 +9,14 @@ This manifest defines what should be included, referenced, or excluded when turn
 | `whitepaper.md` | include | Unified governed bounded observer theorem paper. |
 | `formal_whitepaper.md` | include | Formal proof-status whitepaper grounded in the public proof bundle. |
 | `USE_CASES.md` | include | Adoption-facing scenarios, including a governed autonomous coding/deployment agent. |
+| `REPO_SEMANTIC_INGESTION.md` | include | Public explainer for repository semantic ingestion, semantic file objects, HTM placement, bounded traversal, and semantic-map replay. |
 | `EVIDENCE_CLASSES.md` | include | Public distinction between proof, attestation, export, parity, authorization, checksum, and StateProof evidence. |
 | `FILE_CONSTRAINT_CATALOG.md` | include | Human-readable public export of RFC 2119-style file-semantics constraints. |
 | `file_constraint_catalog.json` | include | Machine-readable public export of the file constraint catalog. |
 | `INDEPENDENT_REPLAY.md` | include | Reviewer playbook for traversing theorem claims to evidence boundaries. |
 | `REPLAY_MATRIX.md` | include | Human-readable theorem-by-theorem independent replay index. |
 | `scripts/replay_fsl_claim.py` | include | Deterministic reviewer tool for replaying one theorem claim against the replay matrix, lifecycle export, boundary documents, and checksums. |
+| `scripts/replay_repo_semantic_map.py` | include | Deterministic reviewer tool for replaying an exported repository semantic map. |
 | `OVERLEAF_README.md` | include | Instructions for compiling the PDF-facing Overleaf paper package. |
 | `overleaf/main.tex` | include | Overleaf-ready LaTeX paper source. |
 | `overleaf/references.bib` | include | Bibliography for the Overleaf paper source. |
@@ -76,6 +78,7 @@ This manifest defines what should be included, referenced, or excluded when turn
 | `fsl_grammar.json` | include | Machine-readable grammar and rendering export. |
 | `FILE_CONSTRAINT_CATALOG.md` | include | Human-readable file constraint catalog export derived from the canonical FSL file constraint catalog. |
 | `file_constraint_catalog.json` | include | Machine-readable file constraint catalog export for external tooling and review. |
+| `REPO_SEMANTIC_INGESTION.md` | include | Public repository semantic ingestion and HTM placement explainer. |
 | `fsl/SYSTEM.yaml` | include as canonical source | Canonical FSL source of truth. Exports are derived from this file. |
 
 ## Reference: theorem and runtime sources

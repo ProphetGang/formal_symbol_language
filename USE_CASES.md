@@ -36,6 +36,10 @@ FSL gives the system a way to say: this path is a public documentation file, thi
 
 That file-semantics step does not replace governance authorization. It gives governance better language. Instead of only asking whether a path string is inside `allowed_packages`, the system can ask whether the file's meaning matches the mission's declared scope.
 
+For a whole repository, this becomes a semantic ingestion path. The system can inventory files, classify them by path and content signatures, apply repository profile overrides, resolve constraints, collect dependency evidence, and place the resulting semantic file objects into the HTM/FSL manifold. The agent is no longer just looking at a folder tree. It is looking at a bounded semantic map of the repository.
+
+That matters because a governed agent needs context before action. If the requested change touches a release note, a checksum manifest, a Lean theorem source, and a Rust runtime module, those files do not mean the same thing. A semantic map lets ScopeAgent declare what kinds of files are expected, lets ResearchAgent request bounded traversal, lets TourAgent return visible semantic occupants, and lets FileInspector attach read-only context to the files that actually matter.
+
 This is where ordinary governance systems often become vague. They may say the change was "approved", "tested", "safe", or "verified", but those words can hide very different kinds of evidence.
 
 FSL enters at that boundary. It does not replace mission governance. Instead, it gives the claims produced by governance stable symbolic and theorem-facing references.
@@ -98,6 +102,14 @@ python3.12 scripts/replay_fsl_claim.py --list
 
 The replay script is not a Lean prover and not a governance authority. It does not create new proofs or authorize missions. Its purpose is narrower and more useful for review: it helps a reader traverse one public claim from theorem ID to evidence boundary without relying on author interpretation.
 
+If a repository semantic map export is available, a reviewer can also replay that map:
+
+```bash
+python3.12 scripts/replay_repo_semantic_map.py semantic_map.json
+```
+
+That replay checks the exported semantic map and placement record for drift. It does not scan a live repository, authorize edits, run Lean, or append StateProof evidence.
+
 ## From Semantic Claim To StateProof Candidate
 
 In the live SiMON system, a semantic observation does not immediately become durable StateProof evidence.
@@ -146,6 +158,40 @@ Rust file-semantics parity != governance authority
 ```
 
 This is useful because many real agent failures are not theorem failures. They are context failures: the agent edits the wrong kind of file, treats generated output as source, changes a release-integrity artifact without refreshing checksums, or touches a runtime file when the mission was only documentation. FSL's file-semantics layer gives those distinctions stable names before the system asks whether a change should proceed.
+
+## From Repository To Semantic Manifold
+
+The repository ingestion path generalizes file semantics into a replayable map:
+
+```text
+repo snapshot
+  -> file inventory
+  -> semantic file objects
+  -> resolved constraints
+  -> dependency context
+  -> HTM placements
+  -> bounded observer visibility
+  -> replayable semantic map
+```
+
+This is the bridge between ordinary software structure and the governed bounded observer model.
+
+The repository is treated as a space of meaning-bearing objects. A file can occupy a semantic cell. A bounded observer can see nearby semantic objects. ResearchAgent can request a bounded traversal through that map. TourAgent can return visible files, symbols, constraints, and ambiguity sources. FileInspector can then inspect only the authorized files and provide context without writing.
+
+The result is not automatic control. It is better review.
+
+The system can say:
+
+```text
+the proposed change touches a public explanation surface
+the release-integrity files require checksum refresh
+the runtime file is outside this documentation-only scope
+the semantic map replayed without placement drift
+the observation is eligible only as a StateProof candidate
+the Rust check agrees as shadow parity
+```
+
+That is the practical promise of embedding FSL in the HTM manifold: repository work becomes something a bounded observer can traverse and explain, instead of a flat list of paths plus a vague claim that the agent understood the codebase.
 
 ## What FSL Gives You That Ordinary Policy Docs Do Not
 

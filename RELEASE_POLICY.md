@@ -2,7 +2,7 @@
 
 This repository uses version numbers for the public FSL observer theorem package, not for the full private SiMON runtime.
 
-Current public package version: `1.1.4`
+Current public package version: `1.1.5`
 
 ## Version Meaning
 
@@ -20,7 +20,7 @@ MAJOR.MINOR.PATCH
 
 ## Current Release
 
-Version `1.1.4` is a public export patch release that adds the generated FSL file constraint catalog in Markdown and JSON form. It resolves file-semantics constraint references into RFC 2119-style statements for readers and external tooling. It does not change theorem IDs, Lean declarations, parser behavior, validator behavior, StateProof append authority, Rust runtime authority, Builder rejection authority, scope expansion authority, or governance execution.
+Version `1.1.5` is a public documentation/export patch release that explains repository semantic ingestion: file inventory, semantic file objects, constraint resolution, dependency context, HTM semantic placement, bounded observer traversal, semantic-map replay, StateProof candidate boundaries, and Rust repository semantic shadow parity. It does not change theorem IDs, Lean declarations, parser behavior, validator behavior, StateProof append authority, Rust runtime authority, Builder rejection authority, scope expansion authority, repository scan authority, or governance execution.
 
 Version `1.1.0` was the first public package release with all of the following included:
 
@@ -63,6 +63,7 @@ A public release should pass these checks before publication:
 - `fsl/SYSTEM.yaml` is present as the canonical FSL source snapshot.
 - `fsl_registry.json`, `fsl_types.json`, `fsl_grammar.json`, and `fsl_specification.md` are present as derived publication exports.
 - `FILE_CONSTRAINT_CATALOG.md` and `file_constraint_catalog.json` are present when the release claims to include public file-semantics constraint catalog exports.
+- `REPO_SEMANTIC_INGESTION.md` and `scripts/replay_repo_semantic_map.py` are present when the release claims to include repository semantic ingestion documentation and semantic-map replay.
 - Private keys, local caches, model files, embedded repositories, and internal runtime artifacts are excluded.
 - Release notes state what changed and what remains open.
 

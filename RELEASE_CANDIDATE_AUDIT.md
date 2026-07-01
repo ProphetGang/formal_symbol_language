@@ -32,6 +32,7 @@ Audited package:
 - `RUST_AUTHORITY_CRITERIA.md`
 - `FILE_CONSTRAINT_CATALOG.md`
 - `file_constraint_catalog.json`
+- `REPO_SEMANTIC_INGESTION.md`
 - `PUBLIC_REPO_NOTES.md`
 - `RELEASE_NOTES.md`
 - `RELEASE_POLICY.md`
@@ -53,6 +54,8 @@ The package is suitable as a public position-paper and language-package release 
 - generated exports are not parser, validator, Lean, Rust runtime, or governance authority
 - semantic file classification and advisory admissibility are not Builder rejection authority
 - Rust file-semantics parity is shadow evidence, not governance authority
+- repository semantic ingestion is documentation/replay evidence, not edit authority
+- Rust repository semantic parity is shadow evidence, not repository scan or governance authority
 - private runtime and governance material is excluded from the public package
 
 ## Checks
@@ -63,6 +66,7 @@ The package is suitable as a public position-paper and language-package release 
 | Rust authority boundary | pass | `RUST_PARITY_NOTE.md` states Rust is shadow/parity evidence; `RUST_AUTHORITY_CRITERIA.md` defines future promotion requirements. |
 | File-semantics authority boundary | pass | `README.md`, `USE_CASES.md`, `RUST_PARITY_NOTE.md`, and the Rust audit state semantic file classification and advisory admissibility are not Builder rejection, scope expansion, StateProof append, or governance authority. |
 | File constraint catalog boundary | pass | `FILE_CONSTRAINT_CATALOG.md` and `file_constraint_catalog.json` expose RFC 2119-style constraint statements as vocabulary/evidence only; they do not grant Builder rejection, scope expansion, StateProof append, Rust authority, or governance authority. |
+| Repository semantic ingestion boundary | pass | `REPO_SEMANTIC_INGESTION.md`, `README.md`, and `USE_CASES.md` explain semantic map replay, HTM placement, bounded traversal, and StateProof candidate boundaries without granting edit, append, scan, or Rust authority. |
 | Lean proof-status honesty | pass | `lean_coverage_report.md` distinguishes checked theorem records, axiom-dependent records, partial records, and definition-only records. |
 | Theorem lifecycle export | pass | `theorem_lifecycle.json` exports 32 active theorem lifecycle records and `theorem_registry.json` merges lifecycle status by theorem ID. |
 | No-sorry/no-axiom audit | pass | `ASSUMPTIONS_APPENDIX.md` and `lean_assumptions.json` scan 10 Lean files, inventory 132 declared axioms, and report 0 code-level `sorry`/`admit` proof holes. |
@@ -98,4 +102,4 @@ The following caveats are intentional and should remain visible:
 
 The package is appropriate for public re-export.
 
-It is now the formal whitepaper package for the current 1.1.4 public package boundary. The proof-status distribution remains unchanged at 31 checked theorem records, 1 axiom-dependent theorem record, 0 partial records, 0 definition-only records, and 0 planned records. The 1.1.4 file constraint catalog export does not change theorem IDs, Lean declarations, parser behavior, validator behavior, StateProof append authority, Rust runtime authority, Builder rejection authority, scope expansion authority, or governance execution behavior.
+It is now the formal whitepaper package for the current 1.1.5 public package boundary. The proof-status distribution remains unchanged at 31 checked theorem records, 1 axiom-dependent theorem record, 0 partial records, 0 definition-only records, and 0 planned records. The 1.1.5 repository semantic ingestion documentation and replay export do not change theorem IDs, Lean declarations, parser behavior, validator behavior, StateProof append authority, Rust runtime authority, Builder rejection authority, scope expansion authority, repository scan authority, or governance execution behavior.

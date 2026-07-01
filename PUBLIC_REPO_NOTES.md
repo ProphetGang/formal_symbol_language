@@ -16,6 +16,7 @@ This repository includes:
 - `RELEASE_CANDIDATE_AUDIT.md`
 - `PUBLICATION_TAG.md`
 - `PUBLIC_REPO_NOTES.md`
+- `REPO_SEMANTIC_INGESTION.md`
 - `STATEPROOF_NOTE.md`
 - `RUST_PARITY_NOTE.md`
 - `RUST_AUTHORITY_CRITERIA.md`
@@ -74,6 +75,8 @@ They are included for readability, external parsing, and documentation. They do 
 
 `FILE_CONSTRAINT_CATALOG.md` and `file_constraint_catalog.json` are included as public file-semantics vocabulary exports. They resolve stable constraint references into RFC 2119-style statements. They do not authorize governance, append StateProof evidence, reject Builder work, expand scope, or promote Rust authority.
 
+`REPO_SEMANTIC_INGESTION.md` is included as public adoption documentation. It explains how repository files can become semantic objects, receive constraint/dependency context, occupy HTM/FSL placements, support bounded traversal, and produce replayable semantic maps. It does not expose the private SiMON runtime or grant repository scan, Builder rejection, StateProof append, or Rust authority.
+
 `FORMAL_PROOF_BUNDLE.md`, `formal_whitepaper.md`, and `lean/` are included as the public formal proof package. The Lean files are source snapshots for inspection; Lean build products and dependencies remain excluded. The formal whitepaper states theorem-by-theorem proof status against the public proof bundle and preserves explicit axiom and lifecycle boundaries.
 
 `OVERLEAF_README.md` and `overleaf/` are included as the PDF-facing paper source package. They make the release easier to compile in Overleaf without replacing the formal proof artifacts.
@@ -84,7 +87,7 @@ They are included for readability, external parsing, and documentation. They do 
 
 `RUST_AUTHORITY_CRITERIA.md` is included as public promotion-boundary documentation. It defines the evidence required before any Rust surface can become governance authority.
 
-`docs/fsl_rust_authority_promotion_audit.md` is included as public report-only audit documentation. It records that Rust StateProof candidate, append-gate, and file-semantics checks remain shadow parity and are not promoted to governance, Builder rejection, scope expansion, or StateProof append authority.
+`docs/fsl_rust_authority_promotion_audit.md` is included as public report-only audit documentation. It records that Rust StateProof candidate, append-gate, file-semantics, and repository-semantic checks remain shadow parity and are not promoted to governance, Builder rejection, scope expansion, repository scan, or StateProof append authority.
 
 `RELEASE_CANDIDATE_AUDIT.md` is included as public claim-safety documentation. It records the current release-candidate boundary and remaining formal proof-status caveats.
 
