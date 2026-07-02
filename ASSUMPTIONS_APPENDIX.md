@@ -18,6 +18,16 @@ This audit found 132 declared axioms and 0 code-level proof holes in the scanned
 
 The largest source of declared axioms is `governance_theorems.lean`. That file is a governance model/bridge file: it names constitutional rules, packet concepts, phases, UI widgets, and governance relations as formal atoms. The cryptographic boundary used by `gbo_vi_non_equivocating` is much smaller and is documented separately in `CRYPTO_AXIOM_BOUNDARY.md`.
 
+The right reading is class-based:
+
+| Evidence class | How to read it |
+| --- | --- |
+| Assumption-free checked theorem | Lean checks the theorem without package-declared axioms in the scanned file. |
+| Checked theorem under explicit axioms | Lean checks the theorem after accepting named assumptions or model primitives. |
+| Governance model atom | A declared proposition used to model the governance system rather than derive the system from first principles. |
+| Cryptographic model boundary | A named external cryptographic assumption, such as binding for the abstract commitment primitive. |
+| Proof hole | An unfinished proof placeholder. This audit found none in scanned code-level Lean proof text. |
+
 The practical reading is:
 
 ```text
@@ -40,6 +50,7 @@ Axiom-dependent theorem claims remain axiom-dependent.
 - `governance_theorems.lean` is a propositional governance model/bridge file. Its axioms encode constitutional atoms, packet atoms, phase atoms, model relations, and proof-witness bridge claims.
 - `goedel_boundary.lean` contains boundary-model axioms for the external-authority/Godel-boundary abstraction.
 - Files with no declared axioms remain assumption-free under this scan, subject to Lean and Mathlib trusted kernels.
+- A high declared-axiom count is not itself a count of failed proofs; it is a map of the assumptions the public package exposes for review.
 
 ## Axiom Counts By File
 

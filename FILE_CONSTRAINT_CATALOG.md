@@ -8,7 +8,7 @@ The catalog is evidence and vocabulary, not runtime authority. It does not autho
 
 ## Snapshot
 
-- Package version: `1.1.6`
+- Package version: `1.1.7`
 - Constraint records: 14
 - Normative terms: MUST_NOT (3), MUST (10), SHOULD (1)
 - Severities: governor_review (13), warn (1)

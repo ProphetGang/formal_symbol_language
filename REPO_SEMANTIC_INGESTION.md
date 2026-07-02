@@ -40,7 +40,7 @@ repository files
   -> semantic file object
   -> constraint resolution
   -> dependency and invariant context
-  -> advisory admissibility
+  -> advisory step-admissibility
   -> HTM semantic placement
   -> bounded observer traversal
   -> optional StateProof candidate
@@ -49,7 +49,7 @@ repository files
 
 Each stage answers a narrower question than the previous one.
 
-File inventory asks what exists. Classification asks what kind of artifact each file appears to be. Repository profiles let a project define its own meaning for paths such as `src/kernel/**`, `proofs/**`, or `docs/**`. Constraint resolution attaches RFC 2119-style expectations to the file. Dependency context records what the file refers to. Advisory admissibility asks whether a proposed operation appears eligible, rejected, not applicable, or requiring Governor review.
+File inventory asks what exists. Classification asks what kind of artifact each file appears to be. Repository profiles let a project define its own meaning for paths such as `src/kernel/**`, `proofs/**`, or `docs/**`. Constraint resolution attaches RFC 2119-style expectations to the file. Dependency context records what the file refers to. Advisory step-admissibility asks whether a proposed operation appears eligible, rejected, not applicable, or requiring Governor review for this step.
 
 Only after those stages does the system place semantic objects into the HTM/FSL manifold.
 
@@ -69,7 +69,7 @@ It can include:
 - resolved constraint statements;
 - dependency edges;
 - scope relationship;
-- advisory admissibility status;
+- advisory step-admissibility status;
 - evidence class;
 - review confidence.
 
@@ -123,7 +123,7 @@ Examples of candidate-worthy summaries include:
 - a repository semantic map was generated;
 - file constraints were resolved;
 - semantic placement replay passed;
-- a scoped admissibility matrix was produced;
+- a scoped step-admissibility matrix was produced;
 - a bounded traversal found the relevant semantic neighborhood.
 
 The boundary is conservative:
@@ -154,6 +154,12 @@ It cannot:
 - promote Rust authority.
 
 Rust parity is useful because it can catch drift between the intended semantic record and a stricter runtime representation. It is not governance authority.
+
+## Terminology Boundary
+
+Repository semantic ingestion uses step-admissibility. It asks whether a proposed file or semantic-map operation appears acceptable for the current bounded step.
+
+It does not claim whole-trajectory admissibility. It does not prove that every future repository action remains viable, that cumulative burden is exhausted or preserved, or that an agent's entire path is globally admissible.
 
 ## Replay
 

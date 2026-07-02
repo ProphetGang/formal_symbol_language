@@ -16,7 +16,7 @@ Space matters because the observer does not see the whole system at once. In the
 
 Time matters because actions happen along a trajectory. A governed agent has history: ticks advance, identity must persist, movement cannot silently rewrite the past, and lifecycle records can be active, deprecated, or excluded. This gives the package a way to talk about continuity instead of treating each action as an isolated prompt response.
 
-Governance matters because not every possible action is admissible. A request must be converted into a bounded mission before an implementation agent acts. That mission has allowed packages, expected delta, role boundaries, and authorization. This gives the package a way to distinguish "the agent can technically do this" from "the agent is allowed to do this."
+Governance matters because not every possible action is allowed at a given step. A request must be converted into a bounded mission before an implementation agent acts. That mission has allowed packages, expected delta, role boundaries, and authorization. This gives the package a way to distinguish "the agent can technically do this" from "the agent is allowed to do this."
 
 FSL sits on top of that world. It is the symbolic language for naming the claims that arise when bounded observers act in governed space and time.
 
@@ -32,7 +32,7 @@ Once the mission is authorized, the implementation agent can perform the scoped 
 
 Before implementation, the files themselves can also be treated as semantic objects. That matters because "a file in scope" is still too vague. A public README, a Lean theorem source file, a Rust runtime module, a checksum file, and an export manifest each carry different meaning. They have different risks, different allowed operations, and different review expectations.
 
-FSL gives the system a way to say: this path is a public documentation file, this path is a formal proof snapshot, this path is a runtime module, this path is release-integrity evidence. ScopeAgent can state what kinds of files are expected. FileInspector can read allowed files and attach context without changing them. The advisory file admissibility layer can then classify whether a proposed file action appears eligible, rejected, requiring Governor review, or not applicable.
+FSL gives the system a way to say: this path is a public documentation file, this path is a formal proof snapshot, this path is a runtime module, this path is release-integrity evidence. ScopeAgent can state what kinds of files are expected. FileInspector can read allowed files and attach context without changing them. The advisory file step-admissibility layer can then classify whether a proposed file action appears eligible, rejected, requiring Governor review, or not applicable.
 
 That file-semantics step does not replace governance authorization. It gives governance better language. Instead of only asking whether a path string is inside `allowed_packages`, the system can ask whether the file's meaning matches the mission's declared scope.
 
@@ -141,23 +141,37 @@ file path
   -> semantic scope check
   -> FileInspector context
   -> dependency and invariant context
-  -> advisory admissibility decision
+  -> advisory step-admissibility decision
   -> FSL claim reference
   -> optional Rust shadow parity
 ```
 
-Each step narrows ambiguity. A path becomes a file object with a kind and role. The scope check asks whether that object matches the mission's declared expectations. FileInspector contributes read-only context from allowed files. Dependency and invariant context show whether the file touches other meaning-bearing surfaces. The advisory admissibility decision reports whether the proposed action appears safe to continue, needs Governor review, or should be rejected by policy.
+Each step narrows ambiguity. A path becomes a file object with a kind and role. The scope check asks whether that object matches the mission's declared expectations. FileInspector contributes read-only context from allowed files. Dependency and invariant context show whether the file touches other meaning-bearing surfaces. The advisory step-admissibility decision reports whether the proposed action appears safe to continue, needs Governor review, or should be rejected by policy.
 
 The boundary is deliberately conservative:
 
 ```text
 semantic file object != permission to edit
 FileInspector context != proof
-advisory admissibility != Builder rejection authority
+advisory step-admissibility != Builder rejection authority
 Rust file-semantics parity != governance authority
 ```
 
 This is useful because many real agent failures are not theorem failures. They are context failures: the agent edits the wrong kind of file, treats generated output as source, changes a release-integrity artifact without refreshing checksums, or touches a runtime file when the mission was only documentation. FSL's file-semantics layer gives those distinctions stable names before the system asks whether a change should proceed.
+
+## Step-Admissibility Versus Trajectory Admissibility
+
+This package uses step-admissibility for local governance and observer transitions. A step-admissible action is an action that satisfies the relevant rule for one proposed transition: a movement step, a file-action preflight, or a scoped governance transition.
+
+That is deliberately narrower than whole-trajectory admissibility. Whole-trajectory admissibility would ask whether an entire path remains viable over time, whether cumulative burden is exhausted, or whether a long-running agent remains inside a global viability floor. Those are neighboring questions, but they are not the claim made by the current FSL file-semantics or observer-step records.
+
+The practical boundary is:
+
+```text
+step-admissible action != globally viable trajectory
+advisory step-admissibility != runtime enforcement authority
+bounded observer step evidence != proof of the whole future path
+```
 
 ## From Repository To Semantic Manifold
 

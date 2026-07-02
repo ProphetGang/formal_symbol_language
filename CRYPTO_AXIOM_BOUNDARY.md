@@ -6,6 +6,8 @@ This note records the current decision for the only axiom-dependent theorem reco
 
 `gbo_vi_non_equivocating` is accepted as a checked theorem under an explicit cryptographic axiom boundary.
 
+The boundary should be read as a named SHA-256-style commitment binding assumption: the theorem checks once the commitment primitive is assumed to satisfy the declared binding predicate. The assumption is visible, classified, and release-documented.
+
 The theorem remains classified as:
 
 - Coverage status: `lean_theorem_axiom_dependent`
@@ -13,7 +15,7 @@ The theorem remains classified as:
 - Theorem ID: `gbo_vi_non_equivocating`
 - Lean declaration: `gbo_vi_non_equivocating`
 
-This is not a claim that Lean internally proves SHA-256 collision resistance or cryptographic binding. It is a claim that the Lean theorem checks once the commitment primitive is treated as an external assumption.
+This is not a claim that Lean internally proves SHA-256 collision resistance or cryptographic binding. It is a claim that the Lean theorem checks once the commitment primitive is treated as an external cryptographic assumption.
 
 ## Lean Boundary
 
@@ -35,6 +37,7 @@ Under the declared commitment model:
 - A governed state has a unique commitment value.
 - The theorem is machine-checked by Lean.
 - The public theorem record may honestly be reported as `machine_checked_under_axioms`.
+- The commitment theorem has a named cryptographic binding boundary rather than an unstated assumption.
 
 ## What This Does Not Prove
 

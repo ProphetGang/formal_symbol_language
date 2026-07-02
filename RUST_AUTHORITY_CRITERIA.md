@@ -31,8 +31,8 @@ Acceptable surface declarations include:
 
 - serialized FSL semantic record malformed-rejection preflight
 - serialized FSL role-bridge packet malformed-rejection preflight
-- mission-open admissibility
-- mission-close admissibility
+- mission-open lifecycle admissibility
+- mission-close lifecycle admissibility
 - FSL sort checking
 - FSL parser acceptance
 - FSL validator acceptance
@@ -40,13 +40,15 @@ Acceptable surface declarations include:
 - StateProof candidate preflight validation
 - StateProof append-gate preflight validation
 - file-semantics preflight validation
-- advisory file admissibility preflight validation
+- advisory file step-admissibility preflight validation
 - repository semantic map preflight validation
 - HTM file placement preflight validation
 - theorem lifecycle verification
-- mesh movement admissibility
+- mesh movement step-admissibility
 
 No mission may promote "the Rust kernel" as a vague whole. Each promoted surface must have its own evidence, rollback path, and compatibility check.
+
+The term step-admissibility is intentional. It names a local transition or preflight boundary, not a proof that an entire trajectory remains viable across all future steps.
 
 The current first candidate is intentionally narrower than "the Rust kernel":
 

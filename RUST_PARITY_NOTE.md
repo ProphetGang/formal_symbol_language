@@ -25,11 +25,13 @@ The FSL hardening track also added Rust shadow parity for five serialized eviden
 
 - `stateproof_candidate_parity`: mirrors StateProof anchor-candidate shape and rejection checks.
 - `stateproof_append_gate_parity`: mirrors append-request and Governor authorization gate checks.
-- `file_semantics_parity`: mirrors file semantic classification and advisory admissibility status checks.
+- `file_semantics_parity`: mirrors file semantic classification and advisory step-admissibility status checks.
 - `repo_semantic_parity`: mirrors repository semantic object, HTM placement, and advisory-status summaries.
 - `role_bridge_parity`: mirrors serialized ScopeAgent semantic regions, TourAgent traversal results, FileInspector context maps, Builder readiness packets, and Governor durable consequence decisions.
 
 Those checks are useful for detecting malformed records, policy drift, scope mismatch, placement drift, constraint-status mismatch, role-boundary drift, and authority-escalation attempts. They do not scan repositories, append StateProofs, reject Builder actions, expand scope, own role outputs, override Governor, or promote Rust to authority.
+
+Here, step-admissibility means a local preflight or transition decision for the current serialized record. It does not mean Rust has proved whole-trajectory viability or received authority to decide governance outcomes.
 
 The first scoped promotion is narrower than the full parity surface:
 reject-only preflight for malformed serialized FSL semantic records. That

@@ -4,7 +4,37 @@ FSL is a governed symbolic language for making autonomous-agent claims inspectab
 
 This repository is the public package for FSL and the governed bounded observer theorem stack. It explains a model of agents as bounded observers in a spatial/temporal system, publishes theorem and proof-status evidence, and provides machine-readable language exports that external tools can inspect.
 
-Current public package version: `1.1.6`
+Current public package version: `1.1.7`
+
+## Formal-First Reading Path
+
+This package should be read first as a formal evidence bundle, then as a symbolic language/adoption package.
+
+Start here if you are reviewing the mathematical and evidence claims:
+
+1. `formal_whitepaper.md` states the theorem-by-theorem proof-status boundary.
+2. `THEOREM_REGISTRY.md` and `theorem_registry.json` identify the 32 public theorem records.
+3. `lean_coverage_report.md` and `lean_coverage.json` report 31 machine-checked theorem records and 1 machine-checked-under-axioms record.
+4. `ASSUMPTIONS_APPENDIX.md` and `CRYPTO_AXIOM_BOUNDARY.md` explain the declared axioms and the named cryptographic binding assumption.
+5. `REPLAY_MATRIX.md`, `replay_matrix.json`, and `scripts/replay_fsl_claim.py` show how a reviewer can replay one public theorem claim.
+6. `theorem_lifecycle.json` records public lifecycle status; it is evidence of theorem-record publication state, not a substitute for Lean proof.
+7. `CHECKSUMS.sha256` verifies that the exported package artifacts have not drifted.
+
+Only after that formal evidence path should a reader move to the broader FSL language, role-governance, Rust parity, semantic file object, and repository-ingestion material. Those layers explain adoption and runtime context; they do not strengthen theorem proof status.
+
+## Formal Evidence Snapshot
+
+| Evidence surface | Current public status |
+| --- | --- |
+| Theorem records | 32 public records |
+| Lean proof status | 31 machine-checked, 1 machine-checked under explicit axioms |
+| Open proof holes | 0 scanned code-level `sorry`/`admit` holes |
+| Declared axioms | 132 public assumptions/model primitives |
+| Central result | `gbo_v_underdetermination` and `anchor_nonuniqueness_exists` |
+| Cryptographic boundary | `gbo_vi_non_equivocating` under a named binding assumption |
+| Lifecycle status | 32 active public theorem lifecycle records |
+| Replay layer | Per-claim replay through `scripts/replay_fsl_claim.py` |
+| Runtime authority | Rust remains narrowly scoped; broad governance authority is not promoted |
 
 ## What Problem This Solves
 
@@ -100,6 +130,32 @@ This package includes:
 
 The one axiom-dependent theorem is `gbo_vi_non_equivocating`. Its boundary is documented in `CRYPTO_AXIOM_BOUNDARY.md`.
 
+### Formal Results At A Glance
+
+The strongest public-facing result is the underdetermination family:
+
+- `gbo_v_underdetermination`
+- `anchor_nonuniqueness_exists`
+
+These theorems capture the core bounded-observer point: a local observer can have evidence that is consistent with more than one possible world state or semantic anchor. In plain English, the system does not merely say "the agent is bounded." It proves that bounded evidence can leave genuine ambiguity.
+
+The package separates theorem evidence into different classes:
+
+| Class | Meaning | Example |
+| --- | --- | --- |
+| Structural Lean theorem | A checked statement about the model's structure, motion, cost, horizon, or ambiguity. | `gbo_v_underdetermination` |
+| Model-definition consequence | A checked consequence that follows closely from the definitions and is useful as a sanity check. | decomposition and preservation lemmas |
+| Cryptographic-assumption theorem | A checked theorem that depends on an explicit external cryptographic binding assumption. | `gbo_vi_non_equivocating` |
+| Runtime/evidence lifecycle claim | Evidence that a claim was exported, attested, replayable, or checksummed. | lifecycle records, replay matrix, checksum manifest |
+
+Those classes should not be collapsed into one vague claim of "verified." A Lean theorem, an axiom-dependent theorem, a lifecycle attestation, a Rust parity check, and a checksum are different kinds of evidence.
+
+### Step-Admissibility Boundary
+
+FSL uses step-admissibility for local observer, file, and governance-transition claims. A step-admissible transition is acceptable for the current bounded step.
+
+That is not the same as whole-trajectory admissibility. The current package does not claim to prove that an agent's entire future path remains globally viable, that cumulative burden is exhausted or preserved across all future actions, or that Rust owns those decisions.
+
 ### Axioms, Theorems, And Proof Holes
 
 An axiom is an explicit assumption or model primitive that the proof checker is allowed to use.
@@ -113,6 +169,8 @@ That is different from an unfinished proof.
 | Proof hole | An unfinished proof placeholder such as `sorry` or `admit`. | Count is 0 for scanned code-level Lean proof holes. |
 
 The `132` declared axioms are not 132 hidden failed proofs. They are the visible assumption inventory across scanned Lean files, including governance model bridge files.
+
+The SHA-256-related boundary is intentionally narrow: this package treats cryptographic binding as a named assumption for the commitment theorem. It does not claim that Lean proves SHA-256 collision resistance.
 
 ### SiMON Runtime Boundary
 
@@ -157,18 +215,18 @@ That means a file is not only treated as bytes on disk. It can be described by:
 - RFC 2119-style constraints;
 - expected scope relationship;
 - dependency and invariant context;
-- advisory admissibility status;
+- advisory step-admissibility status;
 - public constraint catalog reference.
 
 This layer helps bridge ordinary repository work to FSL meaning. A markdown paper, a Lean theorem file, a Rust runtime module, a checksum file, and a public export manifest do not carry the same governance meaning. They have different roles, different risks, different allowed operations, and different evidence boundaries.
 
-In the reference SiMON runtime, ScopeAgent can express what kinds of files are expected, FileInspector can attach read-only context to allowed files, and the advisory file admissibility layer can classify a proposed file action as eligible, rejected, requiring Governor review, or not applicable.
+In the reference SiMON runtime, ScopeAgent can express what kinds of files are expected, FileInspector can attach read-only context to allowed files, and the advisory file step-admissibility layer can classify a proposed file action as eligible, rejected, requiring Governor review, or not applicable.
 
 Important boundary:
 
 ```text
 semantic file classification is not enforcement authority
-advisory admissibility is not Builder rejection authority
+advisory step-admissibility is not Builder rejection authority
 Rust file-semantics parity is not governance authority
 ```
 
@@ -190,7 +248,7 @@ repository files
   -> semantic file object
   -> constraint resolution
   -> dependency and invariant context
-  -> advisory admissibility
+  -> advisory step-admissibility
   -> HTM semantic placement
   -> bounded observer traversal
   -> optional StateProof candidate
@@ -227,7 +285,7 @@ It gives stable names to claims that would otherwise remain loose prose. A missi
 | Agent identity | DID and StateProof identity | `DID`, `identity`, `StateProof` | Observer identity is tracked across history. |
 | Spatial position | HTM cell or observer location | `space.htm_surface`, `adjacent` | The observer acts from a location on the manifold. |
 | Movement rule | movement/history packet | `valid_spatial_motion`, `valid_motion_stay` | Motion obeys the HTM neighbor/bounded-motion rule. |
-| History rule | trace or tick sequence | `valid_history_preserved`, `tick` | Valid history persists across admissible motion. |
+| History rule | trace or tick sequence | `valid_history_preserved`, `tick` | Valid history persists across a step-admissible motion. |
 | Observer bound | local view or horizon | `gbo_iii_spatial_horizon`, `bounded` | The observer has a bounded spatial horizon. |
 | Temporal bound | tick/time horizon | `gbo_iii_temporal_horizon`, `time` | The observer has a bounded temporal horizon. |
 | Formal proof reference | Lean declaration | `gbo_vi_non_equivocating` | The theorem is checked under explicit cryptographic assumptions. |
@@ -269,7 +327,7 @@ governance.identity.state_proof.generate_state_proof
 
 Rust currently mirrors candidate and append-gate validation as shadow parity only. It can help detect malformed records and authority escalation attempts, but it is not promoted to authority for StateProof decisions.
 
-Rust also mirrors file semantic classification and advisory admissibility status as shadow parity. That check can classify a path into a file kind and semantic role, compare expected scope metadata, inspect supplied constraint-evaluation summaries, and report whether the serialized record looks eligible, rejected, or requiring Governor review. It still cannot reject the Builder, expand scope, authorize governance, append StateProof, or promote Rust authority.
+Rust also mirrors file semantic classification and advisory step-admissibility status as shadow parity. That check can classify a path into a file kind and semantic role, compare expected scope metadata, inspect supplied constraint-evaluation summaries, and report whether the serialized record looks eligible, rejected, or requiring Governor review. It still cannot reject the Builder, expand scope, authorize governance, append StateProof, or promote Rust authority.
 
 Rust also mirrors repository semantic records as shadow parity. That check can validate supplied semantic object, placement, and advisory-status summaries for drift or authority escalation. It still does not scan repositories by itself, own FileInspector context, reject Builder actions, expand scope, authorize governance, append StateProof, or promote Rust authority.
 
@@ -360,7 +418,7 @@ This package is not:
 - Lean coverage snapshot: 31 checked theorem records, 1 axiom-dependent, 0 partial, 0 definition-only, 0 planned
 - Theorem lifecycle snapshot: 32 active records
 - Lean assumptions snapshot: 132 declared axioms, 0 code-level `sorry`/`admit` proof holes
-- FSL file-semantics layer: semantic classification and advisory admissibility only
+- FSL file-semantics layer: semantic classification and advisory step-admissibility only
 - FSL file constraint catalog: public vocabulary/evidence only
 - FSL repository semantic ingestion: semantic map/replay explanation only
 - Rust StateProof candidate parity: shadow only

@@ -1,6 +1,6 @@
 # Formal Whitepaper: FSL Governed Observer Theorem Package
 
-Version: `1.1.5`
+Version: `1.1.7`
 
 Date: June 19, 2026
 
@@ -9,6 +9,10 @@ Date: June 19, 2026
 This paper states the formal status of the FSL governed observer theorem package. It is not a new theorem source and does not alter the FSL language, Lean files, theorem registry, parser, validator, Rust runtime, or governance execution. Its role is to report the evidence now assembled in the public proof bundle: Lean source snapshots, theorem registry exports, lifecycle attestations, coverage audits, assumptions audits, and checksums.
 
 The current public theorem registry contains 32 theorem records. The formal coverage audit classifies 31 records as machine-checked theorem records and 1 record as machine-checked under explicit axioms. It reports 0 partial records, 0 definition-only records, and 0 planned records. The theorem lifecycle export reports 32 active lifecycle records with `chain_valid: true`. The assumptions audit scanned 10 Lean files, found 132 declared axioms, and found 0 code-level `sorry` or `admit` proof holes.
+
+The central mathematical result is the underdetermination family. The package proves that bounded observation can leave multiple world states or semantic anchors consistent with the available evidence. Other checked records support the model by establishing HTM motion structure, horizon bounds, identity and tick preservation, positive cost, and impossibility results. This paper distinguishes those structural theorem results from model-definition consequences, cryptographic-assumption theorems, and runtime evidence claims.
+
+The ordering of this paper is intentional: proof status, theorem identity, assumptions, lifecycle evidence, and excluded claims come before any adoption or runtime interpretation. FSL symbols, Rust parity, StateProof lifecycle records, and public replay scripts are evidence-routing surfaces; they do not replace Lean proof status.
 
 ## Evidence Package
 
@@ -35,8 +39,13 @@ This paper uses the following proof-status vocabulary:
 | --- | --- |
 | `machine_checked_theorem` | A matching Lean theorem or lemma exists, the audited Lean file checks, and the public claim matches the checked statement. |
 | `machine_checked_under_axioms` | A matching Lean theorem exists and checks, but depends on explicitly declared axiomatic primitives. |
+| structural theorem | A checked statement about model structure, motion, horizon, cost, ambiguity, or impossibility. |
+| model-definition consequence | A checked statement that follows closely from the model definitions and is useful as a sanity check or bridge lemma. |
+| cryptographic-assumption theorem | A checked theorem that depends on an explicit external cryptographic assumption. |
+| runtime/evidence claim | A claim about export, replay, lifecycle status, checksum integrity, or runtime parity rather than a Lean proof. |
 | lifecycle attestation | The theorem machine has emitted a hash-chained lifecycle record for the theorem. This is not itself a Lean proof. |
 | model/bridge axiom | A proposition or relation declared as an axiom to model governance, boundary, or cryptographic assumptions. |
+| step-admissibility | The FSL/observer predicate governing a single accepted transition or movement step. It is not a whole-trajectory viability or exhaustion theorem. |
 | excluded claim | A stronger statement intentionally not claimed by this paper. |
 
 A lifecycle record is evidence that a theorem record has been attested into the theorem lifecycle chain. It does not replace the Lean theorem or convert an axiom-dependent theorem into an assumption-free theorem.
@@ -63,6 +72,17 @@ This paper treats `fsl/SYSTEM.yaml` and the exported FSL JSON files as language 
 | Planned / not yet encoded | 0 |
 | Total theorem records | 32 |
 
+## Central Mathematical Result
+
+The underdetermination records are the most important formal result in the package:
+
+- `gbo_v_underdetermination`
+- `anchor_nonuniqueness_exists`
+
+They state, in checked form, that bounded observation can leave more than one world state or semantic anchor compatible with the same evidence. This is stronger than a naming convention and stronger than a documentation claim. It is the mathematical reason the package treats observer claims as bounded, replayable, and evidence-classified rather than globally omniscient.
+
+The horizon, motion, cost, and identity theorems give the observer model its structure. Some records are intentionally close to definitions; those are best read as model sanity checks or bridge lemmas. They remain useful because they keep the public registry aligned with checked Lean declarations, but they should not be presented as the same kind of result as the underdetermination theorem family.
+
 ## Theorem-By-Theorem Status
 
 | # | theorem_id | family | Lean declaration | proof_status | lifecycle_status | axiom dependency | summary |
@@ -78,7 +98,7 @@ This paper treats `fsl/SYSTEM.yaml` and the exported FSL JSON files as language 
 | 9 | `htmcell_neighbor_irrefl` | `htm_geometry` | `HTMCell.neighbor_irrefl` | `machine_checked_theorem` | `active` | no | No HTM cell is its own neighbor, preventing fake movement by self-loop. |
 | 10 | `htmcell_neighbor_same_depth` | `htm_geometry` | `HTMCell.neighbor_same_depth` | `machine_checked_theorem` | `active` | no | Neighbor movement preserves depth, keeping local motion on a consistent resolution layer. |
 | 11 | `gbo_i_decomposition` | `observer_bound` | `gbo_i_decomposition` | `machine_checked_theorem` | `active` | no | A governed bounded observer decomposes into identity, position, horizon, and proof-bearing state. |
-| 12 | `gbo_i_did_invariant_necessary` | `observer_bound` | `gbo_i_did_invariant_necessary` | `machine_checked_theorem` | `active` | no | Observer continuity requires DID preservation across admissible state transitions. |
+| 12 | `gbo_i_did_invariant_necessary` | `observer_bound` | `gbo_i_did_invariant_necessary` | `machine_checked_theorem` | `active` | no | Observer continuity requires DID preservation across step-admissible state transitions. |
 | 13 | `gbo_ii_tick_advances` | `observer_motion` | `gbo_ii_tick_advances` | `machine_checked_theorem` | `active` | no | A valid observer move advances the temporal tick. |
 | 14 | `gbo_ii_did_preserved` | `observer_motion` | `gbo_ii_did_preserved` | `machine_checked_theorem` | `active` | no | A valid movement preserves the observer DID. |
 | 15 | `gbo_ii_no_self_loop` | `observer_motion` | `gbo_ii_no_self_loop` | `machine_checked_theorem` | `active` | no | A valid move cannot certify a spatial self-loop as movement. |
@@ -95,8 +115,8 @@ This paper treats `fsl/SYSTEM.yaml` and the exported FSL JSON files as language 
 | 26 | `gbo_impossible_complete_observation` | `observer_impossibility` | `gbo_impossible_complete_observation` | `machine_checked_theorem` | `active` | no | Every governed bounded observer has a non-empty spatial dark complement at its current HTM depth. |
 | 27 | `gbo_impossible_zero_cost` | `observer_impossibility` | `gbo_impossible_zero_cost` | `machine_checked_theorem` | `active` | no | Zero-cost observation or movement is impossible under governed bounds. |
 | 28 | `gbo_impossible_self_certification` | `observer_impossibility` | `gbo_impossible_self_certification` | `machine_checked_theorem` | `active` | no | An observer cannot fully certify itself without an external proof relation. |
-| 29 | `governed_bounded_observer` | `observer_unified` | `governed_bounded_observer` | `machine_checked_theorem` | `active` | no | Checked unified bridge: state decomposition, valid-history tick advance, no admissible self-loop, positive coordination cost, and zero-cost impossibility. |
-| 30 | `valid_history_preserved` | `fsl_movement` | `valid_history_preserved` | `machine_checked_theorem` | `active` | no | FSL-registered movement history remains valid after an admissible motion step. |
+| 29 | `governed_bounded_observer` | `observer_unified` | `governed_bounded_observer` | `machine_checked_theorem` | `active` | no | Checked unified bridge: state decomposition, valid-history tick advance, no step-admissible self-loop, positive coordination cost, and zero-cost impossibility. |
+| 30 | `valid_history_preserved` | `fsl_movement` | `valid_history_preserved` | `machine_checked_theorem` | `active` | no | FSL-registered movement history remains valid after a step-admissible motion step. |
 | 31 | `valid_spatial_motion` | `fsl_movement` | `valid_spatial_motion_iff_cell_valid_motion` | `machine_checked_theorem` | `active` | no | FSL-registered spatial motion must be valid against the HTM neighbor surface. |
 | 32 | `valid_motion_stay` | `fsl_movement` | `valid_motion_stay` | `machine_checked_theorem` | `active` | no | FSL-registered stay/motion validation preserves the bounded observer state. |
 
@@ -109,7 +129,7 @@ The theorem `gbo_vi_non_equivocating` is classified as `machine_checked_under_ax
 - `ComputationallyBinding`
 - `sha256_binding_assumption`
 
-This paper therefore claims that `gbo_vi_non_equivocating` is proved under the abstract commitment/binding model. It does not claim that SHA-256 collision resistance is proved in Lean, that a concrete runtime commitment implementation is verified by that theorem, or that the theorem is assumption-free.
+This paper therefore claims that `gbo_vi_non_equivocating` is proved under the abstract commitment/binding model. The SHA-256 boundary is a named cryptographic binding assumption. This paper does not claim that SHA-256 collision resistance is proved in Lean, that a concrete runtime commitment implementation is verified by that theorem, or that the theorem is assumption-free.
 
 ## Horizon Closure And Model Boundaries
 
@@ -126,7 +146,7 @@ The strengthened Lean source defines the HTM root-face partition at a depth:
 
 Together these show that visible cells at the observer depth are bounded by half of the combinatorial HTM root-face surface and that every observer has a non-empty dark spatial complement at that depth. This is an HTM combinatorial theorem, not a physical spherical-visibility embedding theorem.
 
-Mission temporal horizon proof closes the remaining horizon caveat. The Lean declaration `gbo_iii_temporal_horizon` now proves that for `p1 > 0` and `p2 > 1`, a local visible window plus a non-empty dark temporal window decomposes the product coordination cycle, and the visible window is a strict prefix of the total.
+The temporal horizon proof closes the remaining horizon caveat. The Lean declaration `gbo_iii_temporal_horizon` now proves that for `p1 > 0` and `p2 > 1`, a local visible window plus a non-empty dark temporal window decomposes the product coordination cycle, and the visible window is a strict prefix of the total.
 
 This does not change theorem IDs, Lean declaration names, FSL symbol IDs, parser behavior, validator behavior, Rust runtime behavior, or governance execution. The public lifecycle export remains a historical lifecycle record; the current proof-status authority is the coverage audit, registry export, errata, and this formal whitepaper.
 
@@ -144,6 +164,8 @@ Axiom counts by file:
 
 The largest assumption surface is `lean/governance_theorems.lean`, which is a propositional governance model and bridge file. Its axioms encode constitutional rule atoms, packet atoms, phase atoms, widget atoms, proof-witness bridge claims, and governance-model relations. The boundary model is represented in `lean/goedel_boundary.lean`. The cryptographic commitment boundary is represented in `lean/gbo_theorems.lean`.
 
+These declared axioms are an explicit assumption inventory. They should not be read as hidden failed proofs. The package reports them so a reviewer can distinguish assumption-free checked theorems, checked-under-assumption theorems, and governance model atoms.
+
 The usual Lean trusted computing base remains in scope: the Lean kernel, the imported library environment used to check the files, and the correctness of the commands used to run those checks.
 
 ## Lifecycle Evidence
@@ -160,6 +182,7 @@ This paper does not claim:
 - that SHA-256 collision resistance is proved inside Lean;
 - that the combinatorial HTM root-face half-bound proves arbitrary physical spherical visibility geometry;
 - that `gbo_iii_temporal_horizon` currently proves a complete temporal observability model;
+- that FSL step-admissibility is the same as whole-trajectory viability or exhaustion admissibility;
 - that Rust governance surfaces are constitutional authority;
 - that generated FSL exports replace `fsl/SYSTEM.yaml`;
 - that StateProof raw historical chain repair is erased or hidden;
