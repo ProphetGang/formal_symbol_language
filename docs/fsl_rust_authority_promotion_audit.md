@@ -8,6 +8,8 @@ Rust should not yet become authoritative for FSL StateProof candidate validation
 
 Rust is now useful as a shadow parity layer. It can reject malformed candidate records, malformed append-gate records, malformed file-semantics records, and obvious authority-escalation attempts. It still does not own the canonical StateProof append boundary, the Python dataclass schemas, the FileInspector/ScopeAgent semantic authority, or the Governor authorization lifecycle.
 
+The first safe promotion scope is narrower than full authority: reject-only preflight for malformed serialized FSL semantic records before Python authority evaluates them. That scope is recorded in `RUST_PREFLIGHT_PROMOTION_SCOPE.md` and remains a scope decision only until a later governed activation mission succeeds.
+
 The correct next posture is:
 
 ```text
@@ -16,6 +18,14 @@ Rust runtime authority: not promoted
 Rust validation status: shadow parity
 StateProof append authority: Python canonical entrypoint only
 Builder rejection authority: not granted
+```
+
+Nearest promotable surface:
+
+```text
+surface: serialized_fsl_semantic_record_malformed_rejection_preflight
+action: reject_malformed_serialized_fsl_semantic_record
+status: scope decision only, not active authority
 ```
 
 ## Current Authority Boundary
@@ -212,6 +222,8 @@ Rust may be considered for limited authority only after all of the following are
 
    First promotion, if any, should only allow Rust to reject malformed candidate, append-gate, or file-semantics records before Python authority acts. It should not allow Rust to append StateProof, call `generate_state_proof`, reject Builder actions, expand scope, override Governor authorization, or replace Python dataclass/FileInspector authority.
 
+   The selected first scope is the common subset of those boundaries: malformed serialized FSL semantic record rejection preflight. It is intentionally a pre-Python filter, not an approval path.
+
 5. Governor authorization explicitly names the promoted boundary.
 
    A future governed promotion decision must state whether Rust is promoted to StateProof candidate preflight authority, append-gate preflight authority, file-semantics preflight authority, parity verifier only, or append executor. The safest near-term candidates are narrow preflight rejection authority for malformed serialized records, not append execution or full governance authority.
@@ -235,3 +247,11 @@ document the pipeline publicly
 then add shared parity fixtures
 then reconsider narrowly scoped Rust preflight authority
 ```
+
+The narrow promotion path now has a named first candidate:
+
+```text
+serialized_fsl_semantic_record_malformed_rejection_preflight
+```
+
+It still requires shared fixtures, a parity report, binary provenance, a governed activation packet, and Governor countersign before it can become active.

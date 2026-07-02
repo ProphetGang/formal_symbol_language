@@ -1,12 +1,19 @@
 # Rust Authority Criteria
 
-This document defines the public criteria for any future release that promotes Rust from shadow/parity evidence to governance authority in SiMON.
-
-It does not promote Rust authority.
+This document defines the public criteria for releases that promote Rust from
+shadow/parity evidence to governance authority in SiMON.
 
 Current governance authority remains with the Python/query-surface governance path and the governed StateProof chain.
 
-The current report-only audit for FSL StateProof candidate, append-gate, file-semantics, and repository semantic parity is included at `docs/fsl_rust_authority_promotion_audit.md`. That audit does not promote Rust authority; it records why Rust remains shadow parity for this release.
+The current report-only audit for FSL StateProof candidate, append-gate, file-semantics, repository semantic, and role-bridge parity is included at `docs/fsl_rust_authority_promotion_audit.md`. That audit does not promote broad Rust authority; it records why Rust remains shadow parity outside explicitly promoted narrow preflight boundaries.
+
+The first scoped promotion is documented in `RUST_PREFLIGHT_PROMOTION_SCOPE.md`.
+It is an active reject-only preflight boundary for malformed serialized FSL
+semantic records. It does not activate broad Rust authority.
+
+A second scoped candidate exists for malformed serialized FSL role-bridge
+packet rejection. That candidate is decision-scoped only in this package. It is
+not active runtime authority.
 
 ## Promotion meaning
 
@@ -22,6 +29,8 @@ Any promotion decision must name the exact surfaces being promoted.
 
 Acceptable surface declarations include:
 
+- serialized FSL semantic record malformed-rejection preflight
+- serialized FSL role-bridge packet malformed-rejection preflight
 - mission-open admissibility
 - mission-close admissibility
 - FSL sort checking
@@ -38,6 +47,31 @@ Acceptable surface declarations include:
 - mesh movement admissibility
 
 No mission may promote "the Rust kernel" as a vague whole. Each promoted surface must have its own evidence, rollback path, and compatibility check.
+
+The current first candidate is intentionally narrower than "the Rust kernel":
+
+```text
+surface: serialized_fsl_semantic_record_malformed_rejection_preflight
+action: reject_malformed_serialized_fsl_semantic_record
+status: active reject-only preflight promotion
+```
+
+A passing Rust preflight for this surface only allows the record to continue to
+the existing Python/query-surface authority path. It does not authorize the
+record.
+
+The current second candidate is also narrower than "the Rust kernel":
+
+```text
+surface: serialized_fsl_role_bridge_packet_malformed_rejection_preflight
+action: reject_malformed_serialized_fsl_role_bridge_packet
+status: scope decision only, not active
+```
+
+A future passing Rust preflight for this surface would only allow a role-bridge
+packet to continue to the existing Python/query-surface authority path. It
+would not authorize a mission, own role output, override Governor, reject
+Builder work, move an observer, expand scope, or append StateProof evidence.
 
 ## Minimum criteria
 
@@ -166,6 +200,7 @@ Failing closed is preferred for authority paths. Any fail-open behavior must be 
 
 Rust authority promotion must not be used to:
 
+- approve serialized records merely because they passed preflight
 - rename theorem IDs
 - rename FSL symbols
 - bypass UpdatePacket authorization
@@ -177,8 +212,21 @@ Rust authority promotion must not be used to:
 
 ## Current release status
 
-For this release, Rust remains evidence-bearing and compatibility-checked only.
+For this release, the first narrow Rust preflight surface has been promoted:
 
-The current public Rust parity note reports shadow/parity evidence. It does not grant enforcement authority.
+```text
+Rust may reject malformed serialized FSL semantic records before Python authority evaluates them.
+Rust may not approve records, authorize governance, append StateProof, reject Builder work, expand scope, own TourAgent traversal, or override Governor.
+```
 
-Future promotion requires a separate governed release decision that satisfies this document.
+The role-bridge malformed-packet rejection surface is decision-scoped only:
+
+```text
+Rust may later be considered for rejecting malformed serialized FSL role-bridge packets.
+Rust may not authorize missions, own ScopeAgent/FileInspector/TourAgent/Builder/Governor outputs, override Governor, move observers, append StateProof, reject Builder work, or expand scope.
+```
+
+All other Rust surfaces remain evidence-bearing and compatibility-checked only.
+
+Future promotions require separate governed release decisions that satisfy this
+document.

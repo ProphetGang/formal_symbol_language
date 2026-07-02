@@ -2,7 +2,7 @@
 
 Package: SiMON FSL + Governed Bounded Observer Publication Bundle
 
-Current public package version: `1.1.5`
+Current public package version: `1.1.6`
 
 This bundle is a clean publication directory for understanding FSL and its connection to the governed bounded observer theorem stack. It is intentionally a directory bundle, not a zip archive. Archive creation should happen only after checksum review.
 
@@ -39,6 +39,26 @@ The bundle contains:
 - Publication tag record: `PUBLICATION_TAG.md`
 - Repeatable export manifest: `EXPORT_MANIFEST.json`
 - Checksums: `CHECKSUMS.sha256`
+
+## Version 1.1.6
+
+Version `1.1.6` is a patch release for public documentation of the Rust preflight and role-bridge authority boundary.
+
+It incorporates the current reader-facing release updates:
+
+- `README.md` now distinguishes the active Rust semantic-record malformed-rejection preflight from shadow parity surfaces and future decision-scoped role-bridge promotion.
+- `RUST_PARITY_NOTE.md` now includes role-bridge shadow parity alongside StateProof candidate, append-gate, file-semantics, and repository semantic parity.
+- `RUST_AUTHORITY_CRITERIA.md` now identifies malformed serialized role-bridge packet rejection as a future decision-scoped candidate, not an active authority boundary.
+- `PUBLICATION_TAG.md`, `VERSION`, `EXPORT_MANIFEST.json`, and checksums now identify the public package as `1.1.6`.
+
+No theorem IDs, Lean declarations, parser behavior, validator behavior, FSL registry source semantics, StateProof append authority, Builder rejection authority, scope expansion authority, repository scan authority, role authority, or governance execution behavior changed in `1.1.6`.
+
+Rust authority boundary for `1.1.6`:
+
+- Active: reject-only preflight for malformed serialized FSL semantic records.
+- Shadow only: StateProof candidate parity, append-gate parity, file-semantics parity, repository semantic parity, and role-bridge parity.
+- Decision-scoped only: future malformed role-bridge packet rejection.
+- Not granted: mission authorization, Governor override, StateProof append, Builder rejection, scope expansion, observer movement, repository scan ownership, or broad Rust kernel authority.
 
 ## Version 1.1.5
 
@@ -134,7 +154,10 @@ It is a position-paper and publication-package release. It does not claim comple
 - Rust append-gate parity: shadow only
 - Rust file-semantics parity: shadow only
 - Rust repository semantic parity: shadow only
-- Rust authority promotion: not granted
+- Rust role-bridge parity: shadow only
+- Rust semantic-record malformed rejection: active reject-only preflight
+- Rust role-bridge malformed rejection: decision-scoped only, not active
+- Broad Rust authority promotion: not granted
 
 ## Canonical and derived artifacts
 
@@ -178,7 +201,7 @@ This release is documentation and assembly only. It does not modify parser behav
 
 Rust governance surfaces are currently treated as shadow/parity evidence. The earlier public parity evidence reports 12 passing cases, 0 failures, and 0 skips across mission gate predicates, FSL sort checks, and mesh movement predicates.
 
-Additional internal Rust shadow parity now exists for FSL StateProof candidate validation, append-gate validation, file semantic classification/advisory admissibility status, and repository semantic map summaries. These checks help detect malformed serialized records, policy drift, scope mismatch, placement drift, constraint-status mismatch, and authority escalation attempts. They do not promote Rust to governance authority, do not permit Rust to append StateProof, do not grant repository scan authority to Rust, and do not let Rust reject Builder actions.
+Additional Rust shadow parity now exists for FSL StateProof candidate validation, append-gate validation, file semantic classification/advisory admissibility status, repository semantic map summaries, and serialized role-bridge packets. These checks help detect malformed serialized records, policy drift, scope mismatch, placement drift, constraint-status mismatch, and authority escalation attempts. They do not promote Rust to governance authority, do not permit Rust to append StateProof, do not grant repository scan authority to Rust, do not let Rust reject Builder actions, and do not let Rust own role outputs or override Governor.
 
 `RUST_PARITY_NOTE.md` is included so readers can distinguish Rust compatibility evidence from governance authority. This release does not promote Rust to constitutional authority and does not alter current governance execution.
 
@@ -192,9 +215,9 @@ Additional internal Rust shadow parity now exists for FSL StateProof candidate v
 
 ## Publication tag status
 
-`PUBLICATION_TAG.md` records this package as the governed `1.1.5` public position-paper, language-package, proof-bundle, formal-whitepaper, StateProof/Rust-boundary, file-semantics documentation, file constraint catalog, and repository semantic ingestion patch release. The recommended tag is `fsl-observer-theorem-v1.1.5` after the public package files are committed.
+`PUBLICATION_TAG.md` records this package as the governed `1.1.6` public position-paper, language-package, proof-bundle, formal-whitepaper, StateProof/Rust-boundary, file-semantics documentation, file constraint catalog, repository semantic ingestion, and Rust role-bridge boundary patch release. The recommended tag is `fsl-observer-theorem-v1.1.6` after the public package files are committed.
 
-This tag represents the current formal whitepaper package for the `1.1.5` public package boundary. The proof-status distribution remains `31 / 1 / 0`: 31 machine-checked theorem records, 1 machine-checked-under-explicit-axioms record, and no partial, definition-only, or planned records. It does not claim assumption-free cryptographic proof, StateProof append authority from semantic candidates alone, Rust runtime authority, repository scan authority from Rust, or Builder rejection authority from file-semantics parity, repository semantic parity, or file constraint catalog exports.
+This tag represents the current formal whitepaper package for the `1.1.6` public package boundary. The proof-status distribution remains `31 / 1 / 0`: 31 machine-checked theorem records, 1 machine-checked-under-explicit-axioms record, and no partial, definition-only, or planned records. It does not claim assumption-free cryptographic proof, StateProof append authority from semantic candidates alone, broad Rust runtime authority, repository scan authority from Rust, role authority from Rust, or Builder rejection authority from file-semantics parity, repository semantic parity, role-bridge parity, or file constraint catalog exports.
 
 ## Export process
 

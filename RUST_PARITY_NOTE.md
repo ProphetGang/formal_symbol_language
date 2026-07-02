@@ -21,14 +21,23 @@ The measured surfaces were:
 
 The parity runner also performed binary preflight checks and recorded fresh release binaries for the measured Rust surfaces.
 
-The FSL hardening track also added Rust shadow parity for four serialized evidence boundaries:
+The FSL hardening track also added Rust shadow parity for five serialized evidence boundaries:
 
 - `stateproof_candidate_parity`: mirrors StateProof anchor-candidate shape and rejection checks.
 - `stateproof_append_gate_parity`: mirrors append-request and Governor authorization gate checks.
 - `file_semantics_parity`: mirrors file semantic classification and advisory admissibility status checks.
 - `repo_semantic_parity`: mirrors repository semantic object, HTM placement, and advisory-status summaries.
+- `role_bridge_parity`: mirrors serialized ScopeAgent semantic regions, TourAgent traversal results, FileInspector context maps, Builder readiness packets, and Governor durable consequence decisions.
 
-Those checks are useful for detecting malformed records, policy drift, scope mismatch, placement drift, constraint-status mismatch, and authority-escalation attempts. They do not scan repositories, append StateProofs, reject Builder actions, expand scope, or promote Rust to authority.
+Those checks are useful for detecting malformed records, policy drift, scope mismatch, placement drift, constraint-status mismatch, role-boundary drift, and authority-escalation attempts. They do not scan repositories, append StateProofs, reject Builder actions, expand scope, own role outputs, override Governor, or promote Rust to authority.
+
+The first scoped promotion is narrower than the full parity surface:
+reject-only preflight for malformed serialized FSL semantic records. That
+scope is documented in `RUST_PREFLIGHT_PROMOTION_SCOPE.md`. It is active only
+for rejecting malformed serialized FSL semantic records before Python authority
+evaluates surviving records.
+
+A second promotion decision has been scoped for malformed serialized FSL role-bridge packet rejection. That decision is not active runtime authority in this package. It records the next candidate boundary for future review while keeping Rust role-bridge behavior shadow/parity only.
 
 ## What parity means
 
@@ -53,14 +62,17 @@ The Rust parity evidence does not change:
 - theorem status
 - public release claims
 
-In this release, Rust is evidence-bearing and compatibility-checked. It is not yet the constitutional authority for enforcing SiMON governance decisions.
+In this release, Rust is evidence-bearing and compatibility-checked for most
+surfaces. One narrow surface is active: Rust may reject malformed serialized
+FSL semantic records at preflight. It is not the constitutional authority for
+approving records or enforcing SiMON governance decisions.
 
 For the FSL StateProof candidate pipeline, the current authority boundary is:
 
 ```text
 Python/governance authority: retained
-Rust runtime authority: not promoted
-Rust validation status: shadow parity
+Rust runtime authority: reject-only preflight for malformed serialized FSL semantic records
+Rust validation status: narrow active preflight plus shadow parity for other surfaces
 StateProof append authority: Python canonical entrypoint only
 ```
 
@@ -68,8 +80,8 @@ For the FSL file-semantics layer, the current authority boundary is:
 
 ```text
 Python/FSL semantics authority: retained
-Rust runtime authority: not promoted
-Rust validation status: shadow parity
+Rust runtime authority: reject-only preflight for malformed serialized FSL semantic records
+Rust validation status: narrow active preflight plus shadow parity for other surfaces
 Builder rejection authority: not granted
 Scope expansion authority: not granted
 ```
@@ -78,10 +90,24 @@ For the FSL repository semantic ingestion layer, the current authority boundary 
 
 ```text
 Python/FSL semantic map authority: retained
-Rust runtime authority: not promoted
-Rust validation status: shadow parity
+Rust runtime authority: reject-only preflight for malformed serialized FSL semantic records
+Rust validation status: narrow active preflight plus shadow parity for other surfaces
 Repository scan authority: not granted to Rust
 StateProof append authority: not granted to Rust
+```
+
+For the FSL role-bridge layer, the current authority boundary is:
+
+```text
+Python/query-surface role authority: retained
+Rust runtime authority: reject-only preflight for malformed serialized FSL semantic records
+Rust validation status: role-bridge shadow parity plus decision-scoped future role-bridge preflight
+Mission authorization authority: not granted to Rust
+Governor override authority: not granted to Rust
+StateProof append authority: not granted to Rust
+Builder rejection authority: not granted to Rust
+Scope expansion authority: not granted to Rust
+Observer movement authority: not granted to Rust
 ```
 
 ## Promotion requirement
@@ -101,4 +127,20 @@ At minimum, a future promotion must show:
 - parser, validator, Lean, and public-export compatibility preserved
 - a clear rollback path if a Rust-enforced decision diverges from the Python/query-surface authority
 
-Until that mission succeeds, public readers should interpret Rust runtime work as shadow evidence and hardening support, not as the current source of governance truth.
+The active narrow promotion is:
+
+```text
+Rust may reject malformed serialized FSL semantic records before Python authority evaluates them.
+Rust may not approve records or make governance decisions.
+```
+
+The current decision-scoped future candidate is:
+
+```text
+Rust may later be considered for rejecting malformed serialized FSL role-bridge packets.
+That role-bridge gate is not active in this package.
+Rust may not authorize missions, own role outputs, override Governor, move observers, append StateProof, reject Builder work, or expand scope.
+```
+
+Public readers should interpret all other Rust runtime work as shadow evidence
+and hardening support, not as the current source of governance truth.

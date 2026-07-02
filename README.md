@@ -4,7 +4,7 @@ FSL is a governed symbolic language for making autonomous-agent claims inspectab
 
 This repository is the public package for FSL and the governed bounded observer theorem stack. It explains a model of agents as bounded observers in a spatial/temporal system, publishes theorem and proof-status evidence, and provides machine-readable language exports that external tools can inspect.
 
-Current public package version: `1.1.5`
+Current public package version: `1.1.6`
 
 ## What Problem This Solves
 
@@ -139,9 +139,9 @@ In public terms:
 
 FSL does not replace these roles. FSL gives stable names to the claims those roles produce. A scope boundary can be referenced as a declared scope. A builder delta can be referenced as a symbolic change. A Governor decision can be referenced as an authorization boundary. A StateProof can be referenced as a durable evidence class.
 
-Rust is being developed as a kernel/runtime hardening layer for selected governance checks. In this release, Rust is not the governance authority. It mirrors selected StateProof candidate, append-gate, file-semantics, and repository semantic validation boundaries as shadow parity, helping detect malformed serialized records, policy drift, and authority-escalation attempts.
+Rust is being developed as a kernel/runtime hardening layer for selected governance checks. In this release, Rust is not the governance authority. Rust has one active narrow preflight boundary: it may reject malformed serialized FSL semantic records before Python/query-surface authority evaluates surviving records. Rust also mirrors selected StateProof candidate, append-gate, file-semantics, repository semantic, and role-bridge validation boundaries as shadow parity, helping detect malformed serialized records, policy drift, scope mismatch, and authority-escalation attempts.
 
-The intended long-term value of a Rust kernel is type-safe enforcement at carefully promoted boundaries. Promotion requires explicit evidence, compatibility checks, rollback rules, and a governed authority decision. Until then, Rust remains evidence-bearing validation, not constitutional authority.
+The intended long-term value of a Rust kernel is type-safe enforcement at carefully promoted boundaries. Promotion requires explicit evidence, compatibility checks, rollback rules, and a governed authority decision. Role-bridge malformed-packet rejection is currently decision-scoped for future promotion only; it is not active runtime authority. Until a boundary is explicitly promoted, Rust remains evidence-bearing validation, not constitutional authority.
 
 ### Semantic File Objects
 
@@ -267,11 +267,13 @@ The canonical StateProof append entrypoint remains:
 governance.identity.state_proof.generate_state_proof
 ```
 
-Rust currently mirrors candidate and append-gate validation as shadow parity only. It can help detect malformed records and authority escalation attempts, but it is not promoted to authority.
+Rust currently mirrors candidate and append-gate validation as shadow parity only. It can help detect malformed records and authority escalation attempts, but it is not promoted to authority for StateProof decisions.
 
 Rust also mirrors file semantic classification and advisory admissibility status as shadow parity. That check can classify a path into a file kind and semantic role, compare expected scope metadata, inspect supplied constraint-evaluation summaries, and report whether the serialized record looks eligible, rejected, or requiring Governor review. It still cannot reject the Builder, expand scope, authorize governance, append StateProof, or promote Rust authority.
 
 Rust also mirrors repository semantic records as shadow parity. That check can validate supplied semantic object, placement, and advisory-status summaries for drift or authority escalation. It still does not scan repositories by itself, own FileInspector context, reject Builder actions, expand scope, authorize governance, append StateProof, or promote Rust authority.
+
+Rust also mirrors role-bridge packets as shadow parity. That check covers serialized ScopeAgent semantic regions, TourAgent traversal results, FileInspector context maps, Builder readiness packets, and Governor durable consequence decisions. It can reject malformed or authority-escalating serialized role-bridge packets in parity fixtures, but the future active gate for that surface has not been promoted. Rust still cannot authorize missions, move observers, own role outputs, override Governor, reject Builder work, expand scope, or append StateProof evidence.
 
 See:
 
@@ -365,7 +367,10 @@ This package is not:
 - Rust append-gate parity: shadow only
 - Rust file-semantics parity: shadow only
 - Rust repository semantic parity: shadow only
-- Rust authority promotion: not granted
+- Rust role-bridge parity: shadow only
+- Rust semantic-record malformed rejection: active reject-only preflight
+- Rust role-bridge malformed rejection: decision-scoped only, not active
+- Broad Rust authority promotion: not granted
 
 ## Reader Paths
 
